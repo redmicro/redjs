@@ -1,0 +1,170 @@
+::-webkit-scrollbar{
+    width: 0px !important;
+    height: 0px !important;
+}
+
+body
+{
+    font-size: 1.5rem !important;
+    line-height: 1.5rem;
+}
+div{
+    -webkit-overflow-scrolling: touch;
+    line-height:inherit;
+}
+
+.x-x-body{
+    height:auto;
+    background-color: rgba(255, 242, 249, 0.6);
+    /*background-image: url("http://www.yz.cn/images/blue.jpg");*/
+    background-repeat: no-repeat;
+    background-position:  center 0px;
+
+}
+.x-master-float{
+    z-index: 999999;
+    background-color: rgba(128, 128, 128, 0.35);
+    right:  2rem;
+    bottom: 7rem;
+}
+.x-master-top
+{
+    height: 13rem;
+    background-color: rgba(90,186,80,0.7) !important;
+
+}
+.x-master-top .x-logo
+{
+    /*border-radius:35px;*/
+    overflow: hidden;
+
+}
+.x-master-top .x-me
+{
+    border-radius:3rem;
+    overflow: hidden;
+
+}
+.x-master-top img
+{
+    border-radius:7rem;
+}
+
+.x-master-content
+{
+    position: absolute;
+    top: 13rem;
+    right: 0rem;
+    left: 0rem;
+    min-height: 30rem;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    bottom: 15.5rem;
+}
+
+.x-master-bottom
+{
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+    left: 0px;
+    height: 15rem;
+    line-height:7rem;
+    background-color: rgba(36, 153, 35, 0.8) !important;
+}
+
+.x-goods-list
+{
+    font-size: 120%;
+}
+.x-goods-list ou,.x-goods-list ol {
+    margin: 0px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.x-goods-list li
+{
+    height: 9.8rem !important;
+    list-style-type: none;
+    border: none;
+}
+.x-goods-list-item
+{
+    height: 9.5rem;
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.x-goods-list-item  ou,.x-goods-list-item ol
+{
+    height: 100%;
+}
+.x-goods-list-item img
+{
+    width: 9rem;
+    height: 9rem;
+}
+.x-goods-list-item li
+{
+    height: 3rem !important;
+    line-height:3rem !important;
+}
+.x-goods-list-item .x-content
+{
+    position: absolute;
+    top:0px;
+    left: 8rem;
+    bottom: 0rem;
+    right: 10rem;
+   /*background-color: #8a8a8a;*/
+}
+
+.x-goods-list-item .x-right
+{
+    position: absolute;
+    top:0px;
+    bottom: 0rem;
+    right: 0rem;
+    width: 15rem;
+    /*background-color: #00FFFF;*/
+    height: 100%;
+}
+
+.x-home-bar
+{}
+
+.x-home-bar .x-home-button
+{
+    background:transparent url("../images/icons1.jpg") no-repeat scroll -150px -600px !important ;
+    position: absolute !important;
+}
+.x-home-bar .x-list-button
+{
+    background:transparent url("../images/icons1.jpg") no-repeat scroll -255px -600px !important ;
+    position: absolute !important;
+}
+.x-home-bar .x-list-button img
+{
+
+}
+.x-home-bar .x-notice-button
+{}
+.x-home-bar .x-notice-button img
+{
+    height: 100% !important;
+    overflow: hidden;
+    /*clip:rect(-10px -10px -160px -160px);*/
+    /*background:transparent url("../images/icons.jpg") no-repeat scroll !important ;*/
+    background-size: 160px !important;
+    position: absolute !important;
+}
+.x-home-bar .x-my-button
+{}
+.x-home-bar .x-my-button img
+{
+
+    background:transparent url("../images/icons.jpg") no-repeat scroll !important ;
+
+    background-size:auto !important;
+    position: absolute !important;
+}

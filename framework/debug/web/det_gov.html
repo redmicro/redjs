@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="ch">
+    <meta charset="UTF-8">
+    <title>工厂类网站模版</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/Rsd.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/web.css"/>
+    <script type="text/javascript" src="../../Rsd.js"></script>
+    <script type="text/javascript" src="./app.js?t=Detail"></script>
+    <style>
+        .x-x-body{
+            height:auto;
+            background-color: rgba(255, 242, 249, 0.36);
+            /*background-image: url("http://www.yz.cn/images/blue.jpg");*/
+            background-repeat: no-repeat;
+            background-position:  center 0px;
+        }
+
+        .x-content{
+            /*height: 1170px;*/
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    Rsd.createTamplate(function(){
+
+        Rsd.create('Rsd.template.TMMasterPage',{}).show();
+        $(document.body).attr("class","x-x-body");
+    })
+</script>
+</body>
+</html>

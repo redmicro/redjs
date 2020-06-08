@@ -1,0 +1,304 @@
+:root {
+    --bg-color: rgba(248, 248, 248, 0.40);
+    --font-color:#555;
+    --bg-color-container-disabled:rgba(214, 214, 214, 0.8);
+
+    --bg-color-header: rgba(31, 116, 227, 0.25);
+    --bg-color-label: inherit;
+    --bg-color-template-header:#dcdcdc;
+    --font-color-template-header:#b20000;
+
+    --bg-color-button:rgba(214, 214, 214, 0.9);
+    --bg-color-button-hover:rgba(132, 222, 80, 0.85);
+    --bg-color-fieldset:#F4F4F4;
+    --bg-color-foot: #e3e3e3;
+    /*多选控件下拉框*/
+    --bg-color-box:rgba(230, 230, 230, 0.95);
+    --bg-color-box-item-hover:#96CBFE;
+
+    --bg-color-dialog:#fefefe;
+    --bg-color-dialog-header:#3f51b5 ;
+    --bg-color-chart:whitesmoke;
+    --bg-color-image-viewer:rgba(0, 0, 0, 0.6);
+    --bg-color-image-viewer-header:rgba(0, 0, 0, 0.0);
+
+    --bg-color-waiting:rgba(111, 211, 41, 0.8);
+    --bg-color-loading:rgba(103, 211, 114, 0.6);
+    --bg-color-popup-bar:#00AA00 ;
+
+    /*menu*/
+    --bg-color-menu: rgba(56, 68, 90, 0.8);
+    --bg-color-menu-hover: #38445A;
+    --font-color-menu: #e6e6e6;
+    --font-color-menu-hover:#e6e6e6;
+
+    /*calendar*/
+
+    /*tree*/
+    --bg-color-tree-level-0: #404E67;
+    --bg-color-tree-level-1: rgba(64, 78, 103, 0.90);
+    --bg-color-tree-level-2: rgba(64, 78, 103, 0.80);
+    --bg-color-tree-level-3: rgba(64, 78, 103, 0.60);
+    --bg-color-tree-level-4: rgba(64, 78, 103, 0.50);
+    --bg-color-tree-level-5: rgba(64, 78, 103, 0.40);
+    --bg-color-tree-node-selected:#c0d2ec;
+    --border-color-tree-level-0:rgba(47, 47, 47, 0.90);
+    --border-color-tree-level-1: rgba(47, 47, 47, 0.90);
+    --border-color-tree-level-2:rgba(47, 47, 47, 0.90);
+    --border-color-tree-level-3:rgba(47, 47, 47, 0.90);
+    --border-color-tree-level-4:rgba(47, 47, 47, 0.90);
+    --border-color-tree-level-5:rgba(47, 47, 47, 0.90);
+    --font-color-tree-level-0:#fff;
+    --font-color-tree-level-1:#fff;
+    --font-color-tree-level-2:#fff;
+    --font-color-tree-level-3:#fff;
+    --font-color-tree-level-4:#fff;
+    --font-color-tree-level-5:#fff;
+
+    /*table*/
+    --bg-color-table-caption:#C2C2C2;
+    --bg-color-tr: #FFFFFF;
+    --bg-color-tr-alt: #EFEFEF;
+    --bg-color-tr-hover: rgba(3, 81, 255, 0.13);
+    --bg-color-tr-selected: yellow;
+    --bg-color-tr-edit:rgba(205, 255, 245, 0.7);
+    --bg-color-tfoot: #e3e3e3 ;
+    --font-color-table-sort-link-current:red;
+    --font-color-table-sort-link-hover:blue;
+}
+
+
+th,tfoot>tr,tfoot>td {
+    font-family: '微软雅黑';
+    border-color: #c5c5c5;
+    background-color: var(--bg-color-tfoot) !important;
+    color: #2e2e2e !important;;
+}
+
+.x-componentx-container {
+    position: absolute !important;
+    display: inline-block;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    background-color: transparent;
+}
+
+.x-componentx-container .x-header  {
+    position: absolute !important;
+    display: inline-block;
+    background-color: var(--bg-color-header);
+    /* overflow: hidden;*/
+}
+
+.x-label
+{
+    background-color: var(--bg-color-label);
+}
+
+.x-table
+{
+
+}
+.x-table table
+{
+    position: absolute;
+    padding: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    width: 100%;
+    height: auto !important;
+    border-collapse: collapse;
+    letter-spacing: 2px;
+    display: table;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-top-color: #eff3f6;
+    border-right-color: #eff3f6;
+    border-bottom-color: #eff3f6;
+    border-left-color: #eff3f6;
+}
+.x-table table img{
+    vertical-align: middle;
+}
+.x-table table caption {
+    background-color: inherit;
+    width: 100%;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.x-table table thead {
+    vertical: middle;
+}
+.x-table table tbody {
+    position: relative;
+    width: 100%;
+    border: 0px solid #C2C2C2;
+    border-spacing: 0px;
+    vertical-align: middle;
+}
+
+.x-table table tfoot {
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+    border: 0px solid inherit;
+}
+
+.x-table table thead th {
+    height: 40px;
+    line-height: 28px;
+    font-weight: bold;
+    font-size: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 1px solid var(--bg-color-table-caption);
+}
+.x-table table thead th .x-sort-link{
+    width: 30px;
+    text-align: center;
+
+}
+.x-table table thead th .x-sort-link-current{
+    color: red;
+}
+.x-table table thead th .x-sort-link:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+.x-table table thead th.sub {
+    height: 30px;
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.x-table tbody tr {
+    height: 28px !important;
+    line-height: 28px;
+    display: table-row;
+    vertical-align: inherit;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+
+.x-table tbody tr.alt {
+    background-color: var( --bg-color-tr-alt) !important;
+}
+
+.x-table tbody tr:hover {
+    background-color: var( --bg-color-tr-hover) !important;
+}
+
+.x-table table tbody td {
+
+    font-size: 100%;
+    text-align: center;
+    background: inherit;
+    border-collapse: collapse;
+    font-weight: 300;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.x-table table tfoot tr {
+    width: 100%;
+}
+.x-table table tfoot td {
+}
+.x-table .x-row-selected {
+    background-color: var( --bg-color-tr-selected) !important;
+    font-size: 110%;
+    font-weight: bold;
+    color: #2A2A2A;
+}
+
+.x-table .x-row-edit {
+    background-color: var(--bg-color-tr-edit) !important;
+}
+.x-table .x-row-edit input{
+    width: 95%;
+    height: 25px;
+    border-style: dotted ;
+    border-color: blue ;
+
+}
+.x-table .x-row-edit input[type=checkbox] {
+    width: auto;
+}
+
+
+.x-list-view .x-list-view-menu
+{}
+
+.x-list-view ou,.x-list-view ol
+{
+    height: auto !important;
+    width: 100%;
+    margin-top:0px;
+    overflow: auto;
+}
+.x-list-view-menu ou ,.x-list-view-menu ol {
+    height: auto !important;
+    width: 100%;
+    margin-top:0px;
+}
+
+.x-list-view li
+{
+    color: rgb(102, 102, 102);
+    display: block;
+    font-size: 100%;
+    font-weight: bold;
+}
+.x-list-view .x-li-hover
+{
+
+}
+
+.x-list-view .x-selected, .x-list-view .x-li-hover:hover
+{
+    color: #FFF;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(90deg, rgb(24, 97, 213) 0px, rgb(48, 128, 254) 100%);
+    background-origin: padding-box;
+    background-size: auto;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
+    cursor: pointer;
+
+}
+.x-list-view-menu li
+{
+    float: left;
+    display: block;
+    font-size: 100%;
+}
+.x-list-view-menu .x-li-hover
+{
+
+}
+.x-list-view-menu .x-selected, .x-list-view-menu .x-li-hover:hover
+{
+    border-bottom-width:2px;
+    border-bottom-color:rgb(72, 213, 105);
+    border-bottom-style: solid;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+    "include": ["./redjs/Redjs.js","./redjs/Rsd.js", "./redjs/RedjsLoggerAPI.js","./redjs/common/","./redjs/container/","./redjs/control/","./redjs/controlEx/","./redjs/data/","./redjs/template/","./redjs/view/","./redjs/wap/","./redjs/web/" ],
+    "exclude": [  ],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}

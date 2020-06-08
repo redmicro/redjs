@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>REDJS-TEST</title>
+    <script type="text/javascript" src="../../Rsd.js"></script>
+    <!--<script id='RedjsLoggerAPI' type="text/javascript" src="../../RedjsLoggerAPI.js?t=2019022001" appId="b110c126-f428-489f-82fe-a8fcd12ba99a" token="WEG-Admin-Manager"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../resources/css/Rsd.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/Blue.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/web.css"/>
+   <!--<script type="text/javascript" src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>-->
+    <script>
+        // init vConsole
+        //var vConsole = new VConsole();
+    </script>
+    <script type="text/javascript" lang="zh-cn" language="javascript">
+        Rsd.createApplication({
+            appTitle: 'Test',
+            appName: 'Rsd.Test',
+            appFolder: 'src',
+            //appHost:'http://10.16.20.5/Rsd.Shannon.Web/',
+            appHost:'',
+            loginUrl: 'login',
+            indexUrl: 'index.html',
+            isDebug:false,
+            isDemo:window.location.protocol == 'file:',
+            imgHost:'http://image.dpxcn.com/',
+            requires: [],
+            appId:'b110c126-f428-489f-82fe-a8fcd12ba99a',
+            appDate:new Date().getTime(),
+            beforeRun:function beforeRun() {
+
+                Rsd.loadPlugin('plugin/jquery/jquery.md5.js');
+                //Rsd.alert("您当前使用的浏览器是：" + Rsd.detectNavigator());
+                //Rsd.alert("您当前使用的操作系统是：" + Rsd.detectOS());
+                Rsd.logger = new Rsd.data.Logger({commit:'commitLog',projectId:this.appId,parent:this});
+            },
+            /*
+            * */
+            launch: function launch() {
+                //Rsd.requestJson({url:'https://wex.dpxcn.com/web/index.php?c=site&a=entry&m=ewei_shopv2&do=web&isajax=1'},{},function (d) {
+                //    console.log(d);
+                //});
+                var _form = Rsd.create('Rsd.view.Master', {
+                    border: false,
+                    left:{
+                        nodeClick:function(node)
+                        {
+                            if(!Rsd.isMobile())
+                            {
+                                return
+                            }
+                            if (node.page) {
+                                _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
+                            } else {
+                                _form.showPage(Rsd.create('Rsd.debug.test.' + node.text + 'Page', {title:'',tabTitle:node.text}));
+                            }
+                        },
+                        nodeDblClick:function(node) {
+                            if (node.page) {
+                                _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
+                            } else {
+                                _form.showPage(Rsd.create('Rsd.debug.test.' + node.text + 'Page', {title:'',tabTitle:node.text}));
+                            }
+
+                        },
+                        nodes:[
+                            {text:'Welcome',page:'Rsd.view.WelcomePage'},
+                            {text:'Redjs'},
+                            {text:'Input'},
+                            {text:'Grid'},
+                            {text:'List'},
+                            {text:'NotFound',page:'Rsd.view.SysNotFoundPage'},
+                            {text:'WapEidtor',page:'Rsd.developer.WapPageEditorPage'},
+                            {text:'ImageView'},
+                            {text:'Menu'}
+                            ]}});
+                Rsd.app.MainForm =_form;
+
+                _form.show(1000);
+                _form.showPage(Rsd.create('Rsd.view.WelcomePage',{title:'',tabTitle:'Welcome',backgroundImage:'../../resources/images/LOGO.PNG'}));
+            },
+            /*
+
+             * */
+            showPage: function showPage(page,speed) {
+                Rsd.app.MainForm.showPage(page,speed);
+            }
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
