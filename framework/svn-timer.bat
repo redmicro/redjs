@@ -6,7 +6,7 @@ set /a count= 0
 set /a count += 1
 
 CD "C:\Program Files\TortoiseSVN\bin\" 
-start TortoiseProc.exe -command:update -path:"F:\redmicro\redjs" -closeonend:1
+start TortoiseProc.exe -command:update -path:"C:\redmicro\redjs\framework" -closeonend:1
 
 echo %count% - %date% %time% ÒÑ¸üÐÂ
 
