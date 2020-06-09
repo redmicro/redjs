@@ -278,7 +278,7 @@
             }
 
             Rsd.warn(res.data.msg);
-            console.log(res);
+
         };
         _c.fail = _c.fail||function(res)
         {
@@ -455,7 +455,6 @@
         _test();
 
     };
-
     /**
      * @description  加载controller 的方法
      * */
@@ -540,6 +539,7 @@
 
     };
    
+ 
      
     /**
      * @public
@@ -578,5 +578,5 @@
     Rsd.clearLocal = function clearLocal() {
         wx.clearStorageSync();
     };
-
+ 
 })();

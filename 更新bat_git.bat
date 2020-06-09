@@ -6,4 +6,8 @@ git config --global credential.helper store
 
 cd /d C:\redmicro\redjs
 
-git pull seeker910@hotmail.com:Woshilong910
+git pull 
+
+echo 已获取最新版本，按回车退出
+
+pause >nul
