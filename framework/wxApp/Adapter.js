@@ -578,5 +578,45 @@
     Rsd.clearLocal = function clearLocal() {
         wx.clearStorageSync();
     };
- 
+   /**
+     *
+     * @public
+     * */
+    Rsd.sleep = function sleep(msec) {
+        var start = new Date().getTime();
+        while (true) if (new Date().getTime() - start > msec) break;
+    };
+    /**
+     * @public
+     * */
+    Rsd.toString = function toString(obj) {
+
+        if (obj == undefined) {
+            return "null";
+        }
+        var r = [];
+        if (typeof obj == "string") {
+            return "\"" + obj.replace(/([\"\\])/g, "\\$1").replace(/(\n)/g, "\\n").replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "\"";
+        }
+        if (typeof obj == "object") {
+            if (!obj.sort) {
+
+                for (var i in obj) {
+                    if (typeof (obj[i]) == 'function') {
+                        continue;
+                    }
+                    r.push("\"" + i + "\":" + Rsd.toString(obj[i]));
+                }
+
+                r = "{" + r.join() + "}"
+            } else {
+                for (var i = 0; i < obj.length; i++)
+                    r.push(Rsd.toString(obj[i]))
+                r = "[" + r.join() + "]";
+            }
+            return r;
+        }
+
+        return obj.toString().replace(/\"\:/g, '":""');
+    };
 })();
