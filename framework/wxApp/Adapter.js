@@ -394,7 +394,7 @@
     };
  
     /**
-     * 获取服务
+     * @description 获取服务
      */
     Rsd.getService = function(name)
     {
@@ -541,6 +541,56 @@
         },'加载服务');
     };
 
+    /**
+     *@description 上传文件 参数 url, file,name, args,callback
+     */
+    Rsd.uploadFile=function (url, file,name, args,callback) {
+      
+        let _url = url || '';
+  
+        var service = Rsd.getService(_url);
+         
+        if (service) {
+          _url = service.server.url;
+        }
+  
+        if (Rsd.isEmpty(_url)) {
+            Rsd.warn('请设置上传地址');
+        } 
+        let _formData = args || {};
+        _formData.token = Rsd.app.token;
+        //console.log(_formData); 
+        //console.log( '上传文件('+ name+')');
+
+        const uploadTask = wx.uploadFile({
+          url: _url, //上传接口地址
+          filePath: file,
+          name: name,
+          formData: _formData,
+          header: {
+            'Content-Type': 'multipart/form-data;charset=utf-8'
+          },
+          success(res) { 
+           
+          },
+          complete(res) { 
+            if(callback)
+            {
+              callback(res); 
+            }
+            
+          }
+        });
+  
+        //进度监控
+        uploadTask.onProgressUpdate((res) => {
+          console.log( '文件('+ name+')上传进度', res.progress);
+  
+          //console.log(index +'-已经上传的数据长度', res.totalBytesSent)
+          //console.log(index +'-预期需要上传的数据总长度', res.totalBytesExpectedToSend)
+        });
+  
+      };
     /**
     * @description 小程序更新升级
     * */
