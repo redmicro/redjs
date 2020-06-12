@@ -570,10 +570,10 @@
           header: {
             'Content-Type': 'multipart/form-data;charset=utf-8'
           },
-          success(res) { 
+          success:function(res) { 
            
           },
-          complete(res) { 
+          complete:function(res) { 
             if(callback)
             {
               callback(res); 
