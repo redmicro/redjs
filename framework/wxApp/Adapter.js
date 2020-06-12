@@ -394,6 +394,31 @@
     };
  
     /**
+     * 获取服务
+     */
+    Rsd.getService = function(name)
+    {
+        if(Rsd.isEmpty(name))
+        {
+            throw new Error('param [name] is null when call  Rsd.requestService method.');
+        }
+        var _name = name.toLowerCase();
+        var _group = _name.substr(0,_name.lastIndexOf('.'));
+        var _method = _name.substr(_name.lastIndexOf('.')+1);
+ 
+        var service = Rsd.services[_group];
+        if(Rsd.isEmpty(service) )
+        { 
+            var _error =  '服务['+_name+']不存在,请先注册';
+            Rsd.warn(_error);
+            console.error(_error);
+            return null;
+        }
+
+        return  service.api[_method];;
+    };
+
+    /**
      * testUrl:健康探测 API
      * services:[{group:'',url:'',useSSL:true}]
      */
@@ -539,8 +564,7 @@
 
     };
    
- 
-     
+  
     /**
      * @public
      * @description 写到本地缓存
