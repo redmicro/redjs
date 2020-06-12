@@ -546,7 +546,7 @@
      */
     Rsd.uploadFile=function uploadFile(url, file,name, args,callback) {
       
-        let _url = url || '';
+        var _url = url || '';
   
         var service = Rsd.getService(_url);
          
@@ -563,7 +563,7 @@
             return;
         } 
 
-        let _formData = args || {};
+        var _formData = args || {};
         _formData.token = Rsd.app.token;
         //console.log(_formData); 
         //console.log( '上传文件('+ name+')');
