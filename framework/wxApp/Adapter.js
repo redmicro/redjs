@@ -563,7 +563,33 @@
             return;
         } 
 
-        
+        var _formData = args || {};
+        _formData.token = Rsd.app.token;
+        //console.log(_formData); 
+        //console.log( '上传文件('+ name+')');
+         
+        var uploadTask = wx.uploadFile({
+          url: _url, //上传接口地址
+          filePath: file,
+          name: name,
+          formData: _formData,
+          "header": {
+            'Content-Type': 'multipart/form-data;charset=utf-8'
+          },
+          success: null,
+          complete:callback
+           
+        });
+  
+        //进度监控
+        uploadTask.onProgressUpdate((res) => {
+          console.log( '文件('+ name+')上传进度', res.progress);
+  
+          //console.log(index +'-已经上传的数据长度', res.totalBytesSent);
+
+          //console.log(index +'-预期需要上传的数据总长度', res.totalBytesExpectedToSend);
+
+        });
   
       };
     /**
