@@ -544,7 +544,7 @@
     /**
      *@description 上传文件 参数 url, file,name, args,callback
      */
-    Rsd.uploadFile=function (url, file,name, args,callback) {
+    Rsd.uploadFile=function uploadFile(url, file,name, args,callback) {
       
         let _url = url || '';
   
@@ -553,15 +553,21 @@
         if (service) {
           _url = service.server.url;
         }
+        else
+        {
+            return;
+        }
   
         if (Rsd.isEmpty(_url)) {
             Rsd.warn('请设置上传地址');
+            return;
         } 
+
         let _formData = args || {};
         _formData.token = Rsd.app.token;
         //console.log(_formData); 
         //console.log( '上传文件('+ name+')');
-
+         
         const uploadTask = wx.uploadFile({
           url: _url, //上传接口地址
           filePath: file,
@@ -570,24 +576,19 @@
           header: {
             'Content-Type': 'multipart/form-data;charset=utf-8'
           },
-          success:function(res) { 
+          success: null,
+          complete:callback
            
-          },
-          complete:function(res) { 
-            if(callback)
-            {
-              callback(res); 
-            }
-            
-          }
         });
   
         //进度监控
         uploadTask.onProgressUpdate((res) => {
           console.log( '文件('+ name+')上传进度', res.progress);
   
-          //console.log(index +'-已经上传的数据长度', res.totalBytesSent)
-          //console.log(index +'-预期需要上传的数据总长度', res.totalBytesExpectedToSend)
+          //console.log(index +'-已经上传的数据长度', res.totalBytesSent);
+
+          //console.log(index +'-预期需要上传的数据总长度', res.totalBytesExpectedToSend);
+
         });
   
       };
