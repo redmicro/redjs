@@ -582,7 +582,7 @@
         });
   
         //进度监控
-        uploadTask.onProgressUpdate((res) => {
+        uploadTask.onProgressUpdate(function(res){
           console.log( '文件('+ name+')上传进度', res.progress);
   
           //console.log(index +'-已经上传的数据长度', res.totalBytesSent);
