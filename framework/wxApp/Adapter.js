@@ -568,7 +568,7 @@
         //console.log(_formData); 
         //console.log( '上传文件('+ name+')');
          
-        const uploadTask = wx.uploadFile({
+        var uploadTask = wx.uploadFile({
           url: _url, //上传接口地址
           filePath: file,
           name: name,
