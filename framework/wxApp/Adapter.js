@@ -29,7 +29,7 @@
         }        
         wx.showModal({
             title: _list.length > 1 ?_list[0]:'提示信息',
-            content: _list.length > 1?_list[0]:_list[1],
+            content: _list.length > 1?_list[1]:_list[0],
             "showCancel":false,
             success:function (res) {
                 if(callback instanceof Function)
