@@ -18,9 +18,18 @@
 
     Rsd.warn= function (msg,callback) {
 
+        var _list = [];
+        if(Rsd.isArray(msg))
+        {
+            _list = msg;
+        }
+        else
+        {
+            _list = msg.split("\r\n");
+        }        
         wx.showModal({
-            title: '提示信息',
-            content: msg,
+            title: _list.length > 1 ?_list[0]:'提示信息',
+            content: _list.length > 1?_list[0]:_list[1],
             "showCancel":false,
             success:function (res) {
                 if(callback instanceof Function)
