@@ -285,7 +285,15 @@
             {
                 return;
             }
-
+            //同意拦截错误处理
+            if(Rsd.app.onRequestError)
+            {
+                _rs = Rsd.app.onRequestError(res.data);
+            }
+            if(_rs)
+            {
+                return;
+            }
             Rsd.warn(res.data.msg);
 
         };
