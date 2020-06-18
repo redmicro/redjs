@@ -294,7 +294,15 @@
             {
                 return;
             }
-            Rsd.warn(res.data.msg);
+            if(res.data.data && res.data.data.Title && res.data.data.Message)
+            {
+                Rsd.warn([res.data.data.Title,res.data.data.Message]);
+            }
+            else
+            {
+                Rsd.warn(res.data.msg);
+            }
+            
 
         };
         _c.fail = _c.fail||function(res)
