@@ -601,8 +601,19 @@
           "header": {
             'Content-Type': 'multipart/form-data;charset=utf-8'
           },
-          success: null,
-          complete:callback
+          success: function(res){
+            console.log('success',res);
+            if(callback){
+              callback(res);
+            }
+          },
+          complete:function(res){
+              console.log('complete',res);
+              if(callback){
+                callback(res);
+              }
+            
+          }
            
         });
   
