@@ -637,8 +637,7 @@
      Rsd.uploadFiles = function uploadFiles(url,fileList,callback)
      { 
         var _fn_upload = function(_url,_list,_index)
-        {
-           
+        { 
            if(_index == 0)
            {
              wx.showLoading({
