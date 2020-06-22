@@ -611,8 +611,8 @@
             
               //console.log('complete',res);
               if(callback){
-                console.log(callback);
-                callback.call(res);
+                
+                callback.call(Rsd,res);
               }
             
           }
