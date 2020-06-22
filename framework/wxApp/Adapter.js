@@ -634,7 +634,7 @@
       * 上传多个文件 同步上传 
       *  list :[{file:'',name:'',args:{}}]
       */
-     Rsd.uploadFiles=function(url,list,callback)
+     Rsd.uploadFiles = function uploadFiles(url,fileList,callback)
      { 
          var _fn_upload = function(_url,_list,_index ,_callback)
          {
@@ -655,7 +655,7 @@
                 var name = _list[i].name;
                 var args = _list[i]; 
                 
-                var _fn = (res)=>{
+                var _fn = function(res){
        
                     _list[i].result = res; 
                     _fn_upload(_list,i++);
@@ -673,7 +673,7 @@
             }
       
             wx.hideLoading({
-              complete: (res) => {
+              complete: function(res)  {
                 wx.showToast({
                   title: '上传完成',
                   icon: 'success',
@@ -685,7 +685,7 @@
             return;
          }
 
-         _fn_upload(url,list,0,callback);
+         _fn_upload(url,fileList,0,callback);
      };
     /**
     * @description 小程序更新升级
