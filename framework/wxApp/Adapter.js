@@ -636,56 +636,55 @@
       */
      Rsd.uploadFiles = function uploadFiles(url,fileList,callback)
      { 
-         var _fn_upload = function(_url,_list,_index ,_callback)
-         {
-            
-            if(_index == 0)
-            {
-              wx.showLoading({
-                title: '图片上传中...',
-              });
-        
-            }
-             
-            var i = _index;
+        var _fn_upload = function(_url,_list,_index)
+        {
            
-            if( i < _list.length)
-            {
-                var file = _list[i].url;
-                var name = _list[i].name;
-                var args = _list[i]; 
-                
-                var _fn = function(res){
+           if(_index == 0)
+           {
+             wx.showLoading({
+               title: '图片上传中...',
+             });
        
-                    _list[i].result = res; 
-                    _fn_upload(_list,i++);
-                  
-                  };
+           } 
+           var i = _index;
+           
+           if( i < _list.length)
+           {
+               var file = _list[i].url;
+               var name = _list[i].name;
+               var args = _list[i]; 
+               
+               var _fn = function(res){
       
-                Rsd.uploadFile(_url, file,name, args,_fn);
+                   _list[i].result = res;  
+                   _fn_upload(_url,_list,i+1);
                  
-                return;
-            }
+                 };
+     
+               Rsd.uploadFile(_url, file,name, args,_fn);
+                
+               return;
+           }
         
-            if(_callback)
-            {
-                _callback(_list);
-            }
-      
-            wx.hideLoading({
-              complete: function(res)  {
-                wx.showToast({
-                  title: '上传完成',
-                  icon: 'success',
-                  duration: 800
-                });
-              },
-            });
-            
-            return;
-         }
+           wx.hideLoading({
+             complete: function(res)  {
+               wx.showToast({
+                 title: '上传完成',
+                 icon: 'success',
+                 duration: 800
+               });
+             },
+           });
+           
+           return ;
+        }
 
-         _fn_upload(url,fileList,0,callback);
+        _fn_upload(url,fileList,0);
+
+        if(callback)
+        {
+          callback(fileList);
+        }
      };
     /**
     * @description 小程序更新升级
