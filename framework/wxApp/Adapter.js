@@ -651,13 +651,13 @@
            
             if( i < _list.length)
             {
-                let file = _list[i].url;
-                let name = _list[i].name;
+                var file = _list[i].url;
+                var name = _list[i].name;
                 var args = _list[i]; 
                 
                 var _fn = (res)=>{
        
-                    list[i].result = res; 
+                    _list[i].result = res; 
                     _fn_upload(_list,i++);
                   
                   };
@@ -669,7 +669,7 @@
         
             if(_callback)
             {
-                _callback(list);
+                _callback(_list);
             }
       
             wx.hideLoading({
