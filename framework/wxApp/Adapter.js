@@ -612,7 +612,7 @@
               //console.log('complete',res);
               if(callback){
                 console.log(callback);
-                callback(res);
+                callback.call(res);
               }
             
           }
