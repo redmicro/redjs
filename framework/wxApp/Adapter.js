@@ -608,9 +608,10 @@
             //}
           },
           complete:function(res){
-              console.log(callback);
+            
               //console.log('complete',res);
               if(callback){
+                console.log(callback);
                 callback(res);
               }
             
