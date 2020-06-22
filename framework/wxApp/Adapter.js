@@ -612,7 +612,7 @@
               //console.log('complete',res);
               if(callback){
                 
-                callback.call(Rsd,res);
+                callback.call(Rsd,[res]);
               }
             
           }
