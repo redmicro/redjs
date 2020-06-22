@@ -636,6 +636,8 @@
       */
      Rsd.uploadFiles = function uploadFiles(url,fileList,callback)
      { 
+         var list = fileList||[];
+
         var _fn_upload = function(_url,_list,_index)
         { 
            if(_index == 0)
@@ -665,6 +667,7 @@
                return;
            }
         
+           //上传结束
            wx.hideLoading({
              complete: function(res)  {
                wx.showToast({
@@ -678,11 +681,11 @@
            return ;
         }
 
-        _fn_upload(url,fileList,0);
+        _fn_upload(url,list,0);
 
         if(callback)
         {
-          callback(fileList);
+          callback(list);
         }
      };
     /**
