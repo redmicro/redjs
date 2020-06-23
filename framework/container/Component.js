@@ -116,6 +116,20 @@ Rsd.define('Rsd.container.Component', {
         {
             this.body.style.overflow = this.overflow;
         }
+        var me = this;
+        if(this.draggable)
+        {
+            this.header.element.onmouseover=function(e)
+            {
+                me.dom.setAttribute('draggable',true);
+            }
+    
+            this.body.onmouseover=function(e){
+                
+                me.dom.setAttribute('draggable',false);
+            }
+        }
+        
     },
 
     /*
