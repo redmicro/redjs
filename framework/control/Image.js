@@ -190,10 +190,11 @@ Rsd.define('Rsd.control.Image', {
     * */
     makeControl:function makeControl(config,row)
     {
-        function formatTemplateString(str,row)
+        var _fn = function formatTemplateString(str,row)
         {      //debugger;
+            var _str = Rsd.isEmpty(str)?"":str;
             var html = "";
-            var arr = str.split('#');
+            var arr = _str.split('#');
 
             var _c_str = null;
             var _n_str = null;
@@ -247,23 +248,38 @@ Rsd.define('Rsd.control.Image', {
         var _h = _config.height || 50;
         var _w = _config.width || 50;
         var _ctrl = document.createElement('img');
-        setTimeout(function () {
-            var _src = '';
-            if(_value &&_value.startWith('http://'))
-            {
-                _src = _value;
-            }else
-            {
-                _src = formatTemplateString(_config.formatString,row);
-            }
-
+        _ctrl.onerror = function()
+        {
+            this.onerror = null;
+            var _src = this._src;
             var list = _src.split('http://');
             if(list.length > 2)
             {
-                _ctrl.src = list[list.length -1];
-            }else {
-                _ctrl.src = _src;
+                this.src = list[list.length -1];
             }
+            else 
+            {
+                list = _src.split('https://');
+                if(list.length > 2)
+                {
+                    this.src = list[list.length -1]; 
+                }else
+                {
+                    this.src = _src;
+                }
+            }
+            
+        }
+
+        setTimeout(function () {
+            var _src = _value;
+             
+            if(_config.formatString)
+            {
+                _src = _fn(_config.formatString,row);
+            }
+            _ctrl.src = _src;
+           
 
         },me.timer);
         if(_config.clip)
