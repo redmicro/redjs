@@ -61,6 +61,10 @@ Rsd.define('Rsd.control.Input', {
         }
 
     },
+    /**
+     * 
+     * @param {*} disabled 
+     */
     setDisabled: function setDisabled(disabled) {
         this.callParent(disabled);
         if( this.ctrl)
