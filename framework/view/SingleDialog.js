@@ -18,7 +18,7 @@ Rsd.define('Rsd.view.SingleDialog', {
             "style":{"overflowY":'auto'},
             height:'auto',
             region:'center',
-            width:480,
+            width:'100%',
             flex:100,
         },
         {
@@ -26,7 +26,7 @@ Rsd.define('Rsd.view.SingleDialog', {
             margin: '10 2 2 10',
             region:'bottom',
             layout:'hbox',
-            width:400,
+            width:'100%',
             "style":{"float": 'right'},
             items: []
 
@@ -56,8 +56,9 @@ Rsd.define('Rsd.view.SingleDialog', {
                             text: '保 存',
                             delayMS:2000,
                             width:100,
-                            minWidth: 65,
-                            minHeight: 23,
+                            minWidth: 80,
+                            height:40,
+                            minHeight: 40,
                             margin: '2 10 2 5',
                             handler: '_btn_save'
                         });
@@ -68,8 +69,9 @@ Rsd.define('Rsd.view.SingleDialog', {
                             text: '删 除',
                             delayMS:2000,
                             width:100,
-                            minWidth: 65,
-                            minHeight: 23,
+                            minWidth: 80,
+                            height:40,
+                            minHeight: 40,
                             margin: '2 10 2 5',
                             handler: '_btn_delete'
                         });
@@ -79,8 +81,9 @@ Rsd.define('Rsd.view.SingleDialog', {
                             xtype: 'button',
                             text: '取 消',
                             width:100,
-                            minWidth: 65,
-                            minHeight: 23,
+                            minWidth: 80,
+                            height:40,
+                            minHeight: 40,
                             margin: '2 10 2 5',
                             handler: '_btn_cancel'
                         });
@@ -95,8 +98,9 @@ Rsd.define('Rsd.view.SingleDialog', {
                     {
                         xtype: 'button',
                         width:100,
-                        minWidth: 65,
-                        minHeight: 23,
+                        minWidth: 80,
+                        height:40,
+                        minHeight: 40,
                         margin: '2 10 2 5'
                     },btns[i]);
 

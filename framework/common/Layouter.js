@@ -606,7 +606,9 @@ Rsd.define("Rsd.common.Layouter", {
                     if(body.parentNode)
                     {
                         //chrome 浏览器 下 input left right  两个属性不能同时生效
-                        body.style.width = (body.parentNode.clientWidth - _w - parseInt(header.space)-2) + 'px';
+                        //calc(100% - 130px)
+                        body.style.width = 'calc(100% - ' + ( _w + parseInt(header.space)+2) + 'px)';
+                        //body.style.width = (body.parentNode.clientWidth - _w - parseInt(header.space)-2) + 'px';
                         body.style.height = (body.parentNode.clientHeight - 2) + 'px';
 
                     }

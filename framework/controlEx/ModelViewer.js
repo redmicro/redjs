@@ -32,7 +32,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
     items:[
         {
             xtype:'fieldset',
-            legend:'明 细 信 息',
+            legend:'明 细 信 息', 
             items:[],
             layout:{type:'vbox',align:'left'}
         }
@@ -93,6 +93,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
                 if(_field.label)
                 {
                     _field.label.content = _field.label.content || _field.label.text;
+                    _field.label.style = Rsd.apply({lineHeight:_field.height||40},_field.label.style);
                     delete _field.label.text;
                 }
                 if(_field.hasOwnProperty('readOnly'))
@@ -106,7 +107,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
                 var _h = 0;
                 if(_field.xtype != 'hidden')
                 {
-                    _h = _field.height || 30;
+                    _h = _field.height || 40;
                 }
                 _w += _field.width||0;
                 if( _field.width && _width && _w < _width)
@@ -114,7 +115,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
                 }else
                 {
                     _w = _field.width||0;
-                    _height += _h;
+                    _height += (f%2==0?_h:0);
                 }
 
 
@@ -123,7 +124,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
                         id:_field.id || _field.name,
                         dataIndex: _field.dataIndex||_field.dataindex || _field.name,
                         height:_h,
-                        width:'90%',
+                        width:'45%',
                         tabIndex:f,
                         margin:'2 5 2 5',
                         xtype:'text'
@@ -145,8 +146,8 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
         }
         if( me.height =='auto')
         {
-            me.height = (_height + 50);
-            me.items[0].height = _height+30;
+            me.height = (_height + 100);
+            me.items[0].height = _height+70;
             if(me.items[0] instanceof Rsd.container.Component) {
                 me.doLayout();
             }
