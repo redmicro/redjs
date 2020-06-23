@@ -15,13 +15,18 @@ Rsd.define('Rsd.control.Number', {
     ctrlCls: 'x-control-number',
     handler: null,
     precision:0,
-    /*
-    * */
+    /**
+     * 
+     */
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
 
     },
+    /**
+     * 
+     * @param {*} value 
+     */
     setValue:function setValue(value) {
         var _v = parseFloat(value).toFixed(this.precision||0);
          this.callParent(_v);
