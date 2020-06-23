@@ -12,6 +12,7 @@ Rsd.define('Rsd.control.Number', {
 //    widht: 80,
     text: '',
     inputType: 'number',
+    ctrlCls: 'x-control-number',
     handler: null,
     precision:0,
     /*

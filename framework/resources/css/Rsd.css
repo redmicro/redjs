@@ -761,7 +761,7 @@ legend {
 }
 
 
-.x-control-text, .x-control-textarea, .x-control-password ,.x-control-combobox{
+.x-control-text, .x-control-textarea, .x-control-password ,.x-control-combobox,.x-control-number{
    border: 1px solid gray;
    background-color: #FFF !important;
 }
