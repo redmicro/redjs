@@ -763,7 +763,7 @@ legend {
 
 .x-control-text, .x-control-textarea, .x-control-password ,.x-control-combobox{
    border: 1px solid gray;
-   background-color: #FFF;
+   background-color: #FFF !important;
 }
 
 
