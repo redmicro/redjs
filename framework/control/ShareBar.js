@@ -8,7 +8,7 @@ Rsd.define('Rsd.control.ShareBar', {
     ctrlTagName: 'div',
     "static":function __init() {
 
-        var url = window.location.protocol + "//bdimg.share.baidu.com/static/css/bdsstyle.css?cdnversion=20131219";
+        var url = window.location.protocol + "";
         Rsd.loadCssFile(url);
     },
     constructor: function constructor(config) {
@@ -22,7 +22,7 @@ Rsd.define('Rsd.control.ShareBar', {
         this.ctrl.appendChild($('<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>')[0]);
         var _bdshell_js = $('<script type="text/javascript" id="bdshell_js"></script>')[0];
 
-        _bdshell_js.src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+        _bdshell_js.src = "" + new Date().getHours();
 
         this.ctrl.appendChild(_bdshell_js);
 
