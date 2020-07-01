@@ -1,12 +1,6 @@
-/**
- * Created with IntelliJ IDEA.
- * User: seeker910
- * Date: 13-10-24
- * Time: 下午10:23
- * To change this template use File | Settings | File Templates.
- */
-/*
- * */
+/** 
+ * @description 图片上传控件
+ * */ 
 Rsd.define('Rsd.control.ImageFile', {
     extend: 'Rsd.control.Component',
     xtype: 'image-file',
@@ -19,23 +13,23 @@ Rsd.define('Rsd.control.ImageFile', {
     * */
     src: '',
     /**
-    * 是否是只读模式：在只读模式下不能用于上传图片。
+    * @description 是否是只读模式：在只读模式下不能用于上传图片。
     * */
     readOnly:true,
     /**
-     * image/jpeg, image/x-png, image/gif
+     * @description image/jpeg, image/x-png, image/gif
      * */
     accept:'images/*',
     border:true,
     backgroundImage:true,
     /**
-     * value 值格式化字符串
+     * @description value 值格式化字符串
      * */
     formatString:null,
     /**
-    * 允许看大图
+    * @description 允许看大图
     * */
-    view:true,
+    zoomView:true,
     /*
      * */
     constructor: function Image(config) {

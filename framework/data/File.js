@@ -1,6 +1,5 @@
-/**
- * Created by seeker910 on 13-12-10.
- * 文件上传
+/** 
+ * @description 文件上传Ajax服务
  */
 Rsd.define('Rsd.data.File', {
     extend:'Rsd.data.Ajax',
@@ -14,6 +13,9 @@ Rsd.define('Rsd.data.File', {
     constructor: function File(config) {
        Rsd.apply(this,config||{});
     },
+    /**
+     * 
+     */
     xhr: function() {
         // custom xhr
         var me = this;
@@ -32,15 +34,17 @@ Rsd.define('Rsd.data.File', {
         }
         return myXhr;
     },
-    //Ajax事件
+    /**
+     * Ajax事件
+     */
     beforeSend:function onBeforeSend(){
         // debugger;
         var me = this;
         me.events.fire(me,'beforeSend',arguments);
     },
-    /*
-
-    * */
+    /**
+     * 
+     */ 
     requestJson:function requestJson(files,callback)
     {
         //debugger;

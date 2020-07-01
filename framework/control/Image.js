@@ -1,5 +1,5 @@
 /**
-*图标，没有大图预览功能
+*@description  图片显示控件，没有大图预览功能
 * */
 Rsd.define('Rsd.control.Image', {
     extend: 'Rsd.control.Component',
@@ -7,18 +7,25 @@ Rsd.define('Rsd.control.Image', {
     ctrlTagName: 'div',
     ctrlCls: 'x-control-image',
     dataIndex:'',
+    /**
+     * @description 图片剪切属性(style.clip)：rect(0px 50px 200px 0px)
+     */
     clip:null,
-    /*
-    * 图地址
-    * */
+    /**
+     * 图地址
+     */ 
     src: '',
+    /**
+     * 
+     */
     border:false,
     /*
     * 背景图片URL
     * */
     backgroundImage:true,
     /*
-    * */
+    * @description 图片style.zoom属性
+    */
     zoom:null,
     /*
      * */
@@ -26,7 +33,6 @@ Rsd.define('Rsd.control.Image', {
 
         this.apply(config||{});
     },
-
     /**
      * */
     initComponentEx: function initComponentEx() {
@@ -73,9 +79,9 @@ Rsd.define('Rsd.control.Image', {
             this.ctrl.style.backgroundImage = this.backgroundImage ;
         }
     },
-    /*
-    *
-    * */
+    /**
+     * 
+     */ 
     onAfterInit: function onAfterInit() {
 
         this.callParent();
@@ -86,9 +92,9 @@ Rsd.define('Rsd.control.Image', {
             this.image.style.clip = this.clip;
         }
     },
-    /*
-     * 必须在此设置src
-     * */
+    /** 
+     * @description 必须在此设置src
+     * */ 
     setSrc: function (src,ms) {
 
         var me = this;
@@ -106,13 +112,15 @@ Rsd.define('Rsd.control.Image', {
         }
 
     },
-    /*
+    /**
+     * 
      * */
     getSrc: function () {
         return this.src;
     },
-    /*
-    * */
+    /**
+     * 
+     */ 
     setValue:function setValue(value) {
 
         this.value = value;
@@ -180,8 +188,9 @@ Rsd.define('Rsd.control.Image', {
         }
         return this;
     },
-    /*
-    * */
+     /**
+     * 
+     */ 
     getValue:function getValue() {
         return this.value;
     },

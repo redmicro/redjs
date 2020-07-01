@@ -1,3 +1,6 @@
+/**
+ * @description  Rsd.control.ImageList 控件子元素
+ */
 Rsd.define('Rsd.control.ImageItem', {
     extend: 'Rsd.common.Object',
     requires: ['Rsd.control.Label'],

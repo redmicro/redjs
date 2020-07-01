@@ -1,7 +1,6 @@
 /**
- * Created by seeker910 on 13-12-10.
+ *@description 文件控件 用于选择要上传文件
  */
-
 Rsd.define('Rsd.control.File', {
     extend: 'Rsd.control.Input',
     xtype: 'file',

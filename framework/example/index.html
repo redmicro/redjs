@@ -6,11 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <title>REDJS-TEST</title>
-    <script type="text/javascript" src="../../Rsd.js"></script>
+    <script type="text/javascript" src="../Rsd.js"></script>
     <!--<script id='RedjsLoggerAPI' type="text/javascript" src="../../RedjsLoggerAPI.js?t=2019022001" appId="b110c126-f428-489f-82fe-a8fcd12ba99a" token="WEG-Admin-Manager"></script>-->
-    <link rel="stylesheet" type="text/css" href="../../resources/css/Rsd.css"/>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/Blue.css"/>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/web.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/Rsd.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/Blue.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/web.css"/>
    <!--<script type="text/javascript" src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>-->
     <script>
         // init vConsole
@@ -27,7 +27,7 @@
             indexUrl: 'index.html',
             isDebug:false,
             isDemo:window.location.protocol == 'file:',
-            imgHost:'http://image.dpxcn.com/',
+            imgHost:'http://image.redmicro.cn/',
             requires: [],
             appId:'b110c126-f428-489f-82fe-a8fcd12ba99a',
             appDate:new Date().getTime(),
@@ -68,7 +68,7 @@
 
                         },
                         nodes:[
-                            {text:'Welcome',page:'Rsd.view.WelcomePage'},
+                            {text:'Welcome',width:100,page:'Rsd.view.WelcomePage'},
                             {text:'Redjs'},
                             {text:'Input'},
                             {text:'Grid'},
@@ -81,7 +81,7 @@
                 Rsd.app.MainForm =_form;
 
                 _form.show(1000);
-                _form.showPage(Rsd.create('Rsd.view.WelcomePage',{title:'',tabTitle:'Welcome',backgroundImage:'../../resources/images/LOGO.PNG'}));
+                _form.showPage(Rsd.create('Rsd.view.WelcomePage',{title:'',tabTitle:'Welcome',backgroundImage:'../resources/images/LOGO.PNG'}));
             },
             /*
 
