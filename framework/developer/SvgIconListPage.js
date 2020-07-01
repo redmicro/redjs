@@ -40,7 +40,7 @@ Rsd.define('Rsd.developer.SvgIconListPage', {
             ],
         visible:true
     },
-    items:[ ],
+    items:[],
     sytle:{color:'red'},
     /*
    * */

@@ -1,7 +1,7 @@
 /**
  * Created by seeker910 on 2014/9/2.
  */
-Rsd.define('Rsd.control.HtmlBox', {
+Rsd.define('Rsd.control.IframeBox', {
     extend: 'Rsd.control.Component',
     requires: [],
     xtype:'iframe',

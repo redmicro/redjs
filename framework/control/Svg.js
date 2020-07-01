@@ -35,7 +35,15 @@ Rsd.define('Rsd.control.Svg', {
         {
             var _rs_svg = Rsd.create('Rsd.common.Svg',{});
             var _data =  _rs_svg.get.apply(_rs_svg,this.tagName.split('.'));
-            this.loadData(_data);
+            if(Rsd.isEmpty(_data))
+            {
+                console.error('svg data(tagName:'+this.tagName+')  is null or not exists.');
+            }
+            else
+            {
+                this.loadData(_data);
+            }
+           
         }
 
 
@@ -74,8 +82,8 @@ Rsd.define('Rsd.control.Svg', {
            }
 
        } else {
-           console.error('svg data is error');
-           console.error(_data);
+           console.error('svg(id:'+this.id+') data is error.');
+           console.error('data is:',_data);
        }
    },
     /*

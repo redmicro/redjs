@@ -289,6 +289,10 @@ Rsd.define('Rsd.view.BaseListPage', {
 
     var _toolBarGetter = function () {
 
+        if(this.items.length ==0)
+        {
+            return null;            
+        }
         if(this.items[0].label.content instanceof  Rsd.common.ComponentX)
         {
             return this.items[0].label.content;

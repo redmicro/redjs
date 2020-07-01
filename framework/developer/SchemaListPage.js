@@ -125,14 +125,21 @@ Rsd.define("Rsd.developer.SchemaListPage", {
         if(Rsd.isEmpty(_serviceName))
         {
             Rsd.alert("未设置属性serviceName,请在页面属性或菜单属性中设置serviceName值");
+            return;
         }
-        this.dataStore = Rsd.app.services[_serviceName.toLowerCase()];
-
+        this.dataStore = Rsd.app.getService(_serviceName.toLowerCase());
+ 
+        if(Rsd.isEmpty(this.dataStore))
+        {
+            Rsd.alert("服务["+_serviceName+"]不存在");
+            return;
+        }
         this.callParent(args,function(data)
         {
             if( !data.success)
             {
-                Rsd.alert(data.msg);
+                Rsd.alert(data.msg||'发生了未知的错误');
+                console.log(data);
             }
             var rows = data.data.rows;
             var _where =_args.where||[];

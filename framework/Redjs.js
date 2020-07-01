@@ -845,6 +845,7 @@ function Redjs(config) {
      * @memberof Redjs
      * */
     this.alert = function alert(title, msg, callback) {
+        //console.log(arguments);
         var me = Rsd || this;
         var _title = "提示信息";
         var _msg = "";

@@ -261,6 +261,10 @@ Rsd.define('Rsd.control.Image', {
         {
             this.onerror = null;
             var _src = this._src;
+            if(Rsd.isEmpty(_src))
+            {
+                return;
+            }
             var list = _src.split('http://');
             if(list.length > 2)
             {
@@ -287,10 +291,14 @@ Rsd.define('Rsd.control.Image', {
             {
                 _src = _fn(_config.formatString,row);
             }
-            _ctrl.src = _src;
-           
+            
+            if(!Rsd.isEmpty(_src))
+            {
+                _ctrl.src = _src;
+            } 
 
         },me.timer);
+
         if(_config.clip)
         {
             _ctrl.style.clip = _config.clip;
