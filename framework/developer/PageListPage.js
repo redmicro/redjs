@@ -375,7 +375,7 @@ Rsd.define('Rsd.developer.PageListPage', {
         {
             Rsd.alert("未设置属性serviceName");
         }
-        this.dataStore = Rsd.app.services[_serviceName];
+        this.dataStore = Rsd.app.getService(_serviceName);
 
         this.callParent(_args,callback) ;
     },
