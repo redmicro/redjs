@@ -3435,7 +3435,7 @@ function Redjs(config) {
             for(var j in list)
             {
                 var item = list[j];
-                //console.log(item);
+                console.log(item);
                 if (item.IsWebMethod)
                 {
                     if( _ssl && item.Url.startWith('http://'))
