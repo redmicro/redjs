@@ -3361,6 +3361,12 @@ function Redjs(config) {
     this.loadServices = function loadServices(testUrl,services)
     {
 
+        if(!Rsd.isString(testUrl))
+        {
+            console.error('testUrl 不是有效的值',testUrl);
+            
+            return;
+        }
         Rsd.services=Rsd.services||{};
 
         var servicesList = [];
@@ -3409,7 +3415,7 @@ function Redjs(config) {
         var _test = function()
         {
             _timer++;
-            console.log('第'+ _timer.toString() + '次:探测（'+testUrl+'）远程服务。');
+            console.log('第'+ _timer.toString() + '次:探测（url:'+testUrl+'）远程服务。');
             Rsd.requestJson({url:testUrl,method:'POST',fail:_textFail},{},_load,'连接远程服务');
         };
 
