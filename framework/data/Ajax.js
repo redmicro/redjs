@@ -247,9 +247,12 @@ Rsd.define('Rsd.data.Ajax', {
             }
 
         }
-  console.log(_c.url);
-  console.log(_c.url.toLowerCase());
-  console.log(_c.url.toLowerCase().startWith);
+        if(!Rsd.isString(_c.url))
+        {
+            console.error('args url is not string value.');
+            console.log(_c);
+            return _c;
+        }
         if(this.key && _c.url && !_c.url.toLowerCase().startWith(Rsd.getRedjsHost().toLowerCase()))
         {
             _c.url = _c.url + (_c.url.indexOf('?')> 0? '&':'?') + '___key=' + this.key;
