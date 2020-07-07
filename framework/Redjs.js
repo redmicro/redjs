@@ -3440,7 +3440,8 @@ function Redjs(config) {
                 {
                     if( _ssl && item.Url.startWith('http://'))
                     {
-                        item.Url = 'https://' + item.Url.substr(7)
+                        console.log(item.Url.substr(7));
+                        item.Url = 'https://' + item.Url.substr(7);
                     }
 
                     var config = {
@@ -3456,7 +3457,7 @@ function Redjs(config) {
                         ajaxType:service.ajaxType ||'ajax',
                         local:{method:'get',url:''},
                         server:{
-                            url:item.Url,
+                            url:item.Url||'',
                             method:'POST',
                             //contentType:'application/json',
                             //dataType: 'json',
