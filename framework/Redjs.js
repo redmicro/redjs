@@ -3364,7 +3364,7 @@ function Redjs(config) {
         if(!Rsd.isString(testUrl))
         {
             console.error('testUrl 不是有效的值',testUrl);
-            
+
             return;
         }
         Rsd.services=Rsd.services||{};
@@ -3441,12 +3441,16 @@ function Redjs(config) {
             for(var j in list)
             {
                 var item = list[j];
-                console.log(item);
+                
                 if (item.IsWebMethod)
                 {
-                    if( _ssl && item.Url.startWith('http://'))
+                    if(!Rsd.isString(item.Url))
                     {
-                        console.log(item.Url.substr(7));
+                        console.error('属性Url的值（'+item.Url+'）无效',item);
+                        item.Url = ''; 
+                    }
+                    if( _ssl && item.Url.startWith('http://'))
+                    { 
                         item.Url = 'https://' + item.Url.substr(7);
                     }
 
