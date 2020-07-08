@@ -14,46 +14,53 @@ Rsd.define('Rsd.template.Component', {
 
         config = config || {};
         this.apply(config);
-    },
-
-    /*
-    * 将page 转化成html输出,静态化处理
+    }, 
+   
+     /*
+    *
+    * 将page 展示到document.body对象上
     * */
-    toH5Code:function toH5Code(dataSource) {
-        alert('toH5Code暂未实现');
-    },
-    /*
-    * */
-    toWxAppCode:function toWxAppCode(dataSource) {
-        alert('toWxAppCode暂未实现');
-    },
-    /*
-    * */
-    toWebCode:function toWebCode(dataSource) {
-        alert('toWebCode暂未实现');
-    },
-    /**
-     * @description 页面打开后自动执行 根据子控件的name属性自动递归加载数据
-     * */
-    loadData:function loadData() {
+   show:function show()
+   {
 
-        var _data =  this.dataSource ||{};
+       var me = this;
+       Rsd.onResize(this,this.doLayout);
+       Rsd.empty(document.body);
 
-        for(var i in this.items)
-        {
+       this.callParent('fadeIn',100);
 
-            if(this.items[i].loadData)
-            {
-                var _key = this.items[i].name||'';
-                if(Rsd.isEmpty(_key))
-                {
-                    this.items[i].loadData();
-                }
-                else {
-                    this.items[i].loadData(_data[_key]);
-                }
-            }
-        }
-    }
+       setTimeout(function () {
 
+           if(me.load)
+           {
+               me.load();
+           }
+       },50);
+
+       return this;
+   },
+   /**
+   * @description 页面打开后自动执行 根据子控件的name属性自动递归加载数据
+   * @description 设置控件dataSource后可以 使用this.callPanrent() 统一加载
+   * */
+   load:function load() {
+
+       var _data =  this.dataSource ||{};
+
+       for(var i in this.items)
+       {
+
+           if(this.items[i].loadData)
+           {
+               var _key = this.items[i].name||'';
+               if(Rsd.isEmpty(_key))
+               {
+                   this.items[i].loadData();
+               }
+               else {
+                   this.items[i].loadData(_data[_key]);
+               }
+           }
+       }
+   }
 });

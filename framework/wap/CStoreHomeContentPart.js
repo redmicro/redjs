@@ -2,7 +2,7 @@
  * Created by seeker910 on 2017/7/27.
  */
 Rsd.define('Rsd.wap.CStoreHomeContentPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     xtype:'c-shop-home',
     requires: [
         'Rsd.wap.CBannerPart',
@@ -22,11 +22,7 @@ Rsd.define('Rsd.wap.CStoreHomeContentPart', {
             src:null,
             height:'16rem',
             name:'banner',
-            dataSource:[
-               {src:'./resources/images/banner1.jpg',formatString:'',text:'',url:'./release.html?c=ActivateHome'},
-               {src:'./resources/images/banner2.png',text:'',url:'./release.html?c=ActivateHome'},
-               {src:'./resources/images/banner3.jpg',text:'',url:'./release.html?c=ActivateHome'}
-               ]
+            dataSource:[ ]
         },
         {
             xtype: 'list-view',
@@ -40,7 +36,7 @@ Rsd.define('Rsd.wap.CStoreHomeContentPart', {
                 style:{lineHeight:'5rem'},
                 space:'1px'
             },
-            itemStyle:{},
+            itemStyle:{width:'100%',height:'10rem'},
             itemXtype: 'goods-list-item',
             cls:'x-goods-list',
             dataSource:[],
@@ -55,6 +51,7 @@ Rsd.define('Rsd.wap.CStoreHomeContentPart', {
     },
     /**
      * @description 页面打开后自动执行 根据子控件的name属性自动递归加载数据
+     *  {banner:[],goods:[]}
      * */
     loadData:function loadData(data) {
 

@@ -424,7 +424,7 @@ Rsd.define('Rsd.control.Table', {
         var _dataIndex = (typeof (col) == 'object' ? col.dataindex || col.dataIndex || col.name || col.text : col) || ('col_' + index);
 
         _dataIndex = _dataIndex.trim();
-
+       
         var _subtotalRow = me.subTotalRow || {};
 
         if (col.subs && col.subs.length > 0) {
@@ -889,9 +889,9 @@ Rsd.define('Rsd.control.Table', {
                     _td.style.overflow = 'hidden';
                     _td.style.textOverflow = 'ellipsis';
                     _td.style.noWrap = 'nowrap';
-
+                   
                     tr.appendChild(_td);
-
+                  
                 }
 
             }, 0);
@@ -908,7 +908,7 @@ Rsd.define('Rsd.control.Table', {
         if (!rows) {
             return;
         }
-
+       
         this.columns = this.columns || [];
         for (var i = 0; i < this.columns.length; i++) {
             if (!Rsd.isEmpty(this.columns[i]['format']) && Rsd.isString(this.columns[i]['format'])) {
@@ -931,25 +931,29 @@ Rsd.define('Rsd.control.Table', {
         me.subTotalRow={};
 
         var _tbody = document.createElement('tbody');
-
+        
+        //隐藏渲染时 出现的抖动
         _tbody.style.visibility = 'hidden';
+
         setTimeout(function () {
+        
             _tbody.style.visibility = 'visible';
         },200);
+
         // 在国产浏览器中 _tbody.top 起始位置 为 thead, capiton,之后
         //_tbody.style.top = this.thead.clientHeight + this.tcaption.clientHeight + 'px';
         //_tbody.style.bottom = this.tfoot.clientHeight + 'px';
 
         //防止滚动时内容遮挡表头
         this.table.prepend(_tbody);
-
+      
         this.tbodies = [_tbody];
 
         var _height = 0;
         var _tr;
 
         var _indexStart = this.indexStart || 1;  //debugger;
-        for (var i = 0; i < rows.length; i++) {
+        for (var i = 0; i < rows.length; i++) { 
             _tr = document.createElement("TR");
             _tr.id = i;
             _tr.tag = rows[i];
@@ -986,12 +990,14 @@ Rsd.define('Rsd.control.Table', {
             for (var c in this.columns) {
 
                 me.drawCell(this.columns[c], _tr, rows[i], _indexStart + parseInt(i), this.columns[c]['emptyText'] || this.emptyText || '');
+ 
             }
-
+            
             _tbody.appendChild(_tr);
-            _height += _tr.clientHeight;
+           
+            _height += _tr.clientHeight;  
         }
-
+       
         setTimeout(function () {
             var _subtotalRow = me.subTotalRow || {};
 
@@ -1001,7 +1007,7 @@ Rsd.define('Rsd.control.Table', {
             }
         },1000);
 
-
+      
         _tbody.style.height = _height + 'px';
 
         if(me.ctrl.clientHeight > me.table.clientHeight)

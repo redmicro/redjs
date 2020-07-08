@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/9/1.
  */
 Rsd.define('Rsd.web.CTitlePart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Label',
         'Rsd.control.Link'

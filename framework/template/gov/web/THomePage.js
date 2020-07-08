@@ -3,8 +3,8 @@
  *
  * TTCB top topic content bottom
  */
-Rsd.define('Rsd.template.web.THomePage', {
-    extend: 'Rsd.template.web.TPage',
+Rsd.define('Rsd.template.gov.web.THomePage', {
+    extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.web.CTopBarPart',
         'Rsd.web.CHomeTopicPart',

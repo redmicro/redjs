@@ -1,4 +1,4 @@
-Rsd.define('Rsd.debug.test.ImageViewPage', {
+Rsd.define('Rsd.example.ImageViewPage', {
     extend: 'Rsd.container.Page',
     xtype:'p-image-view',
     requires: [

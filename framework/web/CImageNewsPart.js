@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/21.
  */
 Rsd.define('Rsd.web.CImageNewsPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.web.CImagePart',
         'Rsd.web.CListViewPart'
@@ -24,7 +24,7 @@ Rsd.define('Rsd.web.CImageNewsPart', {
         {
             xtype:'t-list-view',
             title:'要 闻',
-            itemStyle:{overflow:'hidden',height:'45px',lineHeight:'45px'},
+            itemStyle:{overflow:'hidden',height:'45px',lineHeight:'45px',width:'100%'},
             cls:'t-list',
             itemClick:function(){window.open(this.url);},
             flex:3
@@ -36,6 +36,10 @@ Rsd.define('Rsd.web.CImageNewsPart', {
         var me = this;
 
     },
+    /**
+     * 
+     * @param {*} data 
+     */
     loadData:function loadData(data) {
         this.items[1].loadData(data||this.dataSource);
         this.items[0].loadData (data||this.dataSource);

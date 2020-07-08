@@ -1,4 +1,4 @@
-Rsd.define('Rsd.debug.test.GridPage', {
+Rsd.define('Rsd.example.GridPage', {
     extend: 'Rsd.container.Page',
     requires: [
         'Rsd.control.Button',
@@ -17,15 +17,14 @@ Rsd.define('Rsd.debug.test.GridPage', {
     pagging:true,
     items:[
         {
-            xtype: 'table',
-
+            xtype: 'grid',
             label:{content:'0.this is table',space:2},
             footBar:{xtype:'paging-bar',indexChanged:'pageIndexChanged'},
             width:'100%',
             height:300,
             margin:'0 20 0 10',
             border:true,
-            rows:[
+            dataSource:[
                 {a:'2012-02-22',b:'22.00',c:'aaaa',d:'jack',e:false },
                 {a:'2013-03-08',b:'33.33',c:'cccc',d:'tom',e:true},
                 {a:'2015-09-13',b:'2.20' ,c:'dddd' ,d:'🌞🌞',e:false},
@@ -68,7 +67,7 @@ Rsd.define('Rsd.debug.test.GridPage', {
             xtype: 'button',
             text:'1.load data',
             handler:function () {
-
+                this.parent.items[0].loadData();
             }
         },
         {width:'100%',height:10},

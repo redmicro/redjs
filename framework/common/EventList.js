@@ -86,8 +86,8 @@ Rsd.define("Rsd.common.EventList", {
     /**
      * @description 触发事件
      * @param {object} caller 调用者，必须和add时caller一致，否则不会触发事件
-     * @param {string} name
-     * @param {function|string} handler
+     * @param {function|string} name
+     * @param {Array} args
      * @param {string} group 分组关键字
      * */
     fire: function fire(caller,name, args,group) {

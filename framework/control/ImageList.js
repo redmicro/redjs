@@ -75,6 +75,9 @@ Rsd.define('Rsd.control.ImageList', {
      * @example [{title:'logo',text:'this is a picture',src:'http://image.website.com/imagefile',link:'http://www.website.com/target'}]
      * */
     dataSource: [],
+    /**
+     * 图片集合
+     */
     images:[],
     /*
     * */
@@ -124,9 +127,10 @@ Rsd.define('Rsd.control.ImageList', {
     },
 
 
-    /*
-    *
-    * */
+    /** 
+     * 加载图片数据 Rsd.control.ImageItem[]
+     * [{title:'logo',text:'this is a picture',src:'http://image.website.com/imagefile',link:'http://www.website.com/target'}]
+     * */ 
     loadData: function loadData(data) {
 
         var me = this;

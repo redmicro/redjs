@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/31.
  */
 Rsd.define('Rsd.web.CFloatingBoxPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [],
     xtype: 't-floating-box',
     layout: 'fit',

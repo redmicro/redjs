@@ -1,7 +1,7 @@
 /*
  *
   */
-Rsd.define('Rsd.debug.test.ListPage', {
+Rsd.define('Rsd.example.ListPage', {
     extend: 'Rsd.view.BaseListPage',
     requires: ['Rsd.Avengers.stores.ListStore','Rsd.control.GridToolBarSimple'],
     xtype: 'list-page',

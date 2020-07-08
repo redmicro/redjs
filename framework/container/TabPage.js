@@ -10,7 +10,7 @@
 Rsd.define('Rsd.container.TabPage', {
     extend: 'Rsd.container.PageContainer',
     requires:['Rsd.control.Svg'],
-    xtype: 'tabPage',
+    xtype: 'tab-page',
     width: '100%',
     closeBtn:true,
     bodyTagName:'fieldset',
@@ -225,7 +225,7 @@ Rsd.define('Rsd.container.TabPage', {
         this.selectTab("_tab_" + id );
         this.callParent(id,speed);
 
-        this.events.fire(this, 'afterselected', {tab: this.currentTab,page:this.getCurrentPage()});
+        this.events.fire(this, 'afterselected',[{tab: this.currentTab,page:this.getCurrentPage()}] );
     },
     /*
      * */
@@ -234,7 +234,7 @@ Rsd.define('Rsd.container.TabPage', {
         this.removeTab('_tab_'+ id);
         this.callParent(id);
 
-        this.events.fire(this, 'afterremoved', {tab: this.tabs[id],page:this.getCurrentPage()});
+        this.events.fire(this, 'afterremoved', [{tab: this.tabs[id],page:this.getCurrentPage()}]);
     },
     /*
      page.selected控制tab selected样式

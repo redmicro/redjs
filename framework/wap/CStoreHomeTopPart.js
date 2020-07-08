@@ -3,7 +3,7 @@
  */
 
 Rsd.define('Rsd.wap.CStoreHomeTopPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Label',
         'Rsd.control.Link',

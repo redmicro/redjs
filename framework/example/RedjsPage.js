@@ -1,4 +1,4 @@
-Rsd.define('Rsd.debug.test.RedjsPage', {
+Rsd.define('Rsd.example.RedjsPage', {
     extend: 'Rsd.container.Page',
     xtype:'redjs',
     requires: [

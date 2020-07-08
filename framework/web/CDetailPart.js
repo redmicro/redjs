@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/9/1.
  */
 Rsd.define('Rsd.web.CDetailPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Link',
         'Rsd.web.CTitlePart',
@@ -69,6 +69,9 @@ Rsd.define('Rsd.web.CDetailPart', {
         config = config || {};
         Rsd.apply(this, config);
     },
+    /**
+     * 
+     */
     afterRender:function()
     {
         this.setContent({

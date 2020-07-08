@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/20.
  */
 Rsd.define('Rsd.web.CTopBarPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Text',
         'Rsd.control.Label',

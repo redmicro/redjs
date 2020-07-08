@@ -17,7 +17,7 @@ Rsd.define('Rsd.developer.ApiListPage', {
         {
             "name": "Key",
             "text": "Key",
-            "dataindex": "key",
+            "dataindex": "Key",
             "sortable": true,
             "width": 250,
             format:'format_key',
@@ -147,8 +147,7 @@ Rsd.define('Rsd.developer.ApiListPage', {
 
         var me = this;
         var _args = args||{};
-        
-
+         
         this.loadServices(_args.where||[],function (data) {
             me.dataStore = data;
         });
@@ -191,9 +190,9 @@ Rsd.define('Rsd.developer.ApiListPage', {
             var service = Rsd.services[i];
          
             for(var j in service.api) {
- 
+                //console.log(service.api[j]); 
                 var item =service.api[j].data;
-                item.key = service.api[j].key;
+                item.Key = service.api[j].key||'';
                 if (!Rsd.isEmpty(_key)
                     && item.Key.toLowerCase().indexOf(_key) < 0
                     && item.Description.toLowerCase().indexOf(_key) < 0

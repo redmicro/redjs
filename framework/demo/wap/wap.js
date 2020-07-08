@@ -10,7 +10,7 @@ Rsd.createApplication({
         appDate:new Date().getTime(),//开发时使用
         //appDate:new Date('2018-08-07').getTime(),
         isDemo:window.location.protocol == 'file:',
-        imgHost:'http://image.dpxcn.com/',
+        imgHost:'http://image.redmicro.cn/',
         requires:[],
         beforeRun:function beforeRun() {
             Rsd.onResize(function () {
@@ -29,8 +29,8 @@ Rsd.createApplication({
                 return word.substring(0,1).toUpperCase()+word.substring(1);
             });
             var _c = Rsd.getUrlParam('c');
-            var _class = _c || 'StoreHome';
-            var _wap = Rsd.create('Rsd.template.wap.T' + _class + 'Wap', {spm:_spm}).show();
+            var _class = _c || 'Merch';
+            var _wap = Rsd.create('Rsd.template.eBiz.wap.T' + _class + 'Wap', {spm:_spm}).show();
 
         }
     }

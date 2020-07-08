@@ -10,12 +10,6 @@ Rsd.define('Rsd.web.CGridPart', {
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
-    },
-    /*
-    *
-    * */
-    afterRender:function() {
-        this.loadData();
-
     }
+     
 });

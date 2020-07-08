@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/20.
  */
 Rsd.define('Rsd.web.CHomeTopicPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Image',
         'Rsd.control.Text',
@@ -34,6 +34,10 @@ Rsd.define('Rsd.web.CHomeTopicPart', {
             ]
         }
     ],
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);

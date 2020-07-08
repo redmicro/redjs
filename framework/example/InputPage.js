@@ -2,7 +2,7 @@
  * redmicro all Copyright (c)
  */
 
-Rsd.define('Rsd.debug.test.InputPage', {
+Rsd.define('Rsd.example.InputPage', {
     extend: 'Rsd.container.Page',
     requires: [
         'Rsd.control.Button',

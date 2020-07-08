@@ -1,7 +1,7 @@
 
-Rsd.define('Rsd.template.wap.THomeWap', {
-    extend: 'Rsd.template.wap.TWap',
-    requires: [  'Rsd.wap.CBannerPart','Rsd.wap.CSearchPart'],
+Rsd.define('Rsd.template.eBiz.wap.THomeWap', {
+    extend: 'Rsd.template.TWap',
+    requires: ['Rsd.wap.CBannerPart','Rsd.wap.CSearchPart'],
     xtype:'t-home-wap',
     layout:'vbox',
     margin:"0 0 0 0",
@@ -35,6 +35,12 @@ Rsd.define('Rsd.template.wap.THomeWap', {
     constructor: function TPage(config) {
         config = config || {};
         this.apply(config);
+    },
+     /**
+     * 加载数据 页面
+     */
+    load:function load() {
+        this.callParent();
     }
 
 

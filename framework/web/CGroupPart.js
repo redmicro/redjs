@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/28.
  */
 Rsd.define('Rsd.web.CGroupPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.web.CImageNewsPart',
         'Rsd.web.CListViewPart'

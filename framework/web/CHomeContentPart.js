@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/20.
  */
 Rsd.define('Rsd.web.CHomeContentPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Text',
         'Rsd.web.CImageNewsPart',
@@ -46,7 +46,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
         ]
         },
         {
-            xtype:'template',
+            xtype:'container',
             layout:'hbox',
             margin:'40 0 0 0',
             height:500,
@@ -57,7 +57,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                        label:'公示公告',
                        flex:300,
                        autoScroll:true,
-                       itemStyle:{overflow:'hidden',height:'45px'},
+                       itemStyle:{overflow:'hidden',height:'45px',width:'100%'},
                        dataSource:[
                            {xtype:'link',width:'100%',text:'关于进一步做好日常收取的物业专项维修资金管理有关工作',href:'sec_gov.html?t=Detail&id=12345'},
                            {xtype:'link',width:'100%',text:'2013年度我市物业专项维修资金财务分析简报',href:'sec_gov.html?t=Detail&id=12345'},
@@ -73,7 +73,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                     {
                         xtype:'t-tabPart',
                         flex:700,
-                        margin:'0 0 0 20',
+                        margin:'0 0 0 20', 
                         border:false,
                         sizeUnit:'px',
                         //title:'tab',
@@ -84,6 +84,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                                 layout:'fit',
                                 items:[
                                     {      //
+                                        label:{visible:false},
                                         xtype: 't-grid',
                                         columns: [
                                             {text: '物业名称', name: 'col1'},
@@ -174,6 +175,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                                 layout:'fit',
                                 items:[
                                     {
+                                        label:{visible:false},
                                         xtype: 't-grid',
                                         columns: [
                                             {text: '物业名称', name: 'col1'},
@@ -255,12 +257,14 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                                             {}]
 
                                     }
-                                ]},
+                                ]
+                            },
                             {
                                 tabTitle:'业主投票',
                                 layout:'fit',
                                 items:[
                                     {
+                                        label:{visible:false},
                                         xtype: 't-grid',
                                         columns: [
                                             {text: '物业名称', name: 'col1'},
@@ -333,13 +337,14 @@ Rsd.define('Rsd.web.CHomeContentPart', {
              ]
          },
         {
-            xtype:'template',
+            xtype:'container',
             layout:'hbox',
             margin:'40 0 0 0',
             height:500,
             sizeUnit:'px',
             items:[
                 {
+                    xtype:'t-list-view',
                     title:'业主查询',
                     margin:'0 10 0 0',
                     flex:1,
@@ -355,7 +360,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
             ]
         },
         {
-            xtype:'template',
+            xtype:'container',
             layout:'hbox',
             margin:'40 0 0 0',
             height:500,
@@ -366,7 +371,7 @@ Rsd.define('Rsd.web.CHomeContentPart', {
                     title:'业务办理',
                     flex:1,
                     margin:'0 10 0 0',
-                    border:true
+                    border:false
                 },
                 {
                     xtype:'t-list-view',
@@ -419,7 +424,24 @@ Rsd.define('Rsd.web.CHomeContentPart', {
         Rsd.apply(this, config);
 
     },
+    /**
+     * 
+     */
     afterInit:function(){
 
+    },
+    /**
+     * {news:[],notic:[],files:[],laws:[],biz:[]}
+     */
+    loadData:function loadData()
+    {
+        this.items[0].loadData();
+        this.items[1].items[0].loadData();
+        this.items[1].items[1].loadData();
+       
+        this.items[3].items[0].loadData();
+        this.items[3].items[1].loadData();
+        this.items[3].items[2].loadData();
     }
+
 });

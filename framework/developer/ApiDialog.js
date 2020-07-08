@@ -74,13 +74,13 @@ Rsd.define('Rsd.developer.ApiDialog', {
         ]
     },
     major: {
-        height:150,
+        height:200,
         legend: '概况',
         "fields": [
             {
                 "name": "Key",
                 "label": {content:"Key",width:100},
-                "dataindex": "key",
+                "dataindex": "Key",
                 "width": 350
             }, 
             {

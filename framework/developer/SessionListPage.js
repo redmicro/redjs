@@ -67,22 +67,45 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "nobr": true,
         },
         {
-            "name": "TimeSpan",
-            "text": "有效时长（秒）",
-            "dataindex": "TimeSpan",
+            "name": "Duration",
+            "text": "时长（秒）",
+            "dataindex": "Duration",
             "sortable": false,
-            "width": 80,
+            "width": 50,
             "nobr": true,
         },
         {
-            "name": "ClientIp",
-            "text": "来源IP",
-            "dataindex": "ClientIp",
+            "name": "FromHost",
+            "text": "请求地址",
+            "dataindex": "FromHost",
             "sortable": false,
             "width": 80,
             "nobr": true
         },
-
+        {
+            "name": "FromReferer",
+            "text": "请求地址",
+            "dataindex": "FromReferer",
+            "sortable": false,
+            "width": 80,
+            "nobr": true
+        },
+        {
+            "name": "FromUserAgent",
+            "text": "浏览器代理",
+            "dataindex": "FromUserAgent",
+            "sortable": false,
+            "width": 80,
+            "nobr": true
+        },
+        {
+            "name": "ClientIP",
+            "text": "来源IP",
+            "dataindex": "ClientIP",
+            "sortable": false,
+            "width": 80,
+            "nobr": true
+        }, 
         {
             "name": "Host",
             "text": "主机IP",

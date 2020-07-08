@@ -25,7 +25,7 @@
             appHost:'',
             loginUrl: 'login',
             indexUrl: 'index.html',
-            isDebug:false,
+            isDebug:true,
             isDemo:window.location.protocol == 'file:',
             imgHost:'http://image.redmicro.cn/',
             requires: [],
@@ -56,14 +56,14 @@
                             if (node.page) {
                                 _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
                             } else {
-                                _form.showPage(Rsd.create('Rsd.debug.test.' + node.text + 'Page', {title:'',tabTitle:node.text}));
+                                _form.showPage(Rsd.create('Rsd.example.' + node.text + 'Page', {title:'',tabTitle:node.text}));
                             }
                         },
                         nodeDblClick:function(node) {
                             if (node.page) {
                                 _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
                             } else {
-                                _form.showPage(Rsd.create('Rsd.debug.test.' + node.text + 'Page', {title:'',tabTitle:node.text}));
+                                _form.showPage(Rsd.create('Rsd.example.' + node.text + 'Page', {title:'',tabTitle:node.text}));
                             }
 
                         },

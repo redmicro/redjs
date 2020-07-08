@@ -2,8 +2,8 @@
  * Created by seeker910 on 2019/1/8.
  */
 //
-Rsd.define('Rsd.template.wap.TGoodsDetailWap', {
-    extend: 'Rsd.template.wap.TWap',
+Rsd.define('Rsd.template.eBiz.wap.TGoodsDetailWap', {
+    extend: 'Rsd.template.TWap',
     requires: [],
     width:'100%',
     height:'100%',

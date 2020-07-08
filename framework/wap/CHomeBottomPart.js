@@ -3,7 +3,7 @@
  */
 
 Rsd.define('Rsd.wap.CHomeBottomPart', {
-    extend: 'Rsd.template.Component',
+    extend: 'Rsd.container.Component',
     requires: [],
     xtype: 'c-home-bar',
     layout:{type:'hbox'} ,

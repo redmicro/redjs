@@ -1,8 +1,8 @@
 /**
  * Created by seeker910 on 2020/5/1.
  */
-Rsd.define('Rsd.template.web.TPrintPage', {
-    extend: 'Rsd.template.web.TPage',
+Rsd.define('Rsd.template.gov.web.TPrintPage', {
+    extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.control.Button',
         'Rsd.control.PrintArea',

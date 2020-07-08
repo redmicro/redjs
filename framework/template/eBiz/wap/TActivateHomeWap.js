@@ -1,8 +1,8 @@
 /**
  * Created by seeker910 on 2017/7/28.
  */
-Rsd.define('Rsd.template.wap.TActivateHomeWap', {
-    extend: 'Rsd.template.wap.TWap',
+Rsd.define('Rsd.template.eBiz.wap.TActivateHomeWap', {
+    extend: 'Rsd.template.TWap',
     requires: [
         'Rsd.wap.CStoreHomeTopPart',
         'Rsd.wap.CHomeBottomPart'

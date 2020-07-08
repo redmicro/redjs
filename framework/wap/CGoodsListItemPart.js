@@ -9,7 +9,7 @@ Rsd.define('Rsd.wap.CGoodsListItemPart', {
     border:false,
     width:'100%',
     height:'100%',
-    itemStype:{height:'3rem',lineHeight:'3rem'},
+    itemStyle:{width:'100%',height:'3rem',lineHeight:'3rem'},
     label:{position:'left',width:90,height:60,visible:true},
     //height:85,
     cls:'x-goods-list-item',

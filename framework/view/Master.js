@@ -46,7 +46,7 @@ Rsd.define('Rsd.view.Master', {
                     border: false
                 },
                 {
-                    xtype:'tabPage',
+                    xtype:'tab-page',
                     height:'100%',
                     border: false
                 }

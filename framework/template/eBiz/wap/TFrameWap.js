@@ -1,9 +1,11 @@
 /**
  * Created by seeker910 on 2017/6/14.
- */
-//
-Rsd.define('Rsd.template.wap.TFTCBWap', {
-    extend: 'Rsd.template.wap.TWap',
+ * 
+ * 页面结构： float top content bottom
+ *
+ */ 
+Rsd.define('Rsd.template.eBiz.wap.TFrameWap', {
+    extend: 'Rsd.template.TWap',
     requires: [],
     width:'100%',
     height:'100%',
@@ -52,23 +54,14 @@ Rsd.define('Rsd.template.wap.TFTCBWap', {
             border:false
         }
     ],
-    dataSource:null,
+    
     /*
      *
      * */
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
-    },
-    load:function load() {
-        if(this.dataSource)
-        {
-            this.float.value = this.dataSource.float;
-        }
-
-        this.callParent();
     }
-
 
 },function(type){
 

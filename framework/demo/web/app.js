@@ -1,5 +1,8 @@
+/**
+ * 
+ */
 Rsd.createApplication({
-        appTitle:'扬中市住房和城乡建设局门户网站',
+        appTitle:'南京红微信息科技有限公司',
         appFolder: '',
         appHost:'',
         isDebug:false,
@@ -15,6 +18,9 @@ Rsd.createApplication({
                 Rsd.defineRem(Rsd.isMobile()?640:800);
             });
         },
+        /**
+         * 
+         */
         launch: function launch() {
 
             var _title = Rsd.getUrlParam('title')||Rsd.app.appTitle;
@@ -34,7 +40,8 @@ Rsd.createApplication({
             _m.push(0);
             _m.push(_w);
 
-            Rsd.create('Rsd.template.web.T' + _class + 'Page', { spm:_spm,margin:_m.join(' '),}).show();
+            var _theme = 'gov';
+            Rsd.create('Rsd.template.'+_theme+'.web.T' + _class + 'Page', { spm:_spm,margin:_m.join(' '),}).show();
         }
     }
 );

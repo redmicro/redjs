@@ -1,4 +1,4 @@
-Rsd.define('Rsd.debug.test.MenuPage', {
+Rsd.define('Rsd.example.MenuPage', {
     extend: 'Rsd.container.Page',
     requires: [
         'Rsd.control.ListView',
@@ -31,7 +31,7 @@ Rsd.define('Rsd.debug.test.MenuPage', {
                     height:60,
                     itemStyle:{height:40,width:120,textAlign:'center',lineHeight:40,color:'white'},
                     dataSource:['首页','案例展示','新闻中心','最新文章','联系我们','',{xtype:'button',text:'登录',handler:'btn_login'},{xtype:'button',text:'免费注册',handler:'btn_register'}],
-                    label:{xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:40}
+                    label:{xtype:'image',src:'../resources/images/LOGO.PNG',position:'left',width:120,height:40}
                 },
                 {
                     flex:2,
@@ -59,7 +59,7 @@ Rsd.define('Rsd.debug.test.MenuPage', {
                     height:60,
                     itemStyle:{height:40,width:120,textAlign:'center',lineHeight:40,color:'white'},
                     dataSource:['首页','案例展示','新闻中心','最新文章','联系我们','',{xtype:'button',text:'登录',handler:'btn_login'},{xtype:'button',text:'免费注册',handler:'btn_register'}],
-                    label:{xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:40}
+                    label:{xtype:'image',src:'../resources/images/LOGO.PNG',position:'left',width:120,height:40}
                 },
                 {
                     flex:2,
