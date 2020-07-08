@@ -19,6 +19,7 @@ Rsd.define('Rsd.web.CImageNewsPart', {
     items:[
         {
             xtype:'c-image',
+            height:'100%',
             flex:7
         },
         {
@@ -27,6 +28,7 @@ Rsd.define('Rsd.web.CImageNewsPart', {
             itemStyle:{overflow:'hidden',height:'45px',lineHeight:'45px',width:'100%'},
             cls:'t-list',
             itemClick:function(){window.open(this.url);},
+            height:'100%',
             flex:3
         }
     ],
