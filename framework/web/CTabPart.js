@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/24.
+ * 多标签页面
  */
 Rsd.define('Rsd.web.CTabPart', {
     extend: 'Rsd.container.TabPage',
@@ -19,7 +20,7 @@ Rsd.define('Rsd.web.CTabPart', {
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
-        this.on('afterselected','page_loadData')
+        //this.on('afterselected','page_loadData')
     },
   
     /**
@@ -28,8 +29,8 @@ Rsd.define('Rsd.web.CTabPart', {
      */
     page_loadData:function page_loadData(e)
     { 
-        var page = e.page;
-        var _data =  e.page.dataSource ||{};
+        var page = e.page||this.page;
+        var _data =  page.dataSource ||{};
           
         if(page.isLoaded)
         {
@@ -62,11 +63,16 @@ Rsd.define('Rsd.web.CTabPart', {
             var page = Rsd.create('Rsd.container.Page',this.pages[i]);
             this.add(page); 
             this.pages[i] = page;
-            page.isLoaded = false;
+            page.isLoaded = false; 
         }
         setTimeout(function(){
-            me.pages[0].isLoaded = false;
-            me.page_loadData({page:me.pages[0]});
+            
+           for(var i in me.pages){ 
+                var page = me.pages[i]; 
+                page.isLoaded = false;
+                me.page_loadData({page:page});
+            }
+
         },200);
         
     }

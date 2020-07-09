@@ -30,7 +30,7 @@ Rsd.define('Rsd.template.gov.web.TSecondaryPage', {
             region:'top'
         },
         {
-            xtype: 't-contents-group',
+            xtype: 't-group',
             region:'center',
             cls:'x-content'
         },

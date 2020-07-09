@@ -25,9 +25,10 @@ Rsd.createApplication({
 
             var _title = Rsd.getUrlParam('title')||Rsd.app.appTitle;
             var _spm = Rsd.getUrlParam('spm')||'';
-            var str = Rsd.getUrlParam('t')||'';
+            var str = Rsd.getUrlParam('tpl')||'Home';
             str = str.toLowerCase();
-            var _class = str.replace(/\b\w+\b/g, function(word){
+            //首字母大写
+            var _tpl = str.replace(/\b\w+\b/g, function(word){
                 return word.substring(0,1).toUpperCase()+word.substring(1);
             });
             document.title = _title;
@@ -40,8 +41,10 @@ Rsd.createApplication({
             _m.push(0);
             _m.push(_w);
 
-            var _theme = 'gov';
-            Rsd.create('Rsd.template.'+_theme+'.web.T' + _class + 'Page', { spm:_spm,margin:_m.join(' '),}).show();
+            var _theme = Rsd.getUrlParam('theme')||'gov';
+            var _class = 'Rsd.template.'+_theme+'.web.T' + _tpl + 'Page';
+            console.log(_class);
+            Rsd.create(_class, { spm:_spm,margin:_m.join(' '),}).show();
         }
     }
 );

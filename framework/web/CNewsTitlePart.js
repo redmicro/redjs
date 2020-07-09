@@ -1,13 +1,14 @@
 /**
  * Created by seeker910 on 2014/9/1.
+ * 新闻标题
  */
-Rsd.define('Rsd.web.CTitlePart', {
+Rsd.define('Rsd.web.CNewsTitlePart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Label',
         'Rsd.control.Link'
     ],
-    xtype:'t-title',
+    xtype:'t-news-title',
     text:'',
     layout:'vbox',
     height:200,
@@ -143,6 +144,10 @@ Rsd.define('Rsd.web.CTitlePart', {
 
 
     ],
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function constructor(config) {
         config = config || {};
         Rsd.apply(this, config);

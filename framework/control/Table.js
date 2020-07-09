@@ -87,6 +87,7 @@ Rsd.define('Rsd.control.Table', {
         this.ctrl.style.overflow = 'auto';
         this.ctrl.style.marginBottom = '5px';
         this.table = document.createElement('table');
+        this.table.setAttribute('id',this.id + '_table' );
         if(this.tableCls)
         {
             this.addCls(this.table,this.tableCls);
@@ -923,8 +924,9 @@ Rsd.define('Rsd.control.Table', {
 
         var me = this;
         var _el = this.table.tBodies;
-
+ 
         while (_el && _el.length > 0) {
+            
             this.table.removeChild(_el[0]);
         }
         //清空合计
@@ -935,8 +937,7 @@ Rsd.define('Rsd.control.Table', {
         //隐藏渲染时 出现的抖动
         _tbody.style.visibility = 'hidden';
 
-        setTimeout(function () {
-        
+        setTimeout(function () { 
             _tbody.style.visibility = 'visible';
         },200);
 
@@ -944,8 +945,8 @@ Rsd.define('Rsd.control.Table', {
         //_tbody.style.top = this.thead.clientHeight + this.tcaption.clientHeight + 'px';
         //_tbody.style.bottom = this.tfoot.clientHeight + 'px';
 
-        //防止滚动时内容遮挡表头
-        this.table.prepend(_tbody);
+        //插入在第一个位置，防止滚动时内容遮挡表头
+        this.table.prepend(_tbody); 
       
         this.tbodies = [_tbody];
 
@@ -1842,6 +1843,11 @@ Rsd.define('Rsd.control.Table', {
 
 
 },function(type){
+
+    this.defineProperty(type,'table',function(){return this['__table_'+this.id];},function(table){
+        this['__table_'+this.id] = table;
+    },false);
+
     this.defineProperty(type,'columns',function(){return this.__columns;},function(columns){
         this.__columns = columns;
     },false);

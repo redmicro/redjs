@@ -45,22 +45,30 @@ Rsd.define('Rsd.template.Component', {
    * */
    load:function load() {
 
-       var _data =  this.dataSource ||{};
+    var _fn = function(ctrl)
+    {
+        var _data =  ctrl.dataSource ||{};
 
-       for(var i in this.items)
-       {
-
-           if(this.items[i].loadData)
-           {
-               var _key = this.items[i].name||'';
-               if(Rsd.isEmpty(_key))
-               {
-                   this.items[i].loadData();
-               }
-               else {
-                   this.items[i].loadData(_data[_key]);
-               }
-           }
-       }
+        for(var i in ctrl.items)
+        {
+ 
+            if(ctrl.items[i].loadData)
+            {
+                var _key = ctrl.items[i].name||'';
+                if(Rsd.isEmpty(_key))
+                {
+                    ctrl.items[i].loadData();
+                }
+                else {
+                    ctrl.items[i].loadData(_data[_key]);
+                }
+            }
+            if( ctrl.items[i].items &&  ctrl.items[i].items.length> 0 )
+            {
+                _fn( ctrl.items[i]);
+            }
+        }
+    }
+    _fn(this);
    }
 });

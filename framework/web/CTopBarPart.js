@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/20.
+ * 顶部状态栏
  */
 Rsd.define('Rsd.web.CTopBarPart', {
     extend: 'Rsd.container.Component',

@@ -1,5 +1,7 @@
 /**
  * Created by seeker910 on 2014/8/20.
+ * 
+ * 底部版权 
  */
 Rsd.define('Rsd.web.CBottomPart', {
     extend: 'Rsd.container.Component',
@@ -25,9 +27,9 @@ Rsd.define('Rsd.web.CBottomPart', {
             sizeUnit:'px',
             items: [
                 {flex:1},
-                {xtype: 'label',width: 290, style:{textAlign:'center'},text: '版权所有：扬中市房屋专项维修资金管理中心'},
+                {xtype: 'label',width: 290, style:{textAlign:'center'},label:'版权所有：',text: ''},
                 {xtype: 'tbSeparator',width: 20},
-                {xtype: 'label',width:190,style:{textAlign:'center'},text: '备案号：苏ICP备1305877号'},
+                {xtype: 'label',width:190,style:{textAlign:'center'},label:'备案号：',text: ''},
                 {xtype: 'tbSeparator',width: 20},
                 {xtype: 'label',width: 65,style:{textAlign:'center'},text: '关于我们'},
                 {xtype: 'tbSeparator',width: 20},
@@ -39,6 +41,16 @@ Rsd.define('Rsd.web.CBottomPart', {
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
-
+       
+    },
+    /**
+     * {companyName:'',licenseNO:''}
+     */
+    loadData:function loadData(data)
+    {
+        var dataSource = data||this.dataSource ||{}; 
+        this.dataSource = dataSource;
+        this.items[1].items[1].setValue(dataSource.companyName);
+        this.items[1].items[3].setValue(dataSource.licenseNO);
     }
 });

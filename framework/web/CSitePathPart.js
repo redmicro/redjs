@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/31.
+ * 站点路径
  */
 Rsd.define('Rsd.web.CSitePathPart', {
     extend: 'Rsd.control.Label',

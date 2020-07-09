@@ -4,7 +4,7 @@
 Rsd.define('Rsd.web.CHtmlPart', {
     extend: 'Rsd.container.Component',
     requires: ['Rsd.control.HtmlBox'],
-    xtype:'t-html-content',
+    xtype:'t-html',
     htmlContent:'',
     layout:'fit',
     items:[

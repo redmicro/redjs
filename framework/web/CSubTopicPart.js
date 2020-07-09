@@ -27,12 +27,13 @@ Rsd.define('Rsd.web.CSubTopicPart', {
                 {
                     region:'top',
                     flex:3,
-                    height:42,
+                    height:75,
                     layout:'hbox',
+                  
                     margin:'20 0 20 0',
                     items:[
-                        {xtype:'button',text:'搜索',align:'right',width:70} ,
-                        {xtype:'text',margin:'0 5 0 0',align:'right',style:{fontSize:'120%'},width:200}
+                        {xtype:'button',text:'搜索',align:'right',width:70,  style:{overflow:'visible',color:'grey'}} ,
+                        {xtype:'text',margin:'0 5 0 0',align:'right',style:{overflow:'visible',fontSize:'120%'},width:200}
                     ]
                 },
             ]

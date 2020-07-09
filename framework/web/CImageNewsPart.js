@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/21.
+ * 图片新闻：左侧图片轮播，右侧新闻列表
  */
 Rsd.define('Rsd.web.CImageNewsPart', {
     extend: 'Rsd.container.Component',

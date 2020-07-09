@@ -91,9 +91,16 @@ Rsd.define('Rsd.control.Label', {
             }
         }
     },
+    /**
+     * 
+     * @param {*} value 
+     */
     setValue:function setValue(value) {
         this.setText(value);
     },
+    /***
+     * 
+     */
     getValue:function getValue() {
         return this.getText();
     }

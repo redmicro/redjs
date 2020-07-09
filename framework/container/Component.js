@@ -90,7 +90,7 @@ Rsd.define('Rsd.container.Component', {
 
         if(!Rsd.isEmpty(this.header.xtype))
         {
-            this.header.content = Rsd.widget(this.header);
+            this.header.content = Rsd.widget(this.header.xtype,this.header.config||this.header);
             this.header.content.parent = this;
         }
 

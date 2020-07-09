@@ -1,3 +1,14 @@
+:root {
+    --bg-color-button:tranparent;
+}
+input[type='button'] 
+{
+    color: #fff !important;
+}
+.x-componentx-dom
+{
+    overflow: hidden;
+}
 .t-image-news{
     border-top: 4px solid #8b0000;
 }

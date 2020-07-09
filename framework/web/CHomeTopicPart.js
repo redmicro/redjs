@@ -1,5 +1,8 @@
 /**
  * Created by seeker910 on 2014/8/20.
+ * 
+ * 图片横幅
+ * 
  */
 Rsd.define('Rsd.web.CHomeTopicPart', {
     extend: 'Rsd.container.Component',

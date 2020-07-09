@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/28.
+ * 分组展示 
  */
 Rsd.define('Rsd.web.CGroupPart', {
     extend: 'Rsd.container.Component',
@@ -7,7 +8,7 @@ Rsd.define('Rsd.web.CGroupPart', {
         'Rsd.web.CImageNewsPart',
         'Rsd.web.CListViewPart'
     ],
-    xtype: 't-contents-group',
+    xtype: 't-group',
     layout: 'vbox',
     height: 1900,
     sizeUnit:'px',

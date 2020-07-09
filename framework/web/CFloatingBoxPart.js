@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/31.
+ * 浮动框
  */
 Rsd.define('Rsd.web.CFloatingBoxPart', {
     extend: 'Rsd.container.Component',
