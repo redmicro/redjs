@@ -19,6 +19,9 @@ Rsd.define('Rsd.web.CListViewPart', {
         this.apply(config);
 
     },
+    /**
+     * 
+     */
     onAfterRender:function onAfterRender() {
 
         this.callParent();
@@ -26,10 +29,10 @@ Rsd.define('Rsd.web.CListViewPart', {
         if(this.autoScroll){
             this.scroll();
         }
-    },
-
-    /*
-    * */
+    }, 
+    /**
+     * 
+     */
     scrollItem:function scrollItem(){
         var _list = Rsd.select('#'+ this.id + ' li');
         if(_list.length > 0)
@@ -44,20 +47,27 @@ Rsd.define('Rsd.web.CListViewPart', {
         }
 
     },
-    /*
-    * */
+    /** 
+     * */ 
     stop:function stop(){
         clearInterval(this.sn);
     },
-    /*
-    * */
+    /** 
+     * */ 
     scroll:function scroll(){
         var  me = this;
+        if(me.sn)
+        {
+            clearInterval(me.sn);
+        }
         var _fn = function()
          {
              me.scrollItem.call(me);
          }
-        this.sn = setInterval(_fn,2000);
+         setTimeout(function(){
+            me.sn = setInterval(_fn,2000);
+         },200);
+       
     }
 
 });

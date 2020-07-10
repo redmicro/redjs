@@ -12,7 +12,7 @@ Rsd.define('Rsd.control.ImageItem', {
     link:'',
     html:null,
     style:null,
-    constructor: function ListViewItem(config) {
+    constructor: function ImageItem(config) {
         config = config || {};
         this.apply(config);
 

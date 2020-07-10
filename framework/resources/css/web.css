@@ -33,10 +33,10 @@ input[type='button']
     height: 30px;
 }
 .x-bottom{
-    border-top: 2px solid #605bff;
+    overflow: hidden;
 }
 .x-navigation {
-
+    overflow: hidden;
 }
 .x-navigation .x-menu
 {

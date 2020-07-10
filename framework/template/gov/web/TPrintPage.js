@@ -5,12 +5,7 @@ Rsd.define('Rsd.template.gov.web.TPrintPage', {
     extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.control.Button',
-        'Rsd.control.PrintArea',
-        //'Rsd.web.CTopBarPart',
-        //'Rsd.web.CSubTopicPart',
-        //'Rsd.web.CDetailPart',
-        //'Rsd.web.CBottomPart',
-        //'Rsd.web.CSitePathPart'
+        'Rsd.control.PrintArea'
     ],
     xtype:'t-print-page',
     layout:{type:'vbox'},

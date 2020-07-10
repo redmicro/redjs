@@ -1,7 +1,7 @@
-Rsd.define('Rsd.control.ListViewItem', {
+Rsd.define('Rsd.control.ListItem', {
     extend: 'Rsd.common.Object',
     requires: ['Rsd.control.Label'],
-    xtype: 'list-view-item',
+    xtype: 'list-item',
     ctrl:null,
     cls:'',
     key:null,
@@ -14,7 +14,7 @@ Rsd.define('Rsd.control.ListViewItem', {
     style:null,
     /*
     * */
-    constructor: function ListViewItem(config) {
+    constructor: function ListItem(config) {
         config = config || {};
         this.apply(config);
 

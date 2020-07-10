@@ -79,6 +79,10 @@ Rsd.define('Rsd.control.ImageList', {
      * 图片集合
      */
     images:[],
+    /**
+     * 当前图片序号
+     */
+    currentIndex:0,
     /*
     * */
     constructor: function constructor(config) {
@@ -91,8 +95,8 @@ Rsd.define('Rsd.control.ImageList', {
     initComponentEx: function initComponentEx() {
         this.callParent();
 
-        var me = this;
-
+        var me = this; 
+         
         //设置样式
         /*
                 var _ele = me.label.element;
@@ -131,39 +135,67 @@ Rsd.define('Rsd.control.ImageList', {
      * 加载图片数据 Rsd.control.ImageItem[]
      * [{title:'logo',text:'this is a picture',src:'http://image.website.com/imagefile',link:'http://www.website.com/target'}]
      * */ 
-    loadData: function loadData(data) {
+    loadData: function loadData(data ,callback) {
 
         var me = this;
-        this.index=-1;
-        this.images=[];
-        this.dataSource = data || this.dataSource;
+        me.currentIndex=-1;
+        me.images=[];
+        me.dataSource = data || me.dataSource;
         me.ctrl.style.overflow='hidden';
         if(Rsd.isArray(this.dataSource))
         {
-            for(var i in this.dataSource)
+            this.removeAll();
+
+            for(var i in me.dataSource)
             {
                 if(Rsd.isString(this.dataSource[i]))
                 {
-                    this.dataSource[i] = {src:this.dataSource[i]};
+                    me.dataSource[i] = {src:me.dataSource[i]};
                 }
                 var _item = me.dataSource[i];
                 _item.parent = me;
                 var _img = Rsd.create('Rsd.control.ImageItem',_item);
 
-                this.images.push(_img);
+                me.images.push(_img);
+               
                 me.ctrl.appendChild(_img.ctrl);
             }
         }
-        var _animate = {opacity:1};
-        var _speed = 500;
-        this.select(0,null,_animate,_speed);
-        //setInterval
-        setInterval(function () {
-            me.next({top:null,left:'-100%'},{top:null,left:'200%'},2000);
-        },5000);
-        return this;
-    },
+       
+        var _speed = 50;
 
+        setTimeout(function(){
+            me.select(0,{top:null,left:'-100%'},{top:null,left:'200%'},_speed);
+        },0);
+       
+        setTimeout(function(){
+            //setInterval
+            if(me.interval)
+            {
+                clearInterval( me.interval);
+            } 
+            me.interval = setInterval(function () {
+              
+                me.next({top:null,left:'-100%'},{top:null,left:'200%'},2000);
+
+            },5000);
+
+         },_speed);
+        
+        return me;
+    },
+    /**
+     * 
+     */
+    removeAll:function removeAll()
+    { 
+           if(this.ctrl)
+           {
+              this.ctrl.innerHTML = "";
+           }
+             
+           this.images=[];
+    },
     /**
      *   @description 将控件以动画的形式将对象显示出来
      *   @param {int} index
@@ -172,106 +204,114 @@ Rsd.define('Rsd.control.ImageList', {
      *   @param {int} speed 速度
      * */
     select:function(index,outAnimate,inAnimate,speed)
-    {
+    {   
+       
+        var me = this;
+       
+        if ( !Rsd.isArray(me.images) || me.images.length == 0) {
+            
+            return;
+        }
+        if(index == me.currentIndex)
+        {
+            return;
+        }
+      
+        //离开的目标样式
         var _outAnimate = Rsd.apply({opacity:0,left:'-100%'},outAnimate||{});
+        //进入的起始位置样式
         var _inAnimate = Rsd.apply({display:'inline-block',opacity:0,left:'200%'},inAnimate||{});
         var _speed = speed||200;
         if(_speed < 200)
         {
             _speed = 200;
         }
-
-        var me = this;
-        var i = index;
-
+   
         me.dom.style.opacity = 1;
-        if (Rsd.isArray(me.images) && me.images.length > 0) {
-
-            i = i % me.images.length;
-            if (i < 0) {
-                i = me.images.length - 1;
-            }
-
-            this.block(function () {
-
-                if (me.index > -1 && me.index < me.images.length) {
-
-                    var _img_l = me.images[me.index].ctrl;
-                    try {
-                        _img_l.style.transitionDuration = (_speed / 1000.00) + "s";
-                        _img_l.style.transitionProperty = "all";
-
-
-                    } catch (e) {
-
-                    }
-
-                    //out image 离开图片动画
-                    setTimeout(function () {
-
-                        me.setElStyle(_img_l, _outAnimate);
-
-                    }, 0);
-                    //
-                    setTimeout(function () {
-                        try {
-                            _img_l.style.transition = null;
-                            _img_l.style.display = 'none';
-                        } catch (e) {
-
-                        }
-
-                    }, _speed + 10);
-
-                }
-
-                var _img = this.images[i].ctrl;
-
-                try {
-                    // 进入图片 起始位置
-                    me.setElStyle(_img, _inAnimate);
-                    _img.style.transitionDuration = (_speed / 1000.00) + "s";
-                    _img.style.transitionProperty = "all";
-                    //_img.style.transitionTimingFunction= _fun;
-                    //_img.style.transitionDelay=(0/1000.00) + "s"
-
-                } catch (e) {
-
-                }
-
-                //in image 进入图片动画
+        
+        this.block(function () {
+            
+            if(me.currentIndex == 0 || me.currentIndex > 0)
+            { 
+                //要离开的图片
+                var _img_out = me.images[me.currentIndex].ctrl; 
+                //out image 离开图片动画
                 setTimeout(function () {
-
                     try {
-                        //进入图片 目标位置
-                        if (_img instanceof HTMLImageElement) {
+                        
+                        //设置动画 参数
+                        _img_out.style.transitionDuration = (_speed / 1000.00) + "s";
+                        _img_out.style.transitionProperty = "all"; 
 
-                            me.setElStyle(_img, {opacity: 1, left: null, right: null, top: null, bottom: null});
-                        }
-                        else {
-                            me.setElStyle(_img, {opacity: 1, left: 0, right: 0, top: 0, bottom: 0});
-                        }
+                        //离开的最终样式
+                        me.setElStyle(_img_out, _outAnimate);
 
-                        me.index = i;
                     } catch (e) {
 
-                    }
-
+                    } 
+                        
                 }, 0);
 
+                //离开动画执行结束后 => 重置图片状态
+                setTimeout(function () {
+                    try {
+                        _img_out.style.transition = null;
+                        _img_out.style.display = 'none';
+                    } catch (e) {
 
-            }, _speed);
+                    }
 
-        }
+                }, _speed + 10);
+            }
+          
+            //初始化 进度图片状态
+            var i = index< 0 ? 0 : index;
+            i = i % me.images.length;
+            //当前图片序号
+            me.currentIndex = i;  
+            var _img_in = me.images[me.currentIndex].ctrl; 
+            //设置 进入图片 起始状态 
+            me.setElStyle(_img_in, _inAnimate);
+            
+            
+            //in image 进入图片动画
+            setTimeout(function () { 
+               
+                try { 
+                     //设置动画效果
+                     _img_in.style.transitionDuration = (_speed / 1000.00) + "s";
+                    _img_in.style.transitionProperty = "all";
+                    //_img_in.style.transitionTimingFunction= _fun;
+                    //_img_in.style.transitionDelay=(0/1000.00) + "s"
+
+                    //进入图片 目标位置
+                    if (_img_in instanceof HTMLImageElement) {
+                        
+                        me.setElStyle(_img_in, {opacity: 1, left: null, right: null, top: null, bottom: null});
+                    }
+                    else {
+                        me.setElStyle(_img_in, {opacity: 1, left: 0, right: 0, top: 0, bottom: 0});
+                    }
+                   
+                } catch (e) {
+                  
+                }
+
+            }, 10); 
+
+        }, _speed);   
+ 
         return this;
     },
-    /*
-    *
-    * */
+    /** 
+     * 离开动画
+     * 进入动画
+     * 速度
+     * */ 
     next:function next(outAnimate,inAnimate,speed) {
 
         var _speed = speed||1000;
-        this.select( this.index+1,outAnimate,inAnimate,_speed);
+        this.select( this.currentIndex+1,outAnimate,inAnimate,_speed);
         return this;
     },
     /*
@@ -280,7 +320,7 @@ Rsd.define('Rsd.control.ImageList', {
     previous:function previous(outAnimate,inAnimate,speed)
     {
         var _speed = speed||1000;
-        this.select(this.index-1,outAnimate||{left:'200%'},inAnimate||{left:'-100%'},_speed);
+        this.select(this.currentIndex-1,outAnimate||{left:'200%'},inAnimate||{left:'-100%'},_speed);
         return this;
     }
 

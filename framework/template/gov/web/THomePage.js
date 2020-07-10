@@ -7,7 +7,7 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
     extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CHomeTopicPart',
+        'Rsd.web.CImageBarPart',
         'Rsd.web.CHNavigationPart', 
         'Rsd.web.CBottomPart',
         'Rsd.control.Text',
@@ -27,8 +27,10 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
             cls:'x-topBar'
         },
         {
-            xtype:'t-home-topic',
+            xtype:'t-image-bar',
             region:'top',
+            imageUrl:'./resources/images/topic.png',
+            searchService:'',
             cls:'x-topic'
         },
         {
@@ -40,28 +42,38 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
             region:'top',
             dataSource:[
                     {
+                        width:'100%',
                         src:'http://www.gov.cn/site1/20140822/18037327d06b1560bb3002.jpg',
                         text:'习近平同蒙古国总统额勒贝格道尔吉共同签署联合宣言',
-                        url:'http://www.baidu.com',style:{lineHeight:'50px',borderBottom: 'red 1px dotted'}
+                        url:'http://www.baidu.com',
+                        style:{lineHeight:'50px'}
                     },
                     {
+                        width:'100%',
                         src:'http://www.gov.cn/site1/20140820/a41f72693f6e155ecfad01.jpg',
-                        text:'李克强主持召开国务院常务会议',style:{lineHeight:'50px'},
+                        text:'李克强主持召开国务院常务会议',
+                        style:{lineHeight:'50px'},
                         url:'http://www.sina.com'
                     },
                     {
+                        width:'100%',
                         src:'http://www.gov.cn/site1/20140821/a41f72693f6e155feda001.jpg',
                         text:'水利部援藏20年投入300亿元 239万农牧民喝上放心水',
+                        style:{lineHeight:'50px'},
                         url:'http://www.ifeng.com'
                     },
                     {
+                        width:'100%',
                         src:'http://www.gov.cn/site1/20140822/a41f72693f6e15613efe01.jpg',
                         text:'李克强同国家杰出青年科学基金获得者代表座谈',
+                        style:{lineHeight:'50px'},
                         url:'http://www.autohome.com'
                     },
                     {
+                        width:'100%',
                         src:'http://www.gov.cn/site1/20140822/782bcb888b161560d95f01.jpg',
                         text:'和平使命—2014”：中外参演部队举行装备展览交流',
+                        style:{lineHeight:'50px'},
                         url:'http://www.dpxcn.com'
                     }
                 ]
@@ -70,7 +82,7 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
             xtype:'template',
             region:'center',
             items:[
-                {
+                 {
                     xtype:'t-list-view',
                     label:'公示公告',
                     margin:'40 0 0 0',
@@ -457,6 +469,7 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
      */
     load:function load()
     {
-            this.callParent();
+        this.items[5].loadData({companyName:'扬中市房屋专项维修资金管理中心',licenseNO:'苏ICP备1305877号'});
+        this.callParent();
     }
 });

@@ -1,16 +1,16 @@
 /**
  * Created by seeker910 on 2014/8/20.
  * 
- * 图片横幅
+ * 图片 横幅
  * 
  */
-Rsd.define('Rsd.web.CHomeTopicPart', {
+Rsd.define('Rsd.web.CImageBarPart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Image',
         'Rsd.control.Text',
         'Rsd.control.Button'],
-    xtype: 't-home-topic',
+    xtype: 't-image-bar',
     layout:'border',
     height:150,
     sizeUnit:'px',
@@ -22,18 +22,17 @@ Rsd.define('Rsd.web.CHomeTopicPart', {
         {
             xtype:'image',
             region:'center',
-            margin:'10 400 5 50',
-            //src:'../debug/topic.png'
+            margin:'10 400 5 50', 
         },
         {
-            region:'bottom',
+            region:'right',
             height:42,
             layout:'hbox',
             margin:'0 0 7 0',
             border:false,
             items:[
-                {xtype:'button',text:'搜索',align:'right',width:70} ,
-                {xtype:'text',margin:'0 5 0 0',align:'right',style:{fontSize:'120%'},width:200}
+                {xtype:'button',text:'搜索',handler:'btn_search',align:'right',style:{overflow:'visible',color:'grey'},width:70} ,
+                {xtype:'text',margin:'0 5 0 0',align:'right',style:{overflow:'visible',fontSize:'120%'},width:200}
             ]
         }
     ],
@@ -43,7 +42,17 @@ Rsd.define('Rsd.web.CHomeTopicPart', {
      */
     constructor: function constructor(config) {
         config = config || {};
-        this.apply(config);
-
+        this.apply(config); 
+    },
+    /**
+     * 
+     */
+    loadData:function loadData()
+    {
+        this.items[1].setSrc(this.imageUrl);
+    },
+    btn_search:function()
+    {
+         console.log('service is :' + (this.searchService||'none'));
     }
 });

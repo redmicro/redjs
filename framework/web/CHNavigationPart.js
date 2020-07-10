@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/20.
- * 导航条 
+ * 水平 布局 导航条 
  */
 Rsd.define('Rsd.web.CHNavigationPart', {
     extend: 'Rsd.container.Component',

@@ -1562,33 +1562,33 @@ legend {
     cursor: pointer ;
 }
 
-.x-list-view .x-list-view-menu .x-list-view-toolbar{
+.x-list, .x-list-view ,.x-list-menu ,.x-list-toolbar{
     overflow: hidden;
 }
-.x-list-view ou,.x-list-view ol,.x-list-view-menu ou
+.x-list ou,.x-list ol,.x-list-menu ou
 {
     height: auto !important;
     width: 100%;
     margin-top:0px;
     overflow: auto;
 }
-.x-list-view-menu ol,.x-list-view-toolbar ou,.x-list-view-toolbar ol{
+.x-list-menu ol,.x-list-toolbar ou,.x-list-toolbar ol{
     height: auto !important;
     width: 100%;
     margin-top:0px;
 }
-.x-list-view li{
+.x-list li{
     margin-bottom:1px;
     color: rgb(0, 0, 0);
     display: block;
     font-size: 100%;
     font-weight: bold;
 }
-.x-list-view .x-li-hover
+.x-list .x-li-hover 
 {
-
+    overflow: hidden;
 }
-.x-list-view .x-selected, .x-list-view .x-li-hover:hover
+.x-list .x-selected, .x-list .x-li-hover:hover 
 {
     color: #FFF;
     -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
@@ -1607,34 +1607,34 @@ legend {
     cursor: pointer;
 
 }
-.x-list-view-menu li
+.x-list-menu li
 {
     float: left;
     display: block;
     font-size: 100%;
 }
-.x-list-view-menu .x-li-hover
+.x-list-menu .x-li-hover
 {
-
+overflow: hidden;
 }
-.x-list-view-menu .x-selected, .x-list-view-menu .x-li-hover:hover
+.x-list-menu .x-selected, .x-list-menu .x-li-hover:hover
 {
     border-bottom-width:2px;
     border-bottom-color:rgb(72, 213, 105);
     border-bottom-style: solid;
     cursor: pointer;
 }
-.x-list-view-toolbar li
+.x-list-toolbar li
 {
     float: left;
     display: block;
     font-size: 100%;
 }
-.x-list-view-toolbar .x-li-hover
+.x-list-toolbar .x-li-hover
 {
-
+    overflow: hidden;
 }
-.x-list-view-toolbar .x-li-hover:hover
+.x-list-toolbar .x-li-hover:hover
 {
     background-color: rgb(64, 78, 103);
     color: #fff;

@@ -1,5 +1,5 @@
 Rsd.define('Rsd.control.ListMenu', {
-    extend: 'Rsd.control.ListView',
+    extend: 'Rsd.control.List',
     xtype: 'list-menu',
     requires: ['Rsd.data.Menu',
         'Rsd.control.Svg',
@@ -9,6 +9,7 @@ Rsd.define('Rsd.control.ListMenu', {
     margin: '0 0 0 0',
     width: 120,
     itemClick:'menuclick',
+    cls: 'x-list-menu',
     itemSelectedCls:'x-selected',
     itemHover:true,
 

@@ -9,9 +9,8 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
         'Rsd.control.ListView',
         'Rsd.control.Button',
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CHomeTopicPart',
-        'Rsd.web.CHNavigationPart',
-        'Rsd.web.CHomeContentPart',
+        'Rsd.web.CImageBarPart',
+        'Rsd.web.CHNavigationPart', 
         'Rsd.web.CBottomPart'
     ],
     xtype: 't-home-page',

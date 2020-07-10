@@ -5,7 +5,7 @@ Rsd.define('Rsd.template.gov.web.TSecondaryPage', {
     extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CSubTopicPart',
+        'Rsd.web.CImageBarPart',
         'Rsd.web.CGroupPart',
         'Rsd.web.CBottomPart',
         'Rsd.web.CSitePathPart'
@@ -21,7 +21,8 @@ Rsd.define('Rsd.template.gov.web.TSecondaryPage', {
             cls:'x-topBar'
         },
         {
-            xtype:'t-sub-topic',
+            xtype:'t-image-bar',
+            imageUrl:'./resources/images/topic.png',
             region:'top',
             cls:'x-topic'
         },

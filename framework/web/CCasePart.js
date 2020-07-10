@@ -17,10 +17,8 @@ Rsd.define('Rsd.web.CCasePart', {
     sizeUnit:'px',
     items:[ 
     ],
-    /*
-    *
-    * */
-    constructor: function CHomeContentPart(config) {
+    /** */ 
+    constructor: function CCasePart(config) {
         config = config || {};
         Rsd.apply(this, config);
 

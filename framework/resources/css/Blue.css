@@ -238,35 +238,37 @@ th,tfoot>tr,tfoot>td {
 }
 
 
-.x-list-view .x-list-view-menu
-{}
+.x-list, .x-list-view ,.x-list-menu
+{
+     display: inline;
+}
 
-.x-list-view ou,.x-list-view ol
+.x-list ou,.x-list ol
 {
     height: auto !important;
     width: 100%;
     margin-top:0px;
     overflow: auto;
 }
-.x-list-view-menu ou ,.x-list-view-menu ol {
+.x-list-menu ou ,.x-list-menu ol {
     height: auto !important;
     width: 100%;
     margin-top:0px;
 }
 
-.x-list-view li
+.x-list li
 {
     color: rgb(102, 102, 102);
     display: block;
     font-size: 100%;
     font-weight: bold;
 }
-.x-list-view .x-li-hover
+.x-list .x-li-hover
 {
-
+    overflow: hidden;
 }
 
-.x-list-view .x-selected, .x-list-view .x-li-hover:hover
+.x-list .x-selected, .x-list .x-li-hover:hover
 {
     color: #FFF;
     -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
@@ -285,17 +287,17 @@ th,tfoot>tr,tfoot>td {
     cursor: pointer;
 
 }
-.x-list-view-menu li
+.x-list-menu li
 {
     float: left;
     display: block;
     font-size: 100%;
 }
-.x-list-view-menu .x-li-hover
+.x-list-menu .x-li-hover
 {
-
+    overflow: hidden;
 }
-.x-list-view-menu .x-selected, .x-list-view-menu .x-li-hover:hover
+.x-list-menu .x-selected, .x-list-menu .x-li-hover:hover
 {
     border-bottom-width:2px;
     border-bottom-color:rgb(72, 213, 105);

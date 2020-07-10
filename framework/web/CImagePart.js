@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2017/7/27.
- * 图片
+ * 图片轮播
  */
 Rsd.define('Rsd.web.CImagePart', {
     extend: 'Rsd.control.ImageList',

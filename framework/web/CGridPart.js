@@ -6,6 +6,9 @@ Rsd.define('Rsd.web.CGridPart', {
     extend: 'Rsd.control.Grid',
     requires: [''],
     xtype: 't-grid',
+    dataType:{
+        //type:Array, 
+    },
     /*
      * */
     constructor: function constructor(config) {

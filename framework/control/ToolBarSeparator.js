@@ -21,6 +21,10 @@ Rsd.define('Rsd.control.ToolBarSeparator', {
     },
     width: 30,
     height: 30,
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
@@ -39,5 +43,17 @@ Rsd.define('Rsd.control.ToolBarSeparator', {
                  me.ctrl.style.textAlign = "center";
              }
         });
+    },
+     /**
+     * 
+     */
+    onAfterLayout:function onAfterLayout()
+    {
+        if(Rsd.isNumber(this.height))
+        {
+            this.ctrl.style.lineHeight = this.height+ 'px';
+            this.label.element.style.lineHeight = this.height+ 'px';
+        }
+        this.callParent();
     }
 });

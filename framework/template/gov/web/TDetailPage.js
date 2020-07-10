@@ -5,7 +5,7 @@ Rsd.define('Rsd.template.gov.web.TDetailPage', {
     extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CSubTopicPart',
+        'Rsd.web.CImageBarPart',
         'Rsd.web.CDetailPart',
         'Rsd.web.CBottomPart',
         'Rsd.web.CSitePathPart',
@@ -26,7 +26,8 @@ Rsd.define('Rsd.template.gov.web.TDetailPage', {
             cls:'x-topBar'
         },
         {
-            xtype:'t-sub-topic',
+            xtype:'t-image-bar',
+            imageUrl:'./resources/images/topic.png',
             region:'top',
             cls:'x-topic'
         },
@@ -102,6 +103,9 @@ Rsd.define('Rsd.template.gov.web.TDetailPage', {
         config = config || {};
         Rsd.apply(this, config);
     },
+    /**
+     * 
+     */
     load:function load()
     {
         this.items[3].setText('张德江出席十二届全国人大常委会第十次会议闭幕会并讲话');

@@ -19,9 +19,10 @@ Rsd.define('Rsd.web.CTopBarPart', {
         {
             xtype: 'toolBar',
             border: false,
-            height: 30,
+            height: 35,
             layout: 'hbox',
             margin: '5 0 0 0',
+            sytle:{lineHeight:30},
             items: [
                 {xtype: 'link',width: 50,text: '简 体'},
                 {xtype: 'tbSeparator',width: 20},

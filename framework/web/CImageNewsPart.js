@@ -26,13 +26,17 @@ Rsd.define('Rsd.web.CImageNewsPart', {
         {
             xtype:'t-list-view',
             title:'要 闻',
-            itemStyle:{overflow:'hidden',height:'45px',lineHeight:'45px',width:'100%'},
+            itemStyle:{overflow:'hidden',height:'45px',lineHeight:'45px',width:'100%',borderBottom: 'red 1px dotted'},
             cls:'t-list',
             itemClick:function(){window.open(this.url);},
             height:'100%',
             flex:3
         }
     ],
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function constructor(config) {
         config = config || {};
         this.apply(config);
@@ -44,8 +48,10 @@ Rsd.define('Rsd.web.CImageNewsPart', {
      * @param {*} data 
      */
     loadData:function loadData(data) {
-        this.items[1].loadData(data||this.dataSource);
-        this.items[0].loadData (data||this.dataSource);
+         
+        this.dataSource = data||this.dataSource;
+        this.items[1].loadData(this.dataSource);
+        this.items[0].loadData (this.dataSource);
     }
 
 

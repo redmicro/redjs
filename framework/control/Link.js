@@ -4,7 +4,7 @@
 Rsd.define('Rsd.control.Link', {
     extend: 'Rsd.control.Component',
     xtype: 'link',
-    margin:'3 0 2 0',
+    margin:'0 0 0 0',
     text: '',
     cls:'x-link',
     domTagName:'a',
@@ -19,8 +19,9 @@ Rsd.define('Rsd.control.Link', {
         this.apply(config);
 
     } ,
-    /*
-     * */
+    /**
+     * 
+     */
     onAfterInit: function onAfterInit() {
 
         if (this.text) {
@@ -29,6 +30,18 @@ Rsd.define('Rsd.control.Link', {
         if(this.href)
         {
             this.setHref(this.href);
+        }
+        this.callParent();
+    },
+    /**
+     * 
+     */
+    onAfterLayout:function onAfterLayout()
+    {
+        if(Rsd.isNumber(this.height))
+        {
+            this.ctrl.style.lineHeight = this.height+ 'px';
+            this.label.element.style.lineHeight = this.height+ 'px';
         }
         this.callParent();
     },
