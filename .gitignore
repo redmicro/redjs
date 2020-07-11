@@ -189,3 +189,4 @@ packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1/tools/RoslynLa
 .idea/redjs.iml
 .idea/vcs.xml
 .idea/workspace.xml
+.DS_Store
