@@ -268,7 +268,7 @@ th,tfoot>tr,tfoot>td {
     overflow: hidden;
 }
 
-.x-list .x-selected, .x-list .x-li-hover:hover
+.x-list-menu .x-selected, .x-list-menu .x-li-hover:hover
 {
     color: #FFF;
     -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
@@ -286,21 +286,4 @@ th,tfoot>tr,tfoot>td {
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
     cursor: pointer;
 
-}
-.x-list-menu li
-{
-    float: left;
-    display: block;
-    font-size: 100%;
-}
-.x-list-menu .x-li-hover
-{
-    overflow: hidden;
-}
-.x-list-menu .x-selected, .x-list-menu .x-li-hover:hover
-{
-    border-bottom-width:2px;
-    border-bottom-color:rgb(72, 213, 105);
-    border-bottom-style: solid;
-    cursor: pointer;
 }

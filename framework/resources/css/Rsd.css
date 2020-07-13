@@ -1584,11 +1584,11 @@ legend {
     font-size: 100%;
     font-weight: bold;
 }
-.x-list .x-li-hover 
+.x-list .x-li-hover ,.x-list-view .x-li-hover,.x-list-menu .x-li-hover
 {
     overflow: hidden;
 }
-.x-list .x-selected, .x-list .x-li-hover:hover 
+.x-list-menu .x-selected,.x-list-menu .x-li-hover:hover
 {
     color: #FFF;
     -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 0px 0px;
@@ -1607,17 +1607,22 @@ legend {
     cursor: pointer;
 
 }
-.x-list-menu li
+.x-list-menu-{
+    height: auto !important;
+    width: 100%;
+    margin-top:0px;
+}
+.x-list-menu-h li
 {
     float: left;
     display: block;
     font-size: 100%;
 }
-.x-list-menu .x-li-hover
+.x-list-menu-h .x-li-hover
 {
 overflow: hidden;
 }
-.x-list-menu .x-selected, .x-list-menu .x-li-hover:hover
+.x-list-menu-h .x-selected, .x-list-menu-h .x-li-hover:hover
 {
     border-bottom-width:2px;
     border-bottom-color:rgb(72, 213, 105);

@@ -103,13 +103,14 @@ Rsd.define('Rsd.control.List', {
     /**
      * @description  清空列表
      *  */ 
-    removeAll:function () {
-        
+    removeAll:function removeAll() {
+
         if(this.ctrl)
         {
-            this.innerHTML = "";
+            this.ctrl.innerHTML = "";
         }
         this.items = [];
+ 
     },
     /**
     * @param key {int|string} int type is index value,string type is key value.

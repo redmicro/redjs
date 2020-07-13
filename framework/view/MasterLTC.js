@@ -57,7 +57,7 @@ Rsd.define('Rsd.view.MasterLTC', {
             xtype: 'list-menu',
             region: 'top',
             width:'auto',
-            cls:'x-list-view-menu',
+            cls:'x-list-menu-h',
             itemSelectedCls:'x-selected',
             itemHover:true,
             margin:'0 0 5 10',
@@ -126,6 +126,10 @@ Rsd.define('Rsd.view.MasterLTC', {
     load:function load() {
 
     },
+    /**
+     * 
+     * @param {*} item 
+     */
     left_menu_lick:function left_menu_lick(item)
     {
         var menu = item.content.menu;
@@ -142,6 +146,7 @@ Rsd.define('Rsd.view.MasterLTC', {
             this.block(function () {
 
                 //layout second menu in top
+                me.items[1].removeAll();
                 me.items[1].loadData(menu);
 
                 //show first page in content
