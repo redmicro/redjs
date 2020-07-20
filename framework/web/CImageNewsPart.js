@@ -19,7 +19,7 @@ Rsd.define('Rsd.web.CImageNewsPart', {
     dataSource:[],
     items:[
         {
-            xtype:'c-image',
+            xtype:'t-image',
             height:'100%',
             flex:7
         },

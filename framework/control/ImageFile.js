@@ -59,18 +59,19 @@ Rsd.define('Rsd.control.ImageFile', {
         var me = this;
         me.image.style.maxWidth = '100%';
         me.image.style.maxHeight = '100%';
-
-        if(this.view)
+        
+        if(this.zoomView==undefined || this.zoomView)
         {
             this.image.onclick = function () {
 
+                console.log(me.src);
                 if(Rsd.isEmpty(me.src)|| me.src == '#')
                 {
                     return;
                 }
                 var _view = Rsd.create('Rsd.controlEx.ImageViewer',{title:me.title});
 
-                _view.showDialog().loadData([{src:me.src,text: me.label.content}]);
+                _view.showDialog(this.parent).loadData([{src:me.src,text: me.label.content}]);
 
             }
         }

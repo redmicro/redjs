@@ -11,6 +11,7 @@ Rsd.define('Rsd.template.TWap', {
     designModel:false,
     width:'100%',
     spm:null,
+    style:{overflow:'auto'},
     dataSource:null,
     sizeUnit:'rem',
     /*

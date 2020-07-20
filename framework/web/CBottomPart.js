@@ -37,7 +37,7 @@ Rsd.define('Rsd.web.CBottomPart', {
     constructor: function constructor(config) {
         config = config || {};
         Rsd.apply(this, config);
-
+        this.items[0].style.backgroundColor = this.lineColor;
     },
     /**
      * 
@@ -45,6 +45,7 @@ Rsd.define('Rsd.web.CBottomPart', {
      */
     loadData:function loadData(data) {
         this.dataSource = data||this.dataSource;
+       
         this.items[2].loadData( this.dataSource);
     },
     /**

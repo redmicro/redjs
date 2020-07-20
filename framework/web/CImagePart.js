@@ -4,7 +4,7 @@
  */
 Rsd.define('Rsd.web.CImagePart', {
     extend: 'Rsd.control.ImageList',
-    xtype: 'c-image',
+    xtype: 't-image',
     requires: [],
     /*
     * [{src:'',formatString:'',text:''},{src:'',text:''}]

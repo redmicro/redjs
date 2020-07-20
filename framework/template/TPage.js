@@ -10,6 +10,7 @@ Rsd.define('Rsd.template.TPage', {
     margin:"0 0 0 0",
     designModel:false,
     width:'100%',
+    style:{overflow:'auto'},
     spm:null,
     dataSource:null,
     /*

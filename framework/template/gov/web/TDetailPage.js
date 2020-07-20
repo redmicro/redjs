@@ -5,8 +5,7 @@ Rsd.define('Rsd.template.gov.web.TDetailPage', {
     extend: 'Rsd.template.TPage',
     requires: [
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CImageBarPart',
-        'Rsd.web.CDetailPart',
+        'Rsd.web.CImageBarPart', 
         'Rsd.web.CBottomPart',
         'Rsd.web.CSitePathPart',
         'Rsd.web.CListViewPart' ,

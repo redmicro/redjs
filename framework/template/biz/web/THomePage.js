@@ -9,13 +9,14 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
         'Rsd.control.ListView',
         'Rsd.control.Button',
         'Rsd.web.CTopBarPart',
-        'Rsd.web.CImageBarPart',
+        'Rsd.web.CImagePart',
         'Rsd.web.CHNavigationPart', 
         'Rsd.web.CBottomPart'
     ],
     xtype: 't-home-page',
     layout:'border',
     height:'1200px',
+    style:{backgroundColor:'lightslategrey'},
     sizeUnit:'px',
     header:{
         height:60,
@@ -56,7 +57,8 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
          
         {
             region:'center',
-            xtype: 'image-list',
+            xtype: 't-image',
+            height:350,
             dataSource:[]
         },
        
@@ -64,6 +66,7 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             xtype:'t-bottom',
             region:'bottom',
             cls:'x-bottom',
+            lineColor:'black',
             height:150,
             margin:'40 0 0 0'
         }

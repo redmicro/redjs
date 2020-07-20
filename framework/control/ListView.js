@@ -6,6 +6,7 @@
 Rsd.define('Rsd.control.ListView', {
     extend: 'Rsd.control.List',
     requires: [
+        'Rsd.data.Store',
         'Rsd.control.Text',
         'Rsd.control.ComboBox',
         'Rsd.container.FieldSet'

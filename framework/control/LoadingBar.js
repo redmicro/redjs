@@ -27,26 +27,33 @@ Rsd.define('Rsd.control.LoadingBar', {
         me.ctrl.appendChild(_span);
 
     },
+    /**
+     * 
+     * @param {*} speed 
+     */
     start: function start(speed) {
 
         var _span = this.___bar ;
-        $(_span).removeClass('x-fullwidth').delay(speed||10).queue(function (next) {
+        _span.classList.remove('x-fullwidth');
+        setTimeout(function(){
 
-            $(this).addClass('x-fullwidth');
+            _span.classList.add('x-fullwidth');
             if (speed < 5) {
-                $(this).addClass('x-fast');
-                next();
+                _span.classList.add('x-fast'); 
+                return;
             }
             if (speed > 10) {
-                $(this).addClass('x-slow');
-
-                next();
+                _span.classList.add('x-slow'); 
+                return;
             }
-            $(this).addClass('x-normal');
-            next();
-
-        });
+            _span.classList.add('x-normal');    
+            return;
+        },speed||10)
+        
     },
+    /**
+     * 
+     */
     stop:function () {
         var _span = this.___bar ;
         _span.classList.remove('x-fullwidth');
