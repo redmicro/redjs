@@ -15,8 +15,11 @@ namespace Rsd.Redjs.Agent
 
         static RedjsHandler()
         {
-            ServicesContainer.RegistCode("redjs".PadRight(40,'s'),"","");
-            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"]; ;
+            string appId = "52cf3e6e-25df-4dd7-a7a1-db8a7718c3b0";
+            string appKey = "81a452a9-ca88-11ea-bc97-1418772e9399"; 
+            var code = @"CEd7yntcMdP81/6DRwpK6gj1bAvjmA38hRJOnrWUCboX4vDCcyOS9XdseEYDn9qw\r\nVADhu9q37gJdD8mKWQ6PfMeFPoB9pP6eJakLAjfiLz0=";
+            var expireAt = ServicesContainer.RegistCode(appId, appKey, code);
+            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"];
              //host = "http://221.226.117.23:8080/";
             ServicesContainer.AddService(new WebUIService(host, "", "index.html"));
         }

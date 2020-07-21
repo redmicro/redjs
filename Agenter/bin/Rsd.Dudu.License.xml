@@ -54,12 +54,12 @@
             <param name="key">密钥</param>
             <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.License.Permission.Encrypt(System.String,System.String)">
+        <member name="M:Rsd.Dudu.License.Permission.GetKey(System.String,System.String)">
             <summary>
             
             </summary>
-            <param name="pToEncrypt"></param>
-            <param name="sKey"></param>
+            <param name="appId"></param>
+            <param name="appKey"></param>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.License.Permission.ExistKey(System.String)">
