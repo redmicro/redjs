@@ -15,11 +15,12 @@ namespace Rsd.Redjs.Agent
 
         static RedjsHandler()
         {
-            ServicesContainer.Regist("redjs".PadRight(40,'s'),"");
+            ServicesContainer.RegistCode("redjs".PadRight(40,'s'),"","");
             var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"]; ;
              //host = "http://221.226.117.23:8080/";
             ServicesContainer.AddService(new WebUIService(host, "", "index.html"));
         }
+
         /// <summary>
         /// 
         /// </summary>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\redmicro\redjs\release</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Agenter.dll">
+      <publishTime>07/21/2020 16:42:34</publishTime>
+    </File>
+    <File Include="bin/Agenter.pdb">
+      <publishTime>07/21/2020 16:42:34</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>01/28/2015 14:36:58</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>12/17/2019 12:01:34</publishTime>
+    </File>
+    <File Include="bin/Google.Protobuf.dll">
+      <publishTime>12/17/2019 12:01:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>09/05/2018 16:10:50</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Legacy.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>12/17/2019 12:01:34</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.dll">
+      <publishTime>07/16/2020 21:16:26</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.dll.config">
+      <publishTime>05/06/2020 19:58:53</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.License.dll">
+      <publishTime>07/16/2020 21:09:05</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.License.pdb">
+      <publishTime>07/16/2020 21:09:05</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Net.exe">
+      <publishTime>07/16/2020 19:40:07</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Net.exe.config">
+      <publishTime>12/17/2019 12:01:32</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Net.pdb">
+      <publishTime>07/16/2020 19:40:07</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.pdb">
+      <publishTime>07/16/2020 21:16:26</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Web.dll">
+      <publishTime>07/16/2020 21:16:27</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Web.dll.config">
+      <publishTime>05/07/2020 11:15:52</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.Web.pdb">
+      <publishTime>07/16/2020 21:16:27</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Common.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Interfaces.dll">
+      <publishTime>12/17/2019 14:33:07</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Redis.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Text.dll">
+      <publishTime>12/17/2019 14:33:08</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>12/17/2019 13:38:43</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>12/17/2019 13:38:43</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>12/17/2019 13:38:42</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/05/2020 18:22:42</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
