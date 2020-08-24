@@ -36,7 +36,14 @@ Rsd.define('Rsd.view.BaseListPage', {
     /*
     * */
     //formFields:[],
-
+    /**
+     * 获取数据源的 服务名 优先使用serviceName
+     */
+    serviceName:null,
+    /**
+     * 数据源，在 serviceName 没有有效值时 ，有效
+     */
+    dataStore:null,
     /*
     * */
     constructor: function BaseListPage(config) {
@@ -84,11 +91,17 @@ Rsd.define('Rsd.view.BaseListPage', {
         }
         Rsd.showWaiting(me.id, grid);
 
+        var _serviceName = this.serviceName||this.menu.serviceName;
+        if(!Rsd.isEmpty(_serviceName))
+        {  
+            this.dataStore = Rsd.app.getService(_serviceName);
+        }
+        
         if(me.dataStore)
         {
             grid.dataSource = me.dataStore;
         }
-
+       
         setTimeout(function () {
             //console.log(args);console.log(opt);console.log(_args);
             var opt  = me.getPagingOpt();
