@@ -131,6 +131,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
         }
 
     ],
+    sort:[{name:'CreateTime',direction:'DESC'}],
     /*
      * */
     constructor: function constructor(config) {
@@ -153,7 +154,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             Rsd.alert("未设置属性serviceName");
         }
         this.dataStore = Rsd.app.getService(_serviceName);
-
+        _args.sort = this.sort || this.menu.sort||[];
         this.callParent(_args,callback) ;
     }
 
