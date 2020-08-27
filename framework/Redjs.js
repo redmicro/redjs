@@ -2336,22 +2336,28 @@ function Redjs(config) {
     };
 
     /**
-     * @public
+     * @public 是否为true
      * */
     this.isTrue = function isTrue(obj) {
-
+ 
         if (this.isNullOrUndefined(obj)) {
             return false;
         }
+       
         if (this.isBoolean(obj)) {
             return obj;
         }
+
         if (this.isString(obj)) {
             return obj.toLowerCase() == 'true';
         }
 
+        if(this.isNumber(obj))
+        {
+            new Boolean(obj)==true;
+        }
 
-        return new Boolean(obj);
+        return new Boolean(obj)==true;
     };
 
     /**

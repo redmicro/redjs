@@ -552,7 +552,7 @@ Rsd.define('Rsd.control.Table', {
                             var _className = Rsd.xtypes['checkbox'];
                             var _class = Rsd.classes[_className];
                             _cell = _class.prototype.makeControl({}, row);
-                            _cell[0].checked = Rsd.isTrue(_value);
+                            _cell[0].checked = Rsd.isTrue(_value); 
                         }
 
                         break;
@@ -646,7 +646,7 @@ Rsd.define('Rsd.control.Table', {
 
                             _cell = _class.prototype.makeControl(col, row);
 
-                            _cell[0].checked = Rsd.isTrue(_value);
+                            _cell[0].checked = Rsd.isTrue(_value); 
                             {
                                 _cell[0].onchange = function () {
                                     if (col.multiple == false && this.checked) {

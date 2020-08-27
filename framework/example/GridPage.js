@@ -25,9 +25,9 @@ Rsd.define('Rsd.example.GridPage', {
             margin:'0 20 0 10',
             border:true,
             dataSource:[
-                {a:'2012-02-22',b:'22.00',c:'aaaa',d:'jack',e:false },
-                {a:'2013-03-08',b:'33.33',c:'cccc',d:'tom',e:true},
-                {a:'2015-09-13',b:'2.20' ,c:'dddd' ,d:'🌞🌞',e:false},
+                {a:'2012-02-22',b:'22.00',c:'aaaa',d:'jack',e:false ,isCheck:true},
+                {a:'2013-03-08',b:'33.33',c:'cccc',d:'tom',e:true,isCheck:0},
+                {a:'2015-09-13',b:'2.20' ,c:'dddd' ,d:'🌞🌞',e:false,isCheck:-1},
                 {a:'2018-01-11',b:'1.10',c:'bbbb',d:'张三',e:false},
                 {a:'2013-07-09',b:'2982',c:'3333',d:'🌟天空🌟',e:false},
                 {a:'2014-04-04',b:'0.00',c:'4444',d:'mary',e:false},

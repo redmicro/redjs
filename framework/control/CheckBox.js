@@ -35,6 +35,9 @@ Rsd.define('Rsd.control.CheckBox', {
         this.__self_label = _label;
         this.container.appendChild(_label);
     },
+    /**
+     * 
+     */
     onAfterLayout:function onAfterLayout() {
         this.callParent();
         var _label = this.__self_label;
@@ -94,6 +97,7 @@ Rsd.define('Rsd.control.CheckBox', {
         _chk.style.visibility = 'hidden';
         _chk.type = 'checkbox';
         _chk.name = _dataIndex;
+       
         _chk.setAttribute('id','__chk__' + _dataIndex + '__' +_config.__index__++);
 
         var _label = document.createElement('label');
