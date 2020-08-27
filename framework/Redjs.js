@@ -2345,7 +2345,7 @@ function Redjs(config) {
         }
        
         if (this.isBoolean(obj)) {
-            return obj;
+            return obj==true;
         }
 
         if (this.isString(obj)) {
@@ -2354,10 +2354,10 @@ function Redjs(config) {
 
         if(this.isNumber(obj))
         {
-            new Boolean(obj)==true;
+            new Boolean(obj) == true;
         }
 
-        return new Boolean(obj)==true;
+        return new Boolean(obj) == true;
     };
 
     /**
