@@ -122,7 +122,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
 
         if(!(_enum instanceof Rsd.data.Enum))
         {
-            throw new Error('config [enum] is not Rsd.data.Enum.');
+            throw new Error('config [enum] '+ _config.enum.toString() +' is not Rsd.data.Enum.');
         }
 
 
