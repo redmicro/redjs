@@ -25,7 +25,8 @@ Rsd.define('Rsd.common.Application', {
     jsAgentHost:null,
     lang:'zh-cn',
     svg:null,
-    services:{},
+    /*api service*/
+    //services:{},
     schemas:{},
     //app启动时间
     startTime:0,

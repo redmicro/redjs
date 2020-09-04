@@ -92,7 +92,11 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         var _enum = _config.enum;
         if(Rsd.isString(_config.enum))
         {
-            _enum = Rsd.widget(_config.enum);
+            _enum = Rsd.widget(_config.enum,{  
+                textMember: _config.textMember||'text',
+                valueMember: _config.valueMember||'code',
+                colorMember:_config.colorMember||'color'
+            });
         }
         if(Rsd.isArray(_config.enum))
         {
