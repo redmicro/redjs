@@ -92,11 +92,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         var _enum = _config.enum;
         if(Rsd.isString(_config.enum))
         {
-            _enum = Rsd.widget(_config.enum,{  
-                textMember: _config.textMember||'text',
-                valueMember: _config.valueMember||'code',
-                colorMember:_config.colorMember||'color'
-            });
+            _enum = Rsd.widget(_config.enum,{});
         }
         if(Rsd.isArray(_config.enum))
         {
@@ -111,6 +107,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
                Rsd.define(_enum.name,{
                    extend:'Rsd.data.Enum',
                    xtype:_enum.name,
+                   //textMember,valueMember, colorMember 仅在定义时有效
                    textMember: _enum.textMember||'text',
                    valueMember: _enum.valueMember||'code',
                    colorMember:_enum.colorMember||'color',

@@ -7,12 +7,24 @@ Rsd.define('Rsd.data.Enum', {
     requires:['Rsd.data.EnumItem'],
     xtype:'enum',
     singleton:false,
+    /**
+     * @description 仅在定义时使用，在创建Rsd.data.EnumItem对象时，从数据源items中 ，获取指定属性作为Rsd.data.EnumItem对象的text属性值
+     */
     textMember: 'text',
+    /**
+     * @description 仅在定义时使用，在创建Rsd.data.EnumItem对象时，从数据源items中 ，获取指定属性作为Rsd.data.EnumItem对象的value属性值
+     */
     valueMember: 'value',
+    /**
+     * @description 仅在定义时使用，在创建Rsd.data.EnumItem对象时，从数据源items中 ，获取指定属性作为Rsd.data.EnumItem对象的code属性值
+     */
     codeMember: 'code',
-    colorMember:'color',
-    text:'',
+    /**
+     * @description 仅在定义时使用，在创建Rsd.data.EnumItem对象时，从数据源items中 ，获取指定属性作为Rsd.data.EnumItem对象的color属性值
+     */
+    colorMember:'color', 
     //items:[],
+    text:'',
     constructor: function Enum (config) {
         config = config || {};
         this.apply(config);

@@ -27,6 +27,7 @@ Rsd.define('Rsd.data.EnumItem', {
     *
     * */
     makeControl:function makeControl(config) {
+        
         var _config = config||{};
         var _ctrl = document.createElement('label');
         var me = this;
