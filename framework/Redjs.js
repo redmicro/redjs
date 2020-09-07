@@ -2617,8 +2617,8 @@ function Redjs(config) {
      * */
     this.showWaiting = function showWaiting(key, parent) {
         var _key = key || (parent && parent.id) || Math.random();
-        if (!_key) {
-            throw new Erorr('key is null.');
+        if (this.isEmpty_key) {
+            throw new Erorr('key is null. Rsd.showWaiting=function closeWaiting(key, parent)');
         }
         var me = Rsd || this;
         setTimeout(function (parent) {
@@ -2639,8 +2639,8 @@ function Redjs(config) {
      @description 关闭等待窗口
      * */
     this.closeWaiting = function closeWaiting(key, delay) {
-        if (!key) {
-            throw new Erorr('key is null.');
+        if (this.isEmpty(key)) {
+            throw new Erorr('key is null. Rsd.closeWaiting=function closeWaiting(key, delay)');
         }
         var me = Rsd || this;
         setTimeout(function () {
