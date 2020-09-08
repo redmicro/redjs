@@ -3157,13 +3157,15 @@ function Redjs(config) {
      * @public
      * @description 创建空格dom对象
      * */
-    this.blankspan = function blankspan(count) {
+    this.blankspan = function blankspan(count,style) {
         var _c = count || 1;
         var _s = '';
         for (var i = 0; i < _c; i++) {
             _s = _s + '&nbsp;';
         }
-        return  this.parseDom('<span>' + _s + '</span>')[0]
+        var span =  this.parseDom('<span>' + _s + '</span>')[0];
+        this.setElStyle(span,style||{});
+        return span;
     };
 
     /**
