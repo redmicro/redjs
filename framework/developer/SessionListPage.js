@@ -42,31 +42,22 @@ Rsd.define("Rsd.developer.SessionListPage", {
         
         {
             "name": "FromHost",
-            "text": "请求Url地址",
+            "text": "请求信息",
             align:'left',
             "sortable": false,
-            "width": 120,
+            "width": 200,
             xtype:'template',
-            formatString:'HOST:#=FromHost=#</br>Referer:#=FromReferer=#',
+            formatString:'HOST:#=FromHost=#</br>Referer:#=FromReferer=#/<br>浏览器:#=FromUserAgent=#',
             "nobr": true
         },
         
         {
             "name": "FromUserAgent",
-            "text": "浏览器代理",
+            "text": "IP",
             align:'left',
             "sortable": false,
             xtype:'template',
-            formatString:'源IP:#=ClientIP=#</br>浏览器:#=FromUserAgent=#',
-            "width": 160,
-            "nobr": true
-        },
-       
-        {
-            "name": "Host",
-            "text": "主机IP",
-            "dataindex": "Host",
-            "sortable": false,
+            formatString:'源IP:#=ClientIP=#</br>主机IP:#=Host=#',
             "width": 80,
             "nobr": true
         }
