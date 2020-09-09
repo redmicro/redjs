@@ -22,21 +22,13 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "name": "Key",
             "text": "Key",
             "sortable": true,
-            "width": 250,
+            "width": 230,
             align:'left',
             xtype:'template',
-            formatString:'#=Key=#</br>[#=Group=#]&nbsp;&nbsp;#=UserId=#',
+            formatString:'#=UserId=#</br>#=Key=#</br>[#=Group=#]</br>{#=DataType=#}',
             "nobr": false
         },
       
-        {
-            "name": "DataType",
-            "text": "数据类型",
-            "dataindex": "DataType",
-            "sortable": false,
-            "width": 150,
-            "nobr": true
-        },
         {
             "name": "CreateTime",
             "text": "时间",
@@ -44,7 +36,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             align:'left',
             "width": 150,
             xtype:'template',
-            formatString:'创建时间:#=CreateTime=#</br>过期时间:#=ExpireAt=#</br>时长（秒）:#=Duration=#',
+            formatString:'创建:#=CreateTime=#</br>过期:#=ExpireAt=#</br>时长（秒）:#=Duration=#',
             "nobr": true,
         },
         
@@ -69,7 +61,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "width": 120,
             "nobr": true
         },
-        
+       
         {
             "name": "Host",
             "text": "主机IP",
