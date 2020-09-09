@@ -45,7 +45,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "text": "请求信息",
             align:'left',
             "sortable": false,
-            "width": 200,
+            "width": 250,
             xtype:'template',
             formatString:'HOST:#=FromHost=#</br>Referer:#=FromReferer=#/<br>浏览器:#=FromUserAgent=#',
             "nobr": true
