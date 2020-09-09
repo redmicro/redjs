@@ -580,9 +580,8 @@ Rsd.define('Rsd.control.Table', {
                             _p.style.width ='100%';
                             _p.style.height = '100%';
                             _p.style.textOverflow = 'ellipsis';
-                            _p.style.overflow = 'hidden';
-                            _p.style.display= '-webkit-box';
-                            _p.style.lineClamp = col.lineClamp; 
+                            _p.style.overflow = 'hidden'; 
+                            _p.style.maxHeight = (col.lineClamp*14)+'px'; 
                         }
                         var _txt = document.createTextNode((_value == null || _value == undefined || _value == '') ? emptyText : _value);
                         _p.appendChild(_txt);
