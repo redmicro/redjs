@@ -31,8 +31,8 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'操作人:#=Operator=#</br>会话:#=SessionId=#级别:#=LogLevel=#</br>类型:#=LogType=#',
-            "width": 100,
+            formatString:'操作人:#=Operator=#</br>会话:#=SessionId=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#',
+            "width": 80,
             "nobr": true
         },
          
@@ -45,7 +45,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             align:'left',
             "exist": true,
             "xtype": "text",
-            "width": 250,
+            "width": 300,
             "nobr": false
         },
         {
@@ -71,7 +71,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             xtype:'template',
             formatString:'时间:#=LogTime=#</br>线程:#=ThreadFlag=#</br>主机IP:#=CilentIp=#',
-            "width": 150,
+            "width": 100,
             "nobr": true
         }
         
