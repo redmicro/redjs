@@ -100,20 +100,14 @@ Rsd.define('Rsd.developer.ApiListPage', {
             "nobr": true
         },{
             "name": "TypeName",
-            "text": "所在类",
+            "text": "类/方法",
             "dataindex": "Type",
             "sortable": true,
+            xtype:'template',
+            formatString:'#=TypeName=#</br>#=ServiceName=#',
             "width": 150,
             "nobr": true
-        },
-        {
-            "name": "ServiceName",
-            "text": "方法名",
-            "dataindex": "Name",
-            "sortable": true,
-            "width": 100,
-            "nobr": true
-        }
+        } 
     ],
     searchColumns:[{text:'关键字',name:'key',width:350},{xtype:'combobox',name:'group',text:'分组',op:'equals'}],
     templateCols: [

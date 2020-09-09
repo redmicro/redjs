@@ -21,17 +21,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "width": 40,
             "index": 0
         },
-        {
-            "name": "LogTime",
-            "dataIndex": "LogTime",
-            "sortable": false,
-            "text": "记录时间",
-            "index": 30,
-            "exist": true,
-            "xtype": "string",
-            "width": 150,
-            "nobr": true
-        },
+         
         {
             "name": "Operator",
             "dataIndex": "Operator",
@@ -39,7 +29,8 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "text": "操作人",
             "index": 40,
             "exist": true,
-            "xtype": "string",
+            xtype:'template',
+            formatString:'操作人:#=Operator=#</br>时间:#=LogTime=#</br>会话:#=SessionId=#',
             "width": 100,
             "nobr": true
         },
@@ -52,6 +43,16 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             "xtype": "enum",
             "enum": "LogLevelTypes"
+        },
+        {
+            "name": "LogType",
+            "dataIndex": "LogType",
+            "sortable": false,
+            "text": "日志类型",
+            "index": 100,
+            "exist": true,
+            "xtype": "enum",
+            "enum": "LogType"
         },
         {
             "name": "Content",
@@ -68,68 +69,28 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "name": "RefType",
             "dataIndex": "RefType",
             "sortable": false,
-            "text": "引用所在类",
+            "text": "引用位置",
             "index": 60,
             "exist": true,
-            "xtype": "string",
+            xtype:'template',
+            formatString:'#=RefType=#</br>#=RefMethod=#',
             "width": 150,
             "nobr": true
-        },
-        {
-            "name": "RefMethod",
-            "dataIndex": "RefMethod",
-            "sortable": false,
-            "text": "引用所在方法",
-            "index": 70,
-            "exist": true,
-            "xtype": "string",
-            "width": 150,
-            "nobr": true
-        },
+        }, 
         {
             "name": "SessionId",
             "dataIndex": "SessionId",
             "sortable": false,
-            "text": "会话ID",
+            "text": "主机ID",
             "index": 80,
             "exist": true,
-            "xtype": "string",
-            "width": 150,
-            "nobr": true
-        },
-        {
-            "name": "ThreadFlag",
-            "dataIndex": "ThreadFlag",
-            "sortable": false,
-            "text": "线程标识",
-            "index": 90,
-            "exist": true,
-            "xtype": "string",
-            "width": 150,
-            "nobr": true
-        },
-        {
-            "name": "LogType",
-            "dataIndex": "LogType",
-            "sortable": false,
-            "text": "日志类型",
-            "index": 100,
-            "exist": true,
-            "xtype": "enum",
-            "enum": "LogType"
-        },
-        {
-            "name": "CilentIp",
-            "dataIndex": "CilentIp",
-            "sortable": false,
-            "text": "主机IP",
-            "index": 110,
-            "exist": true,
-            "xtype": "string",
+            xtype:'template',
+            formatString:'线程:#=ThreadFlag=#</br>主机IP:#=CilentIp=#',
             "width": 150,
             "nobr": true
         }
-
+        
+       
     ],
     sort:[{name:'CreateTime',direction:'DESC'}],
     /*
