@@ -46,6 +46,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             "xtype": "text",
             "width": 300,
+            lineClamp:8,
             "nobr": false
         },
         {
