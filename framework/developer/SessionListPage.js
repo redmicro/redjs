@@ -21,9 +21,9 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "Key",
             "text": "Key",
-            "dataindex": "Key",
             "sortable": true,
             "width": 250,
+            align:'left',
             xtype:'template',
             formatString:'#=Key=#</br>[#=Group=#]&nbsp;&nbsp;#=UserId=#',
             "nobr": false
@@ -40,9 +40,9 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "CreateTime",
             "text": "时间",
-            "dataindex": "CreateTime",
             "sortable": true,
-            "width": 100,
+            align:'left',
+            "width": 150,
             xtype:'template',
             formatString:'创建时间:#=CreateTime=#</br>过期时间:#=ExpireAt=#</br>时长（秒）:#=Duration=#',
             "nobr": true,
@@ -51,9 +51,9 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "FromHost",
             "text": "请求Url地址",
-            "dataindex": "FromHost",
+            align:'left',
             "sortable": false,
-            "width": 80,
+            "width": 120,
             xtype:'template',
             formatString:'HOST:#=FromHost=#</br>Referer:#=FromReferer=#',
             "nobr": true
@@ -62,11 +62,11 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "FromUserAgent",
             "text": "浏览器代理",
-            "dataindex": "FromUserAgent",
+            align:'left',
             "sortable": false,
             xtype:'template',
             formatString:'源IP:#=ClientIP=#</br>浏览器:#=FromUserAgent=#',
-            "width": 80,
+            "width": 120,
             "nobr": true
         },
         
