@@ -23,25 +23,12 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "text": "Key",
             "dataindex": "Key",
             "sortable": true,
-            "width": 180,
+            "width": 250,
+            xtype:'template',
+            formatString:'#=Key=#</br>[#=Group=#]&nbsp;&nbsp;#=UserId=#',
             "nobr": false
         },
-        {
-            "name": "Group",
-            "text": "分组",
-            "dataindex": "Group",
-            "sortable": true,
-            "width": 100,
-            "nobr": true
-        },
-        {
-            "name": "UserId",
-            "text": "用户ID",
-            "dataindex": "UserId",
-            "sortable": false,
-            "width": 150,
-            "nobr": true
-        },
+      
         {
             "name": "DataType",
             "text": "数据类型",
@@ -52,60 +39,37 @@ Rsd.define("Rsd.developer.SessionListPage", {
         },
         {
             "name": "CreateTime",
-            "text": "创建时间",
+            "text": "时间",
             "dataindex": "CreateTime",
             "sortable": true,
             "width": 100,
+            xtype:'template',
+            formatString:'创建时间:#=CreateTime=#</br>过期时间:#=ExpireAt=#</br>时长（秒）:#=Duration=#',
             "nobr": true,
         },
-        {
-            "name": "ExpireAt",
-            "text": "过期时间",
-            "dataindex": "ExpireAt",
-            "sortable": true,
-            "width": 100,
-            "nobr": true,
-        },
-        {
-            "name": "Duration",
-            "text": "时长（秒）",
-            "dataindex": "Duration",
-            "sortable": false,
-            "width": 50,
-            "nobr": true,
-        },
+        
         {
             "name": "FromHost",
-            "text": "请求地址",
+            "text": "请求Url地址",
             "dataindex": "FromHost",
             "sortable": false,
             "width": 80,
+            xtype:'template',
+            formatString:'HOST:#=FromHost=#</br>Referer:#=FromReferer=#',
             "nobr": true
         },
-        {
-            "name": "FromReferer",
-            "text": "请求地址",
-            "dataindex": "FromReferer",
-            "sortable": false,
-            "width": 80,
-            "nobr": true
-        },
+        
         {
             "name": "FromUserAgent",
             "text": "浏览器代理",
             "dataindex": "FromUserAgent",
             "sortable": false,
+            xtype:'template',
+            formatString:'源IP:#=ClientIP=#</br>浏览器:#=FromUserAgent=#',
             "width": 80,
             "nobr": true
         },
-        {
-            "name": "ClientIP",
-            "text": "来源IP",
-            "dataindex": "ClientIP",
-            "sortable": false,
-            "width": 80,
-            "nobr": true
-        }, 
+        
         {
             "name": "Host",
             "text": "主机IP",
