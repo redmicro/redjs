@@ -574,8 +574,18 @@ Rsd.define('Rsd.control.Table', {
                     case 'text': {
                         _td.style.textAlign = col.align || 'left';
                         _cell = [];
+                        var _p = document.createElement('p');
+                        if(col.lineClamp)
+                        {
+                            _p.style.width ='100%';
+                            _p.style.height = '100%';
+                            _p.style.display= '-webkit-box';
+                            _p.style.lineClamp = col.lineClamp; 
+                        }
                         var _txt = document.createTextNode((_value == null || _value == undefined || _value == '') ? emptyText : _value);
-                        _cell.push(_txt);
+                        _p.appendChild(_txt);
+                        _cell.push(_p);
+                         
                         var _tip = document.createElement('a');
                         _tip.style.float = 'right';
                         _tip.style.backgroundColor = 'rgba(255, 0, 0, 0.65)';
@@ -897,12 +907,6 @@ Rsd.define('Rsd.control.Table', {
                     } 
                     _td.style.whiteSpace = col.nobr?'nowrap':'break-spaces';
 
-                    if(col.lineClamp)
-                    {
-                        _td.style.display= '-webkit-box';
-                        _td.style.lineClamp = col.lineClamp;
-                       
-                    }
                     tr.appendChild(_td);
                   
                 }
