@@ -22,7 +22,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "name": "Key",
             "text": "Key",
             "sortable": true,
-            "width": 230,
+            "width": 200,
             align:'left',
             xtype:'template',
             formatString:'#=UserId=#</br>#=Key=#</br>[#=Group=#]</br>{#=DataType=#}',
@@ -34,7 +34,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "text": "时间",
             "sortable": true,
             align:'left',
-            "width": 150,
+            "width": 130,
             xtype:'template',
             formatString:'创建:#=CreateTime=#</br>过期:#=ExpireAt=#</br>时长（秒）:#=Duration=#',
             "nobr": true,
@@ -58,7 +58,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
             "sortable": false,
             xtype:'template',
             formatString:'源IP:#=ClientIP=#</br>浏览器:#=FromUserAgent=#',
-            "width": 120,
+            "width": 160,
             "nobr": true
         },
        
