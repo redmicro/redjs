@@ -25,7 +25,7 @@ Rsd.define('Rsd.view.MasterLTC', {
         backgroundColor:'rgba(128, 128, 128, 0.04)'
     },
 
-    //margin:'1 0 0 0',
+    margin:'0 0 0 0',
     //top:null,
     //left:null,
     //content:null,

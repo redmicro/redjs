@@ -21,7 +21,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "Key",
             "text": "Key",
-            "sortable": true,
+            "sortable": false,
             "width": 200,
             align:'left',
             xtype:'template',
@@ -32,7 +32,7 @@ Rsd.define("Rsd.developer.SessionListPage", {
         {
             "name": "CreateTime",
             "text": "时间",
-            "sortable": true,
+            "sortable": false,
             align:'left',
             "width": 130,
             xtype:'template',

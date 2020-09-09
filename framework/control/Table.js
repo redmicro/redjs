@@ -23,6 +23,8 @@ Rsd.define('Rsd.control.Table', {
      xtype:date(日期类型)|timestamp(时间戳类型)|number(数字类型)|bool(布尔类型)|string(字符串类型)|text(文本类型)|index(索引列)|checkbox(选择列)|template(模版列)|enum(枚举列)|autocomplete(自动完成列)|json(json列)|已定义控件类型
      style:null,
      editable:false,
+     //可排序，根据dataIndex 指定的列排序
+     sortable:false,
      nobr:true,
      //最大行数
      lineClamp:0,
@@ -1175,7 +1177,7 @@ Rsd.define('Rsd.control.Table', {
             _cell.name = (typeof (_col) == 'object' ? (_col.name || _cell.dataIndex): _col);
             _cell.text = (typeof (_col) == 'object' ? _col.text : _col);
             _cell.tip = (typeof (_col) == 'object' ? (_col.tip || '') : '');
-            _cell.sortable = ((typeof (_col) == 'object' && _col.hasOwnProperty('sortable')) ? _col.sortable : false);
+            _cell.sortable = _cell.dataIndex && ((typeof (_col) == 'object' && _col.hasOwnProperty('sortable')) ? _col.sortable : false);
             _cell.tag = _col;
 
 
