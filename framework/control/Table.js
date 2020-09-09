@@ -889,8 +889,11 @@ Rsd.define('Rsd.control.Table', {
                     }
                     _td.style.overflow = 'hidden';
                     _td.style.textOverflow = 'ellipsis';
-                    _td.style.noWrap = 'nowrap';
-                   
+                    if(col.nobr)
+                    {
+                        _td.setAttribute('nowrap');
+                    } 
+                    _td.style.whiteSpace = col.nobr?'nowrap':'break-spaces';
                     tr.appendChild(_td);
                   
                 }
