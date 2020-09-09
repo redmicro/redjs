@@ -62,7 +62,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             "xtype": "text",
             "width": 250,
-            "nobr": true
+            "nobr": false
         },
         {
             "name": "RefType",
