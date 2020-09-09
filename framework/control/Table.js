@@ -24,6 +24,8 @@ Rsd.define('Rsd.control.Table', {
      style:null,
      editable:false,
      nobr:true,
+     //最大行数
+     lineClamp:0,
      //子标题
      sub:[],
      //仅在xtype=template时有效
@@ -894,6 +896,13 @@ Rsd.define('Rsd.control.Table', {
                         _td.setAttribute('nowrap',true);
                     } 
                     _td.style.whiteSpace = col.nobr?'nowrap':'break-spaces';
+
+                    if(col.lineClamp)
+                    {
+                        _td.style.display= '-webkit-box';
+                        _td.style.lineClamp = col.lineClamp;
+                       
+                    }
                     tr.appendChild(_td);
                   
                 }
