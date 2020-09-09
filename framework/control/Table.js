@@ -891,7 +891,7 @@ Rsd.define('Rsd.control.Table', {
                     _td.style.textOverflow = 'ellipsis';
                     if(col.nobr)
                     {
-                        _td.setAttribute('nowrap');
+                        _td.setAttribute('nowrap',true);
                     } 
                     _td.style.whiteSpace = col.nobr?'nowrap':'break-spaces';
                     tr.appendChild(_td);
