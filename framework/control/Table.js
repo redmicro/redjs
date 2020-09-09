@@ -579,6 +579,8 @@ Rsd.define('Rsd.control.Table', {
                         {
                             _p.style.width ='100%';
                             _p.style.height = '100%';
+                            _p.style.textOverflow = 'ellipsis';
+                            _p.style.overflow = 'hidden';
                             _p.style.display= '-webkit-box';
                             _p.style.lineClamp = col.lineClamp; 
                         }
