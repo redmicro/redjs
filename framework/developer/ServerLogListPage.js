@@ -93,6 +93,6 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
     },
     fromat_content:function fromat_content(row)
     {
-        return [Rsd.newLine(),Rsd.text('时间:'+row['LogTime'],'blue')];
+        return [Rsd.text(row['LogTime'],'blue')];
     }
 });
