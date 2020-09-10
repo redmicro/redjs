@@ -47,6 +47,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "xtype": "text",
             "width": 300,
             lineClamp:8,
+            format:'fromat_content',
             "nobr": false
         },
         {
@@ -58,24 +59,10 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'主机IP:#=CilentIp=#</br>线程:#=ThreadFlag=#</br>类:#=RefType=#</br>方法:#=RefMethod=#',
+            formatString:'主机IP:#=HostIp=#</br>线程:#=ThreadFlag=#</br>类:#=RefType=#</br>方法:#=RefMethod=#',
             "width": 150,
             "nobr": true
-        }, 
-        {
-            "name": "SessionId",
-            "dataIndex": "SessionId",
-            "sortable": false,
-            "text": "主机",
-            "index": 80,
-            align:'left',
-            "exist": true,
-            xtype:'template',
-            formatString:'时间:#=LogTime=#',
-            "width": 100,
-            "nobr": true
-        }
-        
+        } 
        
     ],
     sort:[{name:'CreateTime',direction:'DESC'}],
@@ -103,6 +90,9 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
         this.dataStore = Rsd.app.getService(_serviceName);
         _args.sort = this.sort || this.menu.sort||[];
         this.callParent(_args,callback) ;
+    },
+    fromat_content:function fromat_content(row)
+    {
+        return [Rsd.newLine(),Rsd.text('时间:'+row['LogTime'],'blue')];
     }
-
 });
