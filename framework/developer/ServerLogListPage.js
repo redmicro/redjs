@@ -53,12 +53,12 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "name": "RefType",
             "dataIndex": "RefType",
             "sortable": false,
-            "text": "引用位置",
+            "text": "发生位置",
             "index": 60,
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'#=RefType=#</br>#=RefMethod=#',
+            formatString:'主机IP:#=CilentIp=#</br>线程:#=ThreadFlag=#</br>类:#=RefType=#</br>方法:#=RefMethod=#',
             "width": 150,
             "nobr": true
         }, 
@@ -71,7 +71,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             align:'left',
             "exist": true,
             xtype:'template',
-            formatString:'时间:#=LogTime=#</br>线程:#=ThreadFlag=#</br>主机IP:#=CilentIp=#',
+            formatString:'时间:#=LogTime=#',
             "width": 100,
             "nobr": true
         }
