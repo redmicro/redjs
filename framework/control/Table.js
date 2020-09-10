@@ -580,7 +580,7 @@ Rsd.define('Rsd.control.Table', {
                         if(col.lineClamp)
                         {
                             _p.style.width ='100%';
-                            _p.style.height = '100%';
+                            //_p.style.height = '100%';
                             _p.style.textOverflow = 'ellipsis';
                             _p.style.overflow = 'hidden'; 
                             _p.style.maxHeight = (col.lineClamp*14)+'px'; 
