@@ -1009,8 +1009,16 @@ Rsd.define('Rsd.common.ComponentX', {
 
         var _box = this.popupBox;
         if (_box) {
-            this.setElStyle(_box,_style);
-            _box.style.display = null;
+            this.setElStyle(_box,_style); 
+            if( _box.style.display == 'none')
+            {
+                _box.style.display = null;
+                _box.style.visibility = 'hidden'; 
+                setTimeout(function(){
+                    _box.style.visibility = 'visible';
+                },250);
+            } 
+          
             var me = this;
             Rsd.events.add(Rsd,'click',this.id,function () {
                 me.closePopupBox();

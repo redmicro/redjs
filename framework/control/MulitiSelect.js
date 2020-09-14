@@ -22,9 +22,8 @@ Rsd.define('Rsd.control.MulitiSelect', {
                 var _style = {};
                 var _left = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10);
                 _style.marginLeft =  _left + 'px';
-                _style.marginTop = (me.height - 5) + 'px';
-                _style.tabIndex = me.tabIndex;
-                
+                _style.marginTop = (me.height - parseInt(me.container.style.marginBottom)) + 'px';
+                _style.tabIndex = me.tabIndex; 
                 _style.width = (me.width - _left - parseInt(me.container.style.marginLeft)  - parseInt(me.container.style.marginRight)) + 'px'; 
                 me.showPopupBox(null,_style);
                 event.isCancel = true;
@@ -38,9 +37,9 @@ Rsd.define('Rsd.control.MulitiSelect', {
                 var _style = {};
                 var _left = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10);
                 _style.marginLeft =  _left + 'px';
-                _style.marginTop = (me.height - 5) + 'px';
+                _style.marginTop = (me.height - parseInt(me.container.style.marginBottom)) + 'px';  
                 _style.tabIndex = me.tabIndex;
-                _style.width = (me.width - _left -parseInt(me.container.marginLeft) - parseInt(me.container.marginRight)) + 'px'; 
+                _style.width = (me.width - _left -parseInt(me.container.style.marginLeft) - parseInt(me.container.style.marginRight)) + 'px'; 
                 me.showPopupBox(null,_style);
                 return false;
             }
@@ -87,8 +86,13 @@ Rsd.define('Rsd.control.MulitiSelect', {
         var me = this;
 
         this.callParent();
-
-        this.initPopupBox({minWidth:'100px',minHeight:'50px',maxHeight:'300px',overflowY:'auto'},'x-box','');
+         
+        this.initPopupBox(
+            {
+            minWidth:'100px',
+            minHeight:'50px',
+            maxHeight:'300px',
+            overflowY:'auto'},'x-box','');
 
         setTimeout(function () {
             me.loadData(me.dataSource);
@@ -132,7 +136,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
             li.appendChild(chk);
 
             li.appendChild(document.createTextNode(list[i][me.textMember]));
-
+           
             me.popupBox.appendChild(li);
         }
 
