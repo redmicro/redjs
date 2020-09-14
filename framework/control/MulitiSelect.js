@@ -20,11 +20,12 @@ Rsd.define('Rsd.control.MulitiSelect', {
             fn:function (sender,event) {
                 var me = this;
                 var _style = {};
-                _style.width = me.ctrl.style.width;
-                _style.marginLeft = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10) + 'px';
+                var _left = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10);
+                _style.marginLeft =  _left + 'px';
                 _style.marginTop = (me.height - 5) + 'px';
                 _style.tabIndex = me.tabIndex;
-
+                
+                _style.width = (me.width - _left - parseInt(me.container.style.marginLeft)  - parseInt(me.container.style.marginRight)) + 'px'; 
                 me.showPopupBox(null,_style);
                 event.isCancel = true;
                 return false;
@@ -35,11 +36,11 @@ Rsd.define('Rsd.control.MulitiSelect', {
             fn:function (sender,event) {
                 var me = this;
                 var _style = {};
-                _style.width = me.ctrl.style.width;
-                _style.marginLeft = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10) + 'px';
+                var _left = ((me.label.width ? me.label.width : me.label.element.clientWidth) + 10);
+                _style.marginLeft =  _left + 'px';
                 _style.marginTop = (me.height - 5) + 'px';
                 _style.tabIndex = me.tabIndex;
-
+                _style.width = (me.width - _left -parseInt(me.container.marginLeft) - parseInt(me.container.marginRight)) + 'px'; 
                 me.showPopupBox(null,_style);
                 return false;
             }
@@ -69,12 +70,16 @@ Rsd.define('Rsd.control.MulitiSelect', {
             }
         }
     },
-    /*
+    /**
+    数据源
+    */
+    dataSource:null,
+    /**
      * */
     constructor: function MulitiSelect (config) {
         this.apply(config||{});
     },
-    /*
+    /**
     *
     * */
     onAfterInit:function onAfterInit() {
@@ -83,7 +88,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
 
         this.callParent();
 
-        this.initPopupBox({minHeight:'50px',maxHeight:'300px',overflowY:'auto'},'x-box','');
+        this.initPopupBox({minWidth:'100px',minHeight:'50px',maxHeight:'300px',overflowY:'auto'},'x-box','');
 
         setTimeout(function () {
             me.loadData(me.dataSource);
@@ -91,7 +96,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
 
     },
 
-    /*
+    /**  
      *可通过 重写该方法，定制多选框
      *
      * */
@@ -133,7 +138,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
 
     },
 
-    /*
+    /**
      * */
     getValue:function getValue() {
 
@@ -152,9 +157,8 @@ Rsd.define('Rsd.control.MulitiSelect', {
         return this.__value ;
     },
 
-    /*
-     *
-     *
+    /**
+     * 
      * */
     getText:function getText() {
        var _list = this.getValue();
@@ -165,7 +169,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
         }
         return _temp;
     },
-    /*
+    /**
      *
      * */
     setValue:function setValue(value) {
@@ -173,7 +177,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
         this.__value = value ;
 
     },
-    /*
+    /**
      *
      * */
     makeControl:function makeContrl(config,row) {
@@ -214,6 +218,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
 
         return [_ctrl];
     }
+
 },function (type) {
     var _valueItemGetter = function () {
 

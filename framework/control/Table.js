@@ -596,22 +596,12 @@ Rsd.define('Rsd.control.Table', {
                         _tip.style.height = '8px';
                         _tip.style.verticalAlign = 'text-bottom';
 
-                        _tip.onmouseover = function (e) {
-                            //console.log('this is mouseover');
-                            var _text = document.createElement('textarea');
-                            _text.style.width = '100%';
-                            _text.style.height = '100%';
-                            _text.value = _value;
-
-                            me.initPopupBox({width:200, height:150});
-                            me.showPopupBox(_text, {marginLeft:e.srcElement.offsetLeft, marginTop:e.clientY - e.srcElement.parentElement.offsetHeight});
-                            _text.readonly = true;
-
+                        _tip.onclick = function (e) {
+                            //console.log('this is mouseover'); 
+                            Rsd.showHtml(col.text||'详细内容',_value); 
                             return false;
                         };
-                        _tip.onmouseout = function (e) {
-                            me.closePopupBox();
-                        };
+                         
                         _cell.push(_tip);
 
 

@@ -19,7 +19,7 @@ Rsd.define('Rsd.control.MessageBox', {
     layout:'border',
     buttons:[{btn:'确 定',fn:function(){}}],
     items:[
-        {xtype:'container',  cls:'x-message-box', region:'center', layout:{type:'vbox'}},
+        {xtype:'container',  cls:'x-message-box', style:{overflow:'auto'}, region:'center', layout:{type:'vbox'}},
         {
             xtype:'container',
             margin: '2 10 7 10',
