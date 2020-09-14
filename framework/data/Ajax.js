@@ -270,7 +270,11 @@ Rsd.define('Rsd.data.Ajax', {
         return _c;
     },
 
-
+    /**
+     * 
+     * @param {*} obj 
+     * @param {*} pre 
+     */
     toString:function toString(obj,pre) {
 
 
@@ -281,12 +285,21 @@ Rsd.define('Rsd.data.Ajax', {
         }
 
         if (typeof obj == "string") {
-            return "" + obj.replace(/([\"\\])/g, "\\$1").replace(/(\n)/g, "\\n").replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "";
+            if(_pre)
+            {
+                return _pre +"=" + obj.replace(/([\"\\])/g, "\\$1").replace(/(\n)/g, "\\n").replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "";
+            }else
+            {
+                return "" + obj.replace(/([\"\\])/g, "\\$1").replace(/(\n)/g, "\\n").replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "";
+            }
+           
         }
+
         if (obj instanceof Array) {
             var r = [];
             for (var i = 0; i < obj.length; i++) {
                 if (typeof (obj[i]) == 'function') {
+
                     continue;
                 }
                 if (typeof obj[i] == 'object') {
@@ -296,11 +309,15 @@ Rsd.define('Rsd.data.Ajax', {
                 else {
                     r.push(this.toString(obj[i], _pre + '[' + i + ']'))
                 }
+               
 
                 if (!_pre) {
                     r = r.join('&');
                 }
             }
+            
+            //非对象类型的数组 没有处理为:[1,24,5] 格式
+
             return r;
         }
 
@@ -313,7 +330,6 @@ Rsd.define('Rsd.data.Ajax', {
                 }
                 if ( obj[k]==null || typeof  obj[k] == "string") {
 
-
                     if(_pre)
                     {
                         r.push(_pre + '[' + k + ']' + "=" +  this.toString(obj[k]));
@@ -323,8 +339,9 @@ Rsd.define('Rsd.data.Ajax', {
                     }
                     continue;
                 }
+                 
                 if(typeof obj[k] == 'object' )
-                {
+                { 
                     if(_pre)
                     {
                         var _t = this.toString(obj[k],_pre + '[' + k + ']');
@@ -352,6 +369,7 @@ Rsd.define('Rsd.data.Ajax', {
             {
                 r = r.join('&');
             }
+            //console.log(r);
             return r;
         }
 
@@ -374,7 +392,7 @@ Rsd.define('Rsd.data.Ajax', {
             xhr = new ActiveXObject('Microsoft.XMLHTTP')
         }
 
-
+ 
         //可注册事件
         //onreadystatechange
         //abort

@@ -31,7 +31,7 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'操作人:#=Operator=#</br>会话:#=SessionId=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#',
+            formatString:'操作人:#=Operator=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#</br>会话:#=SessionId=#',
             "width": 80,
             "nobr": true
         },
