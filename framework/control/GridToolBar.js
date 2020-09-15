@@ -154,6 +154,26 @@ Rsd.define('Rsd.control.GridToolBar', {
             {
                 continue;
             }
+            if(_value instanceof Array)
+            {
+                var _list = [];
+                for(var i in _value)
+                {
+                    if(Rsd.isObject(_value[i]))
+                    {
+                        _list.push(_value[i].value);
+                    }
+                    else
+                    {
+                        _list.push(_value[i]);
+                    }
+                   
+                }
+                _value = _list;
+                _c.push({name:_item.dataIndex||_item.name||_item.key,value:_value,op:_item.op || 'in'});
+                
+                continue;
+            }
             if(_item.op==undefined || _item.op==null || _item.op =='' || _item.op == 'like')
             {
                 _value = '%25' + _value + '%25';

@@ -157,7 +157,7 @@ Rsd.define('Rsd.control.MulitiSelect', {
         }
 
         this.__value = _temp;
-
+        //console.log(_temp);
         return this.__value ;
     },
 
