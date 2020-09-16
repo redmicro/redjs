@@ -47,7 +47,7 @@ Rsd.define('Rsd.view.MasterLTC', {
             region: 'left',
             width: 160,
             itemHover:true,
-            itemStyle:{height:'45px',lineHeight:'45px'},
+            itemStyle:{height:'45px',lineHeight:'45px',"margin":'0px 2px 1px 0px'},
             itemClick:'left_menu_lick',
             itemSelectedCls:'x-selected',
             layout:'vbox',
