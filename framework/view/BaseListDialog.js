@@ -4,7 +4,7 @@
 Rsd.define('Rsd.view.BaseListDialog', {
     extend: 'Rsd.container.Dialog',
     requires: [ 'Rsd.control.Grid'],
-    xtype: 'list-dialog',
+    xtype: 'base-list-dialog',
     width: 480,
     layout: 'vbox',
     readOnly:true,

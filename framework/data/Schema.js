@@ -26,13 +26,14 @@ Rsd.define('Rsd.data.Schema', {
         this.apply(config);
     },
     /**
-    * @description 对已存在但列进行合并，对不存在列不会添加到原始数组中
+    * @description 对已存在但列进行合并，对不存在列不会添加到原始数组中,可通过列的visible属性控制列的显示状态
     * */
     getColumns:function getColumns(cols) {
 
 
         var  _temp = [];
         var _list = cols||[];
+ 
         for(var i in _list)
         {
             var _c = _list[i];
@@ -41,9 +42,10 @@ Rsd.define('Rsd.data.Schema', {
                 continue;
             }
             if(this.__columns_m[_c.name])
-            {
+            { 
                 this.__columns_m[_c.name].tip = this.__columns_m[_c.name].text;
-                Rsd.apply(this.__columns_m[_c.name],_c)
+                Rsd.apply(this.__columns_m[_c.name],_c);
+               
             }
             else
             {
@@ -51,11 +53,22 @@ Rsd.define('Rsd.data.Schema', {
             }
         }
         _temp = _temp.concat(this.columns||[]);
+
         _temp.sort(function (a,b) {
             return a.index - b.index;
         })
 
-        return _temp;
+        var _rs = [];
+        for(var i in _temp)
+        {
+            if(_temp[i].visible === false)
+            {
+                continue;
+            }
+            _rs.push(_temp[i])
+        }
+
+        return _rs;
     },
     /*
     *
