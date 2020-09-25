@@ -787,14 +787,15 @@ Rsd.define('Rsd.container.Component', {
      * 根据ID获取
      * */
     getItemById: function getItemById(id) {
+       
         if(Rsd.isEmpty(id))
         {
             return null;
         }
         function iterate(parent) {
-            var _item = null;
+            var _item = null; 
             if (Rsd.isArray(parent.items)) {
-                for (var i = 0;i < parent.items.length;i++) {
+                for (var i = 0;i < parent.items.length;i++) { 
                     if (parent.items[i].id && parent.items[i].id == id) {
                         _item = parent.items[i];
                         break;

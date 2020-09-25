@@ -12,9 +12,7 @@ Rsd.define('Rsd.container.Simulator', {
     header:{cls:'x-phone-header',space:1,visible:true},
     cls:'x-simulator',
     bodyCls:'x-phone-body',
-    items:[
-        
-    ],
+    items:[],
     setting:['$className','id','bodyCls','cls','height','layout','floating','text','title','name','width','xtype','label','header','action','method'],
     controls:{},
     /*
@@ -66,6 +64,7 @@ Rsd.define('Rsd.container.Simulator', {
                 //console.log('doc DragOver')
             });
         }
+        this.simulator = this.items[0];
     },
     /*
     * */
@@ -228,14 +227,19 @@ Rsd.define('Rsd.container.Simulator', {
                     {
                         return;
                     }
-                    var _obj = Rsd.get(_data.id);
-
+                  
+                    var _obj = me.controls[_data.id];
+                    if(_obj == null)
+                    {
+                        console.error('未找到对象'+_data.id);
+                    }
                     if(sender instanceof  Rsd.container.Component)
                     {
                         sender.add(_obj);
                     }
                     else
-                    {console.log(_obj);console.log(sender);
+                    {
+                        
                         sender.dom.parentNode.insertBefore(_obj.dom,sender.dom);
                     }
                     if(me.onChanged)
