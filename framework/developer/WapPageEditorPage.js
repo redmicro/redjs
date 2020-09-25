@@ -13,19 +13,23 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
         'Rsd.control.Tree',
         'Rsd.control.Svg'],
     layout: 'border',
-    header:{
-        xtype:'list-menu',
-        width:'100%',
-        visible:true,
-        cls:'x-list-view-toolbar',
-        height:50,
-        itemClick:'btn_add',
-        "itemStyle":{"height":'50px',"width":'auto',"float":'left',"textAlign":'center',"marginRight":'2px'}
-        },
+    header:null,
     items:[
+        {
+            xtype:'list-menu', 
+            width:90,
+            visible:true,
+            style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,zIndex:9999},
+            cls:'x-list-view-toolbar', 
+            fixed:{top:150,bottom:100,left:360},
+            itemClick:'btn_add',
+            "itemStyle":{"height":'50px',"width":'80px',"float":'left',"textAlign":'left',"marginRight":'2px'}
+            },
         {
             xtype: 'grid',
             region:'left',
+            margin:'0 0 10 0',
+            width:250,
             label:{
                xtype:'combobox',
                label: {
@@ -51,9 +55,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             border:false,
             columns:[{xtype:'index',text:'序号'},{text:'名称',width:80,dataIndex:'name'},{text:'类型',width:100,dataIndex:'value',editable:true},{dataIndex:'op',width:20}],
             dataSource:[{name:'春节档首页'},{name:'元霄档首页'},{name:'2-14情人节首页'},{name:'3-8节首页'}],
-            rowdblclick:'doc_rowdblclick',
-            margin:'0 0 10 0',
-            width:250
+            rowdblclick:'doc_rowdblclick'
         },
         {
             xtype:'simulator',
@@ -129,19 +131,46 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
 
     ],
     ctrlConfig:[
-        {text:'Form',icon:'default.123',width:80,config:{xtype:'form',draggable:true,text:'Form',border:true,width:'100%',height:100}},
-        {text:'Box',icon:'default.123',width:80,config:{xtype:'container',draggable:true,text:'Box',border:true,width:'100%',height:100}},
-        {text:'图片',width:90,config:{xtype:'image',draggable:true,text:'Image',border:false,view:false,width:'100%',height:150,
-                src:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532410988540&di=33cd12dd3d1b9b96af35c45c77064a1f&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fa686c9177f3e67097d4b8ed230c79f3df8dc5550.jpg'}
+        {
+            text:'Form',icon:'default.123',
+            config:{xtype:'form',draggable:true,text:'Form',border:true,width:'100%',height:100}
         },
-        {text:'文本',icon:'default.6',width:90,config:{xtype:'label',draggable:true,label:'标题',text:'文字信息',width:'100%'}},
-        {text:'Image',width:100,config:{xtype:'image',draggable:true,text:'Image'}},
-        {text:'按钮',width:90,config:{xtype:'button',draggable:true,text:'提交按钮'}},
-        {text:'幻灯片',width:110,config:{}},
-        {text:'Icons',width:110,config:{}},
-        {text:'tabList',width:110,config:{}},
-        {text:'导航栏',width:110,config:{}},
-        {text:'统计',width:90,config:{}}
+        {
+            text:'Box',icon:'default.123',
+            config:{xtype:'container',draggable:true,text:'Box',border:true,width:'100%',height:100}},
+        {
+            text:'图片',icon:'default.146',
+            config:{
+                xtype:'image',
+                draggable:true,
+                text:'Image',
+                border:false,
+                view:false,
+                width:'100%',
+                height:150,
+                src:'http://image.redmicro.cn/wxapp/xchief/emptyImg.png'
+            }
+        },
+        {
+            text:'文本',icon:'default.6',
+            config:{xtype:'label',draggable:true,label:'标题',text:'文字信息',width:'100%'}
+        },
+        {
+            text:'连接',icon:'default.5',
+            config:{xtype:'link',draggable:true,text:'Image'}
+        },
+        {
+            text:'按钮',icon:'default.14',
+            config:{xtype:'button',draggable:true,text:'提交按钮'}
+        },
+        {
+            text:'幻灯片',
+            config:{}
+        },
+        {text:'Icons',config:{}},
+        {text:'tabList',config:{}},
+        {text:'导航栏',config:{}},
+        {text:'报表',config:{}}
     ],
     saveApi:null,
     getApi:null,
@@ -159,8 +188,8 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     * */
     load:function load() {
         //this.items[4].dom.style.left = ( Rsd.app.MainForm.left.dom.clientWidth + 250)+'px';
-        this.items[0].loadData();
-        this.items[1].setDocumentIndex("javascript:void(0);");
+        this.items[1].loadData();
+        this.items[2].setDocumentIndex("javascript:void(0);");
 
         var svg = Rsd.create('Rsd.common.Svg',{});
         svg.load(Rsd.getRedjsUrl('/resources/svg/default.js'));
@@ -172,27 +201,30 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             btns.addItem(this.ctrlConfig[i]);
         }
 
-        var listView = this.header.content ;
-        listView.loadData(btns);
+        var listView = this.items[0];
 
+        setTimeout(function(){
+            listView.loadData(btns);
+        },1000);
+        
 
         var me = this;
-        var _doc = me.items[1].getDocument();
+        var _doc = me.items[2].getDocument();
         if(_doc==null)
         {
             setTimeout(function () {
 
-                var _doc = me.items[1].getDocument();
+                var _doc = me.items[2].getDocument();
                 if(_doc != null)
                 {
                     var link = _doc.createElement('link');
                     link.type = 'text/css';
                     link.rel = 'stylesheet';
-                    link.href = Rsd.getRedjsHost() + '/resources/css/Rsd.css';
+                    link.href = Rsd.getRedjsHost() + 'resources/css/Rsd.css';
                     var head = _doc.getElementsByTagName('head')[0];
                     head.appendChild(link);
 
-                    me.items[1].setDocumentTitle('无标题');
+                    me.items[2].setDocumentTitle('无标题');
                 }
                 me.buildTree();
             },100);
@@ -228,7 +260,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
         var me = this;
         var _menu = item.content.menu;
 
-        var _ctrl = this.items[1].addControl(_menu.config);
+        var _ctrl = this.items[2].addControl(_menu.config);
 
         this.showProperty(_ctrl, null);
 
@@ -249,8 +281,8 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
      buildTree:function buildTree() {
 
 
-         var _doc = this.items[1].getDocConfig();
-         var _tree = this.items[3];
+         var _doc = this.items[2].getDocConfig();
+         var _tree = this.items[4];
 
          var _nodes = [];
          _nodes.push({text: _doc.title,id:_doc.id,  autoExpanded: true, dynamic: true, tag: _doc.element})
@@ -290,12 +322,12 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     * */
     showProperty:function showProperty(sender, event) {
 
-        var _grid = this.items[2];
+        var _grid = this.items[3];
         _grid.element = sender;
         var arr = [];
 
 
-        var _config = this.items[1].getControlConfig(sender);
+        var _config = this.items[2].getControlConfig(sender);
 
         for (var i in _config) {
             var _c = _config[i];
@@ -368,16 +400,16 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     * */
     on_change:function on_change(sender,event) {
 
-        var _grid = this.items[2];
+        var _grid = this.items[3];
          if(Rsd.isType(_grid.element ,HTMLDocument))
          {
              if(sender.name == 'title')
              {
-                 this.items[1].setDocumentTitle(sender.getValue());
+                 this.items[2].setDocumentTitle(sender.getValue());
              }
              if(sender.name == 'indexFile')
              {
-                 this.items[1].setDocumentIndex(sender.getValue());
+                 this.items[2].setDocumentIndex(sender.getValue());
              }
              //
          }

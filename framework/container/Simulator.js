@@ -85,9 +85,9 @@ Rsd.define('Rsd.container.Simulator', {
         }
         return null;
     },
-    /*
-    *
-    * */
+    /**
+     * @description 设置doc标题
+     */ 
     setDocumentTitle:function setDocumentTitle(title) {
         var me = this;
         var _doc = this.getDocument();
@@ -96,9 +96,9 @@ Rsd.define('Rsd.container.Simulator', {
         this.items[0].title = title ;
 
     },
-    /*
-    *
-    * */
+    /**
+     * @description 设置doc地址
+     */ 
     setDocumentIndex:function setDocumentIndex(index)
     {
         this.items[0].body.src = index;
