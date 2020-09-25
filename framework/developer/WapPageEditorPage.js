@@ -21,10 +21,10 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             visible:true,
             style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,zIndex:9999},
             cls:'x-list-view-toolbar', 
-            fixed:{top:150,bottom:100,left:360},
+            fixed:{top:120,bottom:100,left:360},
             itemClick:'btn_add',
             "itemStyle":{"height":'50px',"width":'80px',"float":'left',"textAlign":'left',"marginRight":'2px'}
-            },
+        },
         {
             xtype: 'grid',
             region:'left',
@@ -66,7 +66,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             margin:'10px auto 10px auto',
             onChanged:'buildTree',
             onSelectChanged:'showProperty',
-            flex:500
+            flex:500, 
         },
         {
             xtype: 'grid',
@@ -78,7 +78,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             border:false,
             columns:[{text:'名称',width:80,dataIndex:'name'},{text:'值',width:100,dataIndex:'value',editable:true},{dataIndex:'op',width:20}],
             rowdblclick:'pr_rowdblclick',
-            margin:'0 0 10 0',
+            margin:'0 0 10 10',
             width:250
         },
         {
@@ -103,12 +103,12 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
                 width:'100%',
                 handler:'btn_refresh'
             },
-            style:{backgroundColor:'#rgba(255, 255, 255, 0.25)'},
-            height:'100%',
+            style:{backgroundColor:'#rgba(255, 255, 255, 0.25)',border:'1px black solid'},
+            height:'99%',
             nodeClick:'select_ele',
             showRoot:false,
             border:false,
-            margin:'0 10 0 0',
+            margin:'0 0 0 0',
             width:250
         },
         {
@@ -117,7 +117,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             border:false,
             margin:'10 50 0 50',
             style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50},
-            fixed:{bottom:30,right:500,left:250},
+            fixed:{bottom:30,right:550,left:360},
             layout:'hbox',
             items:[
                 {flex:1},
@@ -157,7 +157,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
         },
         {
             text:'连接',icon:'default.5',
-            config:{xtype:'link',draggable:true,text:'Image'}
+            config:{xtype:'link', width:'100%',draggable:true,text:'点击跳转'}
         },
         {
             text:'按钮',icon:'default.14',
@@ -189,8 +189,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     load:function load() {
         //this.items[4].dom.style.left = ( Rsd.app.MainForm.left.dom.clientWidth + 250)+'px';
         this.items[1].loadData();
-        this.items[2].setDocumentIndex("javascript:void(0);");
-
+        
         var svg = Rsd.create('Rsd.common.Svg',{});
         svg.load(Rsd.getRedjsUrl('/resources/svg/default.js'));
 
@@ -259,7 +258,16 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     btn_add:function btn_add(item) {
         var me = this;
         var _menu = item.content.menu;
-
+        if(_menu.config=== undefined || _menu.config==null)
+        {
+            Rsd.alert('控件['+_menu.text +']未设置config');
+            return;
+        }
+        if(Rsd.isEmpty(_menu.config.xtype))
+        {
+            Rsd.alert('控件['+_menu.text +']config属性未设置xtype');
+            return;
+        }
         var _ctrl = this.items[2].addControl(_menu.config);
 
         this.showProperty(_ctrl, null);

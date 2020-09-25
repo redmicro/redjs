@@ -13,15 +13,7 @@ Rsd.define('Rsd.container.Simulator', {
     cls:'x-simulator',
     bodyCls:'x-phone-body',
     items:[
-        {
-            width:'100%',
-            height:'100%',
-            header:{cls:'x-app-header',height:45,space:1,visible:true},
-            bodyTagName:'iframe',
-            bodyCls:'x-app-body',
-            afterLayout:'app_afterLayout',
-            border:false
-        }
+        
     ],
     setting:['$className','id','bodyCls','cls','height','layout','floating','text','title','name','width','xtype','label','header','action','method'],
     controls:{},
@@ -30,7 +22,15 @@ Rsd.define('Rsd.container.Simulator', {
     constructor: function Simulator(config) {
         config = config || {};
         this.apply(config);
-
+        this.items.push({
+            width:'100%',
+            height:'100%',
+            header:{cls:'x-app-header',height:45,space:1,visible:true},
+            bodyTagName:'iframe',
+            bodyCls:'x-app-body',
+            afterLayout:'app_afterLayout',
+            border:false
+        });
     },
     /*
     * */
@@ -97,12 +97,13 @@ Rsd.define('Rsd.container.Simulator', {
 
     },
     /**
-     * @description 设置doc地址
+     * @description 加载子控件
      */ 
-    setDocumentIndex:function setDocumentIndex(index)
+    loadData:function loadData(items)
     {
-        this.items[0].body.src = index;
+       
     },
+     
     /*
     * */
     setControlProperty:function(id,name,value)
@@ -234,7 +235,7 @@ Rsd.define('Rsd.container.Simulator', {
                         sender.add(_obj);
                     }
                     else
-                    {
+                    {console.log(_obj);console.log(sender);
                         sender.dom.parentNode.insertBefore(_obj.dom,sender.dom);
                     }
                     if(me.onChanged)
