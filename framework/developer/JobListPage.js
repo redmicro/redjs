@@ -72,13 +72,14 @@ Rsd.define("Rsd.developer.JobListPage", {
                         "text": "已休眠"
                     },
                     {
-                        "code": "Close",
+                        "code": "Closed",
                         "value": 16,
                         "text": "已关闭"
                     }
                 ]
             },
             "width": 100,
+            format:'status_format',
             "nobr": true
         },
         {
@@ -248,7 +249,7 @@ Rsd.define("Rsd.developer.JobListPage", {
             Rsd.newLine(), 
             Rsd.text('有效期:'+ new Date(row['StartTime']).format('yyyy-MM-dd hh:mm:ss')) ,
             Rsd.newLine(),
-            Rsd.blankspan(2),Rsd.text('    至' + new Date(row['EndTime']).format('yyyy-MM-dd hh:mm:ss')), 
+            Rsd.blankspan(2),Rsd.text('    至' + (row['EndTime']==0?' 无限期':new Date(row['EndTime']).format('yyyy-MM-dd hh:mm:ss'))), 
             Rsd.newLine()
            
         ];
@@ -285,7 +286,13 @@ Rsd.define("Rsd.developer.JobListPage", {
             Rsd.text('类型:'+row['RunHostType'],0,'green')
             ];     
     },
-
+    status_format:function status_format(row)
+    {
+        return [
+            Rsd.newLine(),
+            Rsd.text('['+ new Date(row['StatusChangeTime']).format('yyyy-MM-dd hh:mm:ss') + ']',0,'','最新状态更新时间'),
+        ];
+    },
     time_format:function time_format(row)
     {
           
@@ -331,7 +338,7 @@ Rsd.define("Rsd.developer.JobListPage", {
 
          return [
             Rsd.newLine(),
-            Rsd.text( new Date(row['LastExeTime']).format('yyyy-MM-dd hh:mm:ss')),
+            Rsd.text( '['+ new Date(row['LastExeTime']).format('yyyy-MM-dd hh:mm:ss')+ ']',0,'','最后一次执行时间'),
             Rsd.newLine(), 
             Rsd.newLine(), 
             Rsd.button('查看代码',_view_code,this,{},{float:'right'}),

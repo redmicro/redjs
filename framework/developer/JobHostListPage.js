@@ -57,18 +57,6 @@ Rsd.define("Rsd.developer.JobHostListPage", {
             "__index__": 5
         },
         {
-            "name": "ExpireTime",
-            "dataIndex": "ExpireTime",
-            "sortable": false,
-            "text": "失效时间",
-            "index": 28,
-            "exist": true,
-            "xtype": "timestamp",
-            "width": 100,
-            "precision": 6,
-            "deep": 1
-        },
-        {
             "name": "LastHeartTime",
             "dataIndex": "LastHeartTime",
             "sortable": false,
@@ -80,6 +68,19 @@ Rsd.define("Rsd.developer.JobHostListPage", {
             "precision": 6,
             "deep": 1
         },
+        {
+            "name": "ExpireTime",
+            "dataIndex": "ExpireTime",
+            "sortable": false,
+            "text": "失效时间",
+            "index": 28,
+            "exist": true,
+            "xtype": "timestamp",
+            "width": 100,
+            "precision": 6,
+            "deep": 1
+        },
+      
         {
             "name": "LoadedWeight",
             "dataIndex": "LoadedWeight",

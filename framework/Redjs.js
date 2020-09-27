@@ -3106,17 +3106,21 @@ function Redjs(config) {
     };
     /*
     * */
-    this.label = function label(text, color) {
+    this.label = function label(text, color,tip) {
 
-        var _l = document.createElement('label');
-        _l.classList.add('x-text-label');
-        _l.innerHTML = text;
+        var _lbl = document.createElement('label');
+        _lbl.classList.add('x-text-label');
+        _lbl.innerHTML = text;
+        if(Rsd.isString(tip))
+        {
+            _lbl.title = tip;
+        }
         if(!this.isEmpty(color))
         {
-            _l.style.backgroundColor = color;
-            _l.style.borderColor = color;
+            _lbl.style.backgroundColor = color;
+            _lbl.style.borderColor = color;
         }
-        return _l;
+        return _lbl;
     };
     /**
      * @public
@@ -3125,7 +3129,7 @@ function Redjs(config) {
      *  @param {number} width 宽度
      *   @param {string} color 文本颜色
      * */
-    this.text = function text(text, width, color) {
+    this.text = function text(text, width, color,tip) {
         var _t = text || '';
         var _w = width||0;
         var _c = color || 'grey';
@@ -3139,7 +3143,12 @@ function Redjs(config) {
         if (_w > 0) {
             return this.parseDom('<span style="display: inline-block;overflow:hidden;color:' + _c + ';max-width: ' + _w + 'px;">' + _t + '</span>')[0];
         }
-        return this.parseDom('<span style="color:' + _c + ';">' + _t + '</span>')[0];
+        var txt = this.parseDom('<span style="color:' + _c + ';">' + _t + '</span>')[0];
+        if(Rsd.isString(tip))
+        {
+            txt.title = tip;
+        }
+        return txt;
     };
 
     /**
@@ -3185,12 +3194,16 @@ function Redjs(config) {
      * @param {array}  args fn参数
      * @param {object} style 样式对象{text:'',backroud}
      * */
-    this.button = function button(text, fn, caller, args,style) {
+    this.button = function button(text, fn, caller, args,style,tip) {
         var me = Rsd||this;
         var btn = document.createElement('a');
         btn.classList.add('x-text-button');
         btn.href = 'javascript:void(0);';
         btn.innerHTML = text;
+        if(Rsd.isString(tip))
+        {
+            btn.title = tip;
+        }
         this.setElStyle(btn,style||{});
         if (me.isEmpty(fn)) {
             btn.title = "暂不可操作。";

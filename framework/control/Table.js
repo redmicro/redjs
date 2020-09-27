@@ -595,7 +595,7 @@ Rsd.define('Rsd.control.Table', {
                         _tip.style.width = '8px';
                         _tip.style.height = '8px';
                         _tip.style.verticalAlign = 'text-bottom';
-
+                        _tip.title = '点击查看详细信息';
                         _tip.onclick = function (e) {
                             //console.log('this is mouseover'); 
                             Rsd.showHtml(col.text||'详细内容',_value); 
