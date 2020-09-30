@@ -605,7 +605,7 @@ legend {
 .x-componentx-container .x-label {
 
     cursor: inherit;
-    line-height: inherit;
+    line-height: normal;
     position: absolute !important;
 }
 
