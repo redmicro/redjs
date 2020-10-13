@@ -1,5 +1,5 @@
-Rsd.define('Rsd.developer.WapPageEditorPage', {
-    extend: 'Rsd.container.Page',
+Rsd.define('Rsd.developer.WapPageEditor', {
+    extend: 'Rsd.container.Dialog',
     requires: [
         'Rsd.container.Form',
         'Rsd.control.Button',
@@ -11,8 +11,12 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
         'Rsd.control.ListMenu',
         'Rsd.container.Simulator',
         'Rsd.control.Tree',
-        'Rsd.control.Svg'],
+        'Rsd.control.Svg'
+    ],
     layout: 'border',
+    width:'100%',
+    height:'100%',
+    closeBtn:false,
     header:null,
     items:[
         {
@@ -21,7 +25,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             visible:true,
             style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,zIndex:9999},
             cls:'x-list-view-toolbar', 
-            fixed:{top:120,bottom:100,left:360},
+            fixed:{top:50,bottom:100,left:360},
             itemClick:'btn_add',
             "itemStyle":{"height":'50px',"width":'80px',"float":'left',"textAlign":'left',"marginRight":'2px'}
         },
@@ -53,8 +57,20 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
             overflow:'auto',
             "style":{backgroundColor:'rgba(255, 255, 255, 0.25)'},
             border:false,
-            columns:[{xtype:'index',text:'序号'},{text:'名称',width:80,dataIndex:'name'},{text:'类型',width:100,dataIndex:'value',editable:true},{dataIndex:'op',width:20}],
-            dataSource:[{name:'春节档首页'},{name:'元霄档首页'},{name:'2-14情人节首页'},{name:'3-8节首页'}],
+            columns:
+            [
+                {xtype:'index',text:'序号'},
+                {text:'名称',width:80,dataIndex:'name'},
+                {text:'类型',width:100,dataIndex:'value',editable:true},
+                {dataIndex:'op',width:20}
+            ],
+            dataSource:
+            [
+                {name:'春节档首页'},
+                {name:'元霄档首页'},
+                {name:'2-14情人节首页'},
+                {name:'3-8节首页'}
+            ],
             rowdblclick:'doc_rowdblclick'
         },
         {
@@ -125,6 +141,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
                 {xtype:'button',text:'保 存',handler:'btn_save'},
                 {xtype:'button',text:'发 布',handler:'btn_relase'},
                 {xtype:'button',text:'重 置',handler:'btn_reset'},
+                {xtype:'button',text:'退 出',handler:'btn_close'},
                 {flex:1}
             ]
         }
@@ -248,6 +265,11 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     {
         Rsd.showPopup('重置');
     },
+    btn_close:function btn_close()
+    {
+        Rsd.showPopup('退出');
+        this.close();
+    },
     btn_type_change:function btn_type_change()
     {
         Rsd.showPopup('筛选');
@@ -286,7 +308,7 @@ Rsd.define('Rsd.developer.WapPageEditorPage', {
     /*
     *
     * */
-     buildTree:function buildTree() {
+    buildTree:function buildTree() {
 
 
          var _doc = this.items[2].getDocConfig();
