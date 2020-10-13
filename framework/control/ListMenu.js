@@ -79,7 +79,7 @@ Rsd.define('Rsd.control.ListMenu', {
                 _nodeList.push({
                     xtype: 'svg',
                     id:m.id,
-                    label: {width: _label_width, height: 25, align:'left',content: m.text, position: 'right'},
+                    label: {width: _label_width, height: 28, align:'left',content: m.text, position: 'right'},
                     width: _w,
                     margin: '10 10 10 10',
                     height: _h,
