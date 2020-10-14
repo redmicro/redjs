@@ -39,6 +39,8 @@ Rsd.define('Rsd.control.Table', {
      format:function(row, sender){return [];}
      //小数位(毫秒)精度，仅在xtype=number或xtype=timestamp时有效
      precision:0,
+     //仅在xtype=image时有效 空图片地址
+     emptyImg:'http://image.redmicro.cn/logo.png'
      //是否允许多选，仅在xtype=checkbox时有
      multiple:true,
      //合计

@@ -15,24 +15,16 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     ],
     layout: 'border',
     width:'100%',
-    height:'100%',
+    height:'100%', 
     closeBtn:false,
-    header:null,
-    items:[
-        {
-            xtype:'list-menu', 
-            width:90,
-            visible:true,
-            style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,zIndex:9999},
-            cls:'x-list-view-toolbar', 
-            fixed:{top:50,bottom:100,left:360},
-            itemClick:'btn_add',
-            "itemStyle":{"height":'50px',"width":'80px',"float":'left',"textAlign":'left',"marginRight":'2px'}
-        },
+    header:{height:55},
+    style:{overflow:'auto'},
+    cls:'',
+    items:[ 
         {
             xtype: 'grid',
             region:'left',
-            margin:'0 0 10 0',
+            margin:'0 10 10 0',
             width:250,
             label:{
                xtype:'combobox',
@@ -55,7 +47,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             },
             height:'100%',
             overflow:'auto',
-            "style":{backgroundColor:'rgba(255, 255, 255, 0.25)'},
+            "style":{backgroundColor:'rgba(214,214,214,0.2)'},
             border:false,
             columns:
             [
@@ -74,6 +66,18 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             rowdblclick:'doc_rowdblclick'
         },
         {
+            xtype:'list-menu', 
+            region:'left',
+            margin:'0 10 10 0',
+            width:100,
+            visible:true,
+            border:false,
+            style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,zIndex:9999,border:'1px black solid'},
+            cls:'x-list-view-toolbar',  
+            itemClick:'btn_add',
+            "itemStyle":{"height":'50px',"width":'80px',"float":'left',"textAlign":'left',"marginRight":'2px'}
+        },
+        {
             xtype:'simulator',
             region:'center',
             title:'',
@@ -90,7 +94,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             label:{content:'属性',style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',fontSize:'120%'},position:'top',height:40},
             height:'100%',
             overflow:'auto',
-            "style":{backgroundColor:'rgba(255, 255, 255, 0.25)'},
+            "style":{backgroundColor:'rgba(214,214,214,0.2)'},
             border:false,
             columns:[{text:'名称',width:80,dataIndex:'name'},{text:'值',width:100,dataIndex:'value',editable:true},{dataIndex:'op',width:20}],
             rowdblclick:'pr_rowdblclick',
@@ -119,21 +123,20 @@ Rsd.define('Rsd.developer.WapPageEditor', {
                 width:'100%',
                 handler:'btn_refresh'
             },
-            style:{backgroundColor:'#rgba(255, 255, 255, 0.25)',border:'1px black solid'},
-            height:'99%',
+            "style":{backgroundColor:'rgba(214,214,214,0.2)',border:'1px black solid'},  
             nodeClick:'select_ele',
             showRoot:false,
             border:false,
             margin:'0 0 0 0',
-            width:250
+            width:280
         },
         {
             height:50,
+            region:'bottom',
             //width:'500px',
             border:false,
-            margin:'10 50 0 50',
-            style:{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50},
-            fixed:{bottom:30,right:550,left:360},
+            margin:'10 50 10 50',
+            "style":{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,display:'flex'}, 
             layout:'hbox',
             items:[
                 {flex:1},
@@ -200,12 +203,17 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         config = config || {};
         this.apply(config);
     },
+    onAfterInit:function onAfterInit()
+    {
+        this.callParent();
+        this.setElStyle('container',{minHeight:900,minWidth:1600});
+    },
     /*
     *
     * */
     load:function load() {
         //this.items[4].dom.style.left = ( Rsd.app.MainForm.left.dom.clientWidth + 250)+'px';
-        this.items[1].loadData();
+        this.items[0].loadData();
         
         var svg = Rsd.create('Rsd.common.Svg',{});
         svg.load(Rsd.getRedjsUrl('/resources/svg/default.js'));
@@ -217,7 +225,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             btns.addItem(this.ctrlConfig[i]);
         }
 
-        var listView = this.items[0];
+        var listView = this.items[1];
 
         setTimeout(function(){
             listView.loadData(btns);

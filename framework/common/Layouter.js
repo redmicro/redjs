@@ -317,6 +317,10 @@ Rsd.define("Rsd.common.Layouter", {
 
         }
         var _p_top=0;
+        if(_t_flex)
+        {
+            obj.body.style.display= "flex";
+        }
         for (var i=0; i< obj.items.length ;i++) {
             _item = obj.items[i];
             if(_item.floating || _item.fixed)
@@ -328,8 +332,14 @@ Rsd.define("Rsd.common.Layouter", {
                 _item.width = '100%';
             }
 
-            if (_height_rest && _t_flex && _item.flex) {
-                _item.height = parseInt(_height_rest * _item.flex / _t_flex) + 'px';
+            //if (_height_rest && _t_flex && _item.flex) {
+            //    _item.height = parseInt(_height_rest * _item.flex / _t_flex) + 'px';
+            //}
+
+            if(_item.flex)
+            {
+                _item.style = _item.style||{};
+                _item.style.flex = _item.flex;
             }
             switch (_item.align || obj.layout.align)
             {
@@ -380,7 +390,7 @@ Rsd.define("Rsd.common.Layouter", {
         var _item;
         var _width_rest = obj.body.clientWidth;
         var _t_flex = 0;
-
+        
         for (var i=0; i< obj.items.length ;i++) {
             _item = obj.items[i];
             if(_item.floating || _item.fixed)
@@ -399,17 +409,24 @@ Rsd.define("Rsd.common.Layouter", {
             _width_rest -= _item.getWidth();
 
         }
-
+        if(_t_flex)
+        {
+            obj.body.style.display= "flex";
+        }
         for (var i=0; i< obj.items.length ;i++) {
             _item = obj.items[i];
             if(_item.floating || _item.fixed)
             {
                 continue;
             }
-            if (_width_rest && _t_flex && _item.flex) {
-                _item.width = parseInt(_width_rest * _item.flex / _t_flex) + 'px';
+            //if (_width_rest && _t_flex && _item.flex) {
+            //    _item.width = parseInt(_width_rest * _item.flex / _t_flex) + 'px';
+            //}
+            if(_item.flex)
+            {
+                _item.style = _item.style||{};
+                _item.style.flex = _item.flex;
             }
-
             switch (_item.align || obj.layout.align)
             {
                 case 'left':

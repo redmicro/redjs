@@ -196,6 +196,7 @@ Rsd.define('Rsd.control.Image', {
     },
     /*
     *
+    * 
     * */
     makeControl:function makeControl(config,row)
     {
@@ -260,45 +261,47 @@ Rsd.define('Rsd.control.Image', {
         _ctrl.onerror = function()
         {
             this.onerror = null;
-            var _src = this._src;
-            if(Rsd.isEmpty(_src))
+            if(_config.emptyImg)
             {
-                return;
-            }
-            var list = _src.split('http://');
-            if(list.length > 2)
-            {
-                this.src = list[list.length -1];
-            }
-            else 
-            {
-                list = _src.split('https://');
-                if(list.length > 2)
-                {
-                    this.src = list[list.length -1]; 
-                }else
-                {
-                    this.src = _src;
-                }
-            }
+                this.src = _config.emptyImg;
+            } 
             
         }
-
-        setTimeout(function () {
-            var _src = _value;
-             
-            if(_config.formatString)
+        if(Rsd.isEmpty(_value) || _value=='null')
+        {
+            if(_config.emptyImg)
             {
-                _src = _fn(_config.formatString,row);
-            }
-            
-            if(!Rsd.isEmpty(_src))
-            {
-                _ctrl.src = _src;
+                _ctrl.src = _config.emptyImg;
             } 
-
-        },me.timer);
-
+        }else
+        {
+            setTimeout(function () {
+                var _src = _value;
+               
+                
+                var list = _src.split('http://');
+                if(list.length > 2)
+                {
+                    _src = list[list.length -1];
+                }
+                else 
+                {
+                    list = _src.split('https://');
+                    if(list.length > 2)
+                    {
+                        _src = list[list.length -1]; 
+                    } 
+                    if(_src.indexOf('http://') < 0 && _src.indexOf('https://') < 0 && _config.formatString)
+                    {
+                        _src = _fn(_config.formatString,row);
+                    }
+                    _ctrl.src = _src;  
+                } 
+                
+            },me.timer);
+    
+        }
+        
         if(_config.clip)
         {
             _ctrl.style.clip = _config.clip;
