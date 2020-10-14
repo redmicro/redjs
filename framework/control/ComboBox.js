@@ -80,8 +80,9 @@ Rsd.define('Rsd.control.ComboBox', {
             me.container.style.pointerEvents = 'none';
         }
         me.ctrl.onchange = function (evt) {
-
-            me.funApplyByIOC(me.selectedItemChanged,[me.getSelectedItem(),evt]);
+            me.selectedIndex= this.selectedIndex;
+            me.selectedItem = me.getSelectedItem();
+            me.funApplyByIOC(me.selectedItemChanged,[me.selectedItem,evt]);
             me.funApplyByIOC(me.textChanged,[me,evt]);
         }
 
