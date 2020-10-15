@@ -2478,6 +2478,7 @@ function Redjs(config) {
             }
             return false;
         }
+        
         return this.app.appType == 'wxapp';
     };
     /**

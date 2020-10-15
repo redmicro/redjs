@@ -22,6 +22,7 @@ Rsd.createApplication({
             //Rsd.alert("您当前使用的操作系统是：" + Rsd.detectOS());
         },
         launch: function launch() {
+            alert(document.title);
             var _spm = Rsd.getUrlParam('spm')||'';
             var str = Rsd.getUrlParam('view')||'';
             str = str.toLowerCase();
@@ -30,7 +31,8 @@ Rsd.createApplication({
             });
             var _c = Rsd.getUrlParam('c');
             var _class = _c || 'Merch';
-            var _wap = Rsd.create('Rsd.template.eBiz.wap.T' + _class + 'Wap', {spm:_spm}).show();
+            var _wap = Rsd.create('Rsd.template.eBiz.wap.T' + _class + 'Wap', {spm:_spm});
+            _wap.show();
 
         }
     }
