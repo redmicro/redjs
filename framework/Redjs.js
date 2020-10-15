@@ -2465,6 +2465,7 @@ function Redjs(config) {
      * */
     this.isWeChat = function isWeChat(){
 
+        return false;
         if(this.isEmpty(this.app) || this.isEmpty(this.app.appType))
         {
             if(navigator && navigator.userAgent)
@@ -2478,7 +2479,7 @@ function Redjs(config) {
             }
             return false;
         }
-        
+
         return this.app.appType == 'wxapp';
     };
     /**
