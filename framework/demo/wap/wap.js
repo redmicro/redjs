@@ -1,8 +1,8 @@
 Rsd.createApplication({
-        appTitle: 'Avengers',
-        appName: 'Rsd.Avengers',
+        appTitle: 'Hermes H5',
+        appName: 'Rsd.Hermes',
         appFolder: './src',
-        appHost:'http://221.226.117.22/web',
+        apiHost:'http://admin.redmicro.cn/',
         loginUrl: 'login',
         indexUrl: 'release.html',
         isDebug:false,

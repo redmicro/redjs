@@ -2728,12 +2728,14 @@ function Redjs(config) {
      * */
     this.getRedjsHost = function getRedjsHost() {
 
-        if(this.isWeChat())
-        {
-            console.error('Wechat 环境下getRedjsHost方法不可用')
-            return {};
-        }
+        
         if (this.isNullOrUndefined(this.__jsHomePath )) {
+
+            if(this.isWeChat())
+            {
+                console.error('Wechat 环境下getRedjsHost方法不可用')
+                return 'https://js.redmicro.cn';
+            }
 
             var result = ""
 
