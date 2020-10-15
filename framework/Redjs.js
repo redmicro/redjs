@@ -2486,7 +2486,7 @@ function Redjs(config) {
      */
     this.isWeChatApp = function isWeChatApp(){
 
-        return this.app.appType == 'wxapp'; 
+        return this.app && this.app.appType == 'wxapp'; 
     };
     /**
      * @public
