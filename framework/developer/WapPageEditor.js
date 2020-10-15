@@ -17,7 +17,25 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     width:'100%',
     height:'100%', 
     closeBtn:false,
-    header:{height:55,style:{border:'0px',backgroundColor:'rgba(0,0,0,0.55)'}},
+    header:{ 
+        height:55,
+        width:'100%',
+        style:{border:'0px',backgroundColor:'rgba(0,0,0,0.55)'},
+        xtype:'container',
+        config:{ 
+            layout:'hbox',
+            width:'100%',
+            height:'100%',
+            margin:'15 15 0 0',
+            items:[
+                {xtype:'label',flex:1,cls:'x-f-title'},
+                {xtype:'button',text:'重 置',handler:'btn_reset'},
+                {width:15},
+                {xtype:'button',text:'退 出',handler:'btn_close'},
+            ]
+        }
+        
+    },
     style:{overflow:'auto'},
     cls:'',
     autoLoad:true,
@@ -29,24 +47,34 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             margin:'0 10 10 0',
             width:350,
             label:{
-               xtype:'combobox',
-               label: {
-                   content: '文档类型',
-                   height:30,
-                   width:100,
-                   "style": {
-                       fontWeight: 300,
-                       //backgroundColor:'rgba(31, 116, 227, 0.247059)',
-                       fontSize: '120%'
-                   }
-               },
-                margin:'5 0 5 0',
                 width:'100%',
-                position:'top',
-                nullText: '--请选择类型--',
-                dataSource:[{text:'商场首页'},{text:'专题活动'},{text:'会员中心'},{text:'商品详情'},{text:'商品分类'}],
-                textChanged:'page_type_changed',
-                height:40
+                height:40,
+                position:'top', 
+                "style":{backgroundColor:'rgba(31, 116, 227, 0.247059)'},
+                xtype:'combobox',
+                config:{
+                    label: {
+                        content: '文档类型',
+                        height:30,
+                        width:100,
+                        "style": {
+                            fontWeight: 300, 
+                            fontSize: '120%'
+                        }
+                    },  
+                    width:'100%',
+                    height:40, 
+                    margin:'5 0 5 0',
+                    nullText: '--请选择类型--',
+                    dataSource:[
+                        {text:'商场首页'},
+                        {text:'专题活动'},
+                        {text:'会员中心'},
+                        {text:'商品详情'},
+                        {text:'商品分类'}
+                    ],
+                    textChanged:'page_type_changed',
+               } 
             },
             height:'100%',
             overflow:'auto',
@@ -90,7 +118,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             border:false,
             margin:'10px auto 10px auto',
             onChanged:'buildTree',
-            onSelectChanged:'showProperty',
+            onSelectChanged:'loadCtrlProperty',
             flex:500, 
         },
         //property list
@@ -112,23 +140,27 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             xtype:'tree',
             region:'right',
             label:{
-                xtype:'button',
-                margin:'5 0 5 0',
                 height:40,
-                label:{
-                    content:'文档结构',
-                    align:'left',
-                    height:30,
-                    width:150,
-                    "style":{
-                        fontWeight:300,
-                        //backgroundColor:'rgba(31, 116, 227, 0.247059)',
-                        fontSize:'120%'
+                width:'100%', 
+                "style":{backgroundColor:'rgba(31, 116, 227, 0.247059)'},
+                xtype:'button',
+                config:{
+                    label:{
+                        content:'文档结构',
+                        align:'left',
+                        height:30,
+                        width:150,
+                        "style":{
+                            fontWeight:300, 
+                            fontSize:'120%'
+                        },
                     },
-                },
-                text:'刷新',
-                width:'100%',
-                handler:'btn_refresh'
+                    text:'刷新',
+                    margin:'5 0 5 10',
+                    width:'100%',
+                    height:40, 
+                    handler:'btn_refresh'
+                } 
             },
             "style":{backgroundColor:'rgba(214,214,214,0.2)',border:'1px black solid'},  
             nodeClick:'tree_select_ctrl',
@@ -147,12 +179,11 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             "style":{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,display:'flex'}, 
             layout:'hbox',
             items:[
+                {flex:2},
+                {xtype:'button',text:'预 览',handler:'_btn_preview',height:35,width:100},
                 {flex:1},
-                {xtype:'button',text:'预 览',handler:'_btn_preview'},
-                {xtype:'button',text:'保 存',handler:'_btn_save'}, 
-                {xtype:'button',text:'重 置',handler:'btn_reset'},
-                {xtype:'button',text:'退 出',handler:'btn_close'},
-                {flex:1}
+                {xtype:'button',text:'保 存',handler:'_btn_save',height:35,width:100},  
+                {flex:2}
             ]
         }
 
@@ -226,11 +257,13 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     listApi:null,
     previewApi:null,
     puplishApi:null,
+    page:{},
     /*
     * */
     constructor: function WapPageEditorPage(config) {
         config = config || {};
         this.apply(config);
+ 
     },
     /**
      * 
@@ -243,14 +276,15 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     /*
     * 加载数据
     * */
-    load:function load() {
-        //this.items[4].dom.style.left = ( Rsd.app.MainForm.left.dom.clientWidth + 250)+'px';
+    load:function load(data) {
+ 
+        //page列表数据 和分类数据
         this.items[0].loadData();
         
         var svg = Rsd.create('Rsd.common.Svg',{});
         svg.load(Rsd.getRedjsUrl('/resources/svg/default.js'));
 
-
+        //加载开发组件 
         var  btns = Rsd.create('Rsd.data.Menu',{});
         for(var i in this.ctrlConfig)
         {
@@ -263,28 +297,25 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             listView.loadData(btns);
         },1000);
         
+        //加载页面
+        var me = this; 
+        setTimeout(function () {
 
-        var me = this;
-        var _doc = me.items[2].getDocument();
-        //if(_doc==null)
-        {
-            setTimeout(function () {
-
-                var _doc = me.items[2].getDocument();
-                if(_doc != null)
-                {
-                    var link = _doc.createElement('link');
-                    link.type = 'text/css';
-                    link.rel = 'stylesheet';
-                    link.href = Rsd.getRedjsHost() + 'resources/css/Rsd.css';
-                    var head = _doc.getElementsByTagName('head')[0];
-                    head.appendChild(link);
-
-                    me.items[2].setDocumentTitle('无标题');
-                }
-                me.buildTree();
-            },100);
-        }
+            var _doc = me.items[2].getDocument();
+            if(_doc != null)
+            {
+                var link = _doc.createElement('link');
+                link.type = 'text/css';
+                link.rel = 'stylesheet';
+                link.href = Rsd.getRedjsHost() + 'resources/css/Rsd.css';
+                var head = _doc.getElementsByTagName('head')[0];
+                head.appendChild(link);
+                me.header.content.items[0].setText(me.title);
+                me.items[2].setDocumentTitle(me.title);
+            }
+            me.items[2].loadData(data||me.page);
+            me.buildTree();
+        },100);
 
     },
     /**
@@ -300,8 +331,9 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     _btn_save:function _btn_save()
     {
         var simulator = this.items[2];
-        var doc = simulator.getDocConfig(); 
-        this.funApplyByIOC(this.saveApi,[doc]); 
+        var page = simulator.getDocConfig(true); 
+        page.id = this.page.id;
+        this.funApplyByIOC(this.saveApi,[page]); 
     },
      /**
       * 
@@ -315,7 +347,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
      */
     btn_close:function btn_close()
     {
-        Rsd.showPopup('退出');
+        Rsd.showPopup('编辑器退出，退出检是否由为保存数据');
         this.close();
     },
     /**
@@ -343,7 +375,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         }
         var _ctrl = this.items[2].addControl(_menu.config);
 
-        this.showProperty(_ctrl, null);
+        this.loadCtrlProperty(_ctrl, null);
 
         setTimeout(function () {
             me.buildTree();
@@ -367,7 +399,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
          var _tree = this.items[4];
 
          var _nodes = [];
-         _nodes.push({text: _doc.title,id:_doc.id,  autoExpanded: true, dynamic: true, tag: _doc.element})
+         _nodes.push({text: _doc.id+'(' + _doc.title+')',id:_doc.id,  autoExpanded: true, dynamic: true, tag: _doc.element})
          var _list = _doc.items;
 
          for (var i = 0; i < _list.length; i++) {
@@ -485,20 +517,27 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     /**
     *属性值发生改变
     * */
-   pr_on_changed:function pr_on_changed(sender,event) {
+    pr_on_changed:function pr_on_changed(sender,event) {
 
         var _grid = this.items[3];
          if(Rsd.isType(_grid.element ,HTMLDocument))
          {
              if(sender.name == 'title')
              {
-                 this.items[2].setDocumentTitle(sender.getValue());
+                 var title = sender.getValue();
+                 this.items[2].setDocumentTitle(title);
+                 if(title !=  this.title)
+                 {
+                    this.title = title; 
+                    this.header.content.items[0].setText(this.title);
+                 }
+                 
              }
              if(sender.name == 'indexFile')
              {
                  this.items[2].setDocumentIndex(sender.getValue());
              }
-             //
+              
          }
          else
          {

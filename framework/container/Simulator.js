@@ -13,7 +13,7 @@ Rsd.define('Rsd.container.Simulator', {
     cls:'x-simulator',
     bodyCls:'x-phone-body',
     items:[],
-    setting:['$className','id','bodyCls','cls','height','layout','floating','text','title','name','width','xtype','label','header','action','method'],
+    setting:['$className','id','bodyCls','cls','height','layout','floating','text','title','name','width','xtype','label','header','action','method','src'],
     //已加载的控件
     controls:{},
     /** 
@@ -67,7 +67,19 @@ Rsd.define('Rsd.container.Simulator', {
         }
         this.simulator = this.items[0];
     },
-    
+    /**
+     * @description 加载 page 数据
+     * @param {*} data 
+     */
+    loadData:function loadData(data)
+    {
+        var _data = data||{};
+        var items = _data.items||[];
+        for(var i in items)
+        {
+            this.addControl(items[i]);
+        }
+    },
     /**
      *  */ 
     app_afterLayout:function app_afterLayout()
@@ -243,6 +255,7 @@ Rsd.define('Rsd.container.Simulator', {
         }
         return null;
     },
+    
     /**
      * @description 设置doc标题
      */ 
@@ -255,11 +268,12 @@ Rsd.define('Rsd.container.Simulator', {
 
     },
     /**
-     * @description 加载子控件
-     */ 
-    loadData:function loadData(items)
+     * 
+     * @param {*} indexHtml 
+     */
+    setDocumentIndex:function setDocumentIndex(indexHtml)
     {
-        console.log('加载子控件',items);
+        Rsd.showPopup('设置 index html 未实现');
     },
      
     /** 
@@ -277,7 +291,7 @@ Rsd.define('Rsd.container.Simulator', {
     /**
     *
     * */
-    getDocConfig:function getDocConfig() {
+    getDocConfig:function getDocConfig(forSave) {
 
         var _doc = this.getDocument();
         var _config = {title: _doc.title,id:'doc_'+this.id, element:_doc, dataSource: '', indexFile: '', items: []};
@@ -291,17 +305,21 @@ Rsd.define('Rsd.container.Simulator', {
                 {
                     Rsd.showMessage('未找到对象,id['+_id + ']。');
                 }
-                _config.items.push(this.getControlConfig(_obj));
+                _config.items.push(this.getControlConfig(_obj,forSave));
             }
         }
-
+        if(forSave)
+        {
+           delete _config['element'];
+           delete _config['id'];
+        }
         return _config;
 
     },
     /**
     *
      * */
-    getControlConfig:function getControlConfig(ctrl) {
+    getControlConfig:function getControlConfig(ctrl,forSave) {
 
         var _config = {element:ctrl};
         if(Rsd.isType(ctrl,HTMLDocument)) {
@@ -318,7 +336,13 @@ Rsd.define('Rsd.container.Simulator', {
                 var _name = this.setting[i];
                 if(ctrl.hasProperty(_name))
                 {
-                    _config[_name] = ctrl[_name]||null;
+                    if(Rsd.isObject(ctrl[_name]))
+                    {
+                        _config[_name] = Rsd.clone(ctrl[_name]);
+                        continue;
+                    }
+                     
+                    _config[_name] = Rsd.clone(ctrl[_name])||null;
                 }
 
             }
@@ -333,6 +357,21 @@ Rsd.define('Rsd.container.Simulator', {
         if(Rsd.isType(ctrl.parent , HTMLDocument))
         {
             _config['parent'] = 'doc_'+this.id;
+        }
+        if(forSave)
+        {
+           delete _config['element'];
+           delete _config['id'];
+           delete _config['$className'];
+           if(_config.label)
+           {
+              delete _config.label['element'];
+           }
+           if(_config.header)
+           {
+              delete _config.header['element'];
+           }
+           
         }
         return _config;
     }

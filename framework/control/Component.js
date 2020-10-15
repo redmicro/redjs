@@ -25,14 +25,20 @@ Rsd.define('Rsd.control.Component', {
     *
     * {
     *     xtype:'',//控件xtype
+    *     //xtype 控件初始化配置参数
+    *     config:{
+    *     },
+    *     //承载label的html dom元素
+    *     element: null,
+    *     //label 的内容对象 ，可以是字符串 也可以是组件
     *     content: null,//{string|control|object}
     *     position: 'left',
     *     align: 'right',
     *     visible: null,//null:有内容显示，无内容不显示 ,true:始终显示，false：始终不显示
     *     space: 10,
     *     cls: '',
-    *     style:{},
-    *     element: null
+    *     //承载label的element样式
+    *     style:{}, 
      }
     * */
     //label:,
@@ -78,7 +84,7 @@ Rsd.define('Rsd.control.Component', {
         this.elements['ctrl'] = this.ctrl;
 
         if (!Rsd.isEmpty(this.label.xtype)) {
-            this.label.content = Rsd.widget(this.label);
+            this.label.content = Rsd.widget(this.label.xtype,this.label.config||this.label);
             this.label.content.parent = this;
         }
         if (this.label.content == null && this.label.text) {
@@ -191,6 +197,7 @@ Rsd.define('Rsd.control.Component', {
         }
 
         me.label.element.classList.add('x-label');
+
         if (Rsd.isEmpty(me.label.xtype) && me.label.cls) {
             me.label.element.classList.add(me.label.cls);
         }

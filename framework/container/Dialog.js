@@ -18,7 +18,7 @@ Rsd.define('Rsd.container.Dialog', {
     height: 300,
     autoLoad:true,
     header:{visible: true, height: 35, cls: 'x-f-header'},
-    title:' 无标题',
+    title:'无标题',
     listeners:{
         'dragstart':{
             element:'dom',
@@ -40,18 +40,7 @@ Rsd.define('Rsd.container.Dialog', {
         var me = this;
         var _closeBtn = Rsd.getRedjsUrl('/resources/images/container/floating_btn_close.png');
         var _closeBtn1 = Rsd.getRedjsUrl('/resources/images/container/floating_btn_close1.png');
-        var _title = document.createElement('label');
-        _title.classList.add('x-f-title');
-        if (this.closeBtn == false) {
-            _title.style.right = '0px';
-        }
-
-        Rsd.empty(me.header.element);
-
-        _title.appendChild(document.createTextNode(this.title||'无标题'));
-
-        me.header.element.appendChild(_title);
-
+         
         var _close = document.createElement('img');
         _close.classList.add('x-f-close');
         _close.src = _closeBtn;

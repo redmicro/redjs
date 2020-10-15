@@ -23,13 +23,19 @@ Rsd.define('Rsd.container.Component', {
     /*
     * {
     *    xtype:null,
+    *    //xtype 控件初始化配置参数
+    *    config:{
+    *    },
+    *    //承载header的html dom元素
+    *    element: null,
+    *    //header 的内容对象 ，可以是字符串 也可以是组件
+    *    content:null, //{string|control|object}
     *    position: 'top',
     *    align: 'center',
     *    space: 10,
     *    cls: null,
     *    style:{},
-    *    visible:null,
-    *    element: null
+    *    visible:null
     * }
     * */
     // header: {},
@@ -218,7 +224,7 @@ Rsd.define('Rsd.container.Component', {
 
         this.header.element.classList.add('x-header');
 
-        if (Rsd.isEmpty(this.header.xtype) && this.header.cls) {
+        if (Rsd.isEmpty(this.header.xtype) && this.header.cls ) {
             this.header.element.classList.add(this.header.cls);
         }
         if(this.header.content instanceof  Rsd.common.ComponentX)
@@ -1035,31 +1041,22 @@ Rsd.define('Rsd.container.Component', {
 
         var _titleGetter = function () {
 
-            return this.header.content;
+            return this.__title||'';
+             
         };
-        var _titleSetter = function (value) {
 
+        var _titleSetter = function (value) {
+ 
+            this.__title = value;  
             if(Rsd.isEmpty(this.header.content) || Rsd.isString(this.header.content))
             {
-                this.header.content = value;
+                this.header.content = value; 
+                if(this.header && this.header.element)
+                {
+                    this.header.element.innerHTML = value; 
+                }
             }
-
-            if(this.header && this.header.content instanceof  Rsd.common.ComponentX)
-            {
-                this.header.content.setValue(value);
-                return;
-            }
-            if(this.header && this.header.content instanceof  Element)
-            {
-                this.header.content.innerHTML = value;
-                return;
-            }
-            if(this.header && this.header.element)
-            {
-                this.header.element.innerHTML = value;
-                return;
-            }
-
+             
             return;
 
         };
