@@ -605,8 +605,8 @@ function Redjs(config) {
     this.getComputedStyle = function getComputedStyle(id, style) {
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下getComputedStyle方法不可用')
-            return {};
+            console.error('Wechat环境下getComputedStyle方法不可用');
+            return null;
         }
         var el = document.getElementById(id);
         var _value = null;
@@ -1567,7 +1567,7 @@ function Redjs(config) {
         var _id = prefix.replaceAll('[-]', '_') + '_' + this.__id;
         if(this.isWeChat())
         {
-            //console.error('Wechat 环境下getId方法不可用');
+            //console.error('Wechat环境下getId方法不可用');
             return _id;
         }else
         {
@@ -1780,7 +1780,8 @@ function Redjs(config) {
     this.loadPlugin = function loadPlugin(url, callback) {
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下loadPlugin方法不可用')
+            console.log(url);
+            console.error('Wechat环境下loadPlugin方法不可用,请在document的head中提前加载css文件。');
             return ;
         }
         var me = Rsd || this;
@@ -1879,8 +1880,9 @@ function Redjs(config) {
 
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下loadCssFile方法不可用')
-            return {};
+            console.error(url);
+            console.error('Wechat环境下loadCssFile方法不可用,请在document的head中提前加载css文件。');
+            return ;
         }
         var head = document.getElementsByTagName('HEAD').item(0);
         var style = document.createElement('link');
@@ -2510,8 +2512,8 @@ function Redjs(config) {
     this.print = function print(id) {
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下print方法不可用')
-            return {};
+            console.error('Wechat环境下print方法不可用,无法打印。');
+            return;
         }
 
         if (arguments.length == 0) {
@@ -2553,8 +2555,8 @@ function Redjs(config) {
 
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下copy方法不可用')
-            return {};
+            console.error('Wechat环境下copy方法不可用，无法复制数据。');
+            return ;
         }
         var currentFocus = document.activeElement;
 
@@ -2684,7 +2686,7 @@ function Redjs(config) {
     this.getDom = function getDom(id) {
         if(this.isWeChat())
         {
-            console.error('Wechat 环境下getDom方法不可用')
+            console.error('Wechat环境下getDom方法不可用，无法获取dom对象。');
             return {};
         }
         return document.getElementById(id);
@@ -2731,13 +2733,12 @@ function Redjs(config) {
      *@description 获取redjs框架服务器地址，支持将框架部署在远程服务器上
      * */
     this.getRedjsHost = function getRedjsHost() {
-
-        
+ 
         if (this.isNullOrUndefined(this.__jsHomePath )) {
 
             if(this.isWeChat())
             {
-                console.error('Wechat 环境下getRedjsHost方法不可用')
+                console.error('Wechat环境下getRedjsHost方法不可用,默认返回：https://js.redmicro.cn。');
                 return 'https://js.redmicro.cn';
             }
 
