@@ -22,7 +22,7 @@ Rsd.createApplication({
             //Rsd.alert("您当前使用的操作系统是：" + Rsd.detectOS());
         },
         launch: function launch() {
-            alert(document.title);
+             
             var _spm = Rsd.getUrlParam('spm')||'';
             var str = Rsd.getUrlParam('view')||'';
             str = str.toLowerCase();
