@@ -235,6 +235,7 @@ Rsd.define('Rsd.container.Simulator', {
     _ctrl.doLayout();
     _ctrl.animate(300);
     return _ctrl;
+    
     },
     /**
      * @description 获取控件

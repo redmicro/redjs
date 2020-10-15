@@ -457,7 +457,7 @@ function Redjs(config) {
      * */
     "use strict";
     this.onResize = function onResize(obj, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -470,7 +470,7 @@ function Redjs(config) {
     /*
     * */
     this.unResize = function unResize(callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -491,7 +491,7 @@ function Redjs(config) {
      * */
     "use strict";
     this.onDrag = function onDrag(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -509,7 +509,7 @@ function Redjs(config) {
     * */
     "use strict";
     this.onDrop = function onDrop(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -529,7 +529,7 @@ function Redjs(config) {
     * */
     "use strict";
     this.onDragOver = function onDragOver(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -547,7 +547,7 @@ function Redjs(config) {
     * */
     "use strict";
     this.onDragLeave = function onDragLeave(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -564,7 +564,7 @@ function Redjs(config) {
     * */
     "use strict";
     this.onDragEnd = function onDragEnd(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -581,7 +581,7 @@ function Redjs(config) {
     * Fires on the target element when the user drags the object to a valid drop target.
     * */
     this.onDragEnter = function onDragEnter(dom, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             return;
         }
@@ -603,9 +603,9 @@ function Redjs(config) {
      * */
     "use strict";
     this.getComputedStyle = function getComputedStyle(id, style) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
-            console.error('Wechat环境下getComputedStyle方法不可用');
+            console.error('Wechat小程序环境下getComputedStyle方法不可用');
             return null;
         }
         var el = document.getElementById(id);
@@ -1565,9 +1565,9 @@ function Redjs(config) {
         
         this.__id++;
         var _id = prefix.replaceAll('[-]', '_') + '_' + this.__id;
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
-            //console.error('Wechat环境下getId方法不可用');
+            //console.error('Wechat小程序环境下getId方法不可用');
             return _id;
         }else
         {
@@ -1778,10 +1778,10 @@ function Redjs(config) {
      *@desc 用<script> 加载标签 pugins 目录下资源或第三方资源,可以避免异步加载方式失败。
      * */
     this.loadPlugin = function loadPlugin(url, callback) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             console.log(url);
-            console.error('Wechat环境下loadPlugin方法不可用,请在document的head中提前加载css文件。');
+            console.error('Wechat小程序环境下loadPlugin方法不可用,请在document的head中提前加载css文件。');
             return ;
         }
         var me = Rsd || this;
@@ -1878,10 +1878,10 @@ function Redjs(config) {
      * */
     this.loadCssFile = function loadCssFile(url) {
 
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
             console.error(url);
-            console.error('Wechat环境下loadCssFile方法不可用,请在document的head中提前加载css文件。');
+            console.error('Wechat小程序环境下loadCssFile方法不可用,请在document的head中提前加载css文件。');
             return ;
         }
         var head = document.getElementsByTagName('HEAD').item(0);
@@ -2464,8 +2464,7 @@ function Redjs(config) {
      * @description 判断是否是微信浏览器
      * */
     this.isWeChat = function isWeChat(){
-
-        return false;
+ 
         if(this.isEmpty(this.app) || this.isEmpty(this.app.appType))
         {
             if(navigator && navigator.userAgent)
@@ -2480,7 +2479,14 @@ function Redjs(config) {
             return false;
         }
 
-        return this.app.appType == 'wxapp';
+        
+    };
+    /**
+     * @description 判断是否是微信小程序 （this.app.appType == 'wxapp'）
+     */
+    this.isWeChatApp = function isWeChatApp(){
+
+        return this.app.appType == 'wxapp'; 
     };
     /**
      * @public
@@ -2512,9 +2518,9 @@ function Redjs(config) {
      * @public
      * */
     this.print = function print(id) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
-            console.error('Wechat环境下print方法不可用,无法打印。');
+            console.error('Wechat小程序环境下print方法不可用,无法打印。');
             return;
         }
 
@@ -2555,9 +2561,9 @@ function Redjs(config) {
      * */
     this.copy = function copy(data) {
 
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
-            console.error('Wechat环境下copy方法不可用，无法复制数据。');
+            console.error('Wechat小程序环境下copy方法不可用，无法复制数据。');
             return ;
         }
         var currentFocus = document.activeElement;
@@ -2686,9 +2692,9 @@ function Redjs(config) {
      * @public
      * */
     this.getDom = function getDom(id) {
-        if(this.isWeChat())
+        if(this.isWeChatApp())
         {
-            console.error('Wechat环境下getDom方法不可用，无法获取dom对象。');
+            console.error('小程序getDom方法不可用，无法获取dom对象。');
             return {};
         }
         return document.getElementById(id);
@@ -2738,9 +2744,9 @@ function Redjs(config) {
  
         if (this.isNullOrUndefined(this.__jsHomePath )) {
 
-            if(this.isWeChat())
+            if(this.isWeChatApp())
             {
-                console.error('Wechat环境下getRedjsHost方法不可用,默认返回：https://js.redmicro.cn。');
+                console.error('Wechat小程序环境下getRedjsHost方法不可用,默认返回：https://js.redmicro.cn。');
                 return 'https://js.redmicro.cn';
             }
 
