@@ -2,7 +2,7 @@
  * Created by seeker910 on 2017/7/28.
  * 个人中心
  */
-Rsd.define('Rsd.template.eBiz.wap.TMemberHomeWap', {
+Rsd.define('Rsd.template.eBiz.wap.TPersonalWap', {
     extend: 'Rsd.template.eBiz.wap.TFrameWap',
     requires: [
         'Rsd.wap.CStoreHomeTopPart',
