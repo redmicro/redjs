@@ -1562,16 +1562,20 @@ function Redjs(config) {
      * @private
      * */
     this.getId = function getId(prefix) {
-        if(this.isWeChat())
-        {
-            console.error('Wechat 环境下getId方法不可用')
-            return 0;
-        }
+        
         this.__id++;
         var _id = prefix.replaceAll('[-]', '_') + '_' + this.__id;
-        while (document.getElementById(_id)) {
-            this.__id++;
+        if(this.isWeChat())
+        {
+            //console.error('Wechat 环境下getId方法不可用');
+            return _id;
+        }else
+        {
+            while (document.getElementById(_id)) {
+                this.__id++;
+            }
         }
+         
         return _id;
     };
 
