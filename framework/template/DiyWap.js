@@ -38,8 +38,9 @@ Rsd.define('Rsd.template.DiyWap', {
      */
     load:function load(data)
     { 
-        this.callParent(data);
-         
+        var page = data||this.data||{};
+        
+        this.callParent(page); 
         var items = page.items||[];
         var list = [];
         for(var i in items)
