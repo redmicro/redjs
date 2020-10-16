@@ -40,8 +40,8 @@ Rsd.define('Rsd.template.Component', {
        return this;
    },
    /**
-   * @description 页面打开后自动执行 根据子控件的name属性自动递归加载数据
-   * @description 设置控件dataSource后可以 使用this.callPanrent() 统一加载
+   * @description 页面打开后自动执行 根据子控件的name属性自动递归加载各子控件数据
+   * @description 设置控件dataSource后可以 使用this.callPanrent() 统一加载各子控件数据
    * */
    load:function load() {
 
@@ -69,6 +69,7 @@ Rsd.define('Rsd.template.Component', {
             }
         }
     }
+
     _fn(this);
    }
 });

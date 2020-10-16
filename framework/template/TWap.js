@@ -17,7 +17,7 @@ Rsd.define('Rsd.template.TWap', {
     /*
     *
     * */
-    constructor: function TPage(config) {
+    constructor: function TWap(config) {
         config = config || {};
         this.apply(config);
     },
