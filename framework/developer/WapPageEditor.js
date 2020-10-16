@@ -180,9 +180,11 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             layout:'hbox',
             items:[
                 {flex:2},
-                {xtype:'button',text:'预 览',handler:'_btn_preview',height:35,width:100},
+                {xtype:'button',text:'预 览',handler:'_btn_preview',height:35,width:90},
                 {flex:1},
-                {xtype:'button',text:'保 存',handler:'_btn_save',height:35,width:100},  
+                {xtype:'button',text:'暂 存',handler:'_btn_save',height:35,width:90},  
+                {flex:1},
+                {xtype:'button',text:'保存并发布',handler:'btn_save_and_publish',height:35,width:100},  
                 {flex:2}
             ]
         }
@@ -256,7 +258,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     getApi:null,
     listApi:null,
     previewApi:null,
-    puplishApi:null,
+    publishApi:null,
     page:{},
     /*
     * */
@@ -334,6 +336,15 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         var page = simulator.getDocConfig(true); 
         page.id = this.page.id;
         this.funApplyByIOC(this.saveApi,[page]); 
+    },
+    
+    btn_save_and_publish:function()
+    {
+        var simulator = this.items[2];
+        var page = simulator.getDocConfig(true); 
+        page.id = this.page.id;
+        this.funApplyByIOC(this.saveApi,[page]); 
+        this.funApplyByIOC(this.publishApi,[page])
     },
      /**
       * 
