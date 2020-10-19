@@ -26,8 +26,9 @@ Rsd.define('Rsd.control.QRCode', {
         this.apply(config);
     },
 
-    /*
-    * */
+    /**
+     * 
+     */ 
     setValue: function (value) {
         this.__value = value;
     },

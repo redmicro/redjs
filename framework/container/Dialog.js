@@ -17,7 +17,7 @@ Rsd.define('Rsd.container.Dialog', {
     width: '100%',
     height: 300,
     autoLoad:true,
-    header:{visible: true, height: 35, cls: 'x-f-header'},
+    header:{visible: true, height: 35, cls: 'x-f-header',style:{color:'#ffffff'}},
     title:'无标题',
     listeners:{
         'dragstart':{
