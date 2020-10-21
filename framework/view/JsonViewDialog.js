@@ -1,3 +1,6 @@
+/**
+ * @description支持主从结构查看
+ */
 Rsd.define('Rsd.view.JsonViewDialog', {
     extend: 'Rsd.container.Dialog',
     requires: [

@@ -1,7 +1,6 @@
-/*
-*
-*
-* */
+/** 
+ * @description 支持主从结构的对象查看
+ * */ 
 Rsd.define('Rsd.controlEx.JsonViewer', {
     extend: 'Rsd.container.Component',
     requires: [

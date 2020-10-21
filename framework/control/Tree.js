@@ -62,7 +62,7 @@ Rsd.define('Rsd.control.Tree', {
         this.ctrl.style.overflow = 'auto';
         this.ctrl.style.position = 'absolute';
     },
-    /*
+    /**
      **/
     onAfterInit:function onAfterInit()
     {
@@ -110,7 +110,7 @@ Rsd.define('Rsd.control.Tree', {
     },
 
 
-    /*
+    /**
      * */
     contain: function (id) {
         return id != null
@@ -118,21 +118,21 @@ Rsd.define('Rsd.control.Tree', {
             && this.hash[id] != null
             && this.hash[id] != undefined;
     },
-    /*
+    /**
      Open all nodes
      * */
     expandAll: function () {
 
         this.root.expandAll();
     },
-    /*
+    /**
      Close all nodes
      * */
     collapseAll: function () {
         this.root.collapseAll();
     },
 
-    /*
+    /**
      select node
      * */
     selectNode: function (id) {
@@ -144,17 +144,19 @@ Rsd.define('Rsd.control.Tree', {
             node.select();
         }
     },
-    /*
+    /**
      *
      * */
     findNode: function (id) {
         return  this.hash[id];
     },
-    /**/
+    /**
+     * 
+    */
     getSelectedNodes: function () {
 
     },
-    /*
+    /**
      * */
     getCheckedNodes: function () {
 

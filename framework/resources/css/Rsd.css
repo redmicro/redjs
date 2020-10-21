@@ -1291,6 +1291,10 @@ legend {
     border-bottom: solid 1px var(--border-color-tree-level-5);
     color: var(--font-color-tree-level-5);
 }
+.x-tree .x-selected
+{
+    color: mediumblue;
+}
 
 .x-tree .x-child {
     white-space: nowrap;

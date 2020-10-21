@@ -13,7 +13,27 @@ Rsd.define('Rsd.container.Simulator', {
     cls:'x-simulator',
     bodyCls:'x-phone-body',
     items:[],
-    setting:['$className','id','bodyCls','cls','height','layout','floating','text','title','name','width','xtype','label','header','action','method','src'],
+    setting:[
+        {name:'$className',readOnly:true}, 
+        {name:'xtype',readOnly:true},
+        {name:'id',readOnly:true}, 
+        {name:'bodyCls',readOnly:true},
+        {name:'cls',readOnly:true},
+        {name:'title',readOnly:false},
+        {name:'name',readOnly:false},
+        {name:'height',readOnly:false},
+        {name:'width',readOnly:false}, 
+        {name:'layout',readOnly:false},
+        {name:'floating',readOnly:false},
+        {name:'text',readOnly:false}, 
+        {name:'label',readOnly:false,children:['style']},
+        {name:'header',readOnly:false},
+        {name:'mulitiLine',readOnly:false},
+        {name:'action',readOnly:false},
+        {name:'method',readOnly:false},
+        {name:'src',readOnly:false},
+        {name:'style',readOnly:false}
+    ],
     //已加载的控件
     controls:{},
     /** 
@@ -87,154 +107,156 @@ Rsd.define('Rsd.container.Simulator', {
         var _height =  parseInt(this.items[0].container.clientHeight);
         this.items[0].body.style.height = _height - 46 + 'px';
     },
-     /*
-    *
-    * */
-   addControl:function addControl(config) {
-    var me = this;
-    var _doc = this.getDocument();
-    var _config = Rsd.apply({},config || {});
-
-    _config.parent= _doc;
-    _config.domFlag='simulator';
-    _config.domFlagValue='redmicro';
-    _config.listeners= {
-        'click': {
-            element: 'dom',
-            fn: function (sender, event) {
-                me.funApplyByIOC(me.onSelectChanged, [sender, event])
-            }
-        },
-        'focus': {
-            element: 'dom',
-            fn: function (sender, event) {
-                me.funApplyByIOC(me.onSelectChanged, [sender, event])
-            }
-        },
-        'blur': {
-            element: 'dom',
-            fn: function (sender, event) {
-                Rsd.showPopup('blur');
-            }
-        },
-        'mouseover': {
-            element: 'dom',
-            fn: function (sender, event) {
-                sender.addCls('container', 'x-component-edit-box');
-
-            }
-        },
-        'mouseout': {
-            element: 'dom',
-            fn: function (sender, event) {
-
-                sender.removeCls('container', 'x-component-edit-box');
-            }
-        },
-        'dragstart':{
-            element:'dom',
-            fn:function (sender,event) {
-                sender.addCls('container', 'x-component-edit-box');
-
-                event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',id:sender.id,pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
-            }
-        },
-        'dragover':{
-            element:'body',
-            fn:function (sender,event) {
-                event.preventDefault();
-
-                var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
-                if(_data == null || _data.id == this.id)return;
-                //console.log(this.id + 'over');
-            }
-        },
-        'dragend':{
-            element:'dom',
-            fn:function (sender,event) {
-
-                sender.removeCls('container', 'x-component-edit-box');
-                event.dataTransfer.clearData();
-
-                //console.log(this.id + 'end');
-                //event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
-            }
-        },
-        'dragenter':{
-            element:'body',
-            fn:function (sender,event) {
-                //console.log(this.id + 'enter');
-                event.preventDefault();
-
-                var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
-                if(_data == null || _data.id == this.id)return;
-
-
-
-
-            }
-        },
-        'dragleave':{
-            element:'dom',
-            fn:function (sender,event) {
-                sender.removeCls('container', 'x-component-edit-box');
-                //console.log(this.id + 'leave');
-                event.preventDefault();
-
-                var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
-                if(_data == null || _data.id == this.id)return;
-
-                //event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
-            }
-        },
-
-        'drop':{
-            element:'dom',
-            fn:function (sender,event) {
-                //console.log(this.id + 'drop');
-                event.preventDefault();
-                event.cancelBubble = true;
-                event.stopPropagation();
-
-                var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
-                if(_data== null)
-                {
-                    return;
-                }
-              
-                var _obj = me.getControl(_data.id);
-                if(_obj == null)
-                {
-                    console.error('未找到对象'+_data.id);
-                }
-                if(sender instanceof  Rsd.container.Component)
-                {
-                    sender.add(_obj);
-                }
-                else
-                { 
-                    sender.dom.parentNode.insertBefore(_obj.dom,sender.dom);
-                }
-                if(me.onChanged)
-                {
-                    me.funApplyByIOC(me.onChanged,[_obj,event]);
-                }
-            }
-        }
-    };
-
-   if(Rsd.xtypes.hasOwnProperty(_config.xtype)==false)
+     /**
+      * 
+      */ 
+   addControl:function addControl(config) 
    {
-       Rsd.showMessage('未找到xtype为:['+_config.xtype + ']的类。');
-       return null;
+        var me = this;
+        var _doc = this.getDocument();
+        var _config = Rsd.apply({},config || {});
 
-   }
-    var _ctrl = Rsd.widget(_config);
-    this.controls[_ctrl.id]= _ctrl;
-    _ctrl.renderTo(_doc.body);
-    _ctrl.doLayout();
-    _ctrl.animate(300);
-    return _ctrl;
+        _config.parent= _doc;
+        _config.domFlag='simulator';
+        _config.domFlagValue='redmicro';
+        _config.listeners= {
+                'click': {
+                    element: 'dom',
+                    fn: function (sender, event) {
+                        me.funApplyByIOC(me.onSelectChanged, [sender, event])
+                    }
+                },
+                'focus': {
+                    element: 'dom',
+                    fn: function (sender, event) {
+                        me.funApplyByIOC(me.onSelectChanged, [sender, event])
+                    }
+                },
+                'blur': {
+                    element: 'dom',
+                    fn: function (sender, event) {
+                        Rsd.showPopup('blur');
+                    }
+                },
+                'mouseover': {
+                    element: 'dom',
+                    fn: function (sender, event) {
+                        sender.addCls('container', 'x-component-edit-box');
+
+                    }
+                },
+                'mouseout': {
+                    element: 'dom',
+                    fn: function (sender, event) {
+
+                        sender.removeCls('container', 'x-component-edit-box');
+                    }
+                },
+                'dragstart':{
+                    element:'dom',
+                    fn:function (sender,event) {
+                        sender.addCls('container', 'x-component-edit-box');
+
+                        event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',id:sender.id,pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
+                    }
+                },
+                'dragover':{
+                    element:'body',
+                    fn:function (sender,event) {
+                        event.preventDefault();
+
+                        var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
+                        if(_data == null || _data.id == this.id)return;
+                        //console.log(this.id + 'over');
+                    }
+                },
+                'dragend':{
+                    element:'dom',
+                    fn:function (sender,event) {
+
+                        sender.removeCls('container', 'x-component-edit-box');
+                        event.dataTransfer.clearData();
+
+                        //console.log(this.id + 'end');
+                        //event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
+                    }
+                },
+                'dragenter':{
+                    element:'body',
+                    fn:function (sender,event) {
+                        //console.log(this.id + 'enter');
+                        event.preventDefault();
+
+                        var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
+                        if(_data == null || _data.id == this.id)return;
+
+
+
+
+                    }
+                },
+                'dragleave':{
+                    element:'dom',
+                    fn:function (sender,event) {
+                        sender.removeCls('container', 'x-component-edit-box');
+                        //console.log(this.id + 'leave');
+                        event.preventDefault();
+
+                        var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
+                        if(_data == null || _data.id == this.id)return;
+
+                        //event.dataTransfer.setData('Text',Rsd.toString({cmd:'move',pageX:event.pageX||event.clientX,pageY:event.pageY||event.clientY}));
+                    }
+                },
+
+                'drop':{
+                    element:'dom',
+                    fn:function (sender,event) {
+                        //console.log(this.id + 'drop');
+                        event.preventDefault();
+                        event.cancelBubble = true;
+                        event.stopPropagation();
+
+                        var _data = Rsd.toJson(event.dataTransfer.getData('Text'));
+                        if(_data== null)
+                        {
+                            return;
+                        }
+                    
+                        var _obj = me.getControl(_data.id);
+                        if(_obj == null)
+                        {
+                            console.error('未找到对象'+_data.id);
+                        }
+                        if(sender instanceof  Rsd.container.Component)
+                        {
+                            sender.add(_obj);
+                        }
+                        else
+                        { 
+                            sender.dom.parentNode.insertBefore(_obj.dom,sender.dom);
+                        }
+                        if(me.onChanged)
+                        {
+                            me.funApplyByIOC(me.onChanged,[_obj,event]);
+                        }
+                    }
+                }
+            };
+
+        if(Rsd.xtypes.hasOwnProperty(_config.xtype)==false)
+        {
+            Rsd.showMessage('未找到xtype为:['+_config.xtype + ']的类。');
+            return null;
+
+        }
+
+        var _ctrl = Rsd.widget(_config);
+        this.controls[_ctrl.id]= _ctrl;
+        _ctrl.renderTo(_doc.body);
+        _ctrl.doLayout();
+        _ctrl.animate(300);
+        return _ctrl;
     
     },
     /**
@@ -323,18 +345,29 @@ Rsd.define('Rsd.container.Simulator', {
     getControlConfig:function getControlConfig(ctrl,forSave) {
 
         var _config = {element:ctrl};
+         //set parent id
+         if(ctrl.parent instanceof Rsd.common.ComponentX)
+         {
+             _config['parent'] = ctrl.parent.id;
+         }
+         if(Rsd.isType(ctrl.parent , HTMLDocument))
+         {
+             _config['parent'] = 'doc_'+this.id;
+         }
+
         if(Rsd.isType(ctrl,HTMLDocument)) {
 
+            _config['xtype'] = 'document';
             _config['indexFile'] = this.items[0].body.src;
             _config['title'] = ctrl.title;
-            _config['dataSource'] = '';
-            _config['xtype'] = 'document';
+            _config['dataSource'] = ''; 
 
         }else
         {
             for(var i in this.setting)
             {
-                var _name = this.setting[i];
+                var _name = this.setting[i].name;
+                var _readonly = this.setting[i].readOnly;
                 if(ctrl.hasProperty(_name))
                 {
                     if(Rsd.isObject(ctrl[_name]))
@@ -350,15 +383,7 @@ Rsd.define('Rsd.container.Simulator', {
         }
 
 
-        //set parent id
-        if(ctrl.parent instanceof Rsd.common.ComponentX)
-        {
-            _config['parent'] = ctrl.parent.id;
-        }
-        if(Rsd.isType(ctrl.parent , HTMLDocument))
-        {
-            _config['parent'] = 'doc_'+this.id;
-        }
+       
         if(forSave)
         {
            delete _config['element'];

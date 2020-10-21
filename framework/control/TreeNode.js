@@ -400,11 +400,13 @@ Rsd.define('Rsd.control.TreeNode', {
                         }
                     } else {
                         me.funApplyByIOC(me.dblClick || me.tree.nodeDblClick, [me, e]);
+                        me.select();
                     }
 
                 };
                 _a.onclick = function (e) {
                     me.funApplyByIOC(me.click || me.tree.nodeClick, [me, e]);
+                    me.select();
                 };
 
                 _dom.appendChild(_a);

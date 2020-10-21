@@ -233,7 +233,15 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         {
             text:'文本',
             icon:'default.6',
-            config:{xtype:'label',draggable:true,label:'标题',text:'文字信息',width:'100%'}
+            config:{
+                xtype:'label',
+                draggable:true,
+                label:{content:'标题',position:'top',width:'100%',align:'center'},
+                text:'文字信息',
+                width:'100%',
+                height:100,
+                mulitiLine:true
+            }
         },
         {
             text:'连接',
@@ -436,7 +444,9 @@ Rsd.define('Rsd.developer.WapPageEditor', {
      * @param {*} event 
      */
     tree_select_ctrl:function tree_select_ctrl(node,event)
-    {
+    { 
+        //node.dom.style.color= 'blue';
+        
         if(node.tag)
         {
             this.loadCtrlProperty(node.tag,event);
@@ -505,13 +515,23 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         }
 
         if(Rsd.isObject(row['value']))
-        {
-            Rsd.create('Rsd.control.JsonEidtor',{ onChange:function (json) {
-                    row['value'] = json;
-                    grid.element[row['name']] = json;
-                    grid.element.doLayout();
-                    me.buildTree(_grid.element,null);
-                }}).showDialog().loadData(row['value']);
+        { 
+            if( row['name'] == 'style')
+            {
+
+            }
+            Rsd.create('Rsd.view.JsonEidtor',{
+                title:'修改属性['+row['name']+']',
+                data:row['value'],
+                onChanged:function (json) {
+                    //console.log(json);
+                        row['value'] = json; 
+                        grid.element[row['name']] = json;   
+                        grid.element.doLayout();
+                        me.buildTree(grid.element,null);
+                    }
+
+                }).showDialog();
         }
         else
         {

@@ -1,4 +1,4 @@
-Rsd.define('Rsd.control.JsonEidtor', {
+Rsd.define('Rsd.view.JsonEidtor', {
     extend: 'Rsd.container.Dialog',
     requires: [
         'Rsd.control.Grid',
@@ -15,6 +15,7 @@ Rsd.define('Rsd.control.JsonEidtor', {
             height:'100%',
             overflow:'auto',
             style:{backgroundColor:'rgba(255, 255, 255, 0.25)'},
+            header:{visible:false},
             border:false,
             columns:[{text:'名称',width:80,dataIndex:'name'},{text:'值',width:100,dataIndex:'value',editable:true},{dataIndex:'op',width:20}],
             rowdblclick:'pr_rowdblclick',
@@ -23,23 +24,35 @@ Rsd.define('Rsd.control.JsonEidtor', {
         }
     ],
     onChanged:null,
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function JsonEidtor(config) {
         config = config || {};
         this.apply(config);
     },
     /*
     * */
-    loadData:function loadData(json) {
-        var _json = json||{};
-        this.json = _json;
+    load:function load(json) {
+
+        this.callParent(json);
+
+        this.data = json||this.data||{}; 
+        
         var _grid = this.items[0];
         var _list = [];
-        for (var i in _json) {
-            _list.push({name: i, value: _json[i], op: Rsd.isObject(_json[i]) ? '...' : ''});
+        for (var i in  this.data) {
+            _list.push({name: i, value:  this.data[i], op: Rsd.isObject( this.data[i]) ? '...' : ''});
         }
-
+         
         _grid.loadData(_list);
     },
+    /**
+     * 
+     * @param {*} row 
+     * @param {*} data 
+     */
     pr_rowdblclick:function pr_rowdblclick(row,data) {
         var me = this;
         var grid = this.items[0];
@@ -50,7 +63,7 @@ Rsd.define('Rsd.control.JsonEidtor', {
         }
         if(Rsd.isObject(row['value']))
         {
-            Rsd.create('Rsd.control.JsonEidtor',{}).showDialog().loadData(row['value']);
+            Rsd.create('Rsd.view.JsonEidtor',{}).showDialog().loadData(row['value']);
         }
         else
         {
@@ -60,8 +73,10 @@ Rsd.define('Rsd.control.JsonEidtor', {
                 height:'90%',
                 name:row['name'],
                 textChanged:function (sender,event) {
-                    me.json[sender.name] = sender.getValue();
-                    me.funApplyByIOC(me.onChanged,[me.json])
+                  
+                    me.data[sender.name] = sender.getValue();
+                    me.funApplyByIOC(me.onChanged,[me.data])
+ 
                 },
             }));
         }

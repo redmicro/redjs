@@ -56,7 +56,7 @@ Rsd.define('Rsd.control.QRCode', {
         }
 
     },
-
+    
 
 },function (type) {
 

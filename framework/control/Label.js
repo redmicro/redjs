@@ -55,9 +55,12 @@ Rsd.define('Rsd.control.Label', {
         this.callParent();
 
     },
+    /**
+     * 
+     */
     onAfterLayout:function onAfterLayout()
     {
-        if(Rsd.isNumber(this.height))
+        if(this.mulitiLine==false && Rsd.isNumber(this.height))
         {
             this.ctrl.style.lineHeight = this.height+ 'px';
             this.label.element.style.lineHeight = this.height+ 'px';
