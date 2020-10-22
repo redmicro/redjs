@@ -320,7 +320,9 @@ Rsd.define("Rsd.common.Layouter", {
         if(_t_flex)
         {
             obj.body.style.display= "flex";
+            obj.body.style.flexWrap ="wrap";
         }
+
         for (var i=0; i< obj.items.length ;i++) {
             _item = obj.items[i];
             if(_item.floating || _item.fixed)
@@ -341,6 +343,7 @@ Rsd.define("Rsd.common.Layouter", {
                 _item.style = _item.style||{};
                 _item.style.flex = _item.flex;
             }
+            
             switch (_item.align || obj.layout.align)
             {
                 case 'left':
