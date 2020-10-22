@@ -457,9 +457,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             } 
             
             this.loadCtrlProperty(node.tag,event);
-            var simulator = this.items[2];
-            simulator.clearSelected();
-            simulator.selectControl(node.id);
+           
         }else
         {
             Rsd.showMessage('对象不存在');
@@ -516,6 +514,10 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         var _tree = this.items[4];
         _tree.clearSelected();
         _tree.selectNode(sender.id);
+
+        var simulator = this.items[2];
+        simulator.clearSelected();
+        simulator.selectControl(sender.id);
        
     },
     /**
