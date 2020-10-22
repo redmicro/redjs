@@ -46,6 +46,8 @@ Rsd.define('Rsd.control.Tree', {
     nodeClick: null,
     nodeDblClick: null,
     label:{position: 'top', align: 'left',height: 40, cls: 'x-header',visible:true},
+    //节点统一样式
+    nodeStyle:{},
     //toolBar:null,
     /*
      * */
@@ -54,7 +56,7 @@ Rsd.define('Rsd.control.Tree', {
         this.apply(config);
 
     },
-    /*
+    /**
     * */
     initComponentEx: function initComponentEx() {
 
@@ -131,9 +133,24 @@ Rsd.define('Rsd.control.Tree', {
     collapseAll: function () {
         this.root.collapseAll();
     },
-
     /**
-     select node
+     *
+     * */
+    findNode: function (id) {
+        return  this.hash[id];
+    },
+    /**
+     * 
+     */
+    clearSelected:function clearSelected()
+    { 
+        for(var i in this.nodes)
+        { 
+            this.nodes[i].select(false);
+        }
+    },
+    /**
+     @d select node 点击不会触发选中事件
      * */
     selectNode: function (id) {
         if (!this.useSelection)
@@ -144,22 +161,19 @@ Rsd.define('Rsd.control.Tree', {
             node.select();
         }
     },
-    /**
-     *
-     * */
-    findNode: function (id) {
-        return  this.hash[id];
-    },
+   
     /**
      * 
     */
     getSelectedNodes: function () {
-
+        console.error('未实现getSelectedNodes');
+        return [];
     },
     /**
      * */
     getCheckedNodes: function () {
-
+        console.error('未实现getCheckedNodes');
+        return [];
     },
     /**
     *@public
@@ -241,7 +255,10 @@ Rsd.define('Rsd.control.Tree', {
         var _parent = (Rsd.isEmpty(_pid) || !this.contain(_pid)) ?  this.root:this.hash[_pid] ;
 
         _parent.addNode(node);
-
+        if(this.root== _parent)
+        {
+            this.nodes.push(node);
+        }
         return this;
     },
     /**
@@ -260,6 +277,7 @@ Rsd.define('Rsd.control.Tree', {
         {
             throw new Error('use addTreeNode function add treeNode object.');
         }
+
         return this.addTreeNode({
             id: id,
             text: text,
