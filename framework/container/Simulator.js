@@ -14,25 +14,25 @@ Rsd.define('Rsd.container.Simulator', {
     bodyCls:'x-phone-body',
     items:[],
     setting:[
-        {name:'$className',readOnly:true}, 
-        {name:'xtype',readOnly:true},
-        {name:'id',readOnly:true}, 
-        {name:'bodyCls',readOnly:true},
-        {name:'cls',readOnly:true},
-        {name:'title',readOnly:false},
-        {name:'name',readOnly:false},
-        {name:'height',readOnly:false},
-        {name:'width',readOnly:false}, 
-        {name:'layout',readOnly:false},
-        {name:'floating',readOnly:false},
-        {name:'text',readOnly:false}, 
-        {name:'label',readOnly:false,children:['style']},
-        {name:'header',readOnly:false},
-        {name:'mulitiLine',readOnly:false},
-        {name:'action',readOnly:false},
-        {name:'method',readOnly:false},
-        {name:'src',readOnly:false},
-        {name:'style',readOnly:false}
+        {name:'$className',text:'类名',readOnly:true}, 
+        {name:'xtype',text:'类名简称',readOnly:true},
+        {name:'id',text:'ID',readOnly:true},
+        {name:'style',text:'dom样式',readOnly:false}, 
+        {name:'bodyCls',text:'body样式',readOnly:true},
+        {name:'cls',text:'container演示',readOnly:true},
+        {name:'label',text:'组件头部',readOnly:false,children:['style']},
+        {name:'header',text:'组件头部',readOnly:false},
+        {name:'title',text:'标题',readOnly:false},
+        {name:'name',text:'html dom name',readOnly:false},
+        {name:'height',text:'高度',readOnly:false},
+        {name:'width',text:'宽度',readOnly:false}, 
+        {name:'layout',text:'布局方式',readOnly:false},
+        {name:'floating',text:'浮动',readOnly:false},
+        {name:'text',text:'文字',readOnly:false},  
+        {name:'mulitiLine',text:'多行',readOnly:false},
+        {name:'action',text:'表单提交API',readOnly:false},
+        {name:'method',text:'表单提交方法',readOnly:false},
+        {name:'src',text:'图片地址',readOnly:false}
     ],
     //已加载的控件
     controls:{},
@@ -286,10 +286,20 @@ Rsd.define('Rsd.container.Simulator', {
      */
     selectControl:function selectControl(id)
     {
+        var doc = this.getDocument();
         var ctrl = this.controls[id];
         if(ctrl)
         {
             ctrl.addCls('container', 'x-component-select-box');
+            doc.body.classList.remove( 'x-component-select-box');
+        }
+        else
+        {
+           
+            if(id == doc.id)
+            {
+                doc.body.classList.add( 'x-component-select-box');
+            }
         }
     },
     /** 
@@ -299,7 +309,9 @@ Rsd.define('Rsd.container.Simulator', {
 
         if( this.items[0].body.contentWindow)
         {
-            return this.items[0].body.contentWindow.document;
+            var _doc = this.items[0].body.contentWindow.document;
+            _doc.id = 'doc_'+this.id;
+            return _doc;
         }
         return null;
     },
@@ -343,7 +355,8 @@ Rsd.define('Rsd.container.Simulator', {
     getDocConfig:function getDocConfig(forSave) {
 
         var _doc = this.getDocument();
-        var _config = {title: _doc.title,id:'doc_'+this.id, element:_doc, dataSource: '', indexFile: '', items: []};
+        
+        var _config = {title: _doc.title,id:_doc.id,element:_doc, dataSource: '', indexFile: '', items: []};
         if(_doc)
         {
             var _list = _doc.querySelectorAll('[simulator=redmicro]');

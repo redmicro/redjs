@@ -53,16 +53,44 @@
                             {
                                 return
                             }
-                            if (node.page) {
-                                _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
-                            } else {
+                            if (node.page) 
+                            {
+                                var page = Rsd.create(node.page, {title:'',tabTitle:node.text});
+                                if(page instanceof Rsd.container.Page)
+                                {
+                                    _form.showPage(page);
+                                    return;
+                                }
+                               if(page instanceof Rsd.container.Dialog)
+                               {
+                                    page.showDialog();
+                                    return;
+                               }
+                            }
+                            else 
+                            {
                                 _form.showPage(Rsd.create('Rsd.example.' + node.text + 'Page', {title:'',tabTitle:node.text}));
                             }
                         },
                         nodeDblClick:function(node) {
-                            if (node.page) {
-                                _form.showPage(Rsd.create(node.page, {title:'',tabTitle:node.text}));
-                            } else {
+                            if (node.page)
+                            {
+
+                                var page = Rsd.create(node.page, {title:'',tabTitle:node.text});
+                                if(page instanceof Rsd.container.Page)
+                                {
+                                    _form.showPage(page);
+                                    return;
+                                }
+                               if(page instanceof Rsd.container.Dialog)
+                               {
+                                    page.showDialog();
+                                    return;
+                               }
+                                 
+                            }
+                            else
+                            {
                                 _form.showPage(Rsd.create('Rsd.example.' + node.text + 'Page', {title:'',tabTitle:node.text}));
                             }
 
@@ -74,7 +102,7 @@
                             {text:'Grid'},
                             {text:'List'},
                             {text:'NotFound',page:'Rsd.view.SysNotFoundPage'},
-                            {text:'WapEidtor',page:'Rsd.developer.WapPageEditorPage'},
+                            {text:'WapEidtor',page:'Rsd.developer.WapPageEditor'},
                             {text:'ImageView'},
                             {text:'Menu'}
                             ]}});

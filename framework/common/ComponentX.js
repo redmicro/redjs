@@ -5,8 +5,7 @@
 Rsd.define('Rsd.common.ComponentX', {
     extend: 'Rsd.common.Object',
     requires: ['Rsd.common.Layouter'],
-    xtype: 'component-x',
-
+    xtype: 'component-x', 
     cache: Rsd.isDebug,
     singleton:false,
     //dom: null,
@@ -122,15 +121,15 @@ Rsd.define('Rsd.common.ComponentX', {
     * 对象创建于哪个控件
     * */
     from:null,
-    /*
-     * */
+    /**
+     *  */ 
     constructor: function ComponentX(config) {
 
         config = config || {};
         this.apply(config);
 
     },
-    /*
+    /**
      *
      *
      * */
@@ -152,6 +151,7 @@ Rsd.define('Rsd.common.ComponentX', {
         return this;
 
     },
+
     /**
      * @description initComponent 处理dom对象的创建，dom结构，样式，事件注册
      * */
@@ -257,6 +257,7 @@ Rsd.define('Rsd.common.ComponentX', {
 
         return this;
     },
+
     /**
     @description 类级别 在自身beforerender之后发生 ，初始化之前
      * */
@@ -264,8 +265,8 @@ Rsd.define('Rsd.common.ComponentX', {
 
     },
 
-    /*
-     在自身afterrender之前发生 ，初始化之后
+    /**
+     @description 在自身afterrender之前发生 ，初始化之后
      * */
     onAfterInit: function onAfterInit() {
         var me = this;
@@ -319,9 +320,10 @@ Rsd.define('Rsd.common.ComponentX', {
             this.on('afterlayout',this.afterLayout);
         }
     },
-    /*
+
+    /** 
      @public
-     用于布局控件，对于先隐藏，布局后再显示对控件，需要重新调用该方法。
+     @description 用于布局控件，对于先隐藏，布局后再显示对控件，需要重新调用该方法。
      * */
     doLayout: function doLayout() {
 
@@ -337,13 +339,15 @@ Rsd.define('Rsd.common.ComponentX', {
         },30);
         return this;
     },
-    /*
+
+    /** 
     * @public
     * */
     onBeforeLayout: function onBeforeLayout() {
         this.events.fire(this, 'beforelayout', {});
     },
-    /*
+
+    /**
      * @public
      * */
     onAfterLayout: function onAfterLayout() {
@@ -352,9 +356,9 @@ Rsd.define('Rsd.common.ComponentX', {
 
     },
 
-    /*
-    @private
-     * */
+    /**
+    * @private
+    * * */
     render: function render(parent) {
 
         var me = this;
@@ -407,7 +411,7 @@ Rsd.define('Rsd.common.ComponentX', {
 
     },
 
-    /*
+    /**
     * @public
     * */
     renderTo: function renderTo(parent) {
@@ -425,20 +429,22 @@ Rsd.define('Rsd.common.ComponentX', {
 
         return this;
     },
-    /*
-     自身及所有子对象render前
+    /**
+     * @description 自身及所有子对象render前
      * */
     onBeforeRender: function onBeforeRender() {
 
         this.events.fire(this, 'beforerender', {});
     },
-    /*
-     * 自身及所有子对象初始化结束，render结束
+    /**
+     * @description 自身及所有子对象初始化结束，render结束
      * */
     onAfterRender: function onAfterRender() {
         this.events.fire(this, 'afterrender', {});
     },
-    /*
+
+    /**
+     * 
      * */
     on: function on(name, fn) {
 
@@ -458,8 +464,8 @@ Rsd.define('Rsd.common.ComponentX', {
 
     },
 
-    /*
-    *配置项 值为空时，取dom值
+    /**
+    *  @description 配置项 值为空时，取dom值
     * */
     getHeight:function getHeight() {
         if (Rsd.isNullOrUndefined(this.height) && this.isLayout) {
@@ -480,8 +486,9 @@ Rsd.define('Rsd.common.ComponentX', {
         return this.height;
 
     },
-    /*
-    *配置项 值为空时，取dom值
+
+    /**  
+    * @description 配置项 值为空时，取dom值
     * */
     getWidth:function getWidth() {
         if (Rsd.isNullOrUndefined(this.width) && this.isLayout) {
@@ -503,8 +510,9 @@ Rsd.define('Rsd.common.ComponentX', {
 
 
     },
-    /*
-    * */
+
+    /** 
+     * */ 
     toPxValue : function toPxValue(value) {
         if (Rsd.isEmpty(value)) {
             return 0;
@@ -530,8 +538,9 @@ Rsd.define('Rsd.common.ComponentX', {
         }
 
     },
-    /*
-     * */
+
+    /** 
+     * */ 
     remove: function remove() {
         //debugger;
         if (this.dom && this.dom.parentNode) {
@@ -559,8 +568,8 @@ Rsd.define('Rsd.common.ComponentX', {
 
     },
 
-    /*
-     * */
+    /** 
+     * */ 
     addCls: function addCls(ele, cls) {
         var _ele, _cls;
         if (arguments.length == 1) {
@@ -592,8 +601,9 @@ Rsd.define('Rsd.common.ComponentX', {
         }
         return this;
     },
-    /*
-     * */
+
+    /** 
+     * */ 
     containCls: function containCls(ele, cls) {
 
         var _ele, _cls;
@@ -622,7 +632,8 @@ Rsd.define('Rsd.common.ComponentX', {
 
         return _b;
     },
-    /*
+
+    /**
      * */
     removeCls: function removeCls(ele, cls) {
         var _ele, _cls;
@@ -646,7 +657,8 @@ Rsd.define('Rsd.common.ComponentX', {
         }
         return this;
     },
-    /*
+    
+    /**
      * */
     toggleCls: function toggleCls(ele, cls) {
         var _ele, _cls;
@@ -666,7 +678,8 @@ Rsd.define('Rsd.common.ComponentX', {
         }
         return this;
     },
-    /*
+
+    /**
      * */
     changeCls: function changeCls(ele, oldcls, newcls) {
         var _ele, _oldcls, _newcls;
@@ -691,28 +704,31 @@ Rsd.define('Rsd.common.ComponentX', {
         return this;
     },
 
-    /*
+    /**
      * */
     isDisabled: function isDisabled() {
         $(this.dom).attr("disabled") == 'true';
     },
-    /*
+
+    /**
      * */
     isHidden: function isHidden() {
         $(this.dom).css("display") == 'none';
     },
-    /*
+
+    /**
      * */
     isRendered: function isRendered() {
         return this.dom != null && this.dom.parentNode != null;
     },
-    /*
+
+    /**
      * */
     isDestroyed: function isDestroyed() {
         return Rsd.objects[this.id] == undefined || Rsd.objects[this.id] == null;
     },
 
-    /*
+    /**
      * */
     setDisabled: function setDisabled(disabled) {
         this.disabled = disabled;

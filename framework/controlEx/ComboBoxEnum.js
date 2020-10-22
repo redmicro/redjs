@@ -15,6 +15,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
     /*
      * */
     constructor: function ComboBoxEnum (config) {
+
         this.apply(config||{});
 
         if(Rsd.isString(this.enum))
@@ -84,6 +85,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         {
             return[];
         }
+        
         var _config = config ||{};
         var _editable = _config.editable;
         var _value = row[_config.dataIndex|| _config.dataindex || _config.name];
@@ -92,7 +94,38 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         var _enum = _config.enum;
         if(Rsd.isString(_config.enum))
         {
-            _enum = Rsd.widget(_config.enum,{});
+            console.log(_config.enum); 
+            if (!Rsd.xtypes[config.enum]) {
+              
+                Rsd.request({url:Rsd.app.apiHost+'/dev/getenum?enumtype=' + config.enum ,async:false},function(data){
+ 
+                    if(!Rsd.isEmpty(data.data))
+                    {
+                      Rsd.define(data.data.name,{
+                          extend:'Rsd.data.Enum',
+                          "valueMember": "code",
+                          "codeMember": "code",
+                          "textMember": "text",
+                          items:data.data.items,
+                          constructor:function constructor()
+                          {
+          
+                          }
+                       });
+                    }else
+                    {
+                        Rsd.warn('类型：' + _config.enum + '不存在。');
+                    }
+              
+                  });
+                
+              
+                return [];
+
+            } else {
+                _enum = Rsd.widget(_config.enum,{});
+            }
+          
         }
         if(Rsd.isArray(_config.enum))
         {
@@ -123,7 +156,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
 
         if(!(_enum instanceof Rsd.data.Enum))
         {
-            throw new Error('config [enum] value ('+ _config.enum.toString() +') is not Rsd.data.Enum.');
+            throw new Error('config [enum] value ('+ _config.enum.toString() +') is not Rsd.data.Enum.'); 
         }
 
 
@@ -143,7 +176,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
             else
             {
                var _ctrl = null;
-               _ctrl = document.createTextNode(_value);
+               _ctrl = document.createTextNode((_value == null || _value == undefined || _value == '') ? _config.emptyText : _value);
                return [_ctrl]
             }
 

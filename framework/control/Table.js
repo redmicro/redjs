@@ -615,14 +615,8 @@ Rsd.define('Rsd.control.Table', {
                         {
                             td.innerHTML='';
                         }
-                        _td.style.textAlign = col.align || 'center';
-                        if (Rsd.isString(col.enum) && !Rsd.xtypes[col.enum]) {
-                            me.warn('类型：' + col.enum + '不存在。');
-                            _cell = document.createTextNode((_value == null || _value == undefined || _value == '') ? emptyText : _value);
-                        } else {
-                            _cell = Rsd.controlEx.ComboBoxEnum.prototype.makeControl(col, row);
-                        }
-
+                        _td.style.textAlign = col.align || 'center'; 
+                        _cell = Rsd.controlEx.ComboBoxEnum.prototype.makeControl(col, row); 
                         break;
                     }
                     case 'json': {

@@ -129,7 +129,7 @@ Rsd.define("Rsd.common.Layouter", {
 
         }
     },
-    /*
+    /**
      * */
     layoutBorder:function layoutBorder(obj){
         //debugger;
@@ -291,7 +291,7 @@ Rsd.define("Rsd.common.Layouter", {
         }
 
     },
-    /*
+    /**
      * 一列多行布局
      * */
     layoutVbox:function layoutVbox(obj){
@@ -379,7 +379,7 @@ Rsd.define("Rsd.common.Layouter", {
             obj.dom.style.height = _h +'px';
         }
     },
-    /*
+    /**
      * 一行多列布局
      * */
     layoutHbox:function layoutHbox(obj){
@@ -468,7 +468,7 @@ Rsd.define("Rsd.common.Layouter", {
             obj.dom.style.width = _w +'px';
         }
     },
-    /*
+    /**
      * */
     layoutFit:function layoutFit(obj){
         if(obj.layout.type != 'fit')
@@ -517,7 +517,7 @@ Rsd.define("Rsd.common.Layouter", {
             }
         }
     },
-    /*
+    /**
     * */
     layoutAuto:function layoutAuto(obj){
         if(obj.layout.type != 'auto')
@@ -558,8 +558,9 @@ Rsd.define("Rsd.common.Layouter", {
             }
         }
     },
-    /*
-     * */
+
+    /** 
+     * */ 
     layoutContent: function layoutContent(header, body,sizeUnit) {
 
         var _h_style =  header.style || {};

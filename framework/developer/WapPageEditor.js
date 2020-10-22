@@ -26,12 +26,12 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             layout:'hbox',
             width:'100%',
             height:'100%',
-            margin:'15 15 0 0',
+            margin:'10 15 0 0',
             items:[
                 {xtype:'label',flex:1,cls:'x-f-title'},
-                {xtype:'button',text:'重 置',handler:'btn_reset'},
+                {xtype:'button',width:120,height:35,text:'保存并发布',handler:'btn_save_and_publish'},
                 {width:15},
-                {xtype:'button',text:'退 出',handler:'btn_close'},
+                {xtype:'button',height:35,text:'退 出',handler:'btn_close'},
             ]
         }
         
@@ -181,13 +181,13 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             "style":{backgroundColor:'rgba(31, 116, 227, 0.247059)',lineHeight:50,display:'flex'}, 
             layout:'hbox',
             items:[
-                {flex:2},
+                {flex:3},
                 {xtype:'button',text:'预 览',handler:'_btn_preview',height:35,width:90},
                 {flex:1},
                 {xtype:'button',text:'暂 存',handler:'_btn_save',height:35,width:90},  
                 {flex:1},
-                {xtype:'button',text:'保存并发布',handler:'btn_save_and_publish',height:35,width:100},  
-                {flex:2}
+                {xtype:'button',text:'重 置',handler:'btn_reset',height:35,width:90},  
+                {flex:3}
             ]
         }
 
@@ -290,6 +290,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     * */
     load:function load(data) {
  
+        this.header.content.items[1].setElStyle('ctrl',{backgroundColor:'#ddf3fe'},);
         //page列表数据 和分类数据
         this.items[0].loadData();
         
@@ -326,8 +327,14 @@ Rsd.define('Rsd.developer.WapPageEditor', {
                 me.items[2].setDocumentTitle(me.title);
             }
             me.items[2].loadData(data||me.page);
-            me.buildTree();
+
+           
+
         },100);
+
+        setTimeout(function(){
+            me.buildTree(true); 
+        },300);
 
     },
     /**
@@ -347,7 +354,9 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         page.id = this.page.id;
         this.funApplyByIOC(this.saveApi,[page]); 
     },
-    
+    /**
+     * 
+     */
     btn_save_and_publish:function()
     {
         var simulator = this.items[2];
@@ -379,7 +388,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         this.funApplyByIOC(this.listApi,[sender.selectedItem]);  
     },
     /** 
-     * 
+     * 添加控件
     */
     btn_add:function btn_add(item) {
         var me = this;
@@ -396,10 +405,12 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         }
         var _ctrl = this.items[2].addControl(_menu.config);
 
-        this.loadCtrlProperty(_ctrl, null);
-
+       
         setTimeout(function () {
             me.buildTree();
+
+            me.loadCtrlProperty(_ctrl, null);
+
         },20);
 
     },
@@ -413,7 +424,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     /**
      * 构建文档结构树
      */
-    buildTree:function buildTree() {
+    buildTree:function buildTree(selectedRoot) {
 
 
          var _doc = this.items[2].getDocConfig();
@@ -441,6 +452,12 @@ Rsd.define('Rsd.developer.WapPageEditor', {
 
          _tree.loadData(_nodes);
 
+         if(selectedRoot)
+         { 
+            this.loadCtrlProperty(_doc.element,{});
+         } 
+        
+
     },
     /**
      * 文档结构中 选择则控件
@@ -451,11 +468,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     {    
         if(node.tag)
         {
-            if(Rsd.isType(node.tag,HTMLDocument))
-            {
-                node.tag.id = node.id;
-            } 
-            
+             
             this.loadCtrlProperty(node.tag,event);
            
         }else

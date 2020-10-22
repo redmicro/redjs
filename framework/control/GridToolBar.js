@@ -22,10 +22,10 @@ Rsd.define('Rsd.control.GridToolBar', {
     /**
      * @description 未设置查询条件时，查询按钮文本
      * */
-    loadText:'刷 新',
+    loadText:'加 载',
     items:[
         { xtype:'container', layout:{type:'hbox',align:'left'},margin: '5 0 5 0',width:'auto', border:false,items:[]},
-        { xtype:'button', text: '刷 新' ,height:50,margin: '7 5 15 10', width: 100, handler:'btn____search'},
+        { xtype:'button', text: '加 载' ,height:50,margin: '7 5 15 10', width: 100, handler:'btn____search'},
 
     ],
     /**
@@ -78,7 +78,7 @@ Rsd.define('Rsd.control.GridToolBar', {
             var _txt = me.findText || '筛 选';
             if(columns.length == 0 )
             {
-                _txt = me.loadText || '刷 新';
+                _txt = me.loadText || '加 载';
             }
 
             if(me.items[1] instanceof Rsd.control.Component )
