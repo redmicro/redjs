@@ -183,8 +183,24 @@ Rsd.define('Rsd.control.TreeNode', {
      * High lights the selected node
      *
      * */
-    select: function () {
+    select: function select(value) {
         var me = this;
+        
+        if(value != undefined && value != null && (value==false || value == 0 || value<0))
+        {
+            me.dom.classList.remove("x-selected");
+            me.selected = false;
+            if(me.hasChild())
+            {
+                for(var i in me.nodes)
+                {
+                    me.nodes[i].select(false);
+                }
+            }
+            
+            return;
+        }
+
         if (me.selected) {
             return;
         }
@@ -239,6 +255,8 @@ Rsd.define('Rsd.control.TreeNode', {
             _dom.id = _id;
             _dom.classList.add('x-treenode');
             _dom.classList.add('x-treenode-level-'+me.deep);
+            
+            me.tree.setElStyle(_dom,me.tree.nodeStyle);
         }
 
         _dom.style.display = (me.deep > 0 || me.tree.showRoot) ? me.__expand : me.__collapse;
@@ -400,13 +418,13 @@ Rsd.define('Rsd.control.TreeNode', {
                         }
                     } else {
                         me.funApplyByIOC(me.dblClick || me.tree.nodeDblClick, [me, e]);
-                        me.select();
+                        //me.select();
                     }
 
                 };
                 _a.onclick = function (e) {
                     me.funApplyByIOC(me.click || me.tree.nodeClick, [me, e]);
-                    me.select();
+                    //me.select();
                 };
 
                 _dom.appendChild(_a);

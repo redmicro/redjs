@@ -101,6 +101,7 @@ Rsd.define('Rsd.container.Simulator', {
         }
     },
     /**
+     * 
      *  */ 
     app_afterLayout:function app_afterLayout()
     {
@@ -108,7 +109,7 @@ Rsd.define('Rsd.container.Simulator', {
         this.items[0].body.style.height = _height - 46 + 'px';
     },
      /**
-      * 
+      * @description 添加控件
       */ 
    addControl:function addControl(config) 
    {
@@ -259,6 +260,7 @@ Rsd.define('Rsd.container.Simulator', {
         return _ctrl;
     
     },
+
     /**
      * @description 获取控件
      * @param {*} id 
@@ -267,9 +269,32 @@ Rsd.define('Rsd.container.Simulator', {
     { 
         return this.controls[id];
     },
-    
-    /*
-    * */
+    /**
+     * @description 清除所有选择
+     */
+    clearSelected:function selectControl()
+    { 
+        for(var i in this.controls)
+        {
+            var ctrl = this.controls[i];
+            ctrl.removeCls('container', 'x-component-select-box');
+        }
+    },
+    /**
+     * 选择控件
+     * @param {*} id 
+     */
+    selectControl:function selectControl(id)
+    {
+        var ctrl = this.controls[id];
+        if(ctrl)
+        {
+            ctrl.addCls('container', 'x-component-select-box');
+        }
+    },
+    /** 
+     * @@description 获取文档dom
+     * */ 
     getDocument:function getDocument() {
 
         if( this.items[0].body.contentWindow)
@@ -312,8 +337,9 @@ Rsd.define('Rsd.container.Simulator', {
     },
    
     /**
-    *
-    * */
+     * 获取整个文档配置
+     * @param {*} forSave 
+     */
     getDocConfig:function getDocConfig(forSave) {
 
         var _doc = this.getDocument();
@@ -336,14 +362,16 @@ Rsd.define('Rsd.container.Simulator', {
            delete _config['element'];
            delete _config['id'];
         }
+        
         return _config;
 
     },
     /**
-    *
+    * @description 获取文档设计组件配置项
      * */
     getControlConfig:function getControlConfig(ctrl,forSave) {
 
+        
         var _config = {element:ctrl};
          //set parent id
          if(ctrl.parent instanceof Rsd.common.ComponentX)

@@ -163,8 +163,10 @@ Rsd.define('Rsd.developer.WapPageEditor', {
                 } 
             },
             "style":{backgroundColor:'rgba(214,214,214,0.2)',border:'1px black solid'},  
+            nodeStyle:{height:35,lineHeight:35},
             nodeClick:'tree_select_ctrl',
             showRoot:false,
+            showLine:false,
             border:false,
             margin:'0 0 0 0',
             width:280
@@ -415,10 +417,12 @@ Rsd.define('Rsd.developer.WapPageEditor', {
 
 
          var _doc = this.items[2].getDocConfig();
+        
          var _tree = this.items[4];
 
          var _nodes = [];
-         _nodes.push({text: _doc.id+'(' + _doc.title+')',id:_doc.id,  autoExpanded: true, dynamic: true, tag: _doc.element})
+         _nodes.push({text: _doc.id+'(' + _doc.title+')',id:_doc.id ,  autoExpanded: true, dynamic: true, tag: _doc.element})
+
          var _list = _doc.items;
 
          for (var i = 0; i < _list.length; i++) {
@@ -437,35 +441,42 @@ Rsd.define('Rsd.developer.WapPageEditor', {
 
          _tree.loadData(_nodes);
 
-     },
+    },
     /**
      * 文档结构中 选择则控件
      * @param {*} node 
      * @param {*} event 
      */
     tree_select_ctrl:function tree_select_ctrl(node,event)
-    { 
-        //node.dom.style.color= 'blue';
-        
+    {    
         if(node.tag)
         {
+            if(Rsd.isType(node.tag,HTMLDocument))
+            {
+                node.tag.id = node.id;
+            } 
+            
             this.loadCtrlProperty(node.tag,event);
+            var simulator = this.items[2];
+            simulator.clearSelected();
+            simulator.selectControl(node.id);
         }else
         {
             Rsd.showMessage('对象不存在');
         }
 
     },
-    /** 
+    /**
      * 展示控件属性值
-     * */ 
+     * @param {docment or control} sender 
+     * @param {*} event 
+     */
     loadCtrlProperty:function loadCtrlProperty(sender, event) {
 
         var _grid = this.items[3];
         _grid.element = sender;
         var arr = [];
-
-
+       
         var _config = this.items[2].getControlConfig(sender);
 
         for (var i in _config) {
@@ -501,6 +512,11 @@ Rsd.define('Rsd.developer.WapPageEditor', {
 
         _grid.loadData(arr);
 
+        //select tree node 
+        var _tree = this.items[4];
+        _tree.clearSelected();
+        _tree.selectNode(sender.id);
+       
     },
     /**
      * 修改属性值
