@@ -94,33 +94,34 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         var _enum = _config.enum;
         if(Rsd.isString(_config.enum))
         {
-            console.log(_config.enum); 
+            
             if (!Rsd.xtypes[config.enum]) {
               
                 Rsd.request({url:Rsd.app.apiHost+'/dev/getenum?enumtype=' + config.enum ,async:false},function(data){
  
                     if(!Rsd.isEmpty(data.data))
                     {
-                      Rsd.define(data.data.name,{
-                          extend:'Rsd.data.Enum',
-                          "valueMember": "code",
-                          "codeMember": "code",
-                          "textMember": "text",
-                          items:data.data.items,
-                          constructor:function constructor()
-                          {
-          
-                          }
-                       });
+                        Rsd.define(data.data.name,{
+                            extend:'Rsd.data.Enum',
+                            "valueMember": config.valueMember||"code",
+                            "codeMember": config.codeMember||"code",
+                            "textMember": config.textMember||"text",
+                            items:data.data.items,
+                            constructor:function constructor()
+                            {
+            
+                            }
+                        });
+
+                       _enum = Rsd.widget(_config.enum,{});
+
                     }else
                     {
                         Rsd.warn('类型：' + _config.enum + '不存在。');
                     }
-              
-                  });
-                
-              
-                return [];
+
+                  
+                  }); 
 
             } else {
                 _enum = Rsd.widget(_config.enum,{});

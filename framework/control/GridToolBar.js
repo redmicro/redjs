@@ -80,7 +80,7 @@ Rsd.define('Rsd.control.GridToolBar', {
             {
                 _txt = me.loadText || '加 载';
             }
-
+             
             if(me.items[1] instanceof Rsd.control.Component )
             {
                 me.items[1].setValue(_txt) ;
