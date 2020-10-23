@@ -2318,7 +2318,11 @@ function Redjs(config) {
      *
      * */
     this.isNaN = function isNaN(obj) {
-        return isNaN(obj);
+        if(window)
+        {
+            return window.isNaN(obj);
+        }
+        return Number.isNaN(obj);
     };
 
     /**

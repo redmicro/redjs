@@ -43,6 +43,8 @@ Rsd.define('Rsd.container.Component', {
     * 等于header.content
     * */
     //title: '',
+    //鼠标按住头部可拖动
+    //draggable:false,
     /*
     *
     * */
@@ -122,7 +124,7 @@ Rsd.define('Rsd.container.Component', {
         {
             this.body.style.overflow = this.overflow;
         }
-        var me = this;
+        var me = this; 
         if(this.draggable)
         {
             this.header.element.onmouseover=function(e)
@@ -521,36 +523,41 @@ Rsd.define('Rsd.container.Component', {
 
             this.show(_animate, _speed);
         }
-
-        //set position
-        {
-            var me = this;
-
-            if (_x == null) {
-
-                var _w = _p_dom.clientWidth > window.screen.availWidth ? window.screen.availWidth : _p_dom.clientWidth;
-                _x = (_w - me.width) / 2;
-            }
-            if (_y == null) {
-                var _h = _p_dom.clientHeight > window.screen.availHeight ? window.screen.availHeight : _p_dom.clientHeight;
-                _y = ((_h - me.height) * 3) / 10;
-            }
-
-            if (_x < 0) {
-                _x = 0;
-            }
-            if (_y < 0) {
-                _y = 0;
-            }
-
-            me.setPosition(_x, _y);
-        }
+        var me = this;
+        
 
         this.dom.style.zIndex = Rsd.getZIndex(_m_bg.count+1);
         this.dom.style.opacity=0;
 
         this.show(0,function () {
-            this.animate({opacity:1},80,function () {});
+ 
+            me.animate({opacity:1},80,function () {
+                //显示后 set position  ，确保me.dom.clientWidth和me.dom.clientHeight值有效
+                { 
+                    if (_x == null) {
+
+                        var _w = _p_dom.clientWidth > window.screen.availWidth ? window.screen.availWidth : _p_dom.clientWidth;
+                        _x = (_w - me.width||me.dom.clientWidth) / 2;
+                    }
+                    if (_y == null) {
+                        var _h = _p_dom.clientHeight > window.screen.availHeight ? window.screen.availHeight : _p_dom.clientHeight;
+                        _y = ((_h - me.height||me.dom.clientHeight) * 3) / 10;
+                    }
+
+                    if (_x < 0) {
+                        _x = 0;
+                    }
+                    if (_y < 0) {
+                        _y = 0;
+                    }
+                    //console.log(me.dom.clientWidth, me.dom.clientHeight);
+                    //console.log(_x, _y);
+
+                    me.setPosition(_x, _y);
+                }
+
+
+            });
         });
 
         return this;

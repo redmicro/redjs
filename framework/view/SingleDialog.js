@@ -18,8 +18,7 @@ Rsd.define('Rsd.view.SingleDialog', {
             "style":{"overflowY":'auto'},
             height:'auto',
             region:'center',
-            width:'100%',
-            flex:100,
+            width:'100%' 
         },
         {
             height: 55,
@@ -139,6 +138,9 @@ Rsd.define('Rsd.view.SingleDialog', {
        if(this.height =='auto')
        {
            this.height =  100 + mv.height;
+       }else
+       {
+           this.container.style.overflowY='auto';
        }
 
     },

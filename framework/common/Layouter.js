@@ -38,7 +38,7 @@ Rsd.define("Rsd.common.Layouter", {
         }
 
         var _sizeUnit = obj.sizeUnit||'px';
-
+        
         obj.setElStyle(obj.dom,obj.style,_sizeUnit);
 
         var _names = ['top', 'right', 'bottom', 'left'];

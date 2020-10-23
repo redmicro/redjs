@@ -6,9 +6,9 @@ Rsd.define('Rsd.container.Dialog', {
     xtype: 'dialog',
     domCls: 'x-dialog',
     floating: true,
-    /*
-       * 可拖动
-       * */
+    /** 
+     * @description 可拖动
+     * */ 
     draggable: true,
     modular: true,
     closeBtn: true,

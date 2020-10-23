@@ -77,9 +77,16 @@ Rsd.define('Rsd.control.Input', {
     * */
     setValue: function (value) {
         var me = this;
-        me.__value = value;
-        if (me.ctrl) {
-            me.ctrl.value = value;
+        if(me.inputType == 'number')
+        { 
+            me.__value = (value == null ||value==undefined || !Rsd.isNumber(value))?0:value;
+        }else
+        {
+            me.__value = value;
+        }
+      
+        if (me.ctrl) { 
+            me.ctrl.value = me.__value;
 
             //模拟触发onchange
             //me.ctrl.focus();
