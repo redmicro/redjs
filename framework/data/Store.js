@@ -111,14 +111,14 @@ Rsd.define('Rsd.data.Store', {
                                 }
                                 _list = data.data[me.listName];
                             }
-
+ 
                             for(var i in _list)
                             {
                                 var _r = _list[i];
                                 if(Rsd.isEmpty(_r[me.keyName]))
                                 {
-                                    me.error('Object key value is null(KeyName is ['+me.keyName+']).',_r);
-
+                                    me.error('Object key value is null(KeyName is ['+me.keyName+']).');
+                                    me.log(_r);
                                 }
                                 mapping[_r[me.keyName]] = _r;
                             }

@@ -114,7 +114,7 @@ body {
     right: 1px;
     bottom: 0px;
     left: 1px;
-    display: block;
+    display: block !important;
     margin: 0 !important;
     background-color: var(--bg-color);
     color: var(--font-color);

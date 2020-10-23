@@ -16,6 +16,9 @@ Rsd.define('Rsd.container.Dialog', {
     minBtn: true,
     width: '100%',
     height: 300,
+    /**
+     * @description 页面展示后自动加载数据
+     */
     autoLoad:true,
     header:{visible: true, height: 35, cls: 'x-f-header',style:{color:'#ffffff'}},
     title:'无标题',
@@ -27,13 +30,17 @@ Rsd.define('Rsd.container.Dialog', {
             }
         }
     },
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function Dialog(config) {
 
         config = config || {};
         this.apply(config);
     },
 
-    /*
+    /** 
      * */
     onAfterInit: function onAfterInit() {
         this.callParent();
@@ -56,7 +63,7 @@ Rsd.define('Rsd.container.Dialog', {
         _close.style.display = this.closeBtn ? '' : 'none';
         me.header.element.appendChild(_close);
     },
-    /*
+    /** 
      * */
     onAfterRender: function onAfterRender() {
         var me = this;
@@ -102,15 +109,21 @@ Rsd.define('Rsd.container.Dialog', {
         });
     },
 
-    /*
-    * 展示页面，页面展示后自动加载数据。
-    * */
+    /**
+     * @description 参数格式： (parent),(animate,speed), (parent,x, y), (parent,x, y,animate), (parent,x, y,animate,speed)
+    *  @description 展示页面，指定x，y值可以提高页面加载速度；页面展示后自动加载数据（autoLoad==true）。
+     * @param {*} parent 
+     * @param {*} x 
+     * @param {*} y 
+     * @param {*} animate 
+     * @param {*} speed 
+     */
     showDialog:function showDialog(parent, x, y,animate,speed){
 
-        var _parent = null;
-        var _x = null;
-        var _y = null;
-        var _animate = null;
+        var _parent = parent;
+        var _x = x;
+        var _y = y;
+        var _animate = animate;
         var _spees = arguments.length == 0?1000:speed;
         if(arguments.length == 2)
         {

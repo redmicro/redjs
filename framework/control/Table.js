@@ -710,7 +710,7 @@ Rsd.define('Rsd.control.Table', {
                             throw new Error("Could not find class xtype with [" + _xtype + "].");
                         }
                         if (!Rsd.isFunction(_class.prototype.makeControl)) {
-                            throw new Error('Class ' + _className + ' has no function makeControl.');
+                            throw new Error('Class ' + _className + ' has no function makeControl(config,row).');
                         }
                         if (!Rsd.isEmpty(row)) {
                             _cell = _class.prototype.makeControl(col, row);

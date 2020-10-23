@@ -334,8 +334,10 @@ Rsd.define('Rsd.container.Component', {
     },
 
     /**
+     * @description 参数格式：(parent), (x, y), (parent,x, y), (parent,x, y,animate), (parent,x, y,animate,speed)
+     * @description 指定x, y 值，可以页面展示效率
     *  @param parent 要展示的窗体 所在父窗体
-    *  @param 位置：x
+    *  @param 位置：x 
     *  @param 位置：y
     *  @param animate 动画：fadeIn，slideDown
     *  @param speed 打开速度
@@ -352,8 +354,7 @@ Rsd.define('Rsd.container.Component', {
         }
         // debugger;
         var _p =null, _x=null, _y=null,_animate=null,_speed=null;
-
-
+ 
         if (arguments.length == 1) {
             if(arguments[0] instanceof  Rsd.common.ComponentX || arguments[0] instanceof HTMLElement)
             {
@@ -412,8 +413,7 @@ Rsd.define('Rsd.container.Component', {
         {
             _p_dom = _p.dom;
         }
-
-
+ 
         //以模式框 形式展示
         {
             var _parent = _p_dom ;
@@ -437,8 +437,7 @@ Rsd.define('Rsd.container.Component', {
                 _m_bg.opacity = Number(_m_bg.style.opacity);
 
                 if(this.modular.animate)
-                {
-
+                { 
                     var _o =  Number(_m_bg.style.opacity);
                     var _i = 1;
                     var _j = 1;
@@ -524,15 +523,19 @@ Rsd.define('Rsd.container.Component', {
             this.show(_animate, _speed);
         }
         var me = this;
-        
+         
+        if (_x != null || _y != null) {  
+            me.setPosition(_x||100, _y||100);
+        }      
 
         this.dom.style.zIndex = Rsd.getZIndex(_m_bg.count+1);
         this.dom.style.opacity=0;
 
-        this.show(0,function () {
- 
+        this.show(0,function () { 
             me.animate({opacity:1},80,function () {
+                //未指定显示位置 ，计算默认显示位置
                 //显示后 set position  ，确保me.dom.clientWidth和me.dom.clientHeight值有效
+                if(_x == null || _y == null)
                 { 
                     if (_x == null) {
 
@@ -550,9 +553,7 @@ Rsd.define('Rsd.container.Component', {
                     if (_y < 0) {
                         _y = 0;
                     }
-                    //console.log(me.dom.clientWidth, me.dom.clientHeight);
-                    //console.log(_x, _y);
-
+                    //console.log(me.dom.clientWidth, me.dom.clientHeight); 
                     me.setPosition(_x, _y);
                 }
 

@@ -246,8 +246,8 @@ Rsd.define('Rsd.view.SingleDialog', {
         this.close();
     },
 
-    /*
-     *
+    /**
+     * @description 加载数据
      *  */
     load: function load(record) {
 
@@ -255,8 +255,7 @@ Rsd.define('Rsd.view.SingleDialog', {
         this.items[0].loadData(this.data);
         return this;
     },
-    /*
-    *
+    /**
     * */
     foucsField:function foucsField(index) {
         if(Rsd.isEmpty(index))
@@ -268,7 +267,7 @@ Rsd.define('Rsd.view.SingleDialog', {
 
         return this;
     },
-    /*
+    /** 
     *获取字段控件
     * */
     getFieldControl:function getFieldControl(index) {

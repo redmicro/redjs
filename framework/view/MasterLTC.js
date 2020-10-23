@@ -20,6 +20,7 @@ Rsd.define('Rsd.view.MasterLTC', {
     style: {
         //minHeight:600,
         //minWidth:800,
+        position:'fixed',
         overflowX: 'hidden',
         overflowY: 'hidden',
         backgroundColor:'rgba(128, 128, 128, 0.04)'

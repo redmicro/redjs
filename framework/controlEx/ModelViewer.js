@@ -20,6 +20,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
     layout:'fit',
     margin: '10 20 10 20',
     height: 'auto',
+    //fields 已加载
     isLoaded:false,
     readOnly:true,
     errorList:[],
@@ -60,8 +61,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
     * */
     loadFields:function loadFields(readOnly)
     {
-        //debugger;
-
+        //debugger; 
         var me = this;
         if(me.isLoaded)
         {
@@ -153,6 +153,9 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
             }
 
         }
+        //isLoaded == false 时 ，数据不会被加载
+        this.loadData();
+
         return this;
     },
     /*
@@ -180,9 +183,9 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
 
         return this.errorList.length == 0;
     },
-    /*
-    错误消息处理
-    *handler:方法注入
+    /**
+    *@description错误消息处理
+    *@descriptionhandler:方法注入
     * */
     showError:function showError(handler) {
         if(handler)
@@ -195,9 +198,9 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
         }
 
     },
-    /*
-    * 在验证通过时，将控件获取到到数据合并到obj中返回。
-    * 不通过，返回null.
+    /** 
+    * @description 在验证通过时，将控件获取到到数据合并到obj中返回。
+    * @description 不通过，返回null.
     * */
     getRecord:function getRecord(obj)
     {
@@ -226,9 +229,9 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
         }
 
     },
-    /*
+    /**
     *
-    * 获取字段值
+    * @description 获取字段值
     * */
     getFieldValue:function getFieldValue(name)
     {
@@ -248,24 +251,28 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
 
         return _obj[name];
     },
-    /*
-     *
+
+    /**
+     *@description 
      * */
     loadData: function loadData(record) {
 
-        var _r = record || this.data || {};
+        var _r = record || this.data || {}; 
         this.data = _r;
-        if(!_r)
-        {
-            return;
-        }
+        //fields  暂未加载 不加载数据,更新this.data
+       if(this.isLoaded == false)
+       {
+           return;
+       }
         var me = this;
-        var _item = null;
-        var _dataIndex = null;
-        for (var i=0; i < me.items[0].items.length;i++) {
+        var _item = null;  
+        var _dataIndex = null;  
+        for (var i=0; i < me.items[0].items.length;i++)
+         {
+            _item =  me.items[0].items[i];
+             
               try
-              {
-                  _item =  me.items[0].items[i];
+              { 
                   _dataIndex = _item.dataIndex||_item.dataindex;
                   if(Rsd.hasProperty(_r,_dataIndex)) {
                       _item.setValue(_r[_dataIndex]);
@@ -287,7 +294,7 @@ Rsd.define('Rsd.controlEx.ModelViewer', {
                   }
               }
               catch (e) {
-
+                 console.error(e);
               }
 
         }
