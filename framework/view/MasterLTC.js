@@ -290,6 +290,8 @@ Rsd.define('Rsd.view.MasterLTC', {
         var _sep = this.items[1].separatorContainers[0];
         _sep.title = '单击隐藏';
     }
+
+    
 },function(type){
 
     var _leftGetter = function () {

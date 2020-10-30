@@ -97,14 +97,14 @@ Rsd.define('Rsd.control.Component', {
 
         if(this.labelTagName.toLowerCase() == 'img' )
         {
-            if($empty(this.label.content))
+            if(Rsd.isEmpty(this.label.content) && Rsd.isEmpty(this.label.src))
             {
 
                 this.label.element.src = Rsd.emptyImage();
             }
             else
             {
-                this.label.element.src = this.label.content;
+                this.label.element.src = this.label.content||this.label.src;
             }
         }
         else

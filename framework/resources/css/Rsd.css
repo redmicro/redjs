@@ -23,7 +23,7 @@
     --bg-color-image-viewer-header:rgba(0, 0, 0, 0.0);
 
     --bg-color-waiting:rgba(111, 211, 41, 0.8);
-    --bg-color-loading:rgba(103, 211, 114, 0.6);
+    --bg-color-loading:rgba(41, 86, 211, 0.6);
     --bg-color-popup-bar:#00AA00 ;
 
     /*menu*/
@@ -1494,7 +1494,7 @@ legend {
     font-size: 130%;
     font-family: "Arial";
     background-color: var(--bg-color-waiting);
-    color: rgba(11,11,165,0.9);
+    color: #eff3f6;
 }
 .x-loading-box
 {}
@@ -1506,7 +1506,7 @@ legend {
     font-size: 120%;
     font-family: "Arial";
     background-color: var(--bg-color-loading);
-    color: rgba(11,11,165,0.9);
+    color: #eff3f6;
 }
 
 

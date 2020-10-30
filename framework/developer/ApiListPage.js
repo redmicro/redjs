@@ -136,23 +136,31 @@ Rsd.define('Rsd.developer.ApiListPage', {
     /**
      *
      * */
-    load:function(args)
+    load:function load(args)
     {
-
+      
         var me = this;
+        me.callParent();
+
         var _args = args||{};
-         
-        this.loadServices(_args.where||[],function (data) {
-            me.dataStore = data;
-        });
+        setTimeout(function load(){
+             
+            me.loadServices(_args.where||[],function (data) {
+                me.dataStore = data;
+                me.callParentFn('load'); 
+            });
+        },500)
        
-        this.callParent();
+       
+   
+        
     },
     /*
     *获取服务
     * */
     loadServices:function loadServices(args,callback) {
 
+        
         var list = [];
         var _args = args||[];
         var _key=null;

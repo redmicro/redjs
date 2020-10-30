@@ -194,7 +194,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     ],
     ctrlConfig:[
         {
-            text:'Form',
+            text:'表 单',
             icon:'default.123',
             config:
             {
@@ -207,7 +207,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             }
         },
         {
-            text:'Box',
+            text:'方 框',
             icon:'default.123',
             config:{
                 xtype:'container',
@@ -219,7 +219,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             }
         },
         {
-            text:'图片',
+            text:'图 片',
             icon:'default.146',
             config:{
                 xtype:'image',
@@ -233,7 +233,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             }
         },
         {
-            text:'文本',
+            text:'文 本',
             icon:'default.6',
             config:{
                 xtype:'label',
@@ -246,23 +246,25 @@ Rsd.define('Rsd.developer.WapPageEditor', {
             }
         },
         {
-            text:'连接',
+            text:'连 接',
             icon:'default.5',
             config:{xtype:'link', width:'100%',draggable:true,text:'点击跳转'}
         },
         {
-            text:'按钮',
+            text:'按 钮',
             icon:'default.14',
             config:{xtype:'button',draggable:true,text:'提交按钮'}
-        },
+        }, 
+        {text:'搜 索',config:{}},
+        {text:'新 闻',config:{}},
         {
             text:'幻灯片',
             config:{}
         },
-        {text:'Icons',config:{}},
-        {text:'tabList',config:{}},
-        {text:'导航栏',config:{}},
-        {text:'报表',config:{}}
+        {text:'导 航',config:{}},
+        {text:'菜 单',config:{}},
+        {text:'商 品',config:{}},
+        {text:'广 告',config:{}}
     ],
     saveApi:null,
     getApi:null,

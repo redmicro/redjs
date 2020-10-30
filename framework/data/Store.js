@@ -218,9 +218,6 @@ Rsd.define('Rsd.data.Store', {
             Rsd.callFunction(this,callback,[_localCache.mapping[key.trim()]]);
             return _localCache.mapping[key.trim()];
         }
-
-
-
     },
     /*
     *

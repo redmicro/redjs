@@ -1709,17 +1709,23 @@ function Redjs(config) {
             for (var i in _plugins) {
 
                 var _p = _plugins[i];
-
+                //console.log(className,_p.name);
                 if (className.startWith(_p.name)) {
-
+                    
                     _url = _url.replace(_p.name, '');
                     _url = _url.replace("Rsd", me.getRedjsHost());
                     _url = _p.path + '/' + _url.replaceAll('[.]', '/') + '.js';
                     _url += '?t=' + (_p.isDebug ? new Date().getTime() : _p.pluginDate);
-
+                   
                     _flag = false;
 
                     break;
+                }else
+                {
+                    if (className.toLowerCase().startWith(_p.name.toLowerCase()))
+                    {
+                        console.error('要加载的类（' + className + '），类名称大小写不规范。（应以：'+_p.name+'开始)');
+                    }
                 }
             }
         }

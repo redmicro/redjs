@@ -16,7 +16,7 @@ Rsd.define('Rsd.container.WaitingBox', {
     items: [
         {
             xtype: 'label',
-            flex:50,
+          
             ctrlCls:'x-text',
             listeners:{
                 'dblclick':{

@@ -92,9 +92,11 @@ Rsd.define('Rsd.control.Image', {
             this.image.style.clip = this.clip;
         }
     },
-    /** 
+    /**
      * @description 必须在此设置src
-     * */ 
+     * @param {*} src 
+     * @param {*} ms  延时设置src的时间
+     */
     setSrc: function (src,ms) {
 
         var me = this;

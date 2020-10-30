@@ -89,7 +89,10 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         var _config = config ||{};
         var _editable = _config.editable;
         var _value = row[_config.dataIndex|| _config.dataindex || _config.name];
-
+        if(_value==undefined)
+        {
+            return document.createTextNode(_config.emptyText ||'-');
+        }
         //debugger;
         var _enum = _config.enum;
         if(Rsd.isString(_config.enum))
@@ -160,7 +163,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
             throw new Error('config [enum] value ('+ _config.enum.toString() +') is not Rsd.data.Enum.'); 
         }
 
-
+      
         if(_editable)
         {
             var _ctrl = null;
@@ -169,7 +172,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
         }
         else
         {
-            var _enumItem = _enum.getItem(_value);
+            var _enumItem = _enum.getItem(_value);   
             if(_enumItem)
             {
                 return _enumItem.makeControl();
@@ -177,7 +180,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
             else
             {
                var _ctrl = null;
-               _ctrl = document.createTextNode((_value == null || _value == undefined || _value == '') ? _config.emptyText : _value);
+               _ctrl = document.createTextNode((_value == null || _value == undefined || _value == '') ? _config.emptyText ||'': _value);
                return [_ctrl]
             }
 
