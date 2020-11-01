@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2017/9/5.
+ * 鼠标悬停 显示子菜单
  */
 Rsd.define('Rsd.control.NavigateMenu', {
     extend: 'Rsd.control.Component',
@@ -116,7 +117,7 @@ Rsd.define('Rsd.control.NavigateMenu', {
             case 'top':
                 me.ctrl.style.top = me.height+'px';
                 break;
-            case  'left':
+            case 'left':
                 me.ctrl.style.top ='0px';
                 me.ctrl.style.left = me.width  +'px';
 
