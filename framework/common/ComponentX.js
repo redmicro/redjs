@@ -1084,8 +1084,7 @@ Rsd.define('Rsd.common.ComponentX', {
     * */
     showLoading: function showLoading(msg, cls) {
 
-        var _x = (this.container.clientWidth - 250) / 2;
-        var _y = (this.container.clientHeight - 50) / 2;
+        var me = this;
 
         if (this.__loadingBox) {
             this.__loadingBox.close();
@@ -1101,8 +1100,13 @@ Rsd.define('Rsd.common.ComponentX', {
                 border: false
             });
         }
-
-        this.__loadingBox.showDialog(this.container, _x, '40%');
+        //异步加载 是位置计算更准确
+        setTimeout(function(){
+            var _x = (me.container.clientWidth - 250) / 2;
+            var _y = (me.container.clientHeight - 50) / 2;
+            me.__loadingBox.showDialog(me.container, _x, '40%');
+        },100);
+       
         return this.__loadingBox;
     },
     /**
