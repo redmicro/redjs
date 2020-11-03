@@ -308,7 +308,18 @@ Rsd.define('Rsd.control.Image', {
         {
             _ctrl.style.clip = _config.clip;
         }
-        _ctrl.width =_w;
+        
+        if(_config.imageSize)
+        {
+            var arr = _config.imageSize.split(' ');
+            if(arr.length >1)
+            {
+                _w = arr[0];
+                _h = arr[1];
+            }
+        }
+        
+        _ctrl.width = _w;
         _ctrl.height = _h;
 
         return _ctrl;
