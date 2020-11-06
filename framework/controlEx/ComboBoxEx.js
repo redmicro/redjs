@@ -28,7 +28,20 @@ Rsd.define('Rsd.controlEx.ComboBoxEx', {
         }
         this.dataStore.load(null,function(data){
 
-            me.setDataSource(data.data) ;
+            var _list = null;
+
+            if(Rsd.isEmpty(me.dataStore.listName) )
+            {
+                _list = data.hasOwnProperty('data')?data.data:data;
+            }else
+            {
+                if(!data.data.hasOwnProperty(me.dataStore.listName))
+                {
+                    me.error('Data has no property(listName is ['+me.dataStore.listName+']).',data.data);
+                }
+                _list = data.data[me.dataStore.listName];
+            }
+            me.setDataSource(_list) ;
 
             if(me.seclectIndex !=null
                 && me.seclectIndex != undefined

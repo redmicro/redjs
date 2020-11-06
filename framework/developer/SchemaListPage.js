@@ -120,7 +120,7 @@ Rsd.define("Rsd.developer.SchemaListPage", {
     load:function load(args,callback)
     {
         var me = this;
-        var _args=args||[];
+        var _args=args||{};
         var _serviceName = this.serviceName||this.menu.serviceName;
         if(Rsd.isEmpty(_serviceName))
         {
@@ -134,7 +134,9 @@ Rsd.define("Rsd.developer.SchemaListPage", {
             Rsd.alert("服务["+_serviceName+"]不存在");
             return;
         }
-        this.callParent(args,function(data)
+        
+        _args.pageSize=200; 
+        this.callParent(_args,function(data)
         {
             if( !data.success)
             {
