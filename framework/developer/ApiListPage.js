@@ -241,6 +241,10 @@ Rsd.define('Rsd.developer.ApiListPage', {
             return [Rsd.circle(8,'green'),Rsd.blankspan(),Rsd.text('F','green')]  ;
         }
     },
+    /**
+     * 
+     * @param {*} row 
+     */
     checkSessionFormat:function checkSessionFormat(row ) {
         if (row['CheckSession'])
         {
