@@ -3031,6 +3031,14 @@ function Redjs(config) {
         if (this.isString(_s)) {
             _s = Number(_s);
         }
+        if(_s>0)
+        {
+            while(_s.toString().length < 13)
+            {
+                _s = _s*10;
+            }
+        }
+        
         if (this.isNumber(_s)) {
             return new Date(_s).format(format || 'yyyy-MM-dd hh:mm:ss');
         }
@@ -3213,7 +3221,7 @@ function Redjs(config) {
 
     /**
      * @public
-     * @description 创建buttom(a)对象，function (text,fn,caller,args)
+     * @description 创建button <input type='button'> 对象，function (text,fn,caller,args)
      * @param {string|object}  text 文字信息
      * @param {string|function} fn 点击事件函数
      * @param {object}  caller 调用对象
@@ -3222,8 +3230,40 @@ function Redjs(config) {
      * */
     this.button = function button(text, fn, caller, args,style,tip) {
         var me = Rsd||this;
-        var btn = document.createElement('a');
+        var btn = document.createElement('input');
+        btn.type = 'button';
         btn.classList.add('x-text-button');
+        btn.value = text;
+        if(Rsd.isString(tip))
+        {
+            btn.title = tip;
+        }
+        this.setElStyle(btn,style||{});
+        if (me.isEmpty(fn)) {
+            btn.title = "暂不可操作。";
+            btn.classList.add("x-control-disabled");
+        }
+        else {
+            btn.onclick = function () {
+                me.callFunction(caller, fn, args);
+            };
+        }
+
+        return btn;
+    };
+    /**
+     * @description 样式简单 无背景的 <a>标签
+     * @param {*} text 
+     * @param {*} fn 
+     * @param {*} caller 
+     * @param {*} args 
+     * @param {*} style 
+     * @param {*} tip 
+     */
+    this.link = function link(text, fn, caller, args,style,tip) {
+        var me = Rsd||this;
+        var btn = document.createElement('a');
+        btn.classList.add('x-text-link');
         btn.href = 'javascript:void(0);';
         btn.innerHTML = text;
         if(Rsd.isString(tip))

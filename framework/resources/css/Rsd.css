@@ -130,10 +130,9 @@ th,tfoot>tr,tfoot>td {
 }
 
 input[type='button'] {
-
-    background:  var(--bg-color-button) !important;
+    background-color: var(--bg-color-button);
     border: 1px solid gray;
-    color: #000000 !important;
+    color: #000000 ;
     font-family: '微软雅黑';
     width:75px;
 }
@@ -160,17 +159,19 @@ input[type='radio'] {
 }
 input,textarea {
     border: 1px solid gray;
-    background-color: #ffffff;;
+    background-color: #ffffff;
 }
 
 input:focus, textarea:focus
 {
-    background: rgb(255, 255, 255) !important;
+    background: rgb(255, 255, 255) ;
     border: 1px solid #6FA1D9 ;
     -webkit-box-shadow:0px 0px 5px #6FA1D9;
 }
 input[type="button"]:focus,input[type="checkbox"]:focus,input[type="submit"]:focus,input[type="reset"]:focus, input[type="radio"]:focus
 {
+    
+    background-color: var(--bg-color-button);
     -webkit-box-shadow:none;
     /*outline: 1px solid #6FA1D9 !important;*/
 }
@@ -610,7 +611,7 @@ legend {
 }
 
 .x-componentx-container .x-ctrl {
-    background: inherit;
+   /* background: inherit;*/
     padding: 0px 0px 0px 0px;
     outline: none;
     font-size: inherit;
@@ -631,7 +632,6 @@ legend {
 .x-control-button {
 
     border-radius: 5px;
-    border: 1px solid #fff;
     outline: none;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -640,7 +640,7 @@ legend {
 {
     display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #fff  !important;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -649,13 +649,14 @@ legend {
     user-select: none;
     background-color: transparent;
     border: 1px solid transparent;
+    width: auto !important;
     padding: .2rem .75rem;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 2;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #007bff !important;
+    border-color: #007bff  !important;
 }
 .x-text-label
 {
@@ -676,6 +677,14 @@ legend {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     background-color: #1498ff;
     border-color: #1498ff;
+}
+.x-text-link
+{
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 .x-control-hidden
 {
