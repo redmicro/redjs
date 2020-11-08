@@ -13,51 +13,55 @@ Rsd.define('Rsd.control.Timestamp', {
         config = config || {};
         this.apply(config);
     },
+    /***
+     *  重写setValue
+     * 因为继承了Rsd.control.Date 所以 this.__value 的实际指类型必须是Date
+     */
     setValue:function setValue(value)
     {
-        if(value == null)
+        if( this.__value == value)
         {
-            this.value = null;
             return;
         }
-        var _value = parseInt(value);
-        if(isNaN(_value)==false)
+        
+        var _date = null;
+        if(value == null)
         {
-            this.value = new Date(value);
-
+            _date = new Date(0);
         }
-        if(  this.value == null)
+       
+        if(value instanceof Date)
+        {
+            _date = value;
+        }
+
+        if(_date==null && !Rsd.isNumber(value))
         {
             Rsd.error('Timestamp值设置错误：【'+ value + '】不是有效的数字类型。');
             return;
         }
-        if(Rsd.isNumber(_value))
+
+        if(_date == null)
         {
+            var _value = parseInt(value);
             for(var i =0 ;i < 6-this.precision;i++)
             {
                 _value = _value * 10;
             }
-            if(_value > 0)
-            {
-                this.value = new Date(_value);
-            }
-            else
-            {
-                this.value = '';
-            }
-
+             _date = new Date(_value) ;
         }
-
+      
+         this.__value = _date;
 
         if (this.ctrl) {
 
-            if( this.value instanceof Date )
+            if( _date != null )
             {
-                this.ctrl.value = this.value.format(this.formatString||'yyyy-MM-dd hh:mm:ss');
+                this.ctrl.value = _date.format(this.formatString||'yyyy-MM-dd hh:mm:ss');
             }
             else
             {
-                this.ctrl.value = this.value;
+                this.ctrl.value = "";
             }
             this.___notShowPopupBox = true;
             this.ctrl.focus();
@@ -66,15 +70,22 @@ Rsd.define('Rsd.control.Timestamp', {
         }
 
     },
-    /*
-    * 无效时间值，返回null.
-    * */
+    /**
+     * 重写getValue
+     * 无效时间值，返回null.
+     */
     getValue:function getValue() {
 
+       
         var _value = Date.parse( this.callParent()) ;
+       
         if(isNaN(_value))
         {
-            return null;
+            return 0;
+        }
+        for(var i =0 ;i < 6-this.precision;i++)
+        {
+                _value = _value / 10;
         }
         return _value;
     }

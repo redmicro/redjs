@@ -7,11 +7,13 @@ Rsd.define("Rsd.developer.SchemaListPage", {
     xtype: "list-schema",
     border: false,
     titleField:"typename",
-    
-     /** 
+    /** 
      * 获取后台Servic服务列表的api接口名称
     */
     serviceName:null,
+    /**
+     * 
+     */
     gridColumns: [
         {
             "text": "序号",
@@ -102,9 +104,15 @@ Rsd.define("Rsd.developer.SchemaListPage", {
         }
     ],
     searchColumns:[{name:"key",text:"关键字",width:350}],
+    /**
+     * 
+     */
     newButtons:[
         {text:"发布数据库",visible:true,handler:"btn_update_db"}
     ],
+    /**
+     * 
+     */
     dataStore:null,
     /**
      * */
@@ -135,7 +143,7 @@ Rsd.define("Rsd.developer.SchemaListPage", {
             return;
         }
         
-        _args.pageSize=200; 
+        
         this.callParent(_args,function(data)
         {
             if( !data.success)

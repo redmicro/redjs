@@ -14,7 +14,11 @@ Rsd.define('Rsd.control.PagingBar', {
     border: false,
     height: 40,
     //indexChanged:'',
-    pagingOpt:{pageSize:100,pageIndex:0,pageCount:0,totalCount:0,pageSizeList:[20,50,100,200]},
+    pagingOpt:{pageSize:100,pageIndex:0,pageCount:0,totalCount:0},
+    /**
+     * @description 分页大小 列表
+     */
+    pageSizeList:[20,50,100,200],
     items: [
         {xtype: 'link', tip: '第一页',handler:'firstPage',border:true, cls: ['x-btn', 'x-first'], width: 30, margin: '5 5 5 5'},
         {xtype: 'link', tip: '上一页', handler:'previousPage',border:true, cls: ['x-btn','x-previous'], width: 30, margin: '5 5 5 5'},
@@ -31,21 +35,37 @@ Rsd.define('Rsd.control.PagingBar', {
             margin: '0 2 0 2',
             height:30,
             border:false,
-            value:100,dataSource:[{text:20,value:20},{text:50,value:50},{text:100,value:100}],
+            value:100,
+            dataSource:[{text:20,value:20},{text:50,value:50},{text:100,value:100}],
             width: 150
         },
         {xtype: 'label', id: '_msg', text: '信息',cls:'x-label', border: false, width:250,height:30, margin: '0 0 0 20'},
         {width:50}
     ],
-    /*
+    /**
      *
      *  */
-    constructor: function ToolBar(config) {
+    constructor: function PagingBar(config) {
         this.header.visible = false;
         config = config || {};
         this.apply(config);
+        var list = this.pageSizeList||[];
+        var _ds = [];
+        for(var i in list)
+        {
+            if(Rsd.isObject(list[i]))
+            {
+                _ds.push({text:list[i].text,value:list[i].value});
+            }
+            else
+            {
+                _ds.push({text:list[i],value:list[i]});
+            }
+            
+        }
+        this.items[8].dataSource = _ds;
     },
-    /*
+    /**
     *
      */
     goTo:function goTo(index) {
@@ -66,7 +86,7 @@ Rsd.define('Rsd.control.PagingBar', {
             this.indexChanged.call(this, _pagingOpt);
         }
     },
-    /*
+    /**
      * */
     previousPage: function () {
 
@@ -77,8 +97,9 @@ Rsd.define('Rsd.control.PagingBar', {
             Rsd.showPopup("已经是第一页");
         }
     },
-    /*
-     * */
+    /**
+     * 
+     */
     nextPage: function () {
 
         if (this.pagingOpt.pageIndex < (this.pagingOpt.pageCount - 1)) {
@@ -89,8 +110,9 @@ Rsd.define('Rsd.control.PagingBar', {
         }
 
     },
-    /*
-     * */
+    /**
+     * 
+     */
     firstPage: function () {
         if (this.pagingOpt.pageIndex == 0) {
             Rsd.showPopup("已经是第一页");
@@ -98,8 +120,9 @@ Rsd.define('Rsd.control.PagingBar', {
         }
         this.goTo(1);
     },
-    /*
-     * */
+    /**
+     * 
+     */
     lastPage: function () {
 
         if (this.pagingOpt.pageIndex == this.pagingOpt.pageCount - 1) {
@@ -108,6 +131,9 @@ Rsd.define('Rsd.control.PagingBar', {
         }
         this.goTo(this.pagingOpt.pageCount);
     },
+    /**
+     * 
+     */
     setPageIndex:function()
     {
         var _pIndex = this.items[5].value;
@@ -119,7 +145,7 @@ Rsd.define('Rsd.control.PagingBar', {
 
         this.goTo(_pIndex);
     },
-    /*
+    /**
     *
     * */
     onPageSizeChanged:function onPageSizeChanged(v,e)
@@ -130,12 +156,12 @@ Rsd.define('Rsd.control.PagingBar', {
         }
 
     },
-    /*
+    /**
     * */
     getPaging:function getPaging() {
         return this.pagingOpt;
     },
-    /*
+    /**
     *
     * */
     setPaging:function setPaging(pagingOpt) {

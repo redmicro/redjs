@@ -205,7 +205,7 @@ Rsd.define('Rsd.control.Date', {
 
         }
     },
-    /*
+    /**
     *
     * */
     getValue:function getValue() {
@@ -223,6 +223,9 @@ Rsd.define('Rsd.control.Date', {
         }
 
     },
+    /**
+     * 
+     */
     checkValue:function checkValue() {
 
         //debugger;
@@ -238,7 +241,7 @@ Rsd.define('Rsd.control.Date', {
             this.value = new Date(this.ctrl.value.replace(/-/g, "/"));
         }
 
-        Rsd.isString(this.value)
+        if(Rsd.isString(this.value))
         {
             this.value = new Date(this.value.replace(/-/g, "/"));
         }
@@ -248,8 +251,9 @@ Rsd.define('Rsd.control.Date', {
             return false;
         }
 
-        this.ctrl.value = this.value.format(this.formatString);
-
+        if(this.value instanceof Date){
+            this.ctrl.value = this.value.format(this.formatString);
+        }
         return true;
 
 

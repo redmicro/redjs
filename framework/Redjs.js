@@ -1001,6 +1001,7 @@ function Redjs(config) {
             alert(msg + ((_ex && _ex instanceof Error) ? (':' + _ex.message) : ''));
         }
         else {
+            console.trace(arguments);
             console.error((Rsd.isEmpty(msg) ? '运行异常' : _msg) + (_url ? '(' + _url + ')' : ''));
         }
         if (_ex) {
