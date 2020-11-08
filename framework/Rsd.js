@@ -1,5 +1,6 @@
 ﻿/*
- * */
+ * 
+ */
 String.prototype.endWith = function (s) {
     if (s == null || s == "" || this.length == 0 || s.length > this.length)
         return false;
