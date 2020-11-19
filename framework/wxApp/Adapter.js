@@ -1,19 +1,25 @@
 (function (){
 
     Rsd.alert= function (msg) {
-        wx.showToast({
-            title: msg,
-            icon: 'OK',
-            image: '',
-            duration: 2000,
-            mask: true,
-            success: function (res) {
-            },
-            fail: function (res) {
-            },
-            complete: function (res) {
-            },
-        });
+        wx.hideLoading(),
+        setTimeout(function(){
+
+            wx.showToast({
+                title: msg,
+                icon: 'OK',
+                image: '',
+                duration: 2000,
+                mask: true,
+                success: function (res) {
+                },
+                fail: function (res) {
+                },
+                complete: function (res) {
+                },
+            });
+            
+        },100);
+        
     };
 
     Rsd.warn= function (msg,callback) {
