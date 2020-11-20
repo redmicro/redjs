@@ -387,17 +387,22 @@
         var _timer = 0;
         var _request = function () {
 
-            if(service.isLoading)
+            if(Rsd.isEmpty(service.api[_method]))
             {
                 //如果正在加载服务 延时200毫秒 最多延时5次
-                _timer++;
+              
                 if(_timer>5)
                 {
                     Rsd.warn('系统繁忙，请稍后再试');
                     return;
                 }
-                console.log(_timer + '- call '+_name + ' => ' + service.group + ' loading api' );
-                setTimeout(_request,200);
+
+                if(service.isLoading){
+                    console.log(_timer + '- call '+_name + ' => ' + service.group + ' loading api' );
+                    setTimeout(_request,200);
+                    _timer++;
+                }
+              
             }
             else
             {
@@ -417,7 +422,8 @@
                 Rsd.loadServiceApi(service,_fn);
             }
 
-        }else
+        }
+        else
         {
             _fn();
         }
@@ -588,6 +594,7 @@
             }
 
         },'加载服务');
+    
     };
 
     /**
