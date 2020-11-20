@@ -455,18 +455,36 @@
      */
     Rsd.loadServices = function loadServices(testUrl,services)
     {
-
-        Rsd.services=Rsd.services||{};
-
+        var _testUrl = "";
         var servicesList = [];
-        if(Rsd.isArray(services))
+        if(Rsd.isEmpty(testUrl))
         {
-            servicesList=services;
+            _testUrl = Rsd.___testUrl;
         }
         else
         {
-            servicesList.push(services);
+            _testUrl = testUrl;
         }
+        if(Rsd.isEmpty(services))
+        {
+            servicesList =  Rsd.___apiList;
+        }
+        else
+        {
+            if(Rsd.isArray(services))
+            {
+                servicesList=services;
+            }
+            else
+            {
+                servicesList.push(services);
+            }
+        }
+ 
+        Rsd.services = Rsd.services||{};
+ 
+        Rsd.___testUrl = _testUrl;
+        Rsd.___apiList = servicesList;
 
         for(var i in servicesList)
         {
@@ -505,7 +523,7 @@
         {
             _timer++;
             console.log('第'+ _timer.toString() + '次:连接（探测）远程服务。');
-            Rsd.requestJson({url:testUrl,method:'POST',fail:_textFail},{},_load,'连接远程服务');
+            Rsd.requestJson({url:_testUrl,method:'POST',fail:_textFail},{},_load,'连接远程服务');
         };
 
         _test();
