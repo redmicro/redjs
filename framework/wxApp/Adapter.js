@@ -389,15 +389,16 @@
 
             if(Rsd.isEmpty(service.api[_method]))
             {
-                //如果正在加载服务 延时200毫秒 最多延时5次
-              
+                //如果正在加载服务 延时200毫秒 最多延时5次 
                 if(_timer>5)
                 {
+                    service.isLoading = false;
                     Rsd.warn('系统繁忙，请稍后再试');
                     return;
                 }
 
                 if(service.isLoading){
+
                     console.log(_timer + '- call '+_name + ' => ' + service.group + ' loading api' );
                     setTimeout(_request,200);
                     _timer++;
@@ -585,6 +586,7 @@
                     Rsd.services[_group].api[item.Name.toLowerCase()] = config;
                 }
             }
+
             service.isLoading = false;
 
             //console.log('loaded =>' + _group);
