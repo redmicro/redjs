@@ -352,7 +352,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
     _btn_save:function _btn_save()
     {
         var simulator = this.items[2];
-        var page = simulator.getDocConfig(true); 
+        var page = simulator.getDocConfig(true);  console.log(this);
         page.id = this.page.id;
         this.funApplyByIOC(this.saveApi,[page]); 
     },
