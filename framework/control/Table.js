@@ -1768,8 +1768,10 @@ Rsd.define('Rsd.control.Table', {
     },
 
     /**
-     *@description 导出表格数据到Excel
-     * */
+     * @description 导出当前表格数据到Excel 
+     * @param {*} sheet 
+     * @param {*} file  仅文件名称（不是路径）
+     */
     "export": function _export(sheet,file) {
 
         var table = this.table;

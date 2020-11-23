@@ -250,8 +250,16 @@ Rsd.define('Rsd.view.BaseListPage', {
         {
             grid.columns = _cols;
         }
+    },
+    /**
+     * 本也表格数据导出excel
+     * @param {*} sheet 
+     * @param {*} file 仅文件名称（不是路径）
+     */
+    export: function _export(sheet,file) {
+        var grid = this.items[0];
+        grid.export(sheet,file);
     }
-
 
 
 },function(type){
