@@ -44,7 +44,7 @@ Rsd.createApplication({
             var _theme = Rsd.getUrlParam('theme')||'gov';
             var _class = 'Rsd.template.'+_theme+'.web.T' + _tpl + 'Page';
             //console.log(_class);
-            Rsd.create(_class, { spm:_spm,margin:_m.join(' '),}).show();
+            Rsd.create(_class, { spm:_spm,}).show();//margin:_m.join(' '),
         }
     }
 );

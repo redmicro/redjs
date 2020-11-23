@@ -130,6 +130,8 @@ Rsd.define("Rsd.common.Layouter", {
         }
     },
     /**
+     * 固定高度和固定宽度的容器内布局 
+     * region:top,bottom,left,right,center
      * */
     layoutBorder:function layoutBorder(obj){
         //debugger;
@@ -292,7 +294,8 @@ Rsd.define("Rsd.common.Layouter", {
 
     },
     /**
-     * 一列多行布局
+     * 不固定高度和固定宽度的容器内布局
+     * display:flex ,flex-direction:row;   一列多行布局
      * */
     layoutVbox:function layoutVbox(obj){
 
@@ -343,7 +346,8 @@ Rsd.define("Rsd.common.Layouter", {
                 _item.style = _item.style||{};
                 _item.style.flex = _item.flex;
             }
-            
+
+            //_item 子控件文字对齐方式
             switch (_item.align || obj.layout.align)
             {
                 case 'left':
@@ -383,7 +387,8 @@ Rsd.define("Rsd.common.Layouter", {
         }
     },
     /**
-     * 一行多列布局
+     * 固定高度和不固定宽度的容器内布局 
+     * display:flex ,flex-direction:column; 一行多列布局
      * */
     layoutHbox:function layoutHbox(obj){
         if(obj.layout.type != 'hbox')
@@ -472,6 +477,7 @@ Rsd.define("Rsd.common.Layouter", {
         }
     },
     /**
+     * 未实现
      * */
     layoutFit:function layoutFit(obj){
         if(obj.layout.type != 'fit')
@@ -521,6 +527,8 @@ Rsd.define("Rsd.common.Layouter", {
         }
     },
     /**
+    * 不固定高度和不固定宽度的容器页面布局
+    * display:contents
     * */
     layoutAuto:function layoutAuto(obj){
         if(obj.layout.type != 'auto')
@@ -541,7 +549,7 @@ Rsd.define("Rsd.common.Layouter", {
             switch (_align)
             {
                 case 'center':
-                    _item.changeCls('dom','x-componentx-dom','x-layout-auto-center');
+                    _item.addCls('dom','x-layout-auto-center');
                     break;
                 case 'left':
                     _item.addCls('dom','x-layout-auto-left');
@@ -563,6 +571,7 @@ Rsd.define("Rsd.common.Layouter", {
     },
 
     /** 
+     * 布局 header(label),body
      * */ 
     layoutContent: function layoutContent(header, body,sizeUnit) {
 

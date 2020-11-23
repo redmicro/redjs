@@ -1,5 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/28.
+ * 页面底部 版权 控件
  */
 Rsd.define('Rsd.web.CBottomPart', {
     extend: 'Rsd.container.Component',

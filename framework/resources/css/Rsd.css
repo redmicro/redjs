@@ -478,25 +478,30 @@ legend {
 
 .x-layout-auto-top {
     position: absolute;
+    display: table;
     top: 0px;
 }
 .x-layout-auto-right {
     position: relative;
+    display: table;
     float: right;
     margin-left: auto;
 }
 .x-layout-auto-bottom {
     position: absolute;
+    display: table;
     bottom: 0px;
 }
 
 .x-layout-auto-left {
     position: relative;
+    display: table;
     margin-right:auto;
 }
 
 .x-layout-auto-center {
     position: relative;
+    display: table;
     margin-right: auto;
     margin-left: auto;
     vertical-align: middle;

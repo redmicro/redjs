@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/28.
- * 分组展示 
+ * 分组展示 ：上部图片新闻 + 下部列表组合
  */
 Rsd.define('Rsd.web.CGroupPart', {
     extend: 'Rsd.container.Component',

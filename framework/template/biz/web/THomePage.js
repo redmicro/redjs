@@ -14,31 +14,31 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
         'Rsd.web.CBottomPart'
     ],
     xtype: 't-home-page',
-    layout:'border',
-    height:'1200px',
-    style:{backgroundColor:'lightslategrey'},
-    sizeUnit:'px',
+    layout:'auto',
+    style:{backgroundColor:'#fff',display:'contents'},//lightslategrey
     header:{
-        height:60,
+        height:100,
         xtype: 'list-view', 
         cls:'x-navigation',
-        style:{backgroundColor:'rgba(255, 24, 0, 0.62)',color:'#000'},
+        style:{backgroundColor:'rgba(46,46,46,0.84)',color:'#000',position:'fixed',top:0,zIndex:9999},
         config:{ 
-            label:{xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:40},
-            margin:'10 20 10 10',
+            label:{xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:100,margin:'20 0'},
+            //margin:'10 20 10 10',
             width:'100%', 
-            height:60,
-            itemStyle:{height:40,width:120,textAlign:'center',lineHeight:40,color:'white'},
+           // style:{backgroundColor:'rgba(46,46,46,1)'},
+            height:100,
+            itemStyle:{height:100,width:120,textAlign:'center',lineHeight:100,color:'white'},
             dataSource:[]
             
         }
     },
     items:[
+        //0
         {
-            region:'top',
+             
             float:true,
             height:60,
-            layout:'hbox',
+            layout:'auto',
             width:'100%',
             items:[
                 {
@@ -54,23 +54,40 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             ]
 
         },
-         
+        //1
         {
-            region:'center',
             xtype: 't-image',
-            height:350,
+            height:450,
             dataSource:[]
         },
-       
+        //2
+        {
+            width:'100%',
+            border:false,
+            style:{backgroundColor:'rgba(47, 57, 80, 1)'},
+            height:136
+        },
+        //3
+        {
+            xtype:'list',
+            width:'100%',
+            border:true,
+            height:534
+        },
+        //4
         {
             xtype:'t-bottom',
-            region:'bottom',
             cls:'x-bottom',
+            width:'100%',
             lineColor:'black',
             height:150,
             margin:'40 0 0 0'
         }
     ],
+    /**
+     * 
+     * @param {*} config 
+     */
     constructor: function constructor(config) {
 
         config = config || {};
@@ -82,9 +99,10 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
     load:function load()
     {
         //首页数据 
-         var menus = ['首页','案例展示','新闻中心','最新文章','联系我们','','',
+         var menus = ['','','','首页','产品与服务','案例展示','新闻中心','联系我们','','',
          {xtype:'button',text:'登录',handler:'btn_login'},
          {xtype:'button',text:'免费注册',handler:'btn_register'}];
+
          var bottomData = {companyName:'南京红微信息科技有限公司',licenseNO:'苏ICP备1234567号'};
          var banner = [ 
              {src:'https://img.alicdn.com/tfs/TB1Q7YOdMHqK1RjSZFgXXa7JXXa-2868-912.png',html:'<H2 style="position: absolute;color: white;left: 50px;top: 100px;"> Learn more ...</H2>'},
@@ -94,7 +112,7 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
          
          this.header.content.loadData(menus);
          this.items[1].loadData(banner);
-         this.items[2].loadData(bottomData);
+         this.items[4].loadData(bottomData);
          //this.callParent();
     },
     btn_register:function btn_register()

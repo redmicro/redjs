@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2014/9/1.
- * 新闻标题
+ * 新闻标题控件 ，用在新闻详细页面 （标题，发布时间，作者，字体大小，分享 ....）
  */
 Rsd.define('Rsd.web.CNewsTitlePart', {
     extend: 'Rsd.container.Component',

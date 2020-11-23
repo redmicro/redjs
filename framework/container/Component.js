@@ -14,10 +14,14 @@ Rsd.define('Rsd.container.Component', {
     xtype: 'container',
 
     /*
+    * 子控件布局方式：
     * vbox:一列多行布局
     * hbox:一行多列布局
     *
-    * {type: 'auto',align:'left'}
+    * {
+    * type: 'auto',
+    * align:'left'//子控件文字对齐方式
+    * }
     * */
     //layout: null,
     /*
@@ -31,6 +35,7 @@ Rsd.define('Rsd.container.Component', {
     *    //header 的内容对象 ，可以是字符串 也可以是组件
     *    content:null, //{string|control|object}
     *    position: 'top',
+    *    //文字对其方式
     *    align: 'center',
     *    space: 10,
     *    cls: null,

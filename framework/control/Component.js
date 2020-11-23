@@ -33,7 +33,7 @@ Rsd.define('Rsd.control.Component', {
     *     //label 的内容对象 ，可以是字符串 也可以是组件
     *     content: null,//{string|control|object}
     *     position: 'left',
-    *     align: 'right',
+    *     align: 'right',//文字对其方式
     *     visible: null,//null:有内容显示，无内容不显示 ,true:始终显示，false：始终不显示
     *     space: 10,
     *     cls: '',
