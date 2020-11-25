@@ -2,11 +2,11 @@
  * Created by seeker910 on 2014/8/20.
  * 客户案例 模块
  */
-Rsd.define('Rsd.web.CCasePart', {
+Rsd.define('Rsd.web.CCaseViewPart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Text',
-        'Rsd.web.CImageNewsPart',
+        'Rsd.web.CImageAndListPart',
         'Rsd.web.CListViewPart',
         'Rsd.web.CTabPart',
         'Rsd.web.CGridPart'

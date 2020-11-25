@@ -1,7 +1,8 @@
 /**
  * Created by seeker910 on 2014/9/2.
+ * html 展示 
  */
-Rsd.define('Rsd.web.CHtmlPart', {
+Rsd.define('Rsd.web.CHtmlViewPart', {
     extend: 'Rsd.container.Component',
     requires: ['Rsd.control.HtmlBox'],
     xtype:'t-html',

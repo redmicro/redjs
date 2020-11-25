@@ -1,10 +1,10 @@
 /**
  * Created by seeker910 on 2014/8/20.
  * 
- * 图片 横幅
+ * 页面顶部 横幅 （ 背景图片+搜索）
  * 
  */
-Rsd.define('Rsd.web.CImageBarPart', {
+Rsd.define('Rsd.web.CBgImageAndSearchPart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Image',

@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/20.
- * 顶部状态栏
+ * 顶部状态栏(字体，语言，日期，领导信箱)
  */
 Rsd.define('Rsd.web.CTopBarPart', {
     extend: 'Rsd.container.Component',

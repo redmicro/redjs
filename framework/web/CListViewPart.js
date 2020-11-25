@@ -1,6 +1,6 @@
 /**
  * Created by seeker910 on 2014/8/23.
- * 列表明细
+ * 列表组件（header + list ）
  */
 Rsd.define('Rsd.web.CListViewPart', {
     extend: 'Rsd.control.ListView',

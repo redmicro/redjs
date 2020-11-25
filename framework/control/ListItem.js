@@ -12,6 +12,7 @@ Rsd.define('Rsd.control.ListItem', {
     * */
     content:null,
     style:null,
+    flex:0,
     /*
     * */
     constructor: function ListItem(config) {
@@ -46,9 +47,14 @@ Rsd.define('Rsd.control.ListItem', {
         if(me.hover)
         {
             me.ctrl.classList.add('x-li-hover');
-
         }
+        
         var item = me.content;
+        if(item.flex)
+        {
+             me.ctrl.style.flex = item.flex;
+        }
+
         if(Rsd.isString(item)){
 
             var _txt = document.createTextNode(item);

@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/8/24.
  * 多标签页面
  */
-Rsd.define('Rsd.web.CTabPart', {
+Rsd.define('Rsd.web.CTabContainerPart', {
     extend: 'Rsd.container.TabPage',
     requires: [],
     layout:'fit',

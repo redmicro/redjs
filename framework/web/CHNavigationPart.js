@@ -3,13 +3,15 @@
  * 水平 布局 导航条 
  */
 Rsd.define('Rsd.web.CHNavigationPart', {
-    extend: 'Rsd.container.Component',
+    extend: 'Rsd.control.ListView',
     requires: [ 'Rsd.control.Label'],
     xtype: 't-h-navigation',
     layout:'hbox',
     height:50,
+    width:'100%',
     sizeUnit:'px',
-    cls:'x-navigation',
+    itemStyle:{height:'100%',width:150,fontSize:'120%'},
+    cls:'x-navigation-h',
     selectedIndex:null,
     items:[
         {
@@ -78,10 +80,13 @@ Rsd.define('Rsd.web.CHNavigationPart', {
         }
 
     ],
-    constructor: function constructor(config) {
+    constructor: function CHNavigationPart(config) {
         config = config || {};
         this.apply(config);
     },
+    /**
+     * 
+     */
     afterRender:function () {
         if(this.selectedIndex != null
             && this.selectedIndex > -1
@@ -89,5 +94,13 @@ Rsd.define('Rsd.web.CHNavigationPart', {
         {
             this.items[this.selectedIndex].addCls('ctrl','x-selected');
         }
+    },
+    /**
+     * 
+     */
+    loadData:function loadData(data)
+    {
+        this.callParent(data);
+        
     }
 });

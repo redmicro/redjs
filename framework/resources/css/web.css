@@ -3,7 +3,8 @@
 }
 input[type='button'] 
 {
-    color: #fff !important;
+    height: 40px;
+    color: inherit;
 }
 .x-componentx-dom
 {
@@ -35,22 +36,25 @@ input[type='button']
 .x-bottom{
     overflow: hidden;
 }
-.x-navigation {
+.x-navigation-h {
     overflow: hidden;
 }
-.x-navigation .x-menu
+.x-navigation-h ol{
+    display: flex;
+}
+.x-navigation-h .x-menu
 {
     font-size: 110%;
 }
-.x-navigation .x-menu label{
+.x-navigation-h .x-menu label{
    cursor: pointer;
 }
-.x-navigation .x-menu label:hover{
+.x-navigation-h .x-menu label:hover{
     font-weight: bold;
     font-size: 120%;
 }
 
-.x-navigation .x-selected{
+.x-navigation-h .x-selected{
     font-size: 110% !important;
     font-weight: bold !important;
     cursor: default !important;

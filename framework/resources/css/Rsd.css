@@ -130,9 +130,9 @@ th,tfoot>tr,tfoot>td {
 }
 
 input[type='button'] {
-    background-color: var(--bg-color-button);
+    background-color: transparent;
     border: 1px solid gray;
-    color: #000000 ;
+    color: #000 ;
     font-family: '微软雅黑';
     width:75px;
 }
@@ -635,7 +635,7 @@ legend {
 }
 
 .x-control-button {
-
+    
     border-radius: 5px;
     outline: none;
     -webkit-border-radius: 5px;

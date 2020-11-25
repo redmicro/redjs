@@ -2,14 +2,14 @@
  * Created by seeker910 on 2014/8/28.
  * 页面底部 版权 控件
  */
-Rsd.define('Rsd.web.CBottomPart', {
+Rsd.define('Rsd.web.CLinkAndCopyrightPart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.web.CCopyrightPart',
         'Rsd.control.Image',
         'Rsd.control.Text',
         'Rsd.control.Button'],
-    xtype: 't-bottom',
+    xtype: 't-link-copyright',
     layout:'border',
     height:250, 
     sizeUnit:'px',

@@ -11,7 +11,7 @@ Rsd.define('Rsd.template.gov.web.THomePage', {
         'Rsd.web.CHNavigationPart', 
         'Rsd.web.CBottomPart',
         'Rsd.control.Text',
-        'Rsd.web.CImageNewsPart',
+        'Rsd.web.CImageAndListPart',
         'Rsd.web.CListViewPart',
         'Rsd.web.CTabPart',
         'Rsd.web.CGridPart'

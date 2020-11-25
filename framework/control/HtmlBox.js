@@ -7,7 +7,7 @@ Rsd.define('Rsd.control.HtmlBox', {
     xtype:'html-box',
     ctrlTagName: 'div',
     html:'',
-    constructor: function constructor(config) {
+    constructor: function HtmlBox(config) {
         config = config || {};
         this.apply(config);
     },

@@ -2,7 +2,7 @@
  * Created by seeker910 on 2014/9/1.
  * 产品展示模板
  */
-Rsd.define('Rsd.web.CProductPart', {
+Rsd.define('Rsd.web.CProductViewPart', {
     extend: 'Rsd.container.Component',
     requires: [
         'Rsd.control.Link',
