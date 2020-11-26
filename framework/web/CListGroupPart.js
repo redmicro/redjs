@@ -41,14 +41,7 @@ Rsd.define('Rsd.web.CListGroupPart', {
              margin:'0 50 0 50',
              border:true,
              title:'投诉与意见'
-         },
-         {
-            flex:1,
-             height:400,
-             margin:'0 50 0 50',
-             border:true,
-             title:'业主查询'
-         }
+         } 
     ],
     /*
      * */
