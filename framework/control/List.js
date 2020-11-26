@@ -95,7 +95,7 @@ Rsd.define('Rsd.control.List', {
             
         }else
         {
-           console.error('参数data必须是数组');
+            console.error('Rsd.control.List.loadData()方法的data参数必须是数组');
         }
 
         return this;

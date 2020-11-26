@@ -15,10 +15,18 @@ Rsd.define('Rsd.web.CListGroupPart', {
         {
             xtype:'t-list-view',
             flex:1,
+            height:'100%',
+            margin:'0 50 0 50',
+            border:true,
+            title:'电商'
+         },
+        {
+            xtype:'t-list-view',
+            flex:1,
             border:true,
             height:'100%',
             margin:'0 50 0 50',
-            title:'要 闻'
+            title:'公众号'
         },
         {
             xtype:'t-list-view',
@@ -26,21 +34,16 @@ Rsd.define('Rsd.web.CListGroupPart', {
             border:true,
             height:'100%',
             margin:'0 50 0 50',
-            title:'热 点'
+            title:'小程序'
         },
-        {
+       
+         {
+            xtype:'t-list-view',
             flex:1,
             height:'100%',
             margin:'0 50 0 50',
             border:true,
-            title:'新闻调查'
-         },
-         {
-            flex:1,
-            height:'100%',
-             margin:'0 50 0 50',
-             border:true,
-             title:'投诉与意见'
+            title:'网站'
  
          } 
  
@@ -50,5 +53,38 @@ Rsd.define('Rsd.web.CListGroupPart', {
     constructor: function CListGroupPart(config) {
         config = config || {};
         Rsd.apply(this, config);
+    },
+    /**
+     * 
+     */
+    loadData:function loadData(data)
+    {
+        if(Rsd.isArray(data))
+        {
+            console.error('Rsd.control.List.loadData()方法的data参数必须是数组');
+            return;
+        }
+        if(this.dataSource == data)
+        {
+            //return;
+        }
+        this.dataSource = data || this.dataSource;
+ 
+        this.removeAll();
+
+        for(var i in data)
+        {
+            var item = data[i]
+            this.add(Rsd.apply({ 
+                xtype:'t-list-view',
+                flex:1,
+                height:'100%',
+                margin:'0 50 0 50',
+                border:true,
+                title:'电商'
+            },item));
+        }
+       
     }
+    
 });
