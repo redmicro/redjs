@@ -23,7 +23,9 @@ Rsd.define('Rsd.control.List', {
     * @description  item  默认样式 ,即dom li 样式
     * */
     //itemStyle: {height: '30px', lineHeight: '30px',float:'left'},
-    //
+    /**
+     * dom li class
+     */
     itemCls: null,
     /*
     * 启用hover样式

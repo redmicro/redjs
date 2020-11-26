@@ -32,7 +32,7 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
         {
              
             float:true,
-            height:60,
+            height:0,
             layout:'auto',
             width:'100%',
             items:[
@@ -56,7 +56,15 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             width:'100%',
             dataSource:[]
         },
-        //2
+         //2
+         {
+            xtype:'t-list-group',
+            style:{backgroundColor:'rgba(47, 57, 80, 1)'},
+            width:'100%',
+            border:false,
+            height:150
+        },
+        //3
         {
             xtype:'t-list-group',
             header:{
@@ -75,19 +83,12 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             border:false
            
         },
-        //3
+        //4
         {
             width:'100%',
             height:50
         },
-        //4
-        {
-            xtype:'list',
-            style:{backgroundColor:'rgba(47, 57, 80, 1)'},
-            width:'100%',
-            border:true,
-            height:534
-        },
+       
         //5
         {
             xtype:'t-link-copyright',
@@ -116,15 +117,15 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
         
          var menus = [
             {flex:1},
-            {xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:100,margin:'20 0'},
-            {text:'首页',width:120,style:{cursor:'pointer'}},
-            {xtype:'label',text:'产品与服务',width:120,style:{cursor:'pointer'}},
-            {text:'案例展示',width:120,style:{cursor:'pointer'}},
-            {text:'新闻中心',width:120,style:{cursor:'pointer'}},
-            {text:'联系我们',width:120,style:{cursor:'pointer'}},
+            {xtype:'image',src:'../../resources/images/LOGO.PNG',position:'left',width:120,height:100,margin:'20 0',isMenu:false},
+            {text:'首页',style:{lineHeight:100}},
+            {xtype:'label',text:'产品与服务',style:{lineHeight:100}},
+            {text:'案例展示',style:{lineHeight:100}},
+            {text:'新闻中心',style:{lineHeight:100}},
+            {text:'联系我们',style:{lineHeight:100}},
             {flex:1},
-            {xtype:'button',text:'商户登录',handler:'btn_login',width:90,style:{bottom:20,left:60,fontSize:'90%',backgroundColor:'tansparent'}},
-            {xtype:'button',text:'商户注册',handler:'btn_register',width:90,style:{bottom:20,left:30,fontSize:'90%',backgroundColor:'tansparent'}}
+            {xtype:'button',text:'商户登录',handler:'btn_login',width:120,isMenu:false,style:{bottom:20,fontSize:'90%',backgroundColor:'tansparent'}},
+            {xtype:'button',text:'商户注册',handler:'btn_register',width:120,isMenu:false,style:{bottom:20,fontSize:'90%',backgroundColor:'tansparent'}}
         ];
 
          var bottomData = {companyName:'南京红微信息科技有限公司',licenseNO:'苏ICP备18047990号-1'};
@@ -149,7 +150,8 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             this.header.content.loadData(menus);
 
             this.items[1].loadData(banner);
-            this.items[2].loadData([{titile:'电商'},{titile:'公众号'},{titile:'小程序'},{titile:'网站'}]);
+            this.items[2].loadData([{title:'专注'},{title:'原创'},{title:'专业'}]);
+            this.items[3].loadData([{title:'电商'},{title:'公众号'},{title:'小程序'},{title:'网站'}]);
             this.items[5].loadData(bottomData);
             //this.callParent();
     },

@@ -41,17 +41,43 @@ input[type='button']
 }
 .x-navigation-h ol{
     display: flex;
+    justify-content:center;
+    align-items:center;
+
 }
+.x-navigation-h li{
+    display: flex;
+    justify-content:center;
+    align-items:center; 
+}
+
 .x-navigation-h .x-menu
 {
+    width: 100%;
+    text-align: center;
     font-size: 110%;
 }
-.x-navigation-h .x-menu label{
-   cursor: pointer;
+.x-navigation-h .x-menu:after{
+    position: absolute;
+    content: ''; 
+    visibility: hidden;
+    border-bottom:1px rgba(218, 170, 13, 0.85)solid;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 1px;
+    transition: .5s;
 }
-.x-navigation-h .x-menu label:hover{
-    font-weight: bold;
-    font-size: 120%;
+.x-navigation-h .x-menu:hover{
+    cursor: pointer;
+    font-weight: bold; 
+    background-color: lightslategrey;
+}
+.x-navigation-h .x-menu:hover:after{
+    
+    visibility:visible;
+    height: 3px;
+    border-bottom:3px rgba(250, 193, 5, 0.938) solid;
 }
 
 .x-navigation-h .x-selected{

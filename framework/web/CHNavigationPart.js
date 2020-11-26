@@ -9,7 +9,7 @@ Rsd.define('Rsd.web.CHNavigationPart', {
     layout:'hbox',
     height:50,
     width:'100%',
-    sizeUnit:'px',
+    sizeUnit:'px', 
     itemStyle:{height:'100%',width:150,fontSize:'120%'},
     cls:'x-navigation-h',
     selectedIndex:null,
@@ -100,7 +100,43 @@ Rsd.define('Rsd.web.CHNavigationPart', {
      */
     loadData:function loadData(data)
     {
-        this.callParent(data);
+        if(data && !Rsd.isArray(data))
+        {
+            console.error('Rsd.web.CHNavigationPart.loadData()方法的data参数必须是数组');
+            return;
+        }
+         
+        var _list = [];
+        this.removeAll();
+        
+        for(var i in data)
+        {
+            var item = data[i];
+            if(item.isMenu==false)
+            {
+                _list.push(Rsd.apply({ 
+                    xtype:'label',
+                    text:'',
+                    style:{textAlign:'center'},
+                    width:150
+                },item));
+            }
+            else
+            {
+                _list.push(Rsd.apply({ 
+                    xtype:'label',
+                    width:'100%',
+                    height:'100%',
+                    text:'',
+                    cls:'x-menu',
+                    style:{textAlign:'center'},
+                    flex:10
+                },item));
+            }
+            
+        }
+       
+        this.callParent(_list);
         
     }
 });

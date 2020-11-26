@@ -59,22 +59,24 @@ Rsd.define('Rsd.web.CListGroupPart', {
      */
     loadData:function loadData(data)
     {
-        if(Rsd.isArray(data))
+        //console.log(data);
+        if(data && !Rsd.isArray(data))
         {
-            console.error('Rsd.control.List.loadData()方法的data参数必须是数组');
+            console.error('Rsd.web.CListGroupPart.loadData()方法的data参数必须是数组');
             return;
         }
         if(this.dataSource == data)
         {
             //return;
         }
+       
         this.dataSource = data || this.dataSource;
  
         this.removeAll();
 
-        for(var i in data)
+        for(var i in this.dataSource )
         {
-            var item = data[i]
+            var item = this.dataSource [i]
             this.add(Rsd.apply({ 
                 xtype:'t-list-view',
                 flex:1,
