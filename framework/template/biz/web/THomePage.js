@@ -73,6 +73,9 @@ Rsd.define('Rsd.template.biz.web.THomePage', {
             border:false,
             height:450
         },
+        {
+            height:50
+        },
         //3
         {
             xtype:'list',

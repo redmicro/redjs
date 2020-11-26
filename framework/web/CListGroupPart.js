@@ -16,7 +16,7 @@ Rsd.define('Rsd.web.CListGroupPart', {
             xtype:'t-list-view',
             flex:1,
             border:true,
-            height:500,
+            height:'100%',
             margin:'0 50 0 50',
             title:'要 闻'
         },
@@ -24,24 +24,26 @@ Rsd.define('Rsd.web.CListGroupPart', {
             xtype:'t-list-view',
             flex:1,
             border:true,
-            height:500,
+            height:'100%',
             margin:'0 50 0 50',
             title:'热 点'
         },
         {
             flex:1,
-            height:300,
+            height:'100%',
             margin:'0 50 0 50',
             border:true,
             title:'新闻调查'
          },
          {
             flex:1,
-             height:300,
+            height:'100%',
              margin:'0 50 0 50',
              border:true,
              title:'投诉与意见'
+ 
          } 
+ 
     ],
     /*
      * */
