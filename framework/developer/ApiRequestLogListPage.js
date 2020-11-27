@@ -2,10 +2,10 @@
 /**
 * 
 * */
-Rsd.define("Rsd.developer.ServerLogListPage", {
+Rsd.define("Rsd.developer.ApiRequestLogListPage", {
     extend: "Rsd.view.BaseListPage",
     requires: [],
-    xtype: "list-s-log",
+    xtype: "list-ui-api-log",
     border: false,
     titleField:"LogTime",
     readOnly:true,
@@ -13,6 +13,9 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
      * 获取后台日志列表的api接口名称
     */
     serviceName:null,
+    /**
+     * 
+     */
     gridColumns:[
         {
             "text": "序号",
@@ -64,10 +67,13 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
         } 
        
     ],
+    /**
+     * 
+     */
     sort:[{name:'CreateTime',direction:'DESC'}],
     /*
      * */
-    constructor: function constructor(config) {
+    constructor: function ApiRequestLogListPage(config) {
         config = config || {};
         this.apply(config);
     },

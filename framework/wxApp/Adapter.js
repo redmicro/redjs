@@ -328,6 +328,10 @@
             Rsd.hideLoading();
 
             Rsd.error('请求服务异常！');
+            if(Rsd.app.isDebug)
+            {
+                console.log(res);
+            }
         }
 
         Rsd.showLoading(msg);
