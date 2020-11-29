@@ -384,6 +384,6 @@ Rsd.isType = function isType(obj, type) {
      * @param {Number|String} [space]
      * */
     Rsd.formatJson = function formatJson(json, replacer, space) {
-        return JSON.stringify(json, replacer || null, space || 4);
+        return JSON.stringify(json||{}, replacer || null, space || 4);
     };
 
