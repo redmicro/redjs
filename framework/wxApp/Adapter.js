@@ -286,7 +286,7 @@
 
                 }else {
                     Rsd.hideLoading();
-                    Rsd.error('服务异常('+res.statusCode+')');
+                    Rsd.error('服务异常('+Rsd.formatJson(res)+')');
                 }
 
                 return;
@@ -339,7 +339,7 @@
             var sys = wx.getAccountInfoSync();
             if(sys.miniProgram.envVersion=="develop")
             {
-                Rsd.error('请求服务异常！'+res.statusCode);
+                Rsd.error('请求服务异常！'+Rsd.formatJson(res));
             }
             else
             {

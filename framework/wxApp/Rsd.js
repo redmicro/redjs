@@ -378,7 +378,7 @@ Rsd.isType = function isType(obj, type) {
 
     /**
      * @public
-     * @description 格式化json
+     * @description 格式化json 为字符串
      * @param {string|object} json
      * @param {Function|String|Number} [replacer]
      * @param {Number|String} [space]
