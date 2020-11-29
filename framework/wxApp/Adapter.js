@@ -216,7 +216,16 @@
             }
 
             Rsd.hideLoading();
-            Rsd.error('请求服务异常！');
+
+            var sys = wx.getAccountInfoSync();
+            if(sys.miniProgram.envVersion=="develop")
+            {
+                Rsd.error('请求服务异常！'+res);
+            }
+            else
+            {
+                Rsd.error('请求服务异常！');
+            }
         }
         //console.log(_c);
 
@@ -326,11 +335,15 @@
             }
 
             Rsd.hideLoading();
-
-            Rsd.error('请求服务异常！');
-            if(Rsd.app.isDebug)
+ 
+            var sys = wx.getAccountInfoSync();
+            if(sys.miniProgram.envVersion=="develop")
             {
-                console.log(res);
+                Rsd.error('请求服务异常！'+res);
+            }
+            else
+            {
+                Rsd.error('请求服务异常！');
             }
         }
 
