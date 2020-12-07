@@ -334,7 +334,7 @@ namespace Rsd.Redjs.Agenter
 
             foreach (var js in redjs)
             {
-                list_v.Add(js.Trim() + "?v=" + version + "&t=" + releaseTime);
+                list_v.Add(sourceHost + "/" + js.Trim() + "?v=" + version + "&t=" + releaseTime);
             }
 
             return list_v.ToArray();
