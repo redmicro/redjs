@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Agenter</RootNamespace>
-    <AssemblyName>Agenter</AssemblyName>
+    <RootNamespace>Rsd.Redjs.Agenter</RootNamespace>
+    <AssemblyName>Rsd.Redjs.Agenter</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -47,12 +47,6 @@
       <HintPath>..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Rsd.Dudu">
-      <HintPath>..\..\lib\Rsd.Dudu.dll</HintPath>
-    </Reference>
-    <Reference Include="Rsd.Dudu.Web">
-      <HintPath>..\..\lib\Rsd.Dudu.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -76,11 +70,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedjsHandler.cs" />
+    <Compile Include="RedjsConfig.cs" />
+    <Compile Include="RedjsGetFilesService.cs" />
+    <Compile Include="RedjsUIService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -91,6 +91,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dudu\Rsd.Dudu.Common\Rsd.Dudu.csproj">
+      <Project>{f11a1b23-0069-422c-81b4-1c1f686aa003}</Project>
+      <Name>Rsd.Dudu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dudu\Rsd.Dudu.UI\Rsd.Dudu.UI.csproj">
+      <Project>{2df8c246-17f2-4ca6-9c7a-cf530e6fa325}</Project>
+      <Name>Rsd.Dudu.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dudu\Rsd.Dudu.Web\Rsd.Dudu.Web.csproj">
+      <Project>{9d39b12d-7f90-4c23-a14d-812110e52494}</Project>
+      <Name>Rsd.Dudu.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -108,6 +122,8 @@
           <DevelopmentServerPort>60883</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44305/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44305/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

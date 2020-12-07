@@ -9,10 +9,10 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Agenter.dll">
-      <publishTime>10/15/2020 16:47:17</publishTime>
+      <publishTime>12/07/2020 11:36:37</publishTime>
     </File>
     <File Include="bin/Agenter.pdb">
-      <publishTime>10/15/2020 16:47:17</publishTime>
+      <publishTime>12/07/2020 11:36:37</publishTime>
     </File>
     <File Include="bin/AjaxMin.dll">
       <publishTime>01/28/2015 14:36:58</publishTime>
@@ -42,37 +42,43 @@
       <publishTime>12/17/2019 12:01:34</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll">
-      <publishTime>10/15/2020 16:46:36</publishTime>
+      <publishTime>12/07/2020 11:23:47</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll.config">
       <publishTime>05/06/2020 19:58:53</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.dll">
-      <publishTime>10/12/2020 19:06:26</publishTime>
+      <publishTime>12/07/2020 11:23:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.pdb">
-      <publishTime>10/12/2020 19:06:26</publishTime>
+      <publishTime>12/07/2020 11:23:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe">
-      <publishTime>10/12/2020 19:06:26</publishTime>
+      <publishTime>12/07/2020 11:23:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe.config">
       <publishTime>12/17/2019 12:01:32</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.pdb">
-      <publishTime>10/12/2020 19:06:26</publishTime>
+      <publishTime>12/07/2020 11:23:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.pdb">
-      <publishTime>10/15/2020 16:46:36</publishTime>
+      <publishTime>12/07/2020 11:23:47</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.UI.dll">
+      <publishTime>12/07/2020 11:23:48</publishTime>
+    </File>
+    <File Include="bin/Rsd.Dudu.UI.pdb">
+      <publishTime>12/07/2020 11:23:48</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll">
-      <publishTime>10/15/2020 16:46:37</publishTime>
+      <publishTime>12/07/2020 11:23:47</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll.config">
       <publishTime>05/07/2020 11:15:52</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.pdb">
-      <publishTime>10/15/2020 16:46:37</publishTime>
+      <publishTime>12/07/2020 11:23:47</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
       <publishTime>12/17/2019 14:33:08</publishTime>
@@ -96,7 +102,10 @@
       <publishTime>12/17/2019 13:38:42</publishTime>
     </File>
     <File Include="bin/System.ValueTuple.dll">
-      <publishTime>10/10/2020 17:34:57</publishTime>
+      <publishTime>11/26/2020 22:11:51</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/07/2020 11:25:41</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>06/05/2020 18:22:42</publishTime>
