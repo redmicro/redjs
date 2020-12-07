@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Agenter.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Rsd.Redjs.Agenter.Global" Language="C#" %>

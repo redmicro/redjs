@@ -42,43 +42,49 @@
       <publishTime>12/17/2019 12:01:34</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll">
-      <publishTime>12/07/2020 11:23:47</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll.config">
       <publishTime>05/06/2020 19:58:53</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.dll">
-      <publishTime>12/07/2020 11:23:46</publishTime>
+      <publishTime>12/07/2020 15:51:45</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.pdb">
-      <publishTime>12/07/2020 11:23:46</publishTime>
+      <publishTime>12/07/2020 15:51:45</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe">
-      <publishTime>12/07/2020 11:23:46</publishTime>
+      <publishTime>12/07/2020 15:51:45</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe.config">
       <publishTime>12/17/2019 12:01:32</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.pdb">
-      <publishTime>12/07/2020 11:23:46</publishTime>
+      <publishTime>12/07/2020 15:51:45</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.pdb">
-      <publishTime>12/07/2020 11:23:47</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.dll">
-      <publishTime>12/07/2020 11:23:48</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.pdb">
-      <publishTime>12/07/2020 11:23:48</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll">
-      <publishTime>12/07/2020 11:23:47</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll.config">
       <publishTime>05/07/2020 11:15:52</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.pdb">
-      <publishTime>12/07/2020 11:23:47</publishTime>
+      <publishTime>12/07/2020 15:51:46</publishTime>
+    </File>
+    <File Include="bin/Rsd.Redjs.Agenter.dll">
+      <publishTime>12/07/2020 15:51:47</publishTime>
+    </File>
+    <File Include="bin/Rsd.Redjs.Agenter.pdb">
+      <publishTime>12/07/2020 15:51:47</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
       <publishTime>12/17/2019 14:33:08</publishTime>
@@ -104,11 +110,14 @@
     <File Include="bin/System.ValueTuple.dll">
       <publishTime>11/26/2020 22:11:51</publishTime>
     </File>
+    <File Include="bin/软件用户许可安装协议.docx">
+      <publishTime>12/17/2019 13:38:43</publishTime>
+    </File>
     <File Include="Global.asax">
-      <publishTime>12/07/2020 11:25:41</publishTime>
+      <publishTime>12/07/2020 11:41:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/05/2020 18:22:42</publishTime>
+      <publishTime>12/07/2020 15:51:47</publishTime>
     </File>
   </ItemGroup>
 </Project>
