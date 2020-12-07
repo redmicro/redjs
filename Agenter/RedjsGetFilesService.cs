@@ -323,16 +323,14 @@ namespace Rsd.Redjs.Agenter
         /// <returns></returns>
         public virtual string[] GetRedjsWxApp(string sourceHost, string version, string releaseTime)
         {
-            var redjs = new string[] { "config.js", "wxApp/Rsd.js" };//, "Redjs.js"
+            var wxapp_js = new string[] { "config.js", "wxApp/Rsd.js","wxApp/Adapter.js" };//, "Redjs.js"
                                                                      //以下 类型 无法在小程序环境下定义
                                                                      //var common = new string[] { "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" ,"common/EventList.js", "common/Application.js", "common/Svg.js", "common/ComponentX.js" };
                                                                      // var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
-            var wxAppEnd = new string[] { "wxApp/Adapter.js" };
-
-
+             
             var list_v = new List<string>();
 
-            foreach (var js in redjs)
+            foreach (var js in wxapp_js)
             {
                 list_v.Add(sourceHost + "/" + js.Trim() + "?v=" + version + "&t=" + releaseTime);
             }
