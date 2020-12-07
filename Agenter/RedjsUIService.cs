@@ -191,7 +191,7 @@ namespace Rsd.Redjs.Agenter
                 return;
             }
 
-            var ext = this.PictureExt(file);
+            var ext = this.GetPictureExt(file);
             if (!string.IsNullOrEmpty(ext))
             {
                 byte[] bytes = this.RequestFileBytes(files[0]);

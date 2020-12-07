@@ -1,6 +1,7 @@
 ﻿using Rsd.Dudu;
 using Rsd.Dudu.Core;
 using Rsd.Dudu.UI.Core;
+using Rsd.Dudu.UI.Models;
 using Rsd.Dudu.UI.Services;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,17 @@ namespace Rsd.Redjs.Agenter
             this.SourceHost = sourceHost;
             this.IndexPage = defaultIndex;
         }
+
+        /// <summary>
+        /// 获取源站信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public Site GetSourceSite(HttpRequest request)
+        {
+            return null;
+        }
+
         /// <summary>
         /// 
         /// </summary>
