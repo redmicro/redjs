@@ -33,7 +33,27 @@ namespace Rsd.Redjs.Agenter
             this.SourceHost = sourceHost;
             this.IndexPage = defaultIndex;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="domainName"></param>
+        /// <param name="pathPrefix"></param>
+        /// <param name="sourceHost"></param>
+        /// <param name="appJs"></param>
+        /// <param name="defaultIndex"></param>
+        public void AddSourceHost(string domainName, string pathPrefix, string sourceHost, string appJs, string defaultIndex = "index.html")
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="files"></param>
+        public void AddUrlMapping(string url, params string[] files)
+        {
+            throw new NotImplementedException();
+        }
         /// <summary>
         /// 获取源站信息
         /// </summary>
@@ -369,5 +389,7 @@ namespace Rsd.Redjs.Agenter
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }
