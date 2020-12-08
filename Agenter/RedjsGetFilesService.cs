@@ -75,7 +75,7 @@ namespace Rsd.Redjs.Agenter
 
             //来源域名 和 uirlReferer 验证
 
-            string sourceHost = this.SourceHost;
+            string sourceHost = this.SourceHost.TrimEnd('/');
 
             if (request.Url.AbsolutePath.Trim('/') == "")
             {
@@ -187,7 +187,7 @@ namespace Rsd.Redjs.Agenter
                 }
 
             }
-            return new string[] { string.Format("{0}{1}", this.SourceHost, request.Url.PathAndQuery) };
+            return new string[] { string.Format("{0}/{1}", sourceHost, request.Url.PathAndQuery.TrimStart('/')) };
         }
 
     
