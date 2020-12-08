@@ -31,8 +31,9 @@ namespace Rsd.Redjs.Agenter
 
 
             string url = context.Request.RawUrl;  //不含域名和端口
-            string _host = context.Request.Url.Host;
-           
+            //redjs 对外主站
+            string _redjsHost = context.Request.Url.Scheme + "://" + context.Request.Url.Host + ":" + context.Request.Url.Port;
+             
             var _path = new[] { "plugin/" };
             if (_path == null)
             {
@@ -145,7 +146,7 @@ namespace Rsd.Redjs.Agenter
                         {
                             //输出头部脚本
                             context.Response.Write("window.Rsd.__isAgentHost=true;");
-                            context.Response.Write("window.Rsd.__jsHomePath= '" + _host + "';");
+                            context.Response.Write("window.Rsd.__jsHomePath= '" + _redjsHost + "';");
                             context.Response.Write("window.Rsd.__appId= '" + appId + "';");
                             context.Response.Write("window.Rsd.__requestUrl='" + (context.Request.Url != null ? context.Request.Url.AbsoluteUri : "") + "';");
                             context.Response.Write("window.Rsd.__refererHost='" + (context.Request.UrlReferrer != null ? context.Request.UrlReferrer.AbsoluteUri : "") + "';");
