@@ -32,7 +32,7 @@ namespace Rsd.Redjs.Agenter
 
             string url = context.Request.RawUrl;  //不含域名和端口
             //redjs 对外主站
-            string _redjsHost = "//" + context.Request.Url.Host + ":" + context.Request.Url.Port;
+            string _redjsHost = "//" + context.Request.Url.Host;
              
             var _path = new[] { "plugin/" };
             if (_path == null)
