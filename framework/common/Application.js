@@ -21,8 +21,8 @@ Rsd.define('Rsd.common.Application', {
     appVersion:'0.0.0.0',
     //版本发布日期
     appDate:new Date().getTime(),
-    //js脚本代理服务器
-    jsAgentHost:null,
+    //js 脚本代理服务器地址 ，设置该值后，所有js脚本请求 会被指向该地址，且请求格式为jsAgentHost/base64(path),且需要在代理服务上 先解析path内容 
+    jsAgentHost:'',
     lang:'zh-cn',
     svg:null,
     /*api service*/
