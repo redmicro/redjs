@@ -373,11 +373,9 @@ namespace Rsd.Redjs.Agenter
             return list_v.ToArray();
         }
         /// <summary>
-        /// 
+        ///  获取请求path 并解码实际路径
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="pathPrefix"></param>
-        /// <param name="defaultIndex"></param>
+        /// <param name="request"></param> 
         /// <returns></returns>
         public string GetRequestPath(HttpRequest request)
         {

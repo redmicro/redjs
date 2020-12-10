@@ -2753,7 +2753,8 @@ function Redjs(config) {
      * */
     this.getRedjsHost = function getRedjsHost() {
  
-        if (this.isNullOrUndefined(this.__jsHomeHost )) {
+        //debugger;
+        if (this.isEmpty(this.__jsHomeHost )) {
 
             if(this.isWeChatApp())
             {
@@ -2789,9 +2790,10 @@ function Redjs(config) {
             var _d = _path.split('/');
             this.__jsHomeHost = _path.replace(_d[_d.length - 1], '');
         }
+
         if(window.location.protocol=='https:' && this.__jsHomeHost.startsWith('http://'))
         {
-            this.__jsHomeP__jsHomeHostath = 'https://' + this.__jsHomeHost.substring(7);
+            this.__jsHomeHost = 'https://' + this.__jsHomeHost.substring(7);
         }
         if(window.location.protocol=='http:' && this.__jsHomeHost.startsWith('https://'))
         {
