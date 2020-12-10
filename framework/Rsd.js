@@ -165,9 +165,9 @@ Date.prototype.getWeek = function getWeek() {
     }
 
     var getUrl = function getUrl() {
-        if(Rsd.__jsHomePath)
+        if(Rsd.__jsHomeHost)
         {
-            return Rsd.__jsHomePath;
+            return Rsd.__jsHomeHost;
         }
         var result = ""
 
@@ -271,6 +271,10 @@ Date.prototype.getWeek = function getWeek() {
             xtypes: {},
             objects: {},
             singletons: {},
+            //redjs服务器地址
+            __jsHomeHost:'',
+             //表示__jsHomeHost指向的redjs服务器是否代理服务器，代理服务器的求情格式为__jsHomeHost/base64(path),且需要在代理服务上 先解析path内容 
+            __isAgentHost:false, 
             __readyTime:0,
             __id: 0,
             __zIndex: 9000
@@ -378,6 +382,7 @@ Date.prototype.getWeek = function getWeek() {
     };
 
     if(window && window.Config && window.Redjs) {
+         //加载 jquery
         var _c = new Config();
         _c.timestamp = new Date(Date.parse(_c.releaseTime.replace(/-/g,"/"))).getTime();
         init(_c);
@@ -393,6 +398,8 @@ Date.prototype.getWeek = function getWeek() {
 
     }else {
 
+         //加载config,redjs 和  jquery
+
         var loadRedjs = function loadRedjs(url, callback) {
 
             var _new_url = (_host || '') + url;
@@ -406,7 +413,7 @@ Date.prototype.getWeek = function getWeek() {
 
             if (window && Rsd.__isAgentHost) {
                 var _code = window.btoa(unescape(encodeURIComponent(url)));
-                _new_url = Rsd.__jsHomePath + _code;
+                _new_url = Rsd.__jsHomeHost + _code;
             }
             xhr.open('GET', _new_url, true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -438,7 +445,7 @@ Date.prototype.getWeek = function getWeek() {
                 }
             }
         };
-
+       
          _fn = function domLoaded() {
             loadRedjs('config.js' + '?t=' + new Date().getTime(), function () {
 

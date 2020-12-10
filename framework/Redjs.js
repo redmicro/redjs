@@ -2753,7 +2753,7 @@ function Redjs(config) {
      * */
     this.getRedjsHost = function getRedjsHost() {
  
-        if (this.isNullOrUndefined(this.__jsHomePath )) {
+        if (this.isNullOrUndefined(this.__jsHomeHost )) {
 
             if(this.isWeChatApp())
             {
@@ -2787,20 +2787,23 @@ function Redjs(config) {
             var _path = result.substr(0, result.lastIndexOf('/') + 1);
 
             var _d = _path.split('/');
-            this.__jsHomePath = _path.replace(_d[_d.length - 1], '');
+            this.__jsHomeHost = _path.replace(_d[_d.length - 1], '');
         }
-        if(window.location.protocol=='https:' && this.__jsHomePath.startsWith('http://'))
+        if(window.location.protocol=='https:' && this.__jsHomeHost.startsWith('http://'))
         {
-            this.__jsHomePath = 'https://' + this.__jsHomePath.substring(7);
+            this.__jsHomeP__jsHomeHostath = 'https://' + this.__jsHomeHost.substring(7);
         }
-        if(window.location.protocol=='http:' && this.__jsHomePath.startsWith('https://'))
+        if(window.location.protocol=='http:' && this.__jsHomeHost.startsWith('https://'))
         {
-            this.__jsHomePath = 'http://' + this.__jsHomePath.substring(8);
+            this.__jsHomeHost = 'http://' + this.__jsHomeHost.substring(8);
         }
-        return this.__jsHomePath;
+        return this.__jsHomeHost;
     };
-    /*
-    * */
+    /** 
+     * 获取完整的redjs框架地址
+     * isAgentHost：true 表示jsHomePath指向的服务期是否代理服务器，代理服务器的求情格式为jsHomePath/base64(path),需要在代理服务上 先解析path内容 
+     * isAgentHost：false 表示正常结构
+    */
     this.getRedjsUrl = function getRedjs(url) {
         if(this.isAgentHost())
         {
