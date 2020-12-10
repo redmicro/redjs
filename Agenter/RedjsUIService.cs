@@ -141,7 +141,7 @@ namespace Rsd.Redjs.Agenter
                         {
                             //输出头部脚本
                             context.Response.Write("window.Rsd.__isAgentHost=true;");
-                            context.Response.Write("window.Rsd.__jsHomePath= '" + _redjsHost + "';");
+                            context.Response.Write("window.Rsd.__jsHomeHost= '" + _redjsHost + "';");
                             context.Response.Write("window.Rsd.__appId= '" + appId + "';");
                             context.Response.Write("window.Rsd.__requestUrl='" + (context.Request.Url != null ? context.Request.Url.AbsoluteUri : "") + "';");
                             context.Response.Write("window.Rsd.__refererHost='" + (context.Request.UrlReferrer != null ? context.Request.UrlReferrer.AbsoluteUri : "") + "';");
