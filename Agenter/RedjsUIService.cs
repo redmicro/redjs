@@ -28,17 +28,13 @@ namespace Rsd.Redjs.Agenter
             //域名 有效性验证
 
             //域名 和 uirlReferer 验证
-
-
-            string url = context.Request.RawUrl;  //不含域名和端口
+            var getFilesService = ServicesContainer.GetService<IGetUIFilesService>(new GetUIFilesService());
+          
+            string url = getFilesService.GetRequestPath(context.Request);  //不含域名和端口
             //redjs 对外主站
             string _redjsHost = "//" + context.Request.Url.Host + "/";
              
             var _path = new[] { "plugin/" };
-            if (_path == null)
-            {
-                _path = new string[] { };
-            }
 
             bool _f_compress = true;
             foreach (var p in _path)
@@ -50,8 +46,7 @@ namespace Rsd.Redjs.Agenter
                     break;
                 }
             }
-
-            var getFilesService = ServicesContainer.GetService<IGetUIFilesService>(new GetUIFilesService());
+        
             var files = getFilesService.GetFiles(context.Request);
 
             context.Response.Cache.SetCacheability(HttpCacheability.Public);

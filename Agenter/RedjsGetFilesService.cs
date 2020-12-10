@@ -1,5 +1,6 @@
 ﻿using Rsd.Dudu;
 using Rsd.Dudu.Core;
+using Rsd.Dudu.Helpers;
 using Rsd.Dudu.UI.Core;
 using Rsd.Dudu.UI.Models;
 using Rsd.Dudu.UI.Services;
@@ -16,22 +17,22 @@ namespace Rsd.Redjs.Agenter
     public class RedjsGetFilesService : BaseService, IGetUIFilesService, IService
     {
         public override ServiceProxcy Proxcy => ServiceProxcy.Sington;
+        
         /// <summary>
         /// 
         /// </summary>
-        public string SourceHost { get; private set; }
+        private string SourceHost { get; set; }
         /// <summary>
-        /// 默认起始页面
+        /// 
         /// </summary>
-        public string IndexPage { get; private set; }
+        private string IndexPage { get; set; }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sourceHost"></param>
         public RedjsGetFilesService(string sourceHost, string defaultIndex = "index.html")
         {
-            this.SourceHost = sourceHost;
-            this.IndexPage = defaultIndex;
+            this.AddSourceHost("js.redmicro.cn", "", sourceHost, "", defaultIndex);
         }
         /// <summary>
         /// 
@@ -43,7 +44,8 @@ namespace Rsd.Redjs.Agenter
         /// <param name="defaultIndex"></param>
         public void AddSourceHost(string domainName, string pathPrefix, string sourceHost, string appJs, string defaultIndex = "index.html")
         {
-            throw new NotImplementedException();
+            this.SourceHost = sourceHost;
+            this.IndexPage = defaultIndex;
         }
         /// <summary>
         /// 
@@ -74,14 +76,15 @@ namespace Rsd.Redjs.Agenter
             //来源 域名 有效性验证
 
             //来源域名 和 uirlReferer 验证
-
+            var path = this.GetRequestPath(request);
             string sourceHost = this.SourceHost.TrimEnd('/');
 
-            if (request.Url.AbsolutePath.Trim('/') == "")
+            if (path.Trim('/') == "")
             {
-                return new string[] { string.Format("{0}{1}{2}", this.SourceHost, this.IndexPage, request.Url.Query) };
+                return new string[] { string.Format("{0}/{1}", this.SourceHost, path) };
             }
-            var file =  request.Url.AbsolutePath.ToLower();
+          
+            var file = path.ToLower().Split('?')[0];
             if (file.EndsWith("rsd-min.js"))
             {
                 RedjsConfig _config = null;
@@ -187,7 +190,7 @@ namespace Rsd.Redjs.Agenter
                 }
 
             }
-            return new string[] { string.Format("{0}/{1}", sourceHost, request.Url.PathAndQuery.TrimStart('/')) };
+            return new string[] { string.Format("{0}/{1}", sourceHost, path.TrimStart('/')) };
         }
 
     
@@ -376,9 +379,51 @@ namespace Rsd.Redjs.Agenter
         /// <param name="pathPrefix"></param>
         /// <param name="defaultIndex"></param>
         /// <returns></returns>
-        public string GetRequestPath(HttpRequest request, string pathPrefix, string defaultIndex = "")
+        public string GetRequestPath(HttpRequest request)
         {
-            throw new NotImplementedException();
+            string pathPrefix = "";
+            string defaultIndex = "";
+            var url = "";
+            var site = this.GetSourceSite(request);
+            if (site != null)
+            {
+                pathPrefix = site.PathPrefix;
+                defaultIndex = site.DefaultIndex;
+            }
+            if (!string.IsNullOrEmpty(request.Path))
+            {
+                if (!string.IsNullOrEmpty(request.RawUrl))
+                {
+                    url = request.RawUrl.TrimStart('/');
+                }
+                if (string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(request.Path))
+                {
+                    url = request.Path.TrimStart('/');
+                }
+            }
+            else
+            {
+                url = request.QueryString.ToString();
+            }
+
+            url = System.Web.HttpUtility.UrlDecode(url, System.Text.Encoding.UTF8);
+
+            if (StringHelper.IsBase64(url))
+            {
+                var enService = ServicesContainer.GetService<Rsd.Dudu.Core.IEncryptService>(null);
+                url = enService.DecodeBase64(url);
+            }
+
+            url = url.Trim('/');
+            url = url.Substring(pathPrefix == null ? 0 : pathPrefix.Length);
+
+            // 返回默认首页
+            if (string.IsNullOrWhiteSpace(url) || string.IsNullOrEmpty(url))
+            {
+                url = (defaultIndex == null ? "" : defaultIndex);
+            }
+
+            return url;
         }
 
         /// <summary>
