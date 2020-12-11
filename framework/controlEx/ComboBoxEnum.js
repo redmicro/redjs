@@ -106,9 +106,9 @@ Rsd.define('Rsd.controlEx.ComboBoxEnum', {
                     {
                         Rsd.define(data.data.name,{
                             extend:'Rsd.data.Enum',
-                            "valueMember": config.valueMember||"code",
-                            "codeMember": config.codeMember||"code",
-                            "textMember": config.textMember||"text",
+                            "valueMember": config.valueMember||"Value",
+                            "codeMember": config.codeMember||"Code",
+                            "textMember": config.textMember||"Text",
                             items:data.data.items,
                             constructor:function constructor()
                             {

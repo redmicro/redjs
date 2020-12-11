@@ -38,16 +38,18 @@ Rsd.define('Rsd.data.Enum', {
         if(!this.__mapping)
         {
             this.__mapping = {};
+            this.__mapping_code = {};
             var _item = null;
             var _list = this.items || this.chidren;
             for(var i=0;i < _list.length ;i++)
             {
                 _item = _list[i];
                 this.__mapping[_item.value] = _item;
+                this.__mapping[_item.code] = _item;
             }
         }
-      
-        return this.__mapping[value];
+         
+        return this.__mapping[value]|| this.__mapping[_item.value];
         
     }
 
