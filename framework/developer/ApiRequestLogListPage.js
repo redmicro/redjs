@@ -39,8 +39,8 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
         },
          
         {
-            "name": "Content",
-            "dataIndex": "Content",
+            "name": "Message",
+            "dataIndex": "Message",
             "sortable": false,
             "text": "日志内容",
             "index": 50,
@@ -96,6 +96,10 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
         _args.sort = this.sort || this.menu.sort||[];
         this.callParent(_args,callback) ;
     },
+    /**
+     * 
+     * @param {*} row 
+     */
     fromat_content:function fromat_content(row)
     {
         return [Rsd.text(row['LogTime'],'blue')];
