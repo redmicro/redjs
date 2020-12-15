@@ -34,20 +34,20 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
             align:'left',
             xtype:'template',
             formatString:'操作人:#=User=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#</br>主机:#=HostIp=#',
-            "width": 80,
+            "width": 90,
             "nobr": true
         },
          
         {
-            "name": "Origin",
-            "dataIndex": "Origin",
+            "name": "Content",
+            "dataIndex": "Content",
             "sortable": false,
             "text": "日志内容",
             "index": 50,
             align:'left',
             "exist": true,
-            "xtype": "text",
-            "width": 300,
+            "xtype": "template",
+            "width": 350,
             lineClamp:8,
             format:'fromat_content',
             "nobr": false
@@ -62,7 +62,7 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
             align:'left',
             xtype:'template',
             formatString:'ClientIp:#=ClientIp=#</br>Method:#=Method=#</br>Refer:#=Refer=#</br>Session:#=SessionId=#<br>Host:#=Host=#',
-            "width": 150,
+            "width": 200,
             "nobr": true
         } 
        
@@ -103,7 +103,8 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
     fromat_content:function fromat_content(row)
     {
         return [ 
-            Rsd.text(row['Message']),
+            Rsd.text(row['Message'],'red'), 
+            Rsd.text('['+row['Origin']+']'), 
             Rsd.newLine(),
             Rsd.text(row['UserAgent']),
             Rsd.newLine(),
