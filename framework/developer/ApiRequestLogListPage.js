@@ -33,14 +33,14 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'操作人:#=Operator=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#</br>会话:#=SessionId=#',
+            formatString:'操作人:#=User=#</br>级别:#=LogLevel=#</br>类型:#=LogType=#</br>主机:#=HostIp=#',
             "width": 80,
             "nobr": true
         },
          
         {
-            "name": "Message",
-            "dataIndex": "Message",
+            "name": "Origin",
+            "dataIndex": "Origin",
             "sortable": false,
             "text": "日志内容",
             "index": 50,
@@ -53,15 +53,15 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
             "nobr": false
         },
         {
-            "name": "RefType",
-            "dataIndex": "RefType",
+            "name": "Request",
+            "dataIndex": "Request",
             "sortable": false,
-            "text": "发生位置",
+            "text": "Request",
             "index": 60,
             "exist": true,
             align:'left',
             xtype:'template',
-            formatString:'主机IP:#=HostIp=#</br>线程:#=ThreadFlag=#</br>类:#=RefType=#</br>方法:#=RefMethod=#',
+            formatString:'ClientIp:#=ClientIp=#</br>Method:#=Method=#</br>Refer:#=Refer=#</br>Session:#=SessionId=#<br>Host:#=Host=#',
             "width": 150,
             "nobr": true
         } 
@@ -102,6 +102,11 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
      */
     fromat_content:function fromat_content(row)
     {
-        return [Rsd.text(row['LogTime'],'blue')];
+        return [ 
+            Rsd.text(row['Message']),
+            Rsd.newLine(),
+            Rsd.text(row['UserAgent']),
+            Rsd.newLine(),
+            Rsd.text(Rsd.formatTimestamp(row['LogTime']),'blue')];
     }
 });
