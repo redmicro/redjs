@@ -3635,7 +3635,7 @@ function Redjs(config) {
                     Rsd.warn('系统繁忙，请稍后再试');
                     return;
                 }
-                console.log(_timer + '- call '+_name + ' => ' + service.group + ' loading api' );
+                console.log(_timer + '- call '+_name + ' => controller ' + service.group + ' is loading.' );
                 setTimeout(_request,200*_timer);
             }
             else
