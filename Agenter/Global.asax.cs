@@ -19,9 +19,8 @@ namespace Rsd.Redjs.Agenter
             var code = @"CEd7yntcMdP81/6DRwpK6gj1bAvjmA38hRJOnrWUCboX4vDCcyOS9XdseEYDn9qw\r\nVADhu9q37gJdD8mKWQ6PfMeFPoB9pP6eJakLAjfiLz0=";
             var expireAt = ServicesContainer.RegistCode(appId, appKey, code);
 
-            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"];//"http://localhost/redjs/"; //
-
-
+            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"];//"http://localhost/redjs/"; // 
+             
             WebApplication.Initial(this,()=>{
                 WebApplication.LoadPlugins(Rsd.Dudu.UI.Config.GetConfig(null));
                 

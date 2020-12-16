@@ -19400,14 +19400,14 @@
             <param name="sessionId">Session</param> 
             <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.ServicesContainer.GetServiceByTypeName(System.String)">
+        <member name="M:Rsd.Dudu.ServicesContainer.GetServiceEntryByTypeName(System.String)">
             <summary>
             获取已注册的服务
             </summary>
             <param name="typeName"></param> 
             <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.ServicesContainer.GetService(System.String)">
+        <member name="M:Rsd.Dudu.ServicesContainer.GetServiceEntry(System.String)">
             <summary>
             获取已注册的服务
             </summary>
