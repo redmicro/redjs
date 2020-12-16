@@ -3636,7 +3636,7 @@ function Redjs(config) {
                     return;
                 }
                 console.log(_timer + '- call '+_name + ' => ' + service.group + ' loading api' );
-                setTimeout(_request,200);
+                setTimeout(_request,200*_timer);
             }
             else
             {
