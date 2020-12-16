@@ -1,0 +1,4063 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rsd.Dudu.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Rsd.Dudu.Web.Authorization.AuthenticationHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.AuthenticationHandler.SendAsync">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Authorization.FormAuthenticationFilterAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.FormAuthenticationFilterAttribute.Authorization">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.FormAuthenticationFilterAttribute.GetTicket(System.Web.HttpCookieCollection)">
+            <summary>
+            
+            </summary>
+            <param name="cookies"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.Header.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.Header.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="header"></param>
+            <param name="method"></param>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Cnonce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Nonce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Realm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Uri">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Response">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.Method">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.NounceCounter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.Header.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Authorization.NonceHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.NonceHelper.Generate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Authorization.NonceHelper.IsValid(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="nonce"></param>
+            <param name="nonceCount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Controllers.BaseController">
+            <summary>
+            在BaseBizService提供的CURD操作基础上 添加CURD 支持json的处理
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.Index">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.BadRequest(System.String)">
+            <summary>
+            返回：ErrorCodes.W2000 非法请求 (token 为空)
+            </summary>
+            <param name="msg"></param>
+            <returns>非法请求</returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.NoSessionRequest">
+            <summary>
+            返回：ErrorCodes.W2001 Session信息不存在
+            </summary>
+            <returns>Session信息不存在</returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SaveObject(System.Type,Rsd.Dudu.BizModel.JsonObject,Rsd.Dudu.BizModel.ObjectStateType)">
+            <summary>
+            保存对象至数据，并将返回内存中的对象
+            </summary>
+            <param name="type"></param>
+            <param name="json"></param>
+            <param name="objectState">指定当前对象状态（New or Update）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SaveObject(Rsd.Dudu.Core.IMyType,Rsd.Dudu.BizModel.JsonObject,Rsd.Dudu.BizModel.ObjectStateType)">
+            <summary>
+            保存对象至数据，并将返回内存中的对象
+            </summary>
+            <param name="myType"></param>
+            <param name="json"></param>
+            <param name="objectState">当前对象状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetListJson``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,``1}},Rsd.Dudu.DBServices.SortType,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <typeparam name="T1">排序字段类型</typeparam>
+            <param name="expression"></param>
+            <param name="orderBy"></param>
+            <param name="type"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetListJson``1(Rsd.Dudu.DBServices.WhereCondition[],Rsd.Dudu.DBServices.SortCondition[],System.String,System.Boolean,System.String[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="where"></param>
+            <param name="sort"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <param name="bizFormat">先转化为业务对象模型,再格式化为Json</param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetListJson(Rsd.Dudu.Core.IMyType,Rsd.Dudu.DBServices.WhereCondition[],Rsd.Dudu.DBServices.SortCondition[],System.String,System.Boolean,System.String[])">
+            <summary>
+            
+            </summary> 
+            <param name="myType"></param>
+            <param name="where"></param>
+            <param name="sort"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <param name="bizFormat">先转化为业务对象模型,再格式化为Json</param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetPaggingJson(Rsd.Dudu.Core.IMyType,System.Int32,System.Int32,Rsd.Dudu.DBServices.WhereCondition[],Rsd.Dudu.DBServices.SortCondition[],System.String,System.Boolean,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="myType"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="where"></param>
+            <param name="sort"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <param name="bizFormat">先转化为业务对象模型,再格式化为Json</param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetPaggingJson``1(System.Int32,System.Int32,Rsd.Dudu.DBServices.WhereCondition[],Rsd.Dudu.DBServices.SortCondition[],System.String,System.Boolean,System.String[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam> 
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="where"></param>
+            <param name="sort"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <param name="bizFormat">先转化为业务对象模型,再格式化为Json</param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetPaggingJson``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Int32,System.Int32,Rsd.Dudu.DBServices.SortType,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="T1"></typeparam> 
+            <param name="expression"></param>
+            <param name="orderBy"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="tableNameSuffix">分表存储对象，表名称后缀</param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetPaggingJson``1(System.Int32,System.Int32,System.Data.DataTable,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="table"></param>
+            <param name="total"></param>
+            <param name="bizFormat">先转化为业务对象模型,再格式化为Json</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetObject(System.Type,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="key"></param>
+            <param name="tableNameSuffixList">分表存储对象，表名称后缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SignIn(System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="userName"></param>
+            <param name="data"></param>
+            <param name="clientIp"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes">过期时间（分钟），默认30分钟</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SignOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.GetConfigAppSetting(System.String)">
+            <summary>
+            获取web.config文件的AppSettings配置项值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Controllers.BaseHttpHandler">
+            <summary>
+            每个 子类 都要实现自己的DBSession ,以提供给 该类进行CURD操作时的驱动
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.DefaultAction">
+            <summary>
+            默认api
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.RoutePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.SessionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Context">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.HasResponsed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.IsReusable">
+            <summary>
+            您将需要在网站的 Web.config 文件中配置此处理程序 
+            并向 IIS 注册它，然后才能使用它。有关详细信息，
+            请参阅以下链接: https://go.microsoft.com/?linkid=8101007
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Proxcy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Application_BeginRequest(System.Object,System.EventArgs)">
+            
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Application_EndRequest(System.Object,System.EventArgs)">
+            
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Application_RequestCompleted(System.Object,System.EventArgs)">
+            
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Application_Error(System.Object,System.EventArgs)">
+            
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.BeginBusying(System.String)">
+            <summary>
+            当前线程独占系统使用，阻止其他请求访问
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.EndBusying">
+            <summary>
+            当前线程释放独占资源，允许其他请求执行
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.RedirectToRoute(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="routeValues"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetHttpHandler(System.Web.Routing.RequestContext)">
+            <summary>
+            
+            </summary>
+            <param name="requestContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.HttpRequest(Rsd.Dudu.Net.HttpRequestData)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.HttpRequest(System.String,Rsd.Dudu.BizModel.JsonObject,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="data"></param>
+            <param name="method"></param>
+            <param name="contentType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.HttpRequest(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="data"></param>
+            <param name="authorization"></param>
+            <param name="method"></param>
+            <param name="contentType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetDes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetAppId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetAppToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.CheckPermission(System.String,Rsd.Dudu.Web.Service.ServiceAccessLevel)">
+            <summary>
+            验证权限
+            </summary>
+            <param name="actionName"></param>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.OnBeforeRoute(System.String,Rsd.Dudu.Web.Service.ServiceAccessLevel)">
+            <summary>
+            在路由进入目标api之前执行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetAccessToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.CheckAccessToken(System.String)">
+            <summary>
+            验证Token是否有效（存在且未过期）
+            </summary>
+            <param name="accessToken">指定accessToken，空表示本次请求默认accessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetSession">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetSessionData``1">
+            <summary>
+            获取指定类型的Session数据。类型不一致时，返回null
+            </summary>
+            <typeparam name="T">Session数据类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.ResetSession(System.Int32)">
+            <summary>
+            重置Session 并延长有效时间
+            </summary>
+            <param name="minutes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.RefreshSession(System.Int32)">
+            <summary>
+            刷新会话  延长Session有效时间
+            </summary>
+            <param name="minutes"></param>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseHttpHandler.CurrentRequestIp">
+            <summary>
+            当前请求来源客户端IP
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetClientIp">
+            <summary>
+            请求客户端IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetClientHostAddress">
+            <summary>
+             获取远程客户端的 IP 主机地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetClientHostName">
+            <summary>
+            获取远程客户端的 DNS 名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetRequestBrowserId">
+            <summary>
+            浏览器指纹
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetRequestReferrer">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetRequestUserAgent">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Controllers.BizBaseController">
+            <summary>
+             提供对对象的CURD操作
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BizBaseController.Save">
+            <summary>
+            json 结构:
+            {
+            modelType:'Rsd.xxx.xxx',
+            record:{name:'',age:20}
+            }
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BizBaseController.Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BizBaseController.GetObject">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BizBaseController.GetList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.BaseWebPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.BaseWebPage.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.BaseWebPage.GetToken(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.BaseWebPage.GetSessionId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.ControllerAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ControllerAttribute.Path">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ControllerAttribute.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ControllerAttribute.Description">
+            <summary>
+            描述
+            </summary> 
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ControllerAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path">路径</param>
+            <param name="name">名称</param>
+            <param name="description"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.DBMemorySessionCacheService">
+            <summary>
+            通过 继承DBMemoryCacheService~DbMemorySession 类，限定数据存储位置
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.Proxcy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.#ctor(Rsd.Dudu.Core.IDBSession,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="dBSession"></param>
+            <param name="group"></param>
+            <param name="initial">是否初始化 缓存对象 存储表</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.Rsd#Dudu#Web#Core#ISessionCacheService#Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.Rsd#Dudu#Web#Core#ISessionCacheService#Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="timeSpan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.Rsd#Dudu#Web#Core#ISessionCacheService#GetList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionCacheService.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.DBMemorySessionModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.UserId">
+            <summary>
+            用户标识
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.DataType">
+            <summary>
+            数据类型名称
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.DataStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.ExpireAt">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.Duration">
+            <summary>
+            相对过期时间 时间间隔（秒）
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.TimeSpan">
+            <summary>
+            相对过期时间 时间间隔
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.ClientIP">
+            <summary>
+            客户端IP
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.FromHost">
+            <summary>
+            访问域名
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.FromReferer">
+            <summary>
+            请求的referer
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.FromUserAgent">
+            <summary>
+            请求的UserAgent
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.Host">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.DBMemorySessionModel.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.#ctor">
+            <summary>
+            反序列化使用
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.#ctor(System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="minutes">会话有效期</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.#ctor(System.String,System.Object,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="data"></param>
+            <param name="timeSpan"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.GetData``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.DBMemorySessionModel.SetData``1(``0)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.IApiLogService">
+            <summary>
+            API 调用日志
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IApiLogService.BeginCapture(System.String)">
+            <summary>
+            线程独立
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IApiLogService.CancelCapture(System.String)">
+            <summary>
+            线程独立
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IApiLogService.CommitCapture(System.Int32,System.String)">
+            <summary>
+            线程独立 提交所有捕获的日志
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IApiLogService.WebApi(System.String,System.String,System.String,System.DateTime,System.DateTime,System.String,System.String,Rsd.Dudu.Web.Core.RequestClientInfo)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="appId"></param>
+            <param name="user"></param>
+            <param name="bizFlag"></param>
+            <param name="requestTime"></param>
+            <param name="responeTime"></param>
+            <param name="reqData"></param>
+            <param name="repData"></param>
+            <param name="info"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.IResponseResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IResponseResult.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.ISession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.ModifyTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.ClientIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.FromHost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.FromReferer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.FromUserAgent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISession.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1">
+            <summary>
+            Http运行时对象缓存服务
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.IsLocalCache">
+            <summary>
+            是否是本地存储
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Clear(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.GetValue(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.GetValue``1(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <param name="group"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.GetList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Get(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Put(Rsd.Dudu.Cache.ICacheObject[])">
+            <summary>
+            
+            </summary>
+            <param name="objs"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Put(System.String,System.String,`0,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+            <param name="data"></param>
+            <param name="expireAt"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Put``1(System.String,System.String,``0,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <param name="group"></param>
+            <param name="key"></param>
+            <param name="data"></param>
+            <param name="timeSpan"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Put``1(System.String,System.String,``0,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <param name="group"></param>
+            <param name="key"></param>
+            <param name="data"></param>
+            <param name="expireAt"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Contains(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.Remove(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.OnRemoveCallBack(System.String,System.Object,System.Web.Caching.CacheItemRemovedReason)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="r"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.OnUpdateCallBack(System.String,System.Web.Caching.CacheItemUpdateReason,System.Object@,System.Web.Caching.CacheDependency@,System.DateTime@,System.TimeSpan@)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="reason"></param>
+            <param name="expensiveObject"></param>
+            <param name="dependency"></param>
+            <param name="absoluteExpiration"></param>
+            <param name="slidingExpiration"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.HttpRuntimeCacheProvider`1.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.NullKeyPramaTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Core.NullKeyPramaTypes.QueryString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Core.NullKeyPramaTypes.FormData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Core.NullKeyPramaTypes.All">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.ISchemaCacheServcie">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISchemaCacheServcie.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISchemaCacheServcie.Add(System.String,Rsd.Dudu.BizModel.JsonObject)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISchemaCacheServcie.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISchemaCacheServcie.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISchemaCacheServcie.ContainsKey(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISchemaCacheServcie.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.PluginConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Name">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Code">
+            <summary>
+            插件编码
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Category">
+            <summary>
+            插件分类
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Logo">
+            <summary>
+            logo
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Developer">
+            <summary>
+            开发者
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.License">
+            <summary>
+            版权
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.ErrorCodeType">
+            <summary>
+            错误代码类
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.ErrorCodeStart">
+            <summary>
+            错误代码起始值
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.ErrorCodeEnd">
+            <summary>
+            错误代码结束值
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.IsReady">
+            <summary>
+            已经初始化完成
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.Controllers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.ModelTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.ControllerPath">
+            <summary>
+            Controller注册路径
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.PluginConfig.DbSession">
+            <summary>
+            数据库驱动
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Core.PluginConfig._assembly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.#ctor(System.Reflection.Assembly,System.String,System.String,Rsd.Dudu.Core.IDBSession)">
+            <summary>
+            
+            </summary>
+            <param name="assembly"></param>
+            <param name="path"></param>
+            <param name="category"></param>
+            <param name="dbSession">数据库驱动</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.#ctor(System.Reflection.Assembly,System.Type,System.Type,System.String,System.String,Rsd.Dudu.Core.IDBSession)">
+            <summary>
+            
+            </summary>
+            <param name="assembly">插件dll</param>
+            <param name="modelBase">model基类</param>
+            <param name="controllerBase">controller基类</param>
+            <param name="path">Controller注册路径</param>
+            <param name="category"></param>
+            <param name="dbSession"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.InitialTables(Rsd.Dudu.DBServices.TableExistOperationType)">
+            <summary>
+            初始化 数据表
+            </summary>
+            <param name="operationType"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.InitialTable``1(Rsd.Dudu.DBServices.TableExistOperationType)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.Initial">
+            <summary>
+            插件初始化：遍历ModelType 和Controller
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.AddModelType``1">
+            <summary>
+            添加模型类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.AddController``1">
+            <summary>
+            添加controller
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.CacheModelTypes">
+            <summary>
+            缓存MyType
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.RegistControllers">
+            <summary>
+            
+            </summary>
+            <param name="path">Controller注册路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.SchemasCacheService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.SchemasCacheService.Proxcy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.SchemasCacheService.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.#ctor(Rsd.Dudu.Cache.ICacheProvider)">
+            <summary>
+            
+            </summary>
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.Rsd#Dudu#Web#Core#ISchemaCacheServcie#Add(System.String,Rsd.Dudu.BizModel.JsonObject)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.Rsd#Dudu#Web#Core#ISchemaCacheServcie#Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.Rsd#Dudu#Web#Core#ISchemaCacheServcie#Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.Rsd#Dudu#Web#Core#ISchemaCacheServcie#ContainsKey(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.Rsd#Dudu#Web#Core#ISchemaCacheServcie#Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SchemasCacheService.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.IPramaRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.Max">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.Min">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.NotEmpty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.DefauleValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.PramaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.PramaNameCN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.RegularExpress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.Filter">
+            <summary>
+            安全过滤等级
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.ValueType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IPramaRule.TargetType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IPramaRule.Validate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.IPramaRule.Validate(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.IApiDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.ServiceName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.IsWebMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.EnableSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.IApiDescription.PramaRuleList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.RequestClientInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.URL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Method">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Accept">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.AcceptEncoding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.AcceptLanguage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.ContentLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.ContentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.HostIP">
+            <summary>
+            远程客户端主机IP
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.HostName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Origin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Refer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.UserAgent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.DNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.Cookies">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.SessionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.ClientIp">
+            <summary>
+            远程客户端外网IP，从网络参数中获取
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.BrowserType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.BrowserMajorVersion">
+            <summary>
+            浏览器的主版本号
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.BrowserVersion">
+            <summary>
+            浏览器的完整版本号
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.BrowserPlatform">
+            <summary>
+            使用平台的名字
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.IsMobile">
+            <summary>
+            是否是移动设备
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.RequestClientInfo.BrowserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.ISessionCacheService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISessionCacheService.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="timeSpan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.GetList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.ISessionCacheService.RemoveAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.Session">
+            <summary>
+            内部使用类
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Key">
+            <summary>
+            键值
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.UserId">
+            <summary>
+            用户标识
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.DataType">
+            <summary>
+            数据类型名称
+            </summary> 
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.ExpireAt">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.TimeSpan">
+            <summary>
+            相对过期时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Duration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.ModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.ClientIP">
+            <summary>
+            客户端IP
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.FromHost">
+            <summary>
+            访问域名
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.FromReferer">
+            <summary>
+            请求的referer
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.FromUserAgent">
+            <summary>
+            请求的UserAgent
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Host">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.Session.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.#ctor">
+            <summary>
+            反序列化使用
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.#ctor(System.String,System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="data"></param>
+            <param name="minutes">会话有效期</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.#ctor(System.String,System.String,System.Object,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="key"></param>
+            <param name="data"></param>
+            <param name="timeSpan">会话有效期</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.GetData``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.SetData``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.Session.GetInternalIP">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Core.SessionCacheService">
+            <summary>
+            使用的是 HttpRuntime.Cache
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.SessionCacheService.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.SessionCacheService.Proxcy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.#ctor">
+            <summary>
+            使用 HttpRuntime 缓存
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.#ctor(Rsd.Dudu.Cache.ICacheProvider)">
+            <summary>
+            使用指定 缓存 如： Redis ,Memcahce
+            </summary>
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="timeSpan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.Add(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="userId"></param>
+            <param name="data"></param>
+            <param name="clientIP"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.RemoveAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.GetList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Core.SessionCacheService.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.FilterLevel">
+            <summary>
+            API 接口参数安全值过滤等级
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.None">
+            <summary>
+            不过滤
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.Sql">
+            <summary>
+            过滤SQL 关键字
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.Javascript">
+            <summary>
+            过滤 javascript 关键字
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.Shell">
+            <summary>
+            过滤 shell脚本 关键字
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.Bat">
+            <summary>
+            过滤 bat 关键字
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.VB">
+            <summary>
+            过滤 vb脚本 关键字
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.FilterLevel.Python">
+            <summary>
+            过滤 python 关键字
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.IApiService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.Description">
+            <summary>
+            接口描述
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.Level">
+            <summary>
+            Public：公共免费接口,不需要授权,但可以通过ServiceBindIPAttribute属性限定IP
+            Custom：定制付费接口,通过但可以通过ServiceBindIPAttribute属性授权指定账户（appid 和 apptoken）以及指定IP访问
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.CheckSession">
+            <summary>
+            是否验证session,一般为通过___key参数传递
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.ApiLogEnable">
+            <summary>
+            是否记录API请求日志，如果需要记录必须保证已注册IUILogService服务
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.InThread">
+            <summary>
+            在线程中执行
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.IsBlock">
+            <summary>
+            系统被特定业务独占使用，拒绝其他请求
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.BlockMsg">
+            <summary>
+            拒绝访问提示信息
+            </summary> 
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.EncryptKey">
+            <summary>
+            加密key
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IApiService.EncryptHandler">
+            <summary>
+            指定加密方法
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceBindIP.Allowed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceBindIP.AppId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceBindIP.AppToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceBindIP.IPList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.IServiceBindIP.Validate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.IServiceBindIP.Validate(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceCrossDomain.Allowed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceCrossDomain.AppId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceCrossDomain.AppToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.IServiceCrossDomain.DomainList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.IServiceCrossDomain.Validate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.IServiceCrossDomain.Validate(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.ServiceBindIPAttribute">
+            <summary>
+            主要用于服务端对接权限控制
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.AppId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.AppToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.IPList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.Allowed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.#ctor">
+            <summary>
+            任意用户任意IP可访问
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>
+            限制指定IP可访问或不可访问
+            </summary>
+            <param name="allowed">TRUE为可访问，FLASE不可访问</param>
+            <param name="list">IP列表,支持网段格式,不支持localhost</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.#ctor(System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            限制指定账户以及指定IP可访问或不可访问
+            </summary>
+            <param name="appId">*表示任意用户</param>
+            <param name="appToken">*表示任意用户</param>
+            <param name="allowed">TRUE为可访问，FLASE不可访问</param>
+            <param name="list">IP列表,支持网段格式,不支持localhost</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.Validate(System.String,System.String,System.String)">
+            <summary>
+             限定APP使用的服务（如付费服务，定制服务等），验证身份和IP
+            </summary>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceBindIPAttribute.Validate(System.String)">
+            <summary>
+            没有限定APP使用的服务（如公共服务，免费服务等），只验证IP
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute">
+            <summary>
+             主要用于前端对接权限控制
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.AppId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.AppToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.DomainList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.Allowed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.#ctor">
+            <summary>
+            任意用户任意网站可跨域访问
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>
+            限制指定网站可跨域访问或不可跨域访问
+            </summary>
+            <param name="allowed">TRUE为可跨域访问，FLASE不可跨域访问</param>
+            <param name="list">网站列表</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.#ctor(System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            限制指定账户以及指定网站可跨域访问或不可跨域访问
+            </summary>
+            <param name="appId">*表示任意用户</param>
+            <param name="appToken">*表示任意用户</param>
+            <param name="allowed">TRUE为可跨域访问，FLASE不可跨域访问</param>
+            <param name="list">网站列表</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.Validate(System.String,System.String,System.String)">
+            <summary>
+             限定APP使用的服务（如付费服务，定制服务等），验证身份和IP
+            </summary>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="referer">http请求referer</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.Validate(System.String)">
+            <summary>
+            没有限定APP使用的服务（如公共服务，免费服务等），只验证IP
+            </summary>
+            <param name="referer">http请求referer</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ServiceCrossDomainAttribute.RefererInDomainList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="referer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.ServiceAccessLevel">
+            <summary>
+            API服务访问级别
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.Public">
+            <summary>
+            公共免费接口,不需要授权,但可以限定IP
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.Customized">
+            <summary>
+            定制付费接口,必须授权appid 和 apptoken以及指定IP访问
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.NeedPermssion">
+            <summary>
+            有限权限接口，请求者需要获得授权后，才能使用
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.Admin">
+            <summary>
+            管理端接口，仅管理端可以访问
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.Client">
+            <summary>
+            前端接口，仅提供给前端业务使
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.CustomizedAndPermssion">
+            <summary>
+            定制有权限限制接口
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.AdminAndPermssion">
+            <summary>
+            后端有权限限制接口
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Service.ServiceAccessLevel.ClientAndPermssion">
+            <summary>
+            前端有权限限制接口
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.ApiDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.ServiceName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.CheckSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.PramaRuleList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.EnableSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.IsWebMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.ApiServiceAttribute">
+            <summary>
+             接口描述属性： 1、可通过Level属性设置访问接口权限，2、可通过CheckSession属性设置是否验证Session
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.Level">
+            <summary>
+            Public：公共免费接口,不需要授权,但可以通过ServiceBindIPAttribute属性限定IP
+            Custom：定制付费接口,通过但可以通过ServiceBindIPAttribute属性授权指定账户（appid 和 apptoken）以及指定IP访问
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.Description">
+            <summary>
+            接口描述
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.CheckSession">
+            <summary>
+            是否验证session,一般为通过___key参数传递
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.ApiLogEnable">
+            <summary>
+            是否记录API请求日志，如果需要记录必须保证已注册IUILogService服务
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.InThread">
+            <summary>
+            在线程中执行
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.IsBlock">
+            <summary>
+            系统被特定业务独占使用，拒绝其他请求
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.BlockMsg">
+            <summary>
+            拒绝访问提示信息
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.EncryptKey">
+            <summary>
+            加密key
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiServiceAttribute.EncryptHandler">
+            <summary>
+            指定加密方法
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ApiServiceAttribute.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            不加密
+            </summary>
+            <param name="des"></param>
+            <param name="checkSession"></param>
+            <param name="apiLogEnable"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ApiServiceAttribute.#ctor(System.String,System.Boolean,Rsd.Dudu.Web.Service.ServiceAccessLevel,System.Boolean,System.String,System.String)">
+            <summary>
+            加密 返回
+            </summary>
+            <param name="des"></param>
+            <param name="checkSession"></param>
+            <param name="level"></param>
+            <param name="apiLogEnable"></param>
+            <param name="enKey"></param>
+            <param name="enHandler"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ApiServiceAttribute.#ctor(System.String,System.Boolean,Rsd.Dudu.Web.Service.ServiceAccessLevel,System.Boolean,System.String)">
+            <summary>
+            AesEncrypt加密 返回
+            </summary>
+            <param name="des">描述</param>
+            <param name="checkSession"></param>
+            <param name="level"></param>
+            <param name="apiLogEnable"></param>
+            <param name="enKey">AesEncrypt 加密密钥</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ApiServiceAttribute.#ctor(System.String,System.Boolean,Rsd.Dudu.Web.Service.ServiceAccessLevel,System.Boolean,System.Boolean)">
+            <summary>
+             不加密 返回
+            </summary>
+            <param name="des"></param>
+            <param name="checkSession"></param>
+            <param name="level"></param>
+            <param name="apiLogEnable"></param>
+            <param name="inThread"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Service.ApiServiceAttribute.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="des"></param>
+            <param name="blockMsg"></param>
+            <param name="checkSession"></param>
+            <param name="apiLogEnable"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ViewResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ViewResult.Html">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ViewResult.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="html"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ViewResult.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ApplicationInitial">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.WebApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.SessionCacheProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.SchemaCacheProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.CacheProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.SysTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.LoginUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.Errors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.StartTime">
+            <summary>
+            初始化 开始时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.EndTime">
+            <summary>
+            初始化 结束时间
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.IsReady">
+            <summary>
+            系统已启动完毕
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.IsBusying">
+            <summary>
+            系统被特定业务独占使用，拒绝其他请求
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.BusyingMsg">
+            <summary>
+            拒绝访问提示信息
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.Plugins">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.Application">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.CacheService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.#ctor(System.Web.HttpApplication,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="application"></param>
+            <param name="title"></param>
+            <param name="loginUrl"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.InitialConfig(Rsd.Dudu.Web.ApplicationInitial)">
+            <summary>
+            
+            </summary>
+            <param name="initialInvoke"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddCache(System.String,System.Object,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expireAt"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddCache(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddCache(System.String,System.Object,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="timespan">毫秒数</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.SetBusying(System.String,System.Boolean)">
+            <summary>
+            系统独占使用，阻止其他请求访问
+            </summary>
+            <param name="msg"></param>
+            <param name="once">true:仅当前线程（请求）独占系统使用,false:系统阻止任何所有请求，例如：系统维护中</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.EndBusying(System.Boolean)">
+            <summary>
+            结束独占使用，允许其他请求执行
+            </summary>
+            <param name="once">true:仅当前线程（请求）释放独占资源,false:系统阻止任何所有请求，例如：系统维护中</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.GetCacheData``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RemoveAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.Instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.WebApplication.InstanceIsReady">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddGlobalCache(System.String,System.Object,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expireAt"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddGlobalCache(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.AddGlobalCache(System.String,System.Object,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="timespan">毫秒数</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RemoveGlobalCache(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.ClearGlobalCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.GetGlobalCache``1(System.String)">
+            <summary>
+            当前线程独占系统使用，阻止其他请求访问
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.SetApplicationBusying(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.EndApplicationBusying">
+            <summary>
+            当前线程释放独占资源，允许其他请求执行
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.Initial(System.Web.HttpApplication,Rsd.Dudu.Web.ApplicationInitial,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="application"></param>
+            <param name="initialInvoke"></param>
+            <param name="title"></param>
+            <param name="loginUrl"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.SetCacheService(Rsd.Dudu.Cache.ICacheProvider)">
+            <summary>
+            
+            </summary>
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.LoadPlugins(Rsd.Dudu.Web.Core.PluginConfig[])">
+            <summary>
+            加载插件：初始化(遍历ModelType 和Controller)=>缓存MyType=>注册controller 
+            </summary>
+            <param name="plugins"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.ClearPlugins">
+            <summary>
+            清除所有插件
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RegistController(Rsd.Dudu.Web.Controllers.BaseHttpHandler)">
+            <summary>
+            
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RegistController(System.String,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="handlerName"></param>
+            <param name="handlerType"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RegistController(System.String,Rsd.Dudu.Web.Controllers.BaseHttpHandler)">
+            <summary>
+            
+            </summary>
+            <param name="handlerName"></param>
+            <param name="handler"></param>    
+        </member>
+        <member name="M:Rsd.Dudu.Web.WebApplication.RegistController``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="handlerName"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.SuccessResult">
+            <summary>
+            data 数据可以被正确解析
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SuccessResult.#ctor(System.Object,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <param name="code"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SuccessResult.#ctor(System.Object,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <param name="code"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.SuccessResult`1">
+            <summary>
+             data 数据可以被正确解析
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SuccessResult`1.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SuccessResult`1.#ctor(`0,System.Object,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="data"></param>
+            <param name="codeIsValue"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ErrorResult">
+            <summary>
+            返回系统执行失败结果，data 数据可能无法解释为目标结构
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult.#ctor(System.Int32,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ErrorResult`1">
+            <summary>
+            返回系统执行失败结果，data 数据可能无法解释为目标结构
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult`1.#ctor(`0,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult`1.#ctor(`0,System.Object,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="data"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult`1.#ctor(`0,System.Boolean,System.Object[])">
+            <summary>
+            无返回数据
+            </summary>
+            <param name="code"></param>
+            <param name="codeIsValue">code是数值</param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ErrorResult`1.#ctor(`0,System.Object,System.Boolean,System.Object[])">
+            <summary>
+            有返回数据
+            </summary>
+            <param name="code"></param>
+            <param name="data"></param>
+            <param name="codeIsValue">code是数值</param>
+            <param name="args"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.HttpContextExtend">
+            <summary>
+            该扩展类所有方法，只上报异常，不对异常做任何处理
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ValidateIPBlackList(System.Web.HttpContext,System.String[])">
+            <summary>
+            验证黑名单
+            </summary>
+            <param name="context"></param>
+            <param name="blackList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ValidateIPAuth(System.Web.HttpContext,System.String,System.String,Rsd.Dudu.Web.Service.IServiceBindIP[])">
+            <summary>
+            验证IP访问权限，主要用于类级别验证
+            </summary>
+            <param name="context"></param>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="bindips"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ValidateDomainAuth(System.Web.HttpContext,System.String,System.String,Rsd.Dudu.Web.Service.IServiceCrossDomain[])">
+            <summary>
+            验证Domain访问权限，主要用于类级别验证
+            </summary>
+            <param name="context"></param>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="crossDomains"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.Initial(System.Web.HttpContext)">
+            <summary>
+            初始化 初始化路由参数
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.Route(System.Web.HttpContext,System.Reflection.MethodInfo,Rsd.Dudu.Web.Service.IApiService,System.String,System.String,System.String,System.String)">
+            <summary>
+            路由执行，只上报异常，不对异常做任何处理
+            </summary>
+            <param name="context"></param>
+            <param name="method"></param>
+            <param name="serviceFlag"></param>
+            <param name="sessionId"></param>
+            <param name="appId"></param>
+            <param name="appToken"></param>
+            <param name="accessToken"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.HandleException(System.Web.HttpContext,System.String,System.String,System.Boolean)">
+            <summary>
+            异常处理 有异常直接输出到前端 
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="sessionId"></param>
+            <param name="logEnabled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.HandleException(System.Web.HttpContext,System.String,System.String,Rsd.Dudu.Exception.ExceptionHandleDelegate,System.Boolean)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="sessionId"></param>
+            <param name="handler">指定异常处理对象</param>
+            <param name="logEnabled"></param>
+            <returns>true 表示无异常，可以继续执行业务操作</returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ResponseMsg(System.Web.HttpContext,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="returnMsg"></param>
+            <param name="returnData"></param>
+            <param name="returnUrl"></param>
+            <param name="logEnabled"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ResponseData(System.Web.HttpContext,System.String,Rsd.Dudu.Web.Core.IResponseResult,System.Boolean,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="data"></param>
+            <param name="apiLogEnable"></param>
+            <param name="encryptKey">加密KEY</param>
+            <param name="encryptHandler"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ResponseData(System.Web.HttpContext,System.String,System.String,System.Boolean,System.String,System.Object,System.Boolean,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="code"></param>
+            <param name="success"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+            <param name="apiLogEnable"></param>
+            <param name="encryptKey">加密KEY</param>
+            <param name="encryptHandler"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ResponseXml(System.Web.HttpContext,System.String,System.Object,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="data"></param>
+            <param name="apiLogEnable"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ApiLog(System.Web.HttpContext,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="bizFlag"></param>
+            <param name="response"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetSessionId(System.Web.HttpContext)">
+            <summary>
+            获取系统SessionId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.Encrypt(System.Web.HttpContext,System.String,System.String,System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="context"></param>
+            <param name="handler"> IEncryptService 的加密方法</param>
+            <param name="data">加密数据</param>
+            <param name="key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetAppId(System.Web.HttpContext,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetAppToken(System.Web.HttpContext,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetAccessToken(System.Web.HttpContext,System.Boolean,System.String)">
+            <summary>
+            获取访问授权Token
+            </summary>
+            <param name="context"></param>
+            <param name="session">是否获取系统sessionid,等于true时一般用于page页面</param> 
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.ValidateAccessToken(System.Web.HttpContext,System.String)">
+            <summary>
+            验证访问授权Token
+            </summary>
+            <param name="context"></param>
+            <param name="accessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.LoadRequestPramas(System.Web.HttpContext,System.Reflection.MethodInfo)">
+            <summary>
+            加载并验证请求参数
+            </summary>
+            <param name="context"></param>
+            <param name="method"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetNullKeyPrama(System.Web.HttpContext,Rsd.Dudu.Web.Core.NullKeyPramaTypes)">
+            <summary>
+            获取查询参数key值为null的参数
+            </summary>
+            <param name="context"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.SetResponsed(System.Web.HttpContext,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.HasResponsed(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpContextExtend.GetApiList(System.Web.HttpContext,System.Type)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.HttpRequestExtend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.InitialRoute(System.Web.HttpRequest)">
+            <summary>
+            初始化路由参数
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.LoadPramas(System.Web.HttpRequest)">
+            <summary>
+            将请求参数解析为JSON格式
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.InitialPramas(System.Web.HttpRequest)">
+            <summary>
+            根据参数规则加载并验证请求参数
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.ValidatePramas(System.Web.HttpRequest,Rsd.Dudu.Web.Core.IPramaRule[])">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="rules"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.ArrayFormat(System.Web.HttpRequest,Rsd.Dudu.BizModel.JsonObject)">
+            <summary>
+            将JSON对象格式为数组对象
+            </summary>
+            <param name="request"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.ExistsPrama(System.Web.HttpRequest,System.String)">
+            <summary>
+            判断参数是否存在
+            </summary>
+            <param name="request"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetRequestData(System.Web.HttpRequest,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="name">参数名，可为null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetNullKeyPrama(System.Web.HttpRequest,Rsd.Dudu.Web.Core.NullKeyPramaTypes)">
+            <summary>
+            获取查询参数key值为null的参数
+            </summary>
+            <param name="request"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetPrama(System.Web.HttpRequest,System.String)">
+            <summary>
+            获取请求参数对象，仅在进入控制类后可用。
+            </summary>
+            <param name="request"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetPramaValue``1(System.Web.HttpRequest,System.String)">
+            <summary>
+            获取请求参数值，仅在进入控制类后可用。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.PramaConvertToModel``1(System.Web.HttpRequest)">
+            <summary>
+            将请求参数对象化，仅在进入控制类后可用。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.PramaConvertToModel(System.Web.HttpRequest,System.Type)">
+            <summary>
+            将请求参数转化为指定对象，仅在进入控制类后可用。
+            </summary>
+            <param name="request"></param>
+            <param name="targetType">指定对象类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetPramaJson(System.Web.HttpRequest,System.Boolean)">
+            <summary>
+             获取请求参数的JSON对象，仅在进入控制类后可用。
+            </summary>
+            <param name="request"></param>
+            <param name="throwError"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.SaveUploadFile(System.Web.HttpRequest,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetBrowserId(System.Web.HttpRequest)">
+            <summary>
+            浏览器指纹
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetClientIP(System.Web.HttpRequest)">
+            <summary>
+            从服务端变量中获取请求客户端IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetHostAddress(System.Web.HttpRequest)">
+            <summary>
+             获取远程客户端的 IP 主机地址
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetHostName(System.Web.HttpRequest)">
+            <summary>
+            获取远程客户端的 DNS 名称
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetClientInfo(System.Web.HttpRequest,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.GetWechatAppId(System.Web.HttpRequest)">
+            <summary>
+            获取微信小程序Id
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpRequestExtend.IsAjaxRequest(System.Web.HttpRequest)">
+             <summary>
+            判断当前请求是否时ajax请求
+             </summary>
+             <param name="request"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.HttpResponseExtend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFile(System.Web.HttpResponse,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <param name="filePath">完整路径</param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFile(System.Web.HttpResponse,System.IO.Stream,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <param name="stream"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFileFromMongo(System.Web.HttpResponse,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <param name="fileId"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseExcel(System.Web.HttpResponse,System.String,Rsd.Dudu.Helpers.ExcelSheet[])">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <param name="fileName"></param>
+            <param name="sheets"> ExcelSheet data</param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.PramaAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.PramaAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.LoggerAttribute">
+            <summary>
+            独立日志服务参数特性标识
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.LoggerAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.RequestJsonAttribute">
+            <summary>
+            请求参数Json对象特性标识
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.RequestJsonAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.RequestPramaAttribute">
+            <summary>
+            普通请求参数特性标识
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Prama.RequestPramaAttribute.PramaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.RequestPramaAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.RequestModelAttribute">
+            <summary>
+            请求参数对象化特性标识
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.RequestModelAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.ServiceAttribute">
+            <summary>
+            Service对象参数特性标识
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.ServiceAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Prama.NullKeyAttribute">
+            <summary>
+            查询参数key值为null的参数特性标识
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Prama.NullKeyAttribute.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Prama.NullKeyAttribute.#ctor(Rsd.Dudu.Web.Core.NullKeyPramaTypes)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.PramaValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaValue.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaValue.PramaRule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaValue.Exist">
+            <summary>
+            参数是否存在
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaValue.IsDefined">
+            <summary>
+            参数是否定义
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaValue.DefaultValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaValue.#ctor(System.String,System.Object,System.Boolean,Rsd.Dudu.Web.Core.IPramaRule)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="exist"></param>
+            <param name="rule"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaValue.ConvertTo(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaValue.ConvertTo``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaValue.Validate(Rsd.Dudu.Web.Core.IPramaRule)">
+            <summary>
+            
+            </summary>
+            <param name="rule"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaValue.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ExtendMethods">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExtendMethods.GetService``1(System.Web.Services.WebService,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="service"></param>
+            <param name="defaultValue"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExtendMethods.AddService(System.Web.Services.WebService,Rsd.Dudu.Core.IService)">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+            <param name="s"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExtendMethods.ToJson(System.Web.HttpCookieCollection)">
+            <summary>
+            
+            </summary>
+            <param name="cookies"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.PramaValueType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.Unknown">
+            <summary>
+            未指定类型不做值范围验证
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.String">
+            <summary>
+            做长度验证
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.Decimal">
+            <summary>
+            做取值范围验证
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.Enum">
+            <summary>
+            枚举类型
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.Json">
+            <summary>
+            json对象
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.Array">
+            <summary>
+            数组
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaValueType.JsonArray">
+            <summary>
+            json数组
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ConfigHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ConfigHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ConfigHelper.GetNodeValue(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ConfigHelper.GetConfigProperty(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ConfigHelper.GetConnectionString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ErrorCodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0001">
+            <summary>
+            访问数据库失败，{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0002">
+            <summary>
+            {0}数据对象不存在。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0003">
+            <summary>
+            请求API失败,获取API方法{0}（含父类）失败：{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0004">
+            <summary>
+            请求API失败,API方法{0}（不含父类）失败：{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0005">
+            <summary>
+            保存对象（模型：{0}），发生异常：{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0006">
+            <summary>
+            删除对象（模型：{0}），发生异常：{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1000">
+            <summary>
+            配置错误,{0}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1001">
+            <summary>
+            配置错误,属性【{0}】为空。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1002">
+            <summary>
+            配置错误,类型{0}不存在。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1003">
+            <summary>
+            配置错误,页面类型{0}错误。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1004">
+            <summary>
+            配置错误,WebService的Session未启用，请为类型({0})该方法({1})添加[WebMethod(EnableSession = true)]属性。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1005">
+            <summary>
+            参数约束配置错误,服务{0}，方法{1}，{3}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1006">
+            <summary>
+            访问被拒绝,IP({0})不在可信任的范围之内或指定的Token错误。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1007">
+            <summary>
+            访问被拒绝,域名({0})不在可信任的范围之内或指定的Token错误。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1008">
+            <summary>
+            配置错误,参数【{0}】最大值({1})和最小值({2})约束不合理。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1009">
+            <summary>
+            配置错误,参数【{0}】最大长度({1})和最小长度({2})约束不合理。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1010">
+            <summary>
+            解析错误代码({0})失败。\r\n{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2000">
+            <summary>
+            非法请求（Token信息丢失），请重新登录。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2001">
+            <summary>
+            非法请求（Session失效），请重新登录。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2002">
+            <summary>
+            在获取对象（{0}）时发生异常，{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2003">
+            <summary>
+            在保存对象时发生错误，{0}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2004">
+            <summary>
+            创建对象失败\r\n类型({0})属性({1})赋值[{2}]失败,{3}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2005">
+            <summary>
+            {0}\r\n线程执行失败:{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2006">
+            <summary>
+            获取对象发生异常\r\n对象类型({0})\r\n错误信息：{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2007">
+             <summary>
+            获取类型发生异常\r\n类型({0})\r\n错误信息：{1}
+             </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2008">
+            <summary>
+            API日志保存发生异常，请查看日志。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2009">
+            <summary>
+            反序列化失败:请确认类{0}已标注[Serializable]特性，实现接口ISerializable和构造函数{1}(SerializationInfo info, StreamingContext context)；{2}。。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2010">
+            <summary>
+            对象转化为JSON时发生异常\r\n对象类型：{0}，错误信息：{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2011">
+            <summary>
+             登录IP发生变化，请重新登陆。\r\n当前IP({0})原IP({1})。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2015">
+            <summary>
+            {0}\r\非线程执行失败:{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W2021">
+            <summary>
+            反序列化失败。\r\n原类型（{0}）和目标类型（{1}）不一致。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3000">
+            <summary>
+            参数错误，访问未定义参数{0}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3001">
+            <summary>
+            参数错误，参数{0}({1})不是有效值。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3002">
+            <summary>
+            参数错误，参数{0}不存在。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3003">
+            <summary>
+            参数错误，参数{0}不允许为空。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3004">
+            <summary>
+            参数错误，参数{0}长度不得小于{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3005">
+            <summary>
+            参数错误，参数{0}长度不得大于{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3006">
+            <summary>
+            参数错误，参数{0}({1})不是有效数值。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3007">
+            <summary>
+            参数错误，参数{0}不得小于{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3008">
+            <summary>
+            参数错误，参数{0}不得大于{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3009">
+            <summary>
+            参数错误，参数【{0}】赋值失败：{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W3010">
+            <summary>
+            参数错误，参数【{0}】不是目标类型{1}。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W5002">
+            <summary>
+            获取客户端IP时发生异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W5003">
+             <summary>
+            WebUIService请求地址{0}失败：{1}。
+             </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W5004">
+            <summary>
+            获取AppId时发生异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W6001">
+            <summary>
+            服务调用失败\r\n服务（{0}）不存在，请先注入服务再使用。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W6002">
+            <summary>
+            服务调用失败\r\n服务{0}访问级别为ServiceLevels.Public时，不得指定AppId和AppToken值。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W6003">
+            <summary>
+            服务{0}访问级别为ServiceLevels.Custom时，必须指定AppId和AppToken值。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W6004">
+            <summary>
+            访问被拒绝，权限不足；服务{0}访问级别为NeedPermssion。
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9000">
+            <summary>
+            系统异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9001">
+            <summary>
+            HttpHandler执行发生异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9002">
+            <summary>
+            API执行发生异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9003">
+            <summary>
+            获取AccessToken发生异常。{0}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9004">
+            <summary>
+            系统动态注册Controller（{0）失败:{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W9005">
+            <summary>
+            初始化路由失败。{0}
+            </summary>
+        </member>
+        <member name="T:Rsd.Dudu.Web.PramaRuleAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.Token">
+            <summary>
+            用于识别 Attribute 是静态变量还是动态变量
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.PramaRuleAttribute._pramaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.PramaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.PramaNameCN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.RegularExpress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.Filter">
+            <summary>
+            安全过滤等级
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.NotEmpty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.DefauleValue">
+            <summary>
+            NotEmpty == flase 时，参数未传递时默认值
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.Min">
+            <summary>
+            最小值 或 最小长度
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.Max">
+            <summary>
+            最大值 或 最大长度
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.ValueType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.PramaRuleAttribute.TargetType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.#ctor(System.String,System.String,System.Type,System.Boolean,System.Object,Rsd.Dudu.Web.FilterLevel)">
+            <summary>
+            
+            </summary>
+            <param name="pramaName"></param>
+            <param name="pramaNameCN"></param>
+            <param name="targetType">目标类型</param>
+            <param name="notEmpty">默认值:true</param>
+            <param name="defaultValue">默认值</param>
+            <param name="filterLevel"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.#ctor(System.String,System.String,System.String,System.Boolean,System.String,Rsd.Dudu.Web.FilterLevel)">
+            <summary>
+            String 类型
+            </summary>
+            <param name="pramaName"></param>
+            <param name="pramaNameCN"></param>
+            <param name="regularExpress"></param>
+            <param name="notEmpty">默认值:true</param>
+            <param name="defaultValue">默认值</param>
+            <param name="filterLevel"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.#ctor(System.String,System.String,System.Int32,System.Int32,System.Boolean,System.String,Rsd.Dudu.Web.FilterLevel)">
+            <summary>
+            String 类型
+            </summary>
+            <param name="pramaName"></param>
+            <param name="pramaNameCN"></param>
+            <param name="minLength">最小长度（包含）</param>
+            <param name="maxLength">最大长度（包含）</param>
+            <param name="notEmpty">默认值:true</param>
+            <param name="defaultValue">默认值</param>
+            <param name="filterLevel"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.#ctor(System.String,System.String,System.Double,System.Double,System.Boolean,System.Double)">
+            <summary>
+            数值类型 数值判断需精确到小数
+            </summary>
+            <param name="pramaName"></param>
+            <param name="pramaNameCN"></param>
+            <param name="min">最小值（包含）</param>
+            <param name="max">最大值（包含）</param>
+            <param name="notEmpty">默认值:true</param>
+            <param name="defaultValue">默认值:true</param> 
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.Validate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.PramaRuleAttribute.Validate(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.DataResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult.#ctor(System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="success"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult.#ctor(System.Boolean,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="success"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult.#ctor(System.String,System.Boolean,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="success"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.DataResult`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">数据类型</typeparam>
+        </member>
+        <member name="P:Rsd.Dudu.Web.DataResult`1.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.DataResult`1.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.DataResult`1.Msg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.DataResult`1.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult`1.#ctor(System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="success"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult`1.#ctor(System.Boolean,System.String,`0)">
+            <summary>
+            
+            </summary>
+            <param name="success"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.DataResult`1.#ctor(System.String,System.Boolean,System.String,`0)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="success"></param>
+            <param name="msg"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ResponseString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ResponseString.ReturnValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseString.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseString.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ResponseXml">
+            <summary>
+            return string.Format("<xml><return_code><![CDATA[{0}]]></return_code><return_msg><![CDATA[{1}]]></return_msg></xml>", this.ReturnCode, this.ReturnMsg);
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ResponseXml.ReturnCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ResponseXml.ReturnMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseXml.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="returnCode"></param>
+            <param name="returnMsg"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseXml.ToString">
+            <summary>
+            return string.Format("<xml><return_code><![CDATA[{0}]]></return_code><return_msg><![CDATA[{1}]]></return_msg></xml>", this.ReturnCode, this.ReturnMsg);
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ResponseView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ResponseView.UIView">
+            <summary>
+            前端View页面
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ResponseView.DataModel">
+            <summary>
+            数据模型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseView.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="view"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ResponseView.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.SessionContainer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.SessionContainer.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             添加一个session
+            </summary>
+            <param name="userName"></param>
+            <param name="data"></param>
+            <param name="clientIp"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes">过期时间（分钟），默认30分钟</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            添加一个session
+            </summary>
+            <param name="key">指定SessionID</param>
+            <param name="userName"></param> 
+            <param name="data"></param>
+            <param name="clientIp"></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes">过期时间（分钟），默认30分钟</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.CreateToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.GetSession(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.GetSessionData``1(System.String)">
+            <summary>
+            获取一个session
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.ExistSession(System.String)">
+            <summary>
+             验证是否存在有效的访问授权Token
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.ResetSession(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             重置Session 并延长有效时间
+            </summary>
+            <param name="key"></param>
+            <param name=""></param>
+            <param name="host"></param>
+            <param name="referer"></param>
+            <param name="userAgent"></param>
+            <param name="minutes">有效时长(分钟)，默认30分钟</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.RemoveSession(System.String)">
+            <summary>
+            删除一个session
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.RemoveAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SessionContainer.GetSessionInfo(Rsd.Dudu.SysMonitor)">
+            <summary>
+             获取session容器监控信息
+            </summary>
+            <param name="monitor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.ExceptionHandleService">
+            <summary>
+            处理在一次执行中发生的所有异常
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.ExceptionHandleService.Proxcy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.#ctor(System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.Do(Rsd.Dudu.Exception.ExceptionObject[])">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.Do(Rsd.Dudu.Log.ILogService,Rsd.Dudu.Exception.ExceptionObject[])">
+            <summary>
+            
+            </summary>
+            <param name="logService"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.DoSomeOne(Rsd.Dudu.Exception.ExceptionObject)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.GetService``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.ExceptionHandleService.GetMonitorInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.SchemasContainer">
+            <summary>
+            提供 WEB 项目 前端编码使用的数据 
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.SchemasContainer._cache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.SchemasContainer.CacheProvider">
+            <summary>
+            用于存储的缓存服务类型
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SchemasContainer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SchemasContainer.GetSchemaInfo(System.Type,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="width">列宽度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SchemasContainer.Initial(System.Type,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="width">label标签宽度</param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.SchemasContainer.RemoveAll">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

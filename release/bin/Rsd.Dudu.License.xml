@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rsd.Dudu.License</name>
+    </assembly>
+    <members>
+        <member name="T:Rsd.Dudu.License.Permission">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.NewPermission(System.String,System.String,System.String)">
+            <summary>
+            支持本地文件注册 或注册码注册
+            </summary>
+            <param name="projectId"></param>
+            <param name="key"></param>
+            <param name="code"></param>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.GetPermission">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rsd.Dudu.License.Permission.ProjectId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.License.Permission.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.License.Permission.ExpireAt">
+            <summary>
+            到期时间
+            </summary>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.#ctor(System.String,System.String,System.String)">
+            <summary>
+            注册码注册
+            </summary>
+            <param name="projectId"></param>
+            <param name="key"></param>
+            <param name="code">注册码</param>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.AesDecrypt(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="decryptStr">密文</param>
+            <param name="key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.GetKey(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appId"></param>
+            <param name="appKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.License.Permission.ExistKey(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
