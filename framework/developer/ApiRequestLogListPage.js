@@ -103,10 +103,11 @@ Rsd.define("Rsd.developer.ApiRequestLogListPage", {
     fromat_content:function fromat_content(row)
     {
         return [ 
-            Rsd.text(row['Message'],'red'), 
-            Rsd.text('['+row['Origin']+']'), 
+            Rsd.text(row['Message'] + '(' + (row['EndTime'] - row['StartTime'])+'ms)','red'), 
             Rsd.newLine(),
-            Rsd.text(row['UserAgent']),
+            Rsd.nobr('['+row['Origin']+']'), 
+            Rsd.newLine(),
+            Rsd.nobr(row['UserAgent']),
             Rsd.newLine(),
             Rsd.text(Rsd.formatTimestamp(row['LogTime']),'blue')];
     }

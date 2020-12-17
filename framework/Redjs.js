@@ -3189,7 +3189,35 @@ function Redjs(config) {
         }
         return txt;
     };
-
+    /**
+     * 
+     * @param {*} text 
+     * @param {*} width 
+     * @param {*} color 
+     * @param {*} tip 
+     */
+    this.nobr = function nobr(text, width, color,tip) {
+        var _t = text || '';
+        var _w = width||0;
+        var _c = color || 'grey';
+        var _tip = tip || _t;
+        if(arguments.length == 2)
+        {
+            if(this.isString(_w)) {
+                _c = _w;
+                _w = 0;
+            }
+        }
+        if (_w > 0) {
+            return this.parseDom('<nobr style="display: inline-block;overflow:hidden;color:' + _c + ';max-width: ' + _w + 'px;">' + _t + '</nobr>')[0];
+        }
+        var txt = this.parseDom('<nobr style="color:' + _c + ';">' + _t + '</nobr>')[0];
+        if(Rsd.isString(_tip))
+        {
+            txt.title = _tip;
+        }
+        return txt;
+    };
     /**
      * @public
      * @description 创建圆dom对象 function circle(size, color)

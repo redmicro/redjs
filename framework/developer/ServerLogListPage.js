@@ -92,6 +92,6 @@ Rsd.define("Rsd.developer.ServerLogListPage", {
     },
     fromat_content:function fromat_content(row)
     {
-        return [Rsd.text(row['LogTime'],'blue')];
+        return [Rsd.text(row['Title'],'red') ,Rsd.blankspan(2),Rsd.text(row['LogTime'],'blue')];
     }
 });
