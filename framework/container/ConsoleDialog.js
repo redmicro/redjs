@@ -1,9 +1,8 @@
-
-/*
-*
-* */
-Rsd.define('Rsd.view.MasterLTC', {
-    extend: 'Rsd.container.Component',
+/**
+ * 插件控制台：用于独立插件管理
+ */
+Rsd.define('Rsd.container.ConsoleDialog', {
+    extend: 'Rsd.container.Dialog',
     requires: [
         'Rsd.control.Svg',
         'Rsd.control.ListMenu',
@@ -12,51 +11,40 @@ Rsd.define('Rsd.view.MasterLTC', {
         'Rsd.container.PageContainer',
         'Rsd.view.WelcomePage'
     ],
-    xtype: 'v-master-ltc',
+    xtype: 'console-page',
+    height:'95%',
+    width:'95%',
     layout: 'border',
-    height: '100%',//window.screen.clientHeight,
-    width: '100%',//window.screen.clientWidth,
-    border: false,
-    style: {
-        //minHeight:600,
-        //minWidth:800,
-        position:'fixed',
-        overflowX: 'hidden',
-        overflowY: 'hidden',
-        backgroundColor:'rgba(128, 128, 128, 0.04)'
-    },
-
-    margin:'0 0 0 0',
-    //top:null,
-    //left:null,
-    //content:null,
-    //footer:null,
-    home:'',
-    items: [
-        //left
+    autoLoad:false,
+    /**
+     * 插件
+     */
+    pulgin:null,
+    items:[
+        //left 左侧一级菜单
         {
             xtype: 'list-menu',
-            margin:'5 2 0 2',
+            margin:'0 2 0 2',
             labelTagName:'img',
             label:{
                 content:'',
                 position:'top',
                 visible:true,
-                height:50,
+                height:100,
                 space:5,
                 style:{width :'auto',top:'20px',left:'20px',verticalAlign:'middle'}
                 },
             region: 'left',
-            width: 160,
+            width: 130,
             itemHover:true,
             itemStyle:{height:'45px',lineHeight:'45px',"margin":'0px 2px 1px 0px'},
             itemClick:'left_menu_lick',
             itemSelectedCls:'x-selected',
             layout:'vbox',
             dataSource:[],
-            border: false
-        }, 
-        //top
+            border: true
+        },
+        //top 顶部一级菜单
         {
             id:"content-list-menu",
             xtype: 'list-menu',
@@ -71,9 +59,9 @@ Rsd.define('Rsd.view.MasterLTC', {
             itemClick:'second_menu_click',
             height:50,
             layout:'hbox',
-            border: false
+            border: true
         },
-        //content
+        //content 内容显示区
         {
             xtype: 'pageContainer',
             region: 'center',
@@ -82,56 +70,31 @@ Rsd.define('Rsd.view.MasterLTC', {
             style:{backgroundColor:'rgba(128, 128, 128, 0.05)',borderRadius:'6px',marginTop:'2px'},
             border: false
         },
-        //footer
-        {
-            region: 'bottom',
-            hidden:false,
-            height:30
-        }
     ],
-    /*
-     * */
-    constructor: function MasterLTC(config) {
-
+    /**
+     * 
+     * @param {*} config 
+     */
+    constructor:function ConsolePage(config)
+    {
         config = config || {};
         this.apply(config);
-        var me = this;
-        me.on('afterrender', function () {
-            this.dom.classList.add('x-view-master');
-        });
-
-        me.on('aftershow', function () {
-
-            window.onresize = function () {
-
-                me.height = window.screen.clientHeight;
-                me.width = window.screen.clientWidth;
-                me.doLayout();
-            }
-        });
-
     },
-
-    /*
-    * */
-    onAfterShow:function onAfterShow()
+    /**
+     * 
+     */
+    load:function load()
     {
-        Rsd.showWaiting(this.id);
-        this.callParent();
-        var me = this;
+        
+        if(!Rsd.isEmpty(this.plugin))
+        {
+              //加载菜单 
+         //console.log(this.plugin);    
+         this.left.loadData(this.plugin.menu.children);
+             
+        } 
 
-        setTimeout(function () {
-            Rsd.callFunction(me,me.load);
-            Rsd.closeWaiting(me.id);
-        },10);
-
-    },
-
-    /*
-    *
-    * */
-    load:function load() {
-       
+          
     },
     /**
      * 
@@ -143,7 +106,7 @@ Rsd.define('Rsd.view.MasterLTC', {
         this.selectMenu(menu);
     },
     /**
-     *@description 一级菜单被选中
+     * @description 一级菜单被选中
      * @public
      * */
     selectMenu:function selectMenu(menu) {
@@ -266,7 +229,8 @@ Rsd.define('Rsd.view.MasterLTC', {
     * */
     show:function show(animate,speed) {
 
-        Rsd.empty(document.body);
+        this.items[2].removeAll();
+        
         if(arguments.length >1)
         {
             this.callParent(animate,speed);
@@ -297,9 +261,7 @@ Rsd.define('Rsd.view.MasterLTC', {
         _sep.title = '单击隐藏';
     }
 
-    
 },function(type){
-
     var _leftGetter = function () {
         return this.items[0];
     };
@@ -370,30 +332,4 @@ Rsd.define('Rsd.view.MasterLTC', {
 
     this.defineProperty(type,"content", _contentGetter, _contentSetter,true);
 
-
-    var _footerGetter = function () {
-
-        return this.items[3];
-    };
-
-    var _footerSetter = function (value) {
-        if(Rsd.isEmpty(value))
-        {
-            return;
-        }
-        if(Rsd.isString(value))
-        {
-            this.items[3].xtype = value;
-            return;
-        }
-        if(Rsd.isObject(value))
-        {
-            Rsd.apply(this.items[3],value,3);
-            return;
-        }
-    }
-
-    this.defineProperty(type,"footer", _footerGetter, _footerSetter,true);
-
-
-});
+})

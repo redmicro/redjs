@@ -93,8 +93,7 @@ Rsd.define('Rsd.control.ListMenu', {
         }
 
         return this;
-    },
-
+    }, 
     /*
     *
     * */

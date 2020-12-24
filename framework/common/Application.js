@@ -3,7 +3,7 @@
  */
 Rsd.define('Rsd.common.Application', {
     extend:'Rsd.common.Object',
-    requires:['Rsd.data.Schema',"Rsd.common.EventList",'Rsd.data.Service','Rsd.data.Logger','Rsd.common.Lang'],
+    requires:['Rsd.data.Plugin','Rsd.data.Schema',"Rsd.common.EventList",'Rsd.data.Service','Rsd.data.Logger','Rsd.common.Lang'],
     xtype:'application',
     authorization:null,
     token:null,
@@ -109,11 +109,54 @@ Rsd.define('Rsd.common.Application', {
     /**
      * @description 加载插件
      * * */
-    loadPlugin:function loadPlugin(plugin)
+    loadPlugin:function loadPlugin(plugin,callback)
     {
-        this.plugins = this.plugins || [];
+        var app = this;
+        if(Rsd.isString(plugin))
+        {
+            var _plugin = {path:plugin};
+            var _fn = function () {
+                var _p = this;
+                var _s = new Rsd.data.Store({
+                    proxy: {
+                        url: plugin + '/config.js',
+                        method:'get'
+                    }});
 
+                _s.load({},function (config) {
+
+                   
+                    if(config)
+                    {
+                     
+                        var pConfig = new Rsd.data.Plugin(config);
+                        pConfig.path = _p.path;
+                       
+                        app.loadPlugin(pConfig);
+                    }
+
+                    if(callback)
+                    {
+                        callback(pConfig);
+                    }
+                });
+            }
+            _fn.call(_plugin);
+
+            return;
+        }
+
+        this.plugins = this.plugins || [];
+        this.__plugin_mapping = this.__plugin_mapping || {};
         this.plugins.push(plugin);
+        this.__plugin_mapping[plugin.name.toLowerCase()] = plugin;
+    },
+    /**
+     * 
+     */
+    getPlugin:function getPlugin(name)
+    {
+       return  this.__plugin_mapping[name.toLowerCase()] ;
     },
     /**
     * 探测服务端 是否可用
