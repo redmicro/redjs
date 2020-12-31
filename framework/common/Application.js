@@ -52,7 +52,7 @@ Rsd.define('Rsd.common.Application', {
 
         if(me.svg)
         {
-            Rsd.create('Rsd.common.Svg',{}).load('./resources/svg/' + me.svg+'.js?t=' + Rsd.timestamp);
+            Rsd.create('Rsd.data.Svg',{}).load('./resources/svg/' + me.svg+'.js?t=' + Rsd.timestamp);
         }
 
         if (Rsd.validateBrowser() == false) {
@@ -124,11 +124,9 @@ Rsd.define('Rsd.common.Application', {
                     }});
 
                 _s.load({},function (config) {
-
-                   
+ 
                     if(config)
-                    {
-                     
+                    { 
                         var pConfig = new Rsd.data.Plugin(config);
                         pConfig.path = _p.path;
                        

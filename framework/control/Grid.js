@@ -24,7 +24,7 @@ Rsd.define('Rsd.control.Grid', {
     /*
     * 数据源:JsonStore ，dataStore
     * */
-    dataSource:null,
+    dataSource:null, 
     /*
      * */
     constructor: function Grid(config) {
@@ -46,12 +46,12 @@ Rsd.define('Rsd.control.Grid', {
             Rsd.callFunction(this,callback,[{data:null}]);
             return this;
         }
-        var me = this;
-
+       
         if(Rsd.isString(this.dataSource))
         {
-            this.dataSource =  Rsd.widget(this.dataSource,{parent:this});
+            this.dataSource =  Rsd.widget(this.dataSource,{parent:this,listName:'rows'});
         }
+        var me = this;
 
         //debugger;
         if(this.dataSource instanceof Rsd.data.Store) {
@@ -73,12 +73,11 @@ Rsd.define('Rsd.control.Grid', {
                         if(Rsd.isArray(_data))
                         {
                             me.buildRows(_data,1);
-
                         }
                         else
                         {
                             var indexStart = _data.pagesize * _data.pageindex  + 1;
-                            me.buildRows(_data.rows,indexStart);
+                            me.buildRows(_data[me.dataSource.listName||'rows'],indexStart);
                         }
 
                     }
@@ -111,7 +110,7 @@ Rsd.define('Rsd.control.Grid', {
                         }
                         else {
                             var indexStart = _data.pagesize * _data.pageindex + 1;
-                            me.buildRows(_data.rows,indexStart);
+                            me.buildRows(_data[me.dataSource.listName||'rows'],indexStart);
                         }
 
                     }

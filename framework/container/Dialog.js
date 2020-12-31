@@ -10,7 +10,13 @@ Rsd.define('Rsd.container.Dialog', {
      * @description 可拖动
      * */ 
     draggable: true,
+    /**
+     * @description 模态框
+     */
     modular: true,
+    /**
+     * @description 是否显示关闭按钮
+     */
     closeBtn: true,
     maxBtn: true,
     minBtn: true,
@@ -67,8 +73,7 @@ Rsd.define('Rsd.container.Dialog', {
      * */
     onAfterRender: function onAfterRender() {
         var me = this;
-
-
+ 
         this.callParent();
 
         /*
@@ -155,9 +160,9 @@ Rsd.define('Rsd.container.Dialog', {
         }
         return this;
     },
-    /*
-        * 加载页面数据
-        * */
+    /**
+     * @description 加载页面数据
+     */ 
     load:function load() {
 
         return this;

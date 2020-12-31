@@ -2,7 +2,7 @@
  * Created by seeker910 on 2017/7/26.
  * Svg 数据对象
  */
-Rsd.define('Rsd.common.Svg', {
+Rsd.define('Rsd.data.Svg', {
     extend:'Rsd.common.Object',
     singleton:true,
     "static":function __init(callback) {

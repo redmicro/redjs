@@ -296,7 +296,7 @@ Rsd.define('Rsd.developer.WapPageEditor', {
         //page列表数据 和分类数据
         this.items[0].loadData();
         
-        var svg = Rsd.create('Rsd.common.Svg',{});
+        var svg = Rsd.create('Rsd.data.Svg',{});
         svg.load(Rsd.getRedjsUrl('/resources/svg/default.js'));
 
         //加载开发组件 

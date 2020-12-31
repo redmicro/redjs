@@ -1,12 +1,12 @@
-﻿/*
+/*
  * redmicro all Copyright (c)
  */
 
-Rsd.define('Rsd.view.BaseListPage', {
+Rsd.define('Rsd.view.BaseBlockListPage', {
     extend: 'Rsd.container.Page',
     requires: [
         'Rsd.controlEx.ModelViewer',
-        'Rsd.control.Grid',
+        'Rsd.control.ListView',
         'Rsd.control.GridToolBar',
         'Rsd.control.PagingBar'
     ],
@@ -21,15 +21,23 @@ Rsd.define('Rsd.view.BaseListPage', {
     pagging:true,
     items:[
         {
-            xtype: 'grid',
+            xtype:'grid-tool-bar'
+        },
+        {
+            xtype: 'list-view',
             margin: '0 1 0 0',
+            itemXtype:'list-item',
             label:{xtype: 'grid-tool-bar', height:60,width:'100%',searchHandler:'searchListData' },
             footBar:{xtype:'paging-bar',indexChanged:'pageIndexChanged'},
-            rowdblclick: 'grid_row_dblclick',
-            rowclick:''
+            itemDblClick: 'list_item_dblclick',
+            itemClick:''
+        },
+        {
+            xtype:'paging-bar'
         }
     ],
-    rowDblClick:null,
+    itemXtype:'',
+    itemDblClick:null,
     /*
     * */
     //gridColumns:[],
@@ -81,12 +89,12 @@ Rsd.define('Rsd.view.BaseListPage', {
         this.callParent();
         //debugger;
         var me = this;
-        var grid = me.items[0];
-        if(!(grid instanceof Rsd.control.Grid))
+        var listView = me.items[1];
+        if(!(listView instanceof Rsd.control.ListView))
         {
-            console.error("me.items[0] is not Rsd.control.Grid");
+            console.error("me.items[1] is not Rsd.control.ListView");
         }
-        Rsd.showWaiting(me.id, grid);
+        Rsd.showWaiting(me.id, listView);
 
         var _serviceName = this.serviceName||this.menu.serviceName;
         if(!Rsd.isEmpty(_serviceName))
@@ -100,7 +108,7 @@ Rsd.define('Rsd.view.BaseListPage', {
         
         if(me.dataStore)
         {
-            grid.dataSource = me.dataStore;
+            listView.dataSource = me.dataStore;
         }
        
         setTimeout(function () {
@@ -108,7 +116,7 @@ Rsd.define('Rsd.view.BaseListPage', {
             var opt  = me.getPagingOpt();
             var _args =  Rsd.isArray(args)? args : Rsd.apply(args||{}, {pageSize:opt.pageSize,pageIndex:opt.pageIndex});
 
-            grid.loadData(_args, function (data) {
+            listView.loadData(_args, function (data) {
 
                 if(data && data.success)
                 {
@@ -165,9 +173,10 @@ Rsd.define('Rsd.view.BaseListPage', {
     * @description 获取分页信息,在查询时，自动加上分页信息
     * */
     getPagingOpt:function getPagingOpt() {
-      if(this.items[0].footBar instanceof  Rsd.control.PagingBar)
+        
+      if(this.items[2] instanceof  Rsd.control.PagingBar)
       {
-          return this.items[0].footBar.getPaging();
+          return this.items[2].getPaging();
       }
       return {};
     },
@@ -177,29 +186,16 @@ Rsd.define('Rsd.view.BaseListPage', {
     * */
     setPagingOpt:function setPagingOpt(opt) {
 
-        if(this.items[0].footBar instanceof  Rsd.control.PagingBar)
+        if(this.items[2] instanceof  Rsd.control.PagingBar)
         {
-            return this.items[0].footBar.setPaging(opt);
+            return this.items[2].setPaging(opt);
         }
     },
-    /**
-    *@description 添加统计行
-    * */
-    setTotalRow:function setTotalRow(subTotal,total) {
-        var grid = this.items[0];
-        grid.addTotalRow(subTotal,total);
-    },
-    /**
-    *  @description 获取表格的数据
-     * */
-    getListData:function getListData()
-    {
-        var grid = this.items[0];
-        return grid.rows;
-    },
+    
+     
     /*
     * */
-    grid_row_dblclick:function grid_row_dblclick(row,evt)
+    list_item_dblclick:function list_item_dblclick(row,evt)
     {
         this.funApplyByIOC(this.rowDblClick,[row,evt]);
     },
@@ -233,25 +229,7 @@ Rsd.define('Rsd.view.BaseListPage', {
 
         form.showDialog();
     },
-    /*
-    * @private
-    * */
-    buildGridColumns:function buildGridColumns() {
-        var _cols = [];
-        Array.prototype.push.apply(_cols, this.gridColumns||[]);
-        Array.prototype.push.apply(_cols, this.templateCols||[])
-
-        var grid = this.items[0];
-        if(grid instanceof Rsd.control.Grid)
-        {
-            grid.buildColumns(_cols);
-            return;
-        }
-        if(grid instanceof  Object)
-        {
-            grid.columns = _cols;
-        }
-    },
+    
     /**
      * 本也表格数据导出excel
      * @param {*} sheet 
@@ -281,57 +259,27 @@ Rsd.define('Rsd.view.BaseListPage', {
 
     this.defineProperty(type,"formFields", _formFieldsGetter, _formFieldsSetter,true);
 
-    var _columnsGetter = function () {
-        if(this.__gridColumns == undefined)
-        {
-            this.__gridColumns = [];
-        }
-        return this.__gridColumns;
-    };
-
-    var _columnsSetter = function (value) {
-        this.__gridColumns = value;
-
-        this.buildGridColumns();
-    }
-
-    this.defineProperty(type,"gridColumns", _columnsGetter, _columnsSetter,true);
-
-    var _templateColsGetter = function () {
-
-        return this.__templateCols||[];
-    };
-
-    var _templateColsSetter = function (value) {
-        this.__templateCols = value;
-        this.buildGridColumns();
-    }
-
-    this.defineProperty(type,"templateCols", _templateColsGetter, _templateColsSetter,true);
-
+    
+  
     var _toolBarGetter = function () {
 
         if(this.items.length ==0)
         {
             return null;            
         }
-        if(this.items[0].label.content instanceof  Rsd.common.ComponentX)
-        {
-            return this.items[0].label.content;
-        }
-        return this.items[0].label;
+        return this.items[0]; 
     };
 
     var _toolBarSetter = function (value) {
 
         if(Rsd.isString(value))
         {
-            this.items[0].label.xtype = value;
+            this.items[0].xtype = value;
             return;
         }
 
         if(Rsd.isObject(value) ) {
-            Rsd.apply(this.items[0].label, value);
+            Rsd.apply(this.items[0], value);
             return;
         }
     }
@@ -341,16 +289,16 @@ Rsd.define('Rsd.view.BaseListPage', {
 
     var _footBarGetter = function () {
 
-        return this.items[0].footBar;
+        return this.items[2];
     };
 
     var _footBarSetter = function (value) {
 
-        this.items[0].footBar = value;
+        this.items[2] = value;
 
         if(Rsd.isObject(value) && !value.hasOwnProperty('xtype'))
         {
-            this.items[0].footBar.xtype = 'paging-bar';
+            this.items[2].xtype = 'paging-bar';
         }
 
     }

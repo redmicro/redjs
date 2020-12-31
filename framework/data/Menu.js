@@ -32,28 +32,30 @@ Rsd.define('Rsd.data.Menu', {
         this.__mapping = {};
         this.loadData(_children || []);
     },
-    /*
-    *
-    * */
+    /**
+     * @description 加载菜单数据，加载前会清除所有子菜单
+     */ 
     loadData:function loadData(data)
     {
         var _ds = data||[];
        if(Rsd.isArray(_ds))
-       {
+       {   
            this.children = _ds;
        }
     },
-    /*
+    /**
+    *  @description 清除所有子菜单
     * */
     removeAll:function removeAll()
     {
+        this.__mapping = {};
         this.children=[];
     },
     /**
-    *
-     *  */
+    * @description 添加子菜单
+    *  */
     addItem:function addItem(menu)
-    {
+    { 
         //debugger;
         var me = this;
         var _m = menu;
@@ -72,6 +74,7 @@ Rsd.define('Rsd.data.Menu', {
         }
 
         var _list = _m.children;
+        _m.children = [];
         delete _m['children'];
 
         if(_m instanceof Rsd.data.Menu)
@@ -109,9 +112,9 @@ Rsd.define('Rsd.data.Menu', {
 
         return _m;
     },
-    /*
-    *
-    * */
+    /** 
+     * @description 获取子菜单
+     * */ 
     getItem:function getItem(key)
     {
         if(Rsd.isEmpty(key))
@@ -137,9 +140,11 @@ Rsd.define('Rsd.data.Menu', {
         {
             this.__children = [];
         }
-
+         
         if(Rsd.isArray(children))
         {
+            this.__mapping = {};
+            this.__children = [];
             for(var i in children)
             {
                 this.addItem(children[i]);

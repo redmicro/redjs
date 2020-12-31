@@ -66,7 +66,7 @@ Rsd.define('Rsd.developer.SvgIconListPage', {
 
         var _group = group||"default";
         var _url = Rsd.getRedjsUrl('/resources/svg/' + _group + '.js') ;
-        var _rs_svg = Rsd.create('Rsd.common.Svg',{});
+        var _rs_svg = Rsd.create('Rsd.data.Svg',{});
 
         _rs_svg.load(_group,_url,function (data) {
             me.nameList=[];

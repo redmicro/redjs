@@ -20,6 +20,7 @@ Rsd.define('Rsd.container.ConsoleDialog', {
      * 插件
      */
     pulgin:null,
+    header:{height:50,style:{backgroundColor:'#383956d9',color:'#fff'}},
     items:[
         //left 左侧一级菜单
         {
@@ -30,19 +31,20 @@ Rsd.define('Rsd.container.ConsoleDialog', {
                 content:'',
                 position:'top',
                 visible:true,
-                height:100,
+                width:'100%',
+                height:'auto',
                 space:5,
-                style:{width :'auto',top:'20px',left:'20px',verticalAlign:'middle'}
+                style:{minHeight :'50',top:'20px',left:'20px',verticalAlign:'middle'}
                 },
             region: 'left',
-            width: 130,
+            width: 100,
             itemHover:true,
             itemStyle:{height:'45px',lineHeight:'45px',"margin":'0px 2px 1px 0px'},
             itemClick:'left_menu_lick',
             itemSelectedCls:'x-selected',
             layout:'vbox',
             dataSource:[],
-            border: true
+            border: false
         },
         //top 顶部一级菜单
         {
@@ -55,11 +57,11 @@ Rsd.define('Rsd.container.ConsoleDialog', {
             itemHover:true,
             margin:'0 0 5 10',
             style:{backgroundColor:'rgba(128, 128, 128, 0.05)',borderRadius:'6px'},
-            "itemStyle":{"height":'50px',"width":'70px',"float":'left',"textAlign":'center',"marginRight":'2px'},
+            "itemStyle":{"height":'50px',"width":'150px',"float":'left',"textAlign":'center',"marginRight":'2px'},
             itemClick:'second_menu_click',
             height:50,
             layout:'hbox',
-            border: true
+            border: false
         },
         //content 内容显示区
         {
@@ -68,7 +70,7 @@ Rsd.define('Rsd.container.ConsoleDialog', {
             muliti:false,
             margin:'6 0 0 6',
             style:{backgroundColor:'rgba(128, 128, 128, 0.05)',borderRadius:'6px',marginTop:'2px'},
-            border: false
+            border: true
         },
     ],
     /**
@@ -79,6 +81,8 @@ Rsd.define('Rsd.container.ConsoleDialog', {
     {
         config = config || {};
         this.apply(config);
+
+        this.left.label.content = this.logo;
     },
     /**
      * 
@@ -88,10 +92,9 @@ Rsd.define('Rsd.container.ConsoleDialog', {
         
         if(!Rsd.isEmpty(this.plugin))
         {
-              //加载菜单 
-         //console.log(this.plugin);    
-         this.left.loadData(this.plugin.menu.children);
-             
+              //加载菜单  
+            this.left.loadData(this.plugin.menu);
+           //console.log(this.left.label);  
         } 
 
           
@@ -117,7 +120,7 @@ Rsd.define('Rsd.container.ConsoleDialog', {
 
                 //layout second menu in top
                 me.items[1].removeAll();
-                me.items[1].loadData(menu);
+                me.items[1].loadData(menu); 
 
                 //show first page in content
                 if (!Rsd.isEmpty(menu.viewType)) {

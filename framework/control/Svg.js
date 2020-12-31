@@ -33,7 +33,7 @@ Rsd.define('Rsd.control.Svg', {
 
         if(!Rsd.isEmpty(this.tagName) )
         {
-            var _rs_svg = Rsd.create('Rsd.common.Svg',{});
+            var _rs_svg = Rsd.create('Rsd.data.Svg',{});
             var _data =  _rs_svg.get.apply(_rs_svg,this.tagName.split('.'));
             if(Rsd.isEmpty(_data))
             {
