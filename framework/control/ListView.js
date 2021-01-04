@@ -29,9 +29,15 @@ Rsd.define('Rsd.control.ListView', {
      * */
     loadData:function loadData(args,callback) {
 
-        this.dataSource = args||this.dataSource;
-        
-        if(this.dataSource == null)
+        //数据源 为数组
+        if(args instanceof Array)
+        {
+            //listview对象load方法
+            this.callParent(args);
+            Rsd.callFunction(me,callback,arguments);
+            return;
+        }
+        if(this.dataSource == null) 
         {
             Rsd.log('dataSource value is null for Control ListView(id:' +this.id+ ').');
             Rsd.callFunction(this,callback,null);
@@ -44,7 +50,8 @@ Rsd.define('Rsd.control.ListView', {
 
             var _args = Rsd.apply({}, args);
 
-            this.dataSource.load(_args,function(data){
+            this.dataSource.load(_args,function loadData(data){
+                //console.log(data);
                 if (data != null) {
                     Rsd.debug("Rsd.control.ListView.loadData()");
                     if(!data.hasOwnProperty('success'))
@@ -52,6 +59,7 @@ Rsd.define('Rsd.control.ListView', {
                         throw new Error('返回数据格式不正确，未找到[success]属性。');
                     }
                     if (data.success) {
+                        
                         var _data = data.data;
 
                         me.indexStart = _data.pagesize * _data.pageindex  + 1;
@@ -94,16 +102,9 @@ Rsd.define('Rsd.control.ListView', {
             });
             return;
         }
-        //数据源 为数组
-        if(this.dataSource instanceof Array)
-        {
-            //grid对象load方法
-            this.callParent(this.dataSource);
-            Rsd.callFunction(me,callback,arguments);
-            return;
-        }
+        
 
         Rsd.callFunction(me,callback,arguments);
-        Rsd.error('ListView属性dataSource不是有效值：' + this.dataSource );
+        Rsd.error('ListView属性dataSource不是有效值：' , this.dataSource );
     }
 });

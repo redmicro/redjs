@@ -13,34 +13,45 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     xtype: 'base-list-page',
     border: false,
     tabTitle: 'Title',
-    layout: 'fit',
+    layout: 'border',
     selected:true,
     /**
      * @description 是否分页显示
     * */
     pagging:true,
+    /**
+     * 
+     */
     items:[
         {
-            xtype:'grid-tool-bar'
+            xtype:'grid-tool-bar',
+            region:'top',
+            searchHandler:'searchListData',
+            height:50
         },
         {
             xtype: 'list-view',
+            region:'center',
             margin: '0 1 0 0',
-            itemXtype:'list-item',
-            label:{xtype: 'grid-tool-bar', height:60,width:'100%',searchHandler:'searchListData' },
-            footBar:{xtype:'paging-bar',indexChanged:'pageIndexChanged'},
+            itemXtype:'label', 
             itemDblClick: 'list_item_dblclick',
             itemClick:''
         },
         {
-            xtype:'paging-bar'
+            xtype:'paging-bar',
+            indexChanged:'pageIndexChanged',
+            region:'bottom',
+            height:50
         }
     ],
-    itemXtype:'',
+    //
+    //itemXtype:'',
+    //itemStyle:{},
+    /**
+     * 
+     */
     itemDblClick:null,
-    /*
-    * */
-    //gridColumns:[],
+    
     /*
     * */
     //formFields:[],
@@ -57,7 +68,6 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     constructor: function BaseListPage(config) {
         config = config || {};
         this.apply(config);
-
     }, 
     /*
      * */
@@ -118,6 +128,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
 
             listView.loadData(_args, function (data) {
 
+               
                 if(data && data.success)
                 {
                     var _data = data.data;
@@ -260,7 +271,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     this.defineProperty(type,"formFields", _formFieldsGetter, _formFieldsSetter,true);
 
     
-  
+   //toolbar
     var _toolBarGetter = function () {
 
         if(this.items.length ==0)
@@ -286,7 +297,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
 
     this.defineProperty(type,"toolBar", _toolBarGetter, _toolBarSetter,false);
 
-
+    //footbar
     var _footBarGetter = function () {
 
         return this.items[2];
@@ -304,4 +315,11 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     }
 
     this.defineProperty(type,"footBar", _footBarGetter, _footBarSetter,false);
+
+    //itemXtype 
+    this.defineProperty(type,"itemXtype", function(){return this.items[1].itemXtype;}, function(value){return this.items[1].itemXtype=value;},false);
+    //itemStyle 
+    this.defineProperty(type,"itemStyle", function(){return this.items[1].itemStyle;}, function(value){return this.items[1].itemStyle=value;},false);
+
+
 });

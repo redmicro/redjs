@@ -11,7 +11,7 @@ Rsd.define('Rsd.control.ListItem', {
      * rsd control,string ,element，object
     * */
     content:null,
-    style:null,
+    style:{},
     flex:0,
     /*
     * */
@@ -49,7 +49,7 @@ Rsd.define('Rsd.control.ListItem', {
             me.ctrl.classList.add('x-li-hover');
         }
         
-        var item = me.content;
+        var item = me.content ||'no content';
         if(item.flex)
         {
              me.ctrl.style.flex = item.flex;
@@ -79,6 +79,7 @@ Rsd.define('Rsd.control.ListItem', {
             item.parent = me;
 
             var _xtype = item.xtype||me.parent.itemXtype||'label';
+            
             me.ctrl.style.display = 'flex';
             var c = Rsd.widget(_xtype,item);
             c.style.alignSelf='center';
