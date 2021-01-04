@@ -169,7 +169,16 @@ Rsd.define('Rsd.control.List', {
 
         if(!(_item instanceof Rsd.control.ListItem) )
         {
-             _item = Rsd.create('Rsd.control.ListItem',{key:item[me.itemKeyMember],content:item,style:me.itemStyle,hover:me.itemHover,parent:me});
+
+             item.xtype = item.xtype||me.parent.itemXtype||'label';
+
+             _item = Rsd.create('Rsd.control.ListItem',{
+                 key:item[me.itemKeyMember], 
+                 content:item,
+                 style:me.itemStyle,
+                 hover:me.itemHover,
+                 parent:me
+            });
         }
 
         var el = _item.ctrl;
@@ -185,7 +194,11 @@ Rsd.define('Rsd.control.List', {
                 me.addCls(this, me.itemSelectedCls);
             }
             var _click =  item.click || me.itemClick;
-            me.funApplyByIOC(_click,[_item]);
+            if(_click)
+            {
+                me.funApplyByIOC(_click,[_item]);
+            }
+            
 
         });
 
@@ -204,7 +217,11 @@ Rsd.define('Rsd.control.List', {
 
 
             var _dblClick = item.dblClick || me.itemDblClick;
-            me.funApplyByIOC(_dblClick,[_item]);
+            if(_dblClick)
+            {
+                me.funApplyByIOC(_dblClick,[_item]);
+            }
+            
         });
 
        return _item;

@@ -608,10 +608,8 @@ legend {
     text-overflow: ellipsis;
 }
 
-.x-componentx-container .x-label {
-
-    cursor: inherit;
-    line-height: normal;
+.x-componentx-container .x-label { 
+    cursor: inherit; 
     position: absolute !important;
 }
 
@@ -1581,7 +1579,20 @@ legend {
     cursor: pointer ;
 }
 
-.x-list, .x-list-view ,.x-list-menu ,.x-list-toolbar{
+.x-list, .x-list-view 
+{
+     display: inline;
+     overflow: auto;
+}
+.x-list .x-li-hover ,.x-list-view .x-li-hover
+{
+    overflow: auto;
+}
+.x-list-menu{
+    overflow: hidden;
+}
+.x-list-menu .x-li-hover
+{
     overflow: hidden;
 }
 .x-list ou,.x-list ol,.x-list-menu ou
@@ -1603,10 +1614,7 @@ legend {
     font-size: 100%;
     font-weight: bold;
 }
-.x-list .x-li-hover ,.x-list-view .x-li-hover,.x-list-menu .x-li-hover
-{
-    overflow: hidden;
-}
+
 .x-list-menu .x-selected,.x-list-menu .x-li-hover:hover
 {
     color: #FFF;

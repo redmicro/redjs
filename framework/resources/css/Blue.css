@@ -238,11 +238,15 @@ th,tfoot>tr,tfoot>td {
 }
 
 
-.x-list, .x-list-view ,.x-list-menu
+.x-list, .x-list-view
 {
      display: inline;
+     overflow: auto;
 }
-
+.x-list-menu
+{
+    overflow: hidden;
+}
 .x-list ou,.x-list ol
 {
     height: auto !important;

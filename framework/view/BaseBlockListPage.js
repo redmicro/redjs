@@ -50,7 +50,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     /**
      * 
      */
-    itemDblClick:null,
+    itemDblClick:'',
     
     /*
     * */
@@ -125,7 +125,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
             //console.log(args);console.log(opt);console.log(_args);
             var opt  = me.getPagingOpt();
             var _args =  Rsd.isArray(args)? args : Rsd.apply(args||{}, {pageSize:opt.pageSize,pageIndex:opt.pageIndex});
-
+            listView.removeAll();
             listView.loadData(_args, function (data) {
 
                
@@ -206,9 +206,9 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
      
     /*
     * */
-    list_item_dblclick:function list_item_dblclick(row,evt)
+    list_item_dblclick:function list_item_dblclick(item,evt)
     {
-        this.funApplyByIOC(this.rowDblClick,[row,evt]);
+        this.funApplyByIOC(this.itemDblClick,[item.content,evt]);
     },
     /*
     * 展示详细信息
@@ -320,6 +320,5 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
     this.defineProperty(type,"itemXtype", function(){return this.items[1].itemXtype;}, function(value){return this.items[1].itemXtype=value;},false);
     //itemStyle 
     this.defineProperty(type,"itemStyle", function(){return this.items[1].itemStyle;}, function(value){return this.items[1].itemStyle=value;},false);
-
-
+      
 });

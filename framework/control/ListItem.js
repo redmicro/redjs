@@ -50,11 +50,7 @@ Rsd.define('Rsd.control.ListItem', {
         }
         
         var item = me.content ||'no content';
-        if(item.flex)
-        {
-             me.ctrl.style.flex = item.flex;
-        }
-
+         
         if(Rsd.isString(item)){
 
             var _txt = document.createTextNode(item);
@@ -72,16 +68,25 @@ Rsd.define('Rsd.control.ListItem', {
 
             return;
         }
-
+        //
+        var _config = item;
+        
+        if(_config.flex)
+        {
+             me.ctrl.style.flex = _config.flex;
+        }
         //debugger;
-        if(Rsd.isObject(item)){
+        if(Rsd.isObject(_config)){
 
-            item.parent = me;
-
-            var _xtype = item.xtype||me.parent.itemXtype||'label';
+            _config.parent = me;
+            if(Rsd.isEmpty(_config.xtype))
+            {
+                console.error('xtype is null :',_config)
+            }
+            var _xtype = _config.xtype || 'label';
             
             me.ctrl.style.display = 'flex';
-            var c = Rsd.widget(_xtype,item);
+            var c = Rsd.widget(_xtype,_config);
             c.style.alignSelf='center';
             c.renderTo(me.ctrl).doLayout();
 
