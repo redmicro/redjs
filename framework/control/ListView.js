@@ -59,11 +59,16 @@ Rsd.define('Rsd.control.ListView', {
                         throw new Error('返回数据格式不正确，未找到[success]属性。');
                     }
                     if (data.success) {
-                        
+
                         var _data = data.data;
 
                         me.indexStart = _data.pagesize * _data.pageindex  + 1;
-                        me.callParent(_data.rows);
+                        var list = [];
+                        for(var i in _data.rows)
+                        {
+                            list.push({data:_data.rows[i]});
+                        }
+                        me.callParent(list);
 
                     }
                     else

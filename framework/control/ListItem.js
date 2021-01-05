@@ -71,22 +71,25 @@ Rsd.define('Rsd.control.ListItem', {
         //
         var _config = item;
         
-        if(_config.flex)
-        {
-             me.ctrl.style.flex = _config.flex;
-        }
+        
         //debugger;
         if(Rsd.isObject(_config)){
 
-            _config.parent = me;
+         
             if(Rsd.isEmpty(_config.xtype))
             {
-                console.error('xtype is null :',_config)
+                console.error('xtype is null:',_config)
             }
             var _xtype = _config.xtype || 'label';
             
             me.ctrl.style.display = 'flex';
+            if(_config.flex)
+            {
+                me.ctrl.style.flex = _config.flex;
+                delete _config[flex];
+            }
             var c = Rsd.widget(_xtype,_config);
+            c .parent = me;
             c.style.alignSelf='center';
             c.renderTo(me.ctrl).doLayout();
 

@@ -170,7 +170,7 @@ Rsd.define('Rsd.control.List', {
         if(!(_item instanceof Rsd.control.ListItem) )
         {
 
-             item.xtype = item.xtype||me.parent.itemXtype||'label';
+             item.xtype = item.xtype||me.itemXtype||'label';
 
              _item = Rsd.create('Rsd.control.ListItem',{
                  key:item[me.itemKeyMember], 
