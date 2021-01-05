@@ -3658,7 +3658,7 @@ function Redjs(config) {
             {
                 //如果正在加载服务 延时200毫秒 最多延时5次
                 _timer++;
-                if(_timer>5)
+                if(_timer>10)
                 {
                     Rsd.warn('系统繁忙，请稍后再试');
                     return;
