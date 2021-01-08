@@ -83,11 +83,11 @@ Rsd.define('Rsd.control.List', {
             //return;
         }
         this.dataSource = data || this.dataSource;
- 
+      
         if (Rsd.isArray(this.dataSource)) {
             
             for(var i in this.dataSource)
-            {
+            {  
                 var _item = this.newItem(this.dataSource[i]);
                 this.ctrl.appendChild(_item.ctrl);
                 this.items.push(_item);
@@ -97,7 +97,7 @@ Rsd.define('Rsd.control.List', {
             
         }else
         {
-            console.error('Rsd.control.List.loadData()方法的data参数必须是数组');
+            console.error('Rsd.control.List.loadData()方法的data参数必须是数组',this.dataSource);
         }
 
         return this;

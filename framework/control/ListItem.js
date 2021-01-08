@@ -89,7 +89,7 @@ Rsd.define('Rsd.control.ListItem', {
                 delete _config[flex];
             }
             var c = Rsd.widget(_xtype,_config);
-            c .parent = me;
+            c.parent = me;
             c.style.alignSelf='center';
             c.renderTo(me.ctrl).doLayout();
 

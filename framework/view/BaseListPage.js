@@ -10,7 +10,7 @@ Rsd.define('Rsd.view.BaseListPage', {
         'Rsd.control.GridToolBar',
         'Rsd.control.PagingBar'
     ],
-    xtype: 'base-list-page',
+    xtype: 'base-block-list-page',
     border: false,
     tabTitle: 'Title',
     layout: 'fit',

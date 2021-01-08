@@ -32,7 +32,7 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
         {
             xtype: 'list-view',
             region:'center',
-            margin: '0 1 0 0',
+            margin: '0 1 5 0',
             itemXtype:'label', 
             itemDblClick: 'list_item_dblclick',
             itemClick:''
@@ -40,8 +40,9 @@ Rsd.define('Rsd.view.BaseBlockListPage', {
         {
             xtype:'paging-bar',
             indexChanged:'pageIndexChanged',
+            style:{backgroundColor: 'lightsteelblue'},
             region:'bottom',
-            height:50
+            height:40
         }
     ],
     //

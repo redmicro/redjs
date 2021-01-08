@@ -2506,10 +2506,20 @@ function Redjs(config) {
      *
      */
     this.getFunctionName = function getFunctionName(fn, defaultName) {
+        
+
         var nameFromToStringRegex = /^function \s?([^\s(]*)/;
         var result = "";
         if (typeof fn === 'function') {
-            result = fn.name || fn.toString().match(nameFromToStringRegex)[1];
+            try
+            {
+                result = fn.name || fn.toString().match(nameFromToStringRegex)[1];
+            }
+            catch(ex)
+            {
+                console.error("Get Function Name Fail",fn);
+            }
+            
         } else if (typeof fn.constructor === 'function') {
             result = getFunctionName(fn.constructor, defaultName);
         }

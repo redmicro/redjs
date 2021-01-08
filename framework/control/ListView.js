@@ -84,7 +84,7 @@ Rsd.define('Rsd.control.ListView', {
         if(this.dataSource instanceof Rsd.data.Service) {
             var _args = Rsd.apply({}, args);
 
-            this.dataSource.requestJson(_args,function(data){
+            this.dataSource.requestJson(_args,function loadData(data){
                 if (data != null) {
                     Rsd.debug("Rsd.control.ListView.loadData()");
                     if(!data.hasOwnProperty('success'))
@@ -93,9 +93,15 @@ Rsd.define('Rsd.control.ListView', {
                     }
                     if (data.success) {
                         var _data = data.data;
-
+                     
                         me.indexStart = _data.pagesize * _data.pageindex  + 1;
-                        me.callParent(_data.rows);
+                        var list = [];
+                        var _rows = _data[me.dataSource.listName||'rows'];
+                        for(var i in _rows)
+                        {
+                            list.push({data:_rows[i]});
+                        }
+                        me.callParent(list);
 
                     }
                     else
