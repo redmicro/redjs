@@ -222,8 +222,8 @@ namespace Rsd.Redjs.Agenter
         public virtual string[] GetRedjsAll(string sourceHost, string version, string releaseTime)
         {
             var redjs = new string[] { "config.js", "Redjs.js", "Rsd.js", "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" };
-            var common = new string[] { "common/EventList.js", "common/Application.js", "common/Svg.js", "common/ComponentX.js" };
-            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
+            var common = new string[] { "common/EventList.js", "common/Application.js",  "common/ComponentX.js" };
+            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Svg.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
             var control = new string[] {"control/Component.js","container/Component.js","control/Input.js", "control/AutoComplete.js", "control/Button.js", "control/Calendar.js", "control/Chart.js", "control/CheckBox.js","control/Table.js", "control/ComboBox.js",
                                                 "control/Label.js","controlEx/ComboBoxEnum.js", "container/Dialog.js","control/MessageBox.js",
                                                 "container/Form.js", "container/FieldSet.js", "control/ToolBar.js","control/NumberIndex.js","control/PagingBar.js",
@@ -268,8 +268,8 @@ namespace Rsd.Redjs.Agenter
         {
 
             var redjs = new string[] { "config.js", "Redjs.js", "Rsd.js", "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" };
-            var common = new string[] { "common/EventList.js", "common/Application.js", "common/Svg.js", "common/ComponentX.js" };
-            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
+            var common = new string[] { "common/EventList.js", "common/Application.js", "common/ComponentX.js" };
+            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Svg.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
             var control = new string[] {"control/Component.js","container/Component.js","control/Input.js", "control/AutoComplete.js", "control/Button.js", "control/Calendar.js", "control/CheckBox.js","control/Table.js", "control/ComboBox.js",
                                                 "control/Label.js","controlEx/ComboBoxEnum.js", "container/Dialog.js","control/MessageBox.js",
                                                 "container/Form.js", "container/FieldSet.js", "control/ToolBar.js","control/NumberIndex.js","control/PagingBar.js",
@@ -314,8 +314,8 @@ namespace Rsd.Redjs.Agenter
         public virtual string[] GetRedjsWapMin(string sourceHost, string version, string releaseTime)
         {
             var redjs = new string[] { "config.js", "Redjs.js", "Rsd.js", "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" };
-            var common = new string[] { "common/EventList.js", "common/Application.js", "common/Svg.js", "common/ComponentX.js" };
-            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
+            var common = new string[] { "common/EventList.js", "common/Application.js", "common/ComponentX.js" };
+            var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Svg.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
             var control = new string[] {"control/Component.js","container/Component.js","control/Input.js", "control/AutoComplete.js", "control/Button.js", "control/Calendar.js", "control/CheckBox.js", "control/Table.js","control/ComboBox.js",
                                                 "control/Label.js","controlEx/ComboBoxEnum.js", "container/Dialog.js","control/MessageBox.js",
                                                 "container/Form.js", "container/FieldSet.js", "control/ToolBar.js","control/NumberIndex.js","control/PagingBar.js",
@@ -359,10 +359,10 @@ namespace Rsd.Redjs.Agenter
         public virtual string[] GetRedjsWxApp(string sourceHost, string version, string releaseTime)
         {
             var wxapp_js = new string[] { "config.js", "wxApp/Rsd.js","wxApp/Adapter.js" };//, "Redjs.js"
-                                                                     //以下 类型 无法在小程序环境下定义
-                                                                     //var common = new string[] { "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" ,"common/EventList.js", "common/Application.js", "common/Svg.js", "common/ComponentX.js" };
-                                                                     // var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
-             
+                                                                                           //以下 类型 无法在小程序环境下定义
+                                                                                           //var common = new string[] { "common/Object.js", "common/Lang.js", "common/Layouter.js", "data/Logger.js" ,"common/EventList.js", "common/Application.js", "common/ComponentX.js" };
+                                                                                           // var data = new string[] { "data/Ajax.js", "data/Cache.js", "data/EnumItem.js", "data/Enum.js", "data/File.js", "data/Json.js", "data/Menu.js", "data/Svg.js", "data/Schema.js", "data/Service.js", "data/Store.js", "data/WebSocket.js" };
+
             var list_v = new List<string>();
 
             foreach (var js in wxapp_js)
