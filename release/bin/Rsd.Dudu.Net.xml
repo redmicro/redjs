@@ -281,56 +281,6 @@
             </summary>
             <param name="Text"></param>
         </member>
-        <member name="M:Rsd.Dudu.Net.MailService.SendTest">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Net.EmailParameterSet">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.ConsigneeAddress">
-            <summary>
-            收件人的邮件地址 
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.ConsigneeName">
-            <summary>
-            收件人的名称
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.ConsigneeHand">
-            <summary>
-            收件人标题
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.ConsigneeTheme">
-            <summary>
-            收件人的主题
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.SendSetSmtp">
-            <summary>
-            发件邮件服务器的Smtp设置
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.SendEmail">
-            <summary>
-            发件人的邮件
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.SendPwd">
-            <summary>
-            发件人的邮件密码
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Net.EmailParameterSet.SendContent">
-            <summary>
-            发件内容
-            </summary>
-        </member>
         <member name="P:Rsd.Dudu.Net.PacketReceivedEventArgs.Data">
             <summary>
             

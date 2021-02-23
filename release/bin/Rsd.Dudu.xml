@@ -166,182 +166,6 @@
             <param name="property"></param>
             <param name="value"></param>
         </member>
-        <member name="T:Rsd.Dudu.BizModel.BizObjectService`1">
-            <summary>
-            业务对象 CURD 操作服务
-            </summary>
-            <typeparam name="BaseT"></typeparam>
-        </member>
-        <member name="P:Rsd.Dudu.BizModel.BizObjectService`1.DbSession">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.InitialTable``1(Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.#ctor(Rsd.Dudu.Core.IDBSession)">
-            <summary>
-            
-            </summary>
-            <param name="dBSession"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.SaveObject``1(``0)">
-            <summary>
-            
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.SaveObjects``1(``0[])">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="objs"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.GetObject``1(System.String)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.GetObject``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.GetObjects``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,``1}},Rsd.Dudu.DBServices.SortType)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <typeparam name="T1"></typeparam>
-            <param name="expression"></param>
-            <param name="orderBy"></param>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.GetObjects``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.DeleteObject``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="obj"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.BizObjectService`1.DeleteObjects``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-        </member>
-        <member name="T:Rsd.Dudu.BizModel.IBizObjectService`1">
-            <summary>
-            
-            </summary>
-            <typeparam name="BaseT"></typeparam>
-        </member>
-        <member name="P:Rsd.Dudu.BizModel.IBizObjectService`1.DbSession">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.DeleteObject``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="obj"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.DeleteObjects``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.GetObject``1(System.String)">
-            <summary>
-            /
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.GetObject``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.GetObjects``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,``1}},Rsd.Dudu.DBServices.SortType)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <typeparam name="T1"></typeparam>
-            <param name="expression"></param>
-            <param name="orderBy"></param>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.GetObjects``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="expression"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.InitialTable``1(Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.SaveObject``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.BizModel.IBizObjectService`1.SaveObjects``1(``0[])">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="objs"></param>
-            <returns></returns>
-        </member>
         <member name="T:Rsd.Dudu.BizModel.IJsonObject">
             <summary>
             
@@ -2697,6 +2521,52 @@
             
             </summary>
         </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.HelpUrl">
+            <summary>
+            帮助文档URL
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.Success">
+            <summary>
+            API接口调用成功 ，HTTP 请求结果
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.Message">
+            <summary>
+            API接口调用 返回http消息
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.Data">
+            <summary>
+            API接口调用 返回http原始数据包，
+            进一步分解得到ReturnSuccess，ReturnMessage，ReturnCode，ReturnCode
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.ReturnJson">
+            <summary>
+            API接口返回的业务结果（Data字段）的JSON结构可能包含:ReturnCode,ReturnMessage,ReturnSuccess,ReturnData
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.ReturnCode">
+             <summary>
+            ReturnJson 中的 code 数据
+             </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.ReturnSuccess">
+            <summary>
+            ReturnJson 中的 success数据
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.ReturnMessage">
+            <summary>
+            ReturnJson 中的 msg数据
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Core.ApiResult.ReturnData">
+            <summary>
+            ReturnJson 中的data 数据
+            </summary>
+        </member>
         <member name="M:Rsd.Dudu.Core.ApiResult.#ctor(System.Boolean,System.String)">
             <summary>
             
@@ -2704,7 +2574,13 @@
             <param name="success">API接口调用成功</param>
             <param name="message"></param>
         </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult.#ctor(System.String,System.String,System.String,System.Boolean,System.String)">
+        <member name="M:Rsd.Dudu.Core.ApiResult.#ctor(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Core.ApiResult.#ctor(System.String,System.String,System.String,System.Boolean,System.Object)">
             <summary>
             
             </summary>
@@ -2714,80 +2590,7 @@
             <param name="returnMsg"></param>
             <param name="returnData"></param>
         </member>
-        <member name="T:Rsd.Dudu.Core.ApiResult`1">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.HelpUrl">
-            <summary>
-            帮助文档URL
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.Success">
-            <summary>
-            API接口调用成功
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.Message">
-            <summary>
-            API接口调用 返回http消息
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.Data">
-            <summary>
-            API接口调用 返回http数据包，进一步分解得到ReturnSuccess，ReturnMessage，ReturnCode，ReturnCode
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.ReturnJson">
-            <summary>
-            API接口返回的业务结果可能包含:ReturnCode,ReturnMessage,ReturnSuccess,ReturnData
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.ReturnCode">
-            <summary>
-            API接口返回处理结果代码
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.ReturnSuccess">
-            <summary>
-            API接口返回的业务处理成功
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.ReturnMessage">
-            <summary>
-            API接口返回处理结果信息
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Core.ApiResult`1.ReturnData">
-            <summary>
-            API接口返回的业务处理数据
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult`1.#ctor(System.Boolean,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="success">API接口调用成功</param>
-            <param name="message"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult`1.#ctor(System.Net.Http.HttpResponseMessage)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult`1.#ctor(System.String,System.String,System.String,System.Boolean,`0)">
-            <summary>
-            
-            </summary>
-            <param name="data"></param>
-            <param name="returnCode"></param>
-            <param name="returnSuccess"></param>
-            <param name="returnMsg"></param>
-            <param name="returnData"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult`1.SetReturnJson(Rsd.Dudu.BizModel.JsonObject,System.String,System.String,`0,System.Boolean)">
+        <member name="M:Rsd.Dudu.Core.ApiResult.SetReturnJson``1(Rsd.Dudu.BizModel.JsonObject,System.String,System.String,``0,System.Boolean)">
             <summary>
             
             </summary>
@@ -2797,7 +2600,27 @@
             <param name="data"></param>
             <param name="success"></param>
         </member>
-        <member name="M:Rsd.Dudu.Core.ApiResult`1.ToString">
+        <member name="M:Rsd.Dudu.Core.ApiResult.ConvertJsonResult(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="codeMember"></param>
+            <param name="valueMember"></param>
+            <param name="msgMember"></param>
+            <param name="dataMember"></param>
+            <param name="successValue"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Core.ApiResult.ConvertJsonResult``1(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             解析返回数据的json 结构
+            </summary>
+            <param name="codeMember">错误代码 字段</param>
+            <param name="valueMember">错误代码值 字段</param>
+            <param name="msgMember">错误消息</param>
+            <param name="dataMember">返回数据</param>
+            <param name="successValue">成功标识值</param>
+        </member>
+        <member name="M:Rsd.Dudu.Core.ApiResult.ToString">
             <summary>
             
             </summary>
@@ -4890,7 +4713,7 @@
         </member>
         <member name="P:Rsd.Dudu.Core.BaseService.Token">
             <summary>
-            服务令牌 用于验证 服务的作用范围（全局，会话，线程）
+            服务令牌 对象唯一； 用于验证 服务的作用范围（全局，会话，线程）
             </summary>
         </member>
         <member name="P:Rsd.Dudu.Core.BaseService.ProjectId">
@@ -4905,14 +4728,15 @@
         </member>
         <member name="P:Rsd.Dudu.Core.BaseService.SessionId">
             <summary>
-             服务策略为 Session时，值为会话ID；
+            会话唯一
+            服务策略为 Session时，值为会话ID；
              服务策略为 Sington时，值为 ProjectId；
              获取Session和Thread级服务时，会被传递到新获取的服务中
             </summary>
         </member>
         <member name="P:Rsd.Dudu.Core.BaseService.Logger">
             <summary>
-            指定日志服务，
+            指定日志服务 
             </summary>
         </member>
         <member name="P:Rsd.Dudu.Core.BaseService.IsDebug">
@@ -5016,14 +4840,6 @@
             <param name="source"></param>
             <param name="args"></param>
         </member>
-        <member name="M:Rsd.Dudu.Core.BaseService.LogError(System.String,System.String,Rsd.Dudu.Log.LogSourceType)">
-            <summary>
-            
-            </summary>
-            <param name="msg"></param>
-            <param name="code"></param>
-            <param name="source"></param>
-        </member>
         <member name="M:Rsd.Dudu.Core.BaseService.LogError(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
@@ -5031,6 +4847,14 @@
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.LogError(System.String,System.String,Rsd.Dudu.Log.LogSourceType)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <param name="code"></param>
             <param name="source"></param>
         </member>
         <member name="M:Rsd.Dudu.Core.BaseService.UrlEncode(System.String,System.Text.Encoding)">
@@ -5041,6 +4865,22 @@
             <param name="encoding">默认UTF8</param>
             <returns></returns>
         </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.GetHttpRequestString(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="encoding">字符串编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.GetHttpRequestStream(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
         <member name="M:Rsd.Dudu.Core.BaseService.HttpPost(System.String,System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32,System.String,System.Text.Encoding,System.String)">
             <summary>
             数据提交
@@ -5048,8 +4888,8 @@
             <param name="url"></param>
             <param name="data"></param> 
             <param name="timeout">超时时间单位：秒</param>
-            <param name="contentType"></param>
-            <param name="encoding">Response流解析编码</param>
+            <param name="contentType">application/x-www-form-urlencoded</param>
+            <param name="encoding">Request参数和Response流解析编码</param>
             <param name="clientIp">伪造的客户端IP</param>
             <returns></returns>
         </member>
@@ -5135,9 +4975,33 @@
             <param name="method"></param>
             <param name="postStream"></param>
             <param name="timeout">超时时间单位：秒</param>
-            <param name="contentType"></param>
+            <param name="contentType">"application/x-www-form-urlencoded"</param>
             <param name="encoding">Response流解析编码</param>
             <param name="clientIp">伪造的客户端IP</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.HttpRequest(System.String,System.String,System.IO.Stream,System.Int32,System.String,System.String)">
+            <summary>
+            使用 System.Net.WebRequest  对象进行请求
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="postStream"></param>
+            <param name="timeout">超时时间单位：秒</param>
+            <param name="contentType">"application/x-www-form-urlencoded"</param> 
+            <param name="clientIp">伪造的客户端IP</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.HttpRequestByte(System.String,System.String,System.IO.Stream,System.Int32,System.String,System.String)">
+            <summary>
+            使用 System.Net.WebRequest 对象进行请求，返回数据流
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="postStream"></param>
+            <param name="timeout"></param>
+            <param name="contentType"></param>
+            <param name="clientIp"></param>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.Core.BaseService.StreamToBytes(System.IO.Stream)">
@@ -5155,6 +5019,11 @@
             将 Stream 写入文件 
             </summary> 
         </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.FileToStream(System.String)">
+            <summary> 
+            从文件读取 Stream 
+            </summary> 
+        </member>
         <member name="M:Rsd.Dudu.Core.BaseService.StreamToBase64(System.IO.Stream)">
              <summary>
             
@@ -5162,25 +5031,19 @@
              <param name="stream"></param>
              <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.Core.BaseService.CopyStream(System.IO.Stream,System.IO.Stream)">
-            <summary>
-            
-            </summary>
-            <param name="source"></param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Core.BaseService.FileToStream(System.String)">
-            <summary> 
-            从文件读取 Stream 
-            </summary> 
-        </member>
         <member name="M:Rsd.Dudu.Core.BaseService.Base64ToFile(System.String,System.String)">
             <summary>
             
             </summary>
             <param name="base64String"></param>
             <param name="filePath"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Core.BaseService.CloneStream(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="source"></param> 
+            <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.Core.BaseService.GetInternalIP">
             <summary>
@@ -12654,434 +12517,6 @@
             <param name="url"></param>
             <returns></returns>
         </member>
-        <member name="T:Rsd.Dudu.Permission.Api">
-            <summary>
-            系统API接口
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Path">
-            <summary>
-            路径
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Group">
-            <summary>
-            分组
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Enable">
-            <summary>
-            可用
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Text">
-            <summary>
-            文本
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Version">
-            <summary>
-            版本
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.Level">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.CheckSession">
-            <summary>
-            是否验证session,一般为通过___key参数传递
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.LogEnable">
-            <summary>
-            是否记录API请求日志，如果需要记录必须保证已注册IUILogService服务
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.InThread">
-            <summary>
-            在线程中执行
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Api.IsBlock">
-            <summary>
-            系统被特定业务独占使用，拒绝其他请求
-            </summary> 
-        </member>
-        <member name="T:Rsd.Dudu.Permission.IPermService">
-            <summary>
-            权限处理 服务 ，不包含UI菜单管理
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.AddApi(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="path"></param>
-            <param name="group"></param>
-            <param name="text"></param>
-            <param name="version"></param>
-            <param name="level"></param>
-            <param name="session"></param>
-            <param name="log"></param>
-            <param name="thread"></param>
-            <param name="block"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.AddPage(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <param name="text"></param>
-            <param name="code"></param>
-            <param name="viewType"></param>
-            <param name="icon"></param>
-            <param name="modelType"></param>
-            <param name="serviceName"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.AddPageButton(Rsd.Dudu.Permission.Page,System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="page"></param>
-            <param name="name"></param>
-            <param name="text"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.AddRole(System.String,System.String,System.Boolean,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <param name="orgId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.GetMenuList(Rsd.Dudu.Permission.Role)">
-            <summary>
-            
-            </summary>
-            <param name="role"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.IPermService.InitialTable(Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <param name="drop"></param>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.Page">
-            <summary>
-            系统UI页面
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.ViewType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Path">
-            <summary>
-            路径
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Icon">
-            <summary>
-            图标
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Enable">
-            <summary>
-            可用
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Group">
-            <summary>
-            分组
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Text">
-            <summary>
-            文本
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Width">
-            <summary>
-            菜单文本宽度
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.ModelType">
-            <summary>
-            类型名称
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.ServiceName">
-            <summary>
-            API服务名
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.WhereCondition">
-            <summary>
-            where 条件
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.SortCondition">
-            <summary>
-            排序条件
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Page.SortCode">
-            <summary>
-            排序编码 
-            00
-            0001
-            0002
-            01
-            0101
-            0102
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.PageButton">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PageButton.PageKey">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PageButton.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PageButton.Enable">
-            <summary>
-            可用
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PageButton.Text">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PageButton.Description">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.PermService">
-            <summary>
-            权限处理 服务 ，不包含UI菜单管理
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PermService.Proxcy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.#ctor(Rsd.Dudu.Core.IDBSession)">
-            <summary>
-            权限处理服务构造函数
-            </summary>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.#ctor">
-            <summary>
-            权限处理服务构造函数
-            </summary> 
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.InitialTable(Rsd.Dudu.Core.IDBSession,Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <param name="dbSession"></param>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.InitialTable``1(Rsd.Dudu.Core.IDBSession,Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            初始化 数据库表
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbSession"></param>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.InitialTable(Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.AddPage(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <param name="text"></param>
-            <param name="code"></param>
-            <param name="viewType"></param>
-            <param name="icon"></param>
-            <param name="modelType"></param>
-            <param name="serviceName"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.AddPageButton(Rsd.Dudu.Permission.Page,System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="page"></param>
-            <param name="name"></param>
-            <param name="text"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.AddApi(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="path"></param>
-            <param name="group"></param>
-            <param name="text"></param>
-            <param name="version"></param>
-            <param name="level"></param>
-            <param name="session"></param>
-            <param name="log"></param>
-            <param name="thread"></param>
-            <param name="block"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.AddRole(System.String,System.String,System.Boolean,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <param name="desc"></param>
-            <param name="enable"></param>
-            <param name="orgId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.GetMenuList(Rsd.Dudu.Permission.Role)">
-            <summary>
-            
-            </summary>
-            <param name="role"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Rsd.Dudu.Permission.PermService.GetMonitorInfo">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.PermType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Rsd.Dudu.Permission.PermType.Api">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Rsd.Dudu.Permission.PermType.Page">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Rsd.Dudu.Permission.PermType.PageButton">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.PermBase">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.PermBase.SortIndex">
-            <summary>
-            displayorder 排序号
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.Role">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Role.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Role.Enable">
-            <summary>
-            可用
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Role.OrgId">
-            <summary>
-            关联组织结构
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.Role.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="T:Rsd.Dudu.Permission.RolePermList">
-            <summary>
-            权限清单
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.RolePermList.RoleKey">
-            <summary>
-            角色ID
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.RolePermList.PermKey">
-            <summary>
-            权限ID
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.RolePermList.PermType">
-            <summary>
-            权限类型
-            </summary>
-        </member>
-        <member name="P:Rsd.Dudu.Permission.RolePermList.Enable">
-            <summary>
-            可用
-            </summary>
-        </member>
         <member name="T:Rsd.Dudu.Redis.IRedisListCacheService`1">
             <summary>
             
@@ -14152,7 +13587,7 @@
             AES加密
             </summary>
             <param name="encryptStr">明文</param>
-            <param name="key">密钥</param>
+            <param name="key">长度为32字符的密钥</param>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.EncryptService.AesEncrypt(System.Byte[],System.Byte[])">
@@ -14168,7 +13603,7 @@
             AES解密
             </summary>
             <param name="decryptStr">密文</param>
-            <param name="key">密钥</param>
+            <param name="key">长度为32字符的密钥</param>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.EncryptService.AesDecrypt(System.Byte[],System.Byte[])">
@@ -14270,36 +13705,40 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             写日志到文件
-            </summary>
+            </summary> 
+            <param name="title"></param>
             <param name="msg">操作代码</param>
             <param name="operationCode">日志描述</param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ConsoleLogService.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             警告日志
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="operationCode"></param>
             <param name="logTime"></param>
@@ -14375,7 +13814,7 @@
         </member>
         <member name="M:Rsd.Dudu.Log.LogServiceBase.BeginCapture(System.String)">
             <summary>
-            开始日志收集
+            开始日志收集 并将数据存于当前线程中
             </summary>
             <param name="key"></param>
         </member>
@@ -14408,19 +13847,21 @@
             </summary>
             <param name="list"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.LogServiceBase.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.LogServiceBase.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.LogServiceBase.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.LogServiceBase.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -14437,10 +13878,11 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.LogServiceBase.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.LogServiceBase.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
@@ -14465,15 +13907,16 @@
         <member name="M:Rsd.Dudu.Log.LogServiceBase.Error(System.String,System.String,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
-            </summary>
+            </summary> 
             <param name="msg"></param>
             <param name="code"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.LogServiceBase.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.LogServiceBase.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -14533,6 +13976,7 @@
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -14590,38 +14034,8 @@
         </member>
         <member name="P:Rsd.Dudu.Log.DbLogService.DbSession">
             <summary>
-            
+            数据库驱动
             </summary>
-        </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.InitialTable(Rsd.Dudu.Core.IDBSession,Rsd.Dudu.Log.LogLevelTypes,Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <param name="dbSession"></param>
-            <param name="logLevel"></param>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.InitialTable``1(Rsd.Dudu.Core.IDBSession,Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            初始化日志数据库表
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="dbSession"></param>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.InitialTable(Rsd.Dudu.Log.LogLevelTypes,Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <param name="logLevel"></param>
-            <param name="drop"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.InitialTable``1(Rsd.Dudu.DBServices.TableExistOperationType)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="drop"></param>
         </member>
         <member name="M:Rsd.Dudu.Log.DbLogService.#ctor(Rsd.Dudu.Core.IDBSession,Rsd.Dudu.Log.LogLevelTypes,System.Boolean)">
             <summary>
@@ -14630,6 +14044,12 @@
             <param name="dbSession"></param>
             <param name="logLevel"></param>
             <param name="isDebug"></param> 
+        </member>
+        <member name="M:Rsd.Dudu.Log.DbLogService.InitialTables(Rsd.Dudu.DBServices.TableExistOperationType)">
+            <summary>
+            根据服务初始化时设置的日志级别，初始化日志数据库表
+            </summary> 
+            <param name="drop"></param>
         </member>
         <member name="M:Rsd.Dudu.Log.DbLogService.CheckTableExists(Rsd.Dudu.Log.LogLevelTypes)">
             <summary>
@@ -14648,36 +14068,40 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.DbLogService.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.DbLogService.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
-            <param name="msg"></param>
-            <param name="code"></param>
-            <param name="logTime"></param>
-            <param name="source"></param>
-        </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
-            <summary>
-            
-            </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.DbLogService.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.DbLogService.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
+            <param name="msg"></param>
+            <param name="code"></param>
+            <param name="logTime"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Log.DbLogService.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+            <summary>
+            
+            </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -14930,36 +14354,40 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.FileLogService.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.FileLogService.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.FileLogService.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.FileLogService.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             写日志到文件
             </summary>
+            <param name="title"></param>
             <param name="msg">操作代码</param>
             <param name="operationCode">日志描述</param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.FileLogService.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.FileLogService.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
-            警告日志
+            
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="operationCode"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.FileLogService.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.FileLogService.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -15044,6 +14472,11 @@
             </summary>
         </member>
         <member name="P:Rsd.Dudu.Log.LogBase.LogLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Log.LogBase.Title">
             <summary>
             
             </summary>
@@ -15164,17 +14597,18 @@
         </member>
         <member name="M:Rsd.Dudu.Log.ILogService.BeginCapture(System.String)">
             <summary>
-            线程独立
+            开始日志收集 并将数据以指定的键值存于当前线程中 线程独立
             </summary>
+            <param name="key">键值</param>
         </member>
         <member name="M:Rsd.Dudu.Log.ILogService.CancelCapture(System.String)">
             <summary>
-            线程独立
+            取消日志收集 线程独立
             </summary>
         </member>
         <member name="M:Rsd.Dudu.Log.ILogService.CommitCapture(System.String)">
             <summary>
-            
+            提交日志 将存于当前线程中数据 提交存储
             </summary>
             <param name="key"></param>
         </member>
@@ -15189,10 +14623,11 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ILogService.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ILogService.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             调试输出
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
@@ -15222,28 +14657,31 @@
             <param name="code"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ILogService.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ILogService.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ILogService.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ILogService.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             警告日志
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.ILogService.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.ILogService.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             普通信息
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
@@ -15290,36 +14728,40 @@
             <param name="start"></param>
             <param name="end"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.WindowsLogService.Debug(System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.WindowsLogService.Debug(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.WindowsLogService.Error(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.WindowsLogService.Error(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="code"></param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.WindowsLogService.Info(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.WindowsLogService.Info(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             写日志到文件
             </summary>
+            <param name="title"></param>
             <param name="msg">操作代码</param>
             <param name="operationCode">日志描述</param>
             <param name="logTime"></param>
             <param name="source"></param>
         </member>
-        <member name="M:Rsd.Dudu.Log.WindowsLogService.Warn(System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
+        <member name="M:Rsd.Dudu.Log.WindowsLogService.Warn(System.String,System.String,System.String,System.Int64,Rsd.Dudu.Log.LogSourceType)">
             <summary>
             警告日志
             </summary>
+            <param name="title"></param>
             <param name="msg"></param>
             <param name="operationCode"></param>
             <param name="logTime"></param>
@@ -15381,9 +14823,9 @@
             
             </summary>
         </member>
-        <member name="F:Rsd.Dudu.ErrorCodes.S0000">
+        <member name="F:Rsd.Dudu.ErrorCodes.None">
             <summary>
-            未知异常:{0}
+            处理成功
             </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S0001">
@@ -15568,7 +15010,12 @@
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S3006">
             <summary>
-            属性赋值错误，对象{0}属性{1}赋值发生异常：{2}
+            Json属性赋值错误，对象{0}属性{1}取值发生参数错误：{2}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.ErrorCodes.S3007">
+            <summary>
+            Json属性赋值错误，对象{0}属性{1}赋值发生异常：{2}
             </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S3999">
@@ -15603,7 +15050,7 @@
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S5000">
             <summary>
-            JSON数据转化失败（值类型：{0}，值：{1}），错误信息：{2}
+            实例化JSON失败（值类型：{0}，值：{1}），错误信息：{2}
             </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S5001">
@@ -15620,6 +15067,11 @@
             <summary>
             Excel创建失败。\r\n{0}。
             </summary>
+        </member>
+        <member name="F:Rsd.Dudu.ErrorCodes.S6001">
+             <summary>
+            请求地址{0}失败\r\n原因：{1}
+             </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S8000">
             <summary>
@@ -15643,22 +15095,22 @@
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S9004">
              <summary>
-            获取服务（{0}）时SessionId不允许为空。
+            获取服务异常|服务（{0}）时SessionId不允许为空。
              </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S9005">
-             <summary>
-            服务{0}(token:{1})为Session或Thread级 ,无法访问。
-             </summary>
+            <summary>
+            获取服务异常|服务{0}(token:{1})为{2}级 ,无法访问。
+            </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S9998">
             <summary>
-            授权即将到期提示，该项目使用的Rsd.Dudu框架相关服务即将到期（{0}），请及时联系厂家购买授权。
+            授权即将到期提示|该项目使用的Rsd.Dudu框架相关服务即将到期（{0}），请及时联系厂家购买授权。
             </summary>
         </member>
         <member name="F:Rsd.Dudu.ErrorCodes.S9999">
             <summary>
-            授权过期提示，该项目使用的Rsd.Dudu框架相关服务已到期（{0}），请联系厂家购买授权。
+            授权过期提示|该项目使用的Rsd.Dudu框架相关服务已到期（{0}），请联系厂家购买授权。
             </summary>
         </member>
         <member name="T:Rsd.Dudu.ExtendMethods">
@@ -15787,10 +15239,10 @@
         </member>
         <member name="M:Rsd.Dudu.ExtendMethods.ToJsonList(System.Data.DataTable,System.Type[])">
             <summary>
-            遇到同名字段放弃
+            支持联合查询，遇到同名字段放弃
             </summary>
-            <param name="dt"></param>
-            <param name="types">遇到同名字段放弃</param>
+            <param name="dt">查询（支持联合查询）得到的表格</param>
+            <param name="types"> 遇到同名字段放弃（支持联合查询）</param>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.ExtendMethods.ToJsonList``2(System.Data.DataTable)">
@@ -19287,6 +18739,16 @@
             项目ID
             </summary>
         </member>
+        <member name="P:Rsd.Dudu.ServicesContainer.IsLicenseError">
+            <summary>
+            授权过期已报警
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.ServicesContainer.IsLicenseWarn">
+            <summary>
+            授权即将到期已警告
+            </summary>
+        </member>
         <member name="P:Rsd.Dudu.ServicesContainer.ExpireAt">
             <summary>
             授权到期时间
@@ -19543,6 +19005,11 @@
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
+        </member>
+        <member name="F:Rsd.Dudu.ServicesContainer._cache">
+            <summary>
+            热数据 缓存
+            </summary>
         </member>
         <member name="M:Rsd.Dudu.ServicesContainer.Get(System.Type)">
             <summary>
