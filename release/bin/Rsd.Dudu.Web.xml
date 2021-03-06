@@ -32,6 +32,11 @@
             <param name="cookies"></param>
             <returns></returns>
         </member>
+        <member name="T:Rsd.Dudu.Web.Authorization.Header">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Rsd.Dudu.Web.Authorization.Header.#ctor">
             <summary>
             
@@ -84,6 +89,11 @@
             
             </summary>
         </member>
+        <member name="P:Rsd.Dudu.Web.Authorization.Header.UnauthorizedResponseHeader">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Rsd.Dudu.Web.Authorization.Header.ToString">
             <summary>
             
@@ -114,6 +124,11 @@
             在BaseBizService提供的CURD操作基础上 添加CURD 支持json的处理
             </summary>
         </member>
+        <member name="P:Rsd.Dudu.Web.Controllers.BaseController.DbSession">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Rsd.Dudu.Web.Controllers.BaseController.Index">
             <summary>
             
@@ -131,6 +146,13 @@
             返回：ErrorCodes.W2001 Session信息不存在
             </summary>
             <returns>Session信息不存在</returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.NotImplemented(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SaveObject(System.Type,Rsd.Dudu.BizModel.JsonObject,Rsd.Dudu.BizModel.ObjectStateType)">
             <summary>
@@ -249,7 +271,7 @@
             <param name="tableNameSuffixList">分表存储对象，表名称后缀</param>
             <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SignIn(System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseController.SignIn(System.String,Rsd.Dudu.Web.Core.ISessionData,System.String,System.String,System.String,System.String,System.Int32)">
             <summary>
             
             </summary>
@@ -335,9 +357,16 @@
         </member>
         <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.ProcessRequest(System.Web.HttpContext)">
             <summary>
-            
+            安全验证，初始化请求，反射处理方法，执行请求方法
             </summary>
             <param name="context"></param>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetActionMethod(System.String)">
+            <summary>
+            获取api 接口对应的方法
+            </summary>
+            <param name="actionName"></param>
+            <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.Application_BeginRequest(System.Object,System.EventArgs)">
             
@@ -466,6 +495,12 @@
             获取指定类型的Session数据。类型不一致时，返回null
             </summary>
             <typeparam name="T">Session数据类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.GetSessionData">
+            <summary>
+            获取指定类型的Session数据
+            </summary>
             <returns></returns>
         </member>
         <member name="M:Rsd.Dudu.Web.Controllers.BaseHttpHandler.ResetSession(System.Int32)">
@@ -991,7 +1026,32 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Rsd.Dudu.Web.Core.ISessionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISessionData.Id">
+            <summary>
+            当前会话的用户ID
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISessionData.Key">
+            <summary>
+            当前会话的用户Key
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Core.ISessionData.UserName">
+            <summary>
+            当前会话的用户名
+            </summary>
+        </member>
         <member name="T:Rsd.Dudu.Web.Core.NullKeyPramaTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.Core.NullKeyPramaTypes.None">
             <summary>
             
             </summary>
@@ -1152,17 +1212,6 @@
             <param name="category"></param>
             <param name="dbSession">数据库驱动</param>
         </member>
-        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.#ctor(System.Reflection.Assembly,System.Type,System.Type,System.String,System.String,Rsd.Dudu.Core.IDBSession)">
-            <summary>
-            
-            </summary>
-            <param name="assembly">插件dll</param>
-            <param name="modelBase">model基类</param>
-            <param name="controllerBase">controller基类</param>
-            <param name="path">Controller注册路径</param>
-            <param name="category"></param>
-            <param name="dbSession"></param>
-        </member>
         <member name="M:Rsd.Dudu.Web.Core.PluginConfig.InitialTables(Rsd.Dudu.DBServices.TableExistOperationType)">
             <summary>
             初始化 数据表
@@ -1180,18 +1229,6 @@
             插件初始化：遍历ModelType 和Controller
             </summary>
         </member>
-        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.AddModelType``1">
-            <summary>
-            添加模型类
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:Rsd.Dudu.Web.Core.PluginConfig.AddController``1">
-            <summary>
-            添加controller
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
         <member name="M:Rsd.Dudu.Web.Core.PluginConfig.CacheModelTypes">
             <summary>
             缓存MyType
@@ -1201,8 +1238,6 @@
             <summary>
             
             </summary>
-            <param name="path">Controller注册路径</param>
-            <returns></returns>
         </member>
         <member name="T:Rsd.Dudu.Web.Core.SchemasCacheService">
             <summary>
@@ -1859,6 +1894,11 @@
             指定加密方法
             </summary>
         </member>
+        <member name="T:Rsd.Dudu.Web.Service.IServiceBindIP">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Rsd.Dudu.Web.Service.IServiceBindIP.Allowed">
             <summary>
             
@@ -1894,6 +1934,11 @@
             <param name="appToken"></param>
             <param name="ip"></param>
             <returns></returns>
+        </member>
+        <member name="T:Rsd.Dudu.Web.Service.IServiceCrossDomain">
+            <summary>
+            
+            </summary>
         </member>
         <member name="P:Rsd.Dudu.Web.Service.IServiceCrossDomain.Allowed">
             <summary>
@@ -2148,6 +2193,41 @@
             </summary>
         </member>
         <member name="P:Rsd.Dudu.Web.Service.ApiDescription.IsWebMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.Level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.ApiLogEnable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.InThread">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.IsBlock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.BlockMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.EncryptKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rsd.Dudu.Web.Service.ApiDescription.EncryptHandler">
             <summary>
             
             </summary>
@@ -2717,7 +2797,7 @@
         </member>
         <member name="M:Rsd.Dudu.Web.HttpContextExtend.ResponseMsg(System.Web.HttpContext,System.String,System.String,System.String,System.String,System.Boolean)">
             <summary>
-            
+            返回 提示信息（html 标签 或js 脚本 ）
             </summary>
             <param name="context"></param>
             <param name="bizFlag"></param>
@@ -3017,7 +3097,7 @@
             
             </summary>
         </member>
-        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFile(System.Web.HttpResponse,System.String,System.String)">
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.WriteFile(System.Web.HttpResponse,System.String,System.String)">
             <summary>
             
             </summary>
@@ -3025,7 +3105,7 @@
             <param name="filePath">完整路径</param>
             <param name="fileName"></param>
         </member>
-        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFile(System.Web.HttpResponse,System.IO.Stream,System.String)">
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.WriteFile(System.Web.HttpResponse,System.IO.Stream,System.String)">
             <summary>
             
             </summary>
@@ -3033,7 +3113,7 @@
             <param name="stream"></param>
             <param name="fileName"></param>
         </member>
-        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseFileFromMongo(System.Web.HttpResponse,System.String,System.String)">
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.WriteFileFromMongo(System.Web.HttpResponse,System.String,System.String)">
             <summary>
             
             </summary>
@@ -3041,7 +3121,7 @@
             <param name="fileId"></param>
             <param name="fileName"></param>
         </member>
-        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.ResponseExcel(System.Web.HttpResponse,System.String,Rsd.Dudu.Helpers.ExcelSheet[])">
+        <member name="M:Rsd.Dudu.Web.HttpResponseExtend.WriteExcel(System.Web.HttpResponse,System.String,Rsd.Dudu.Helpers.ExcelSheet[])">
             <summary>
             
             </summary>
@@ -3304,7 +3384,7 @@
             访问数据库失败，{0}
             </summary>
         </member>
-        <member name="F:Rsd.Dudu.Web.ErrorCodes.W0002">
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.ObjectNotExists">
             <summary>
             {0}数据对象不存在。
             </summary>
@@ -3321,12 +3401,12 @@
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W0005">
             <summary>
-            保存对象（模型：{0}），发生异常：{1}
+            保存对象失败（类型：{0}），发生异常：{1}
             </summary>
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W0006">
             <summary>
-            删除对象（模型：{0}），发生异常：{1}
+            删除对象失败（模型：{0}），发生异常：{1}
             </summary>
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W1000">
@@ -3382,6 +3462,11 @@
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W1010">
             <summary>
             解析错误代码({0})失败。\r\n{1}
+            </summary>
+        </member>
+        <member name="F:Rsd.Dudu.Web.ErrorCodes.W1011">
+            <summary>
+            API处理失败：({0}) 
             </summary>
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W2000">
@@ -3566,7 +3651,7 @@
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W9004">
             <summary>
-            系统动态注册Controller（{0）失败:{1}
+            动态注册Controller失败（{0}）失败:{1}
             </summary>
         </member>
         <member name="F:Rsd.Dudu.Web.ErrorCodes.W9005">
@@ -3878,7 +3963,7 @@
             
             </summary>
         </member>
-        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,Rsd.Dudu.Web.Core.ISessionData,System.String,System.String,System.String,System.String,System.Int32)">
             <summary>
              添加一个session
             </summary>
@@ -3891,7 +3976,7 @@
             <param name="minutes">过期时间（分钟），默认30分钟</param>
             <returns></returns>
         </member>
-        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,System.String,System.Object,System.String,System.String,System.String,System.String,System.Int32)">
+        <member name="M:Rsd.Dudu.Web.SessionContainer.AddSession(System.String,System.String,Rsd.Dudu.Web.Core.ISessionData,System.String,System.String,System.String,System.String,System.Int32)">
             <summary>
             添加一个session
             </summary>
@@ -3936,8 +4021,7 @@
             <summary>
              重置Session 并延长有效时间
             </summary>
-            <param name="key"></param>
-            <param name=""></param>
+            <param name="key"></param> 
             <param name="host"></param>
             <param name="referer"></param>
             <param name="userAgent"></param>
