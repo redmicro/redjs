@@ -126,3 +126,5 @@ packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1/tools/RoslynLa
 .DS_Store
 .vs/Rsd.Redjs.Agent/v16/TestStore/0/000.testlog
 .vs/Rsd.Redjs.Agent/v16/TestStore/0/000.testlog
+Agenter/.vs/Agenter/v16/.suo
+Agenter/.vs/Agenter/config/applicationhost.config
