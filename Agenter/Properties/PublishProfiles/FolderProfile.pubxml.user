@@ -228,10 +228,10 @@
       <publishTime>03/06/2021 19:01:38</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.dll">
-      <publishTime>03/06/2021 19:01:40</publishTime>
+      <publishTime>03/06/2021 19:05:29</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.pdb">
-      <publishTime>03/06/2021 19:01:40</publishTime>
+      <publishTime>03/06/2021 19:05:29</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
       <publishTime>06/08/2020 23:17:24</publishTime>
