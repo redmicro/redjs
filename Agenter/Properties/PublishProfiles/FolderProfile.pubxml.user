@@ -6,6 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\redmicro\redjs\release</_PublishTargetUrl>
+    <History>True|2021-03-08T02:40:08.6734385Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Agenter.dll">
@@ -18,28 +19,28 @@
       <publishTime>01/28/2015 14:36:58</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
-      <publishTime>06/08/2020 23:17:20</publishTime>
+      <publishTime>12/17/2019 12:01:34</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
-      <publishTime>06/08/2020 23:17:20</publishTime>
+      <publishTime>12/17/2019 12:01:34</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
     </File>
     <File Include="bin/MongoDB.Bson.dll">
-      <publishTime>06/08/2020 23:17:23</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/MongoDB.Driver.Core.dll">
-      <publishTime>06/08/2020 23:17:23</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/MongoDB.Driver.dll">
-      <publishTime>06/08/2020 23:17:23</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/MongoDB.Driver.Legacy.dll">
-      <publishTime>06/08/2020 23:17:23</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>06/08/2020 23:17:20</publishTime>
+      <publishTime>12/17/2019 12:01:34</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -48,7 +49,7 @@
       <publishTime>08/08/2018 12:18:12</publishTime>
     </File>
     <File Include="bin/roslyn/csc.rsp">
-      <publishTime>10/30/2018 11:39:38</publishTime>
+      <publishTime>08/08/2018 12:09:42</publishTime>
     </File>
     <File Include="bin/roslyn/csi.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -57,7 +58,7 @@
       <publishTime>08/08/2018 12:18:34</publishTime>
     </File>
     <File Include="bin/roslyn/csi.rsp">
-      <publishTime>11/01/2018 19:57:12</publishTime>
+      <publishTime>08/08/2018 12:09:56</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -78,7 +79,7 @@
       <publishTime>08/08/2018 05:38:48</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>11/01/2018 19:57:04</publishTime>
+      <publishTime>08/08/2018 12:09:42</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
       <publishTime>12/05/2017 09:36:44</publishTime>
@@ -87,10 +88,10 @@
       <publishTime>12/05/2017 09:36:44</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
-      <publishTime>10/30/2018 11:39:38</publishTime>
+      <publishTime>08/08/2018 12:09:42</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>11/01/2018 19:57:04</publishTime>
+      <publishTime>08/08/2018 12:09:42</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
       <publishTime>11/05/2016 18:55:32</publishTime>
@@ -180,7 +181,7 @@
       <publishTime>08/08/2018 12:18:18</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.rsp">
-      <publishTime>11/01/2018 19:57:08</publishTime>
+      <publishTime>08/08/2018 12:09:46</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -189,82 +190,82 @@
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll">
-      <publishTime>03/06/2021 19:01:38</publishTime>
+      <publishTime>03/07/2021 11:46:30</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll.config">
-      <publishTime>06/08/2020 23:17:25</publishTime>
+      <publishTime>05/06/2020 19:58:53</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.dll">
-      <publishTime>12/05/2020 23:54:05</publishTime>
+      <publishTime>12/11/2020 12:27:57</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.License.pdb">
-      <publishTime>12/05/2020 23:54:05</publishTime>
+      <publishTime>12/11/2020 12:27:57</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe">
-      <publishTime>03/06/2021 19:01:37</publishTime>
+      <publishTime>03/07/2021 09:48:31</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.exe.config">
-      <publishTime>06/08/2020 23:17:27</publishTime>
+      <publishTime>12/17/2019 12:01:32</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Net.pdb">
-      <publishTime>03/06/2021 19:01:37</publishTime>
+      <publishTime>03/07/2021 09:48:31</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.pdb">
-      <publishTime>03/06/2021 19:01:38</publishTime>
+      <publishTime>03/07/2021 11:46:30</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.dll">
-      <publishTime>03/06/2021 19:01:39</publishTime>
+      <publishTime>03/07/2021 15:59:00</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.pdb">
-      <publishTime>03/06/2021 19:01:39</publishTime>
+      <publishTime>03/07/2021 15:59:00</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll">
-      <publishTime>03/06/2021 19:01:38</publishTime>
+      <publishTime>03/07/2021 11:49:17</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll.config">
-      <publishTime>07/31/2020 22:13:46</publishTime>
+      <publishTime>05/07/2020 11:15:52</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.pdb">
-      <publishTime>03/06/2021 19:01:38</publishTime>
+      <publishTime>03/07/2021 11:49:17</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.dll">
-      <publishTime>03/06/2021 20:14:27</publishTime>
+      <publishTime>03/08/2021 10:39:30</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.pdb">
-      <publishTime>03/06/2021 20:14:27</publishTime>
+      <publishTime>03/08/2021 10:39:30</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
-      <publishTime>06/08/2020 23:17:24</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/ServiceStack.Interfaces.dll">
-      <publishTime>06/08/2020 23:17:24</publishTime>
+      <publishTime>12/17/2019 14:33:07</publishTime>
     </File>
     <File Include="bin/ServiceStack.Redis.dll">
-      <publishTime>06/08/2020 23:17:24</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/ServiceStack.Text.dll">
-      <publishTime>06/08/2020 23:17:24</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
-      <publishTime>06/10/2020 07:08:32</publishTime>
+      <publishTime>12/17/2019 13:38:43</publishTime>
     </File>
     <File Include="bin/System.Memory.dll">
-      <publishTime>01/26/2021 01:08:29</publishTime>
+      <publishTime>12/17/2019 14:33:08</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
-      <publishTime>06/10/2020 07:08:32</publishTime>
+      <publishTime>12/17/2019 13:38:42</publishTime>
     </File>
     <File Include="bin/System.ValueTuple.dll">
-      <publishTime>12/05/2020 18:09:41</publishTime>
+      <publishTime>11/26/2020 22:11:51</publishTime>
     </File>
     <File Include="bin/软件用户许可安装协议.docx">
-      <publishTime>07/31/2020 22:13:46</publishTime>
+      <publishTime>12/17/2019 13:38:43</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>01/26/2021 00:23:24</publishTime>
+      <publishTime>12/07/2020 11:41:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/06/2021 20:16:58</publishTime>
+      <publishTime>03/08/2021 10:40:08</publishTime>
     </File>
   </ItemGroup>
 </Project>
