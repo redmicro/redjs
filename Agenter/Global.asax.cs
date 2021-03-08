@@ -11,7 +11,11 @@ namespace Rsd.Redjs.Agenter
 {
     public class Global : System.Web.HttpApplication
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Application_Start(object sender, EventArgs e)
         {
             string appId = "52cf3e6e-25df-4dd7-a7a1-db8a7718c3b0";
@@ -19,10 +23,11 @@ namespace Rsd.Redjs.Agenter
             var code = @"CEd7yntcMdP81/6DRwpK6gj1bAvjmA38hRJOnrWUCboX4vDCcyOS9XdseEYDn9qw\r\nVADhu9q37gJdD8mKWQ6PfMeFPoB9pP6eJakLAjfiLz0=";
             var expireAt = ServicesContainer.RegistCode(appId, appKey, code);
 
-            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"];//"http://localhost/redjs/"; // 
+            var host = System.Web.Configuration.WebConfigurationManager.AppSettings["sourceHost"]; 
              
             WebApplication.Initial(this,()=>{
-                WebApplication.LoadPlugins(Rsd.Dudu.UI.Config.GetConfig(null));
+
+                 WebApplication.LoadPlugins(Rsd.Dudu.UI.Config.GetConfig(null, Dudu.UI.Core.UILogLevelTypes.All,null));
                 
                  ServicesContainer.AddService(new RedjsUIService());
                  ServicesContainer.AddService(new RedjsGetFilesService(host));

@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\redmicro\redjs\release</_PublishTargetUrl>
-    <History>True|2021-03-08T02:40:08.6734385Z;</History>
+    <History>True|2021-03-08T06:56:53.3905223Z;True|2021-03-08T11:03:22.4879602+08:00;True|2021-03-08T10:40:08.6734385+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Agenter.dll">
@@ -17,6 +17,12 @@
     </File>
     <File Include="bin/AjaxMin.dll">
       <publishTime>01/28/2015 14:36:58</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>03/08/2021 14:56:52</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>03/08/2021 14:56:52</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
       <publishTime>12/17/2019 12:01:34</publishTime>
@@ -190,7 +196,7 @@
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll">
-      <publishTime>03/07/2021 11:46:30</publishTime>
+      <publishTime>03/08/2021 14:56:24</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.dll.config">
       <publishTime>05/06/2020 19:58:53</publishTime>
@@ -211,28 +217,28 @@
       <publishTime>03/07/2021 09:48:31</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.pdb">
-      <publishTime>03/07/2021 11:46:30</publishTime>
+      <publishTime>03/08/2021 14:56:24</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.dll">
-      <publishTime>03/07/2021 15:59:00</publishTime>
+      <publishTime>03/08/2021 14:56:25</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.pdb">
-      <publishTime>03/07/2021 15:59:00</publishTime>
+      <publishTime>03/08/2021 14:56:25</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll">
-      <publishTime>03/07/2021 11:49:17</publishTime>
+      <publishTime>03/08/2021 14:56:25</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll.config">
       <publishTime>05/07/2020 11:15:52</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.pdb">
-      <publishTime>03/07/2021 11:49:17</publishTime>
+      <publishTime>03/08/2021 14:56:25</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.dll">
-      <publishTime>03/08/2021 10:39:30</publishTime>
+      <publishTime>03/08/2021 14:56:44</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.pdb">
-      <publishTime>03/08/2021 10:39:30</publishTime>
+      <publishTime>03/08/2021 14:56:44</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
       <publishTime>12/17/2019 14:33:08</publishTime>
@@ -264,8 +270,11 @@
     <File Include="Global.asax">
       <publishTime>12/07/2020 11:41:11</publishTime>
     </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>03/08/2021 14:56:45</publishTime>
+    </File>
     <File Include="Web.config">
-      <publishTime>03/08/2021 10:40:08</publishTime>
+      <publishTime>03/08/2021 14:56:44</publishTime>
     </File>
   </ItemGroup>
 </Project>
