@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\redmicro\redjs\release</_PublishTargetUrl>
-    <History>True|2021-03-08T07:04:24.2082412Z;True|2021-03-08T14:56:53.3905223+08:00;True|2021-03-08T11:03:22.4879602+08:00;True|2021-03-08T10:40:08.6734385+08:00;</History>
+    <History>True|2021-03-09T13:14:07.8873766Z;True|2021-03-08T15:04:24.2082412+08:00;True|2021-03-08T14:56:53.3905223+08:00;True|2021-03-08T11:03:22.4879602+08:00;True|2021-03-08T10:40:08.6734385+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Agenter.dll">
@@ -19,10 +19,10 @@
       <publishTime>01/28/2015 14:36:58</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>03/08/2021 15:04:23</publishTime>
+      <publishTime>03/09/2021 21:14:06</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>03/08/2021 15:04:23</publishTime>
+      <publishTime>03/09/2021 21:14:06</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
       <publishTime>12/17/2019 12:01:34</publishTime>
@@ -220,10 +220,10 @@
       <publishTime>03/08/2021 15:04:07</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.dll">
-      <publishTime>03/08/2021 15:04:08</publishTime>
+      <publishTime>03/09/2021 21:13:31</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.UI.pdb">
-      <publishTime>03/08/2021 15:04:08</publishTime>
+      <publishTime>03/09/2021 21:13:31</publishTime>
     </File>
     <File Include="bin/Rsd.Dudu.Web.dll">
       <publishTime>03/08/2021 15:04:08</publishTime>
@@ -235,10 +235,10 @@
       <publishTime>03/08/2021 15:04:08</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.dll">
-      <publishTime>03/08/2021 15:04:09</publishTime>
+      <publishTime>03/09/2021 21:13:33</publishTime>
     </File>
     <File Include="bin/Rsd.Redjs.Agenter.pdb">
-      <publishTime>03/08/2021 15:04:09</publishTime>
+      <publishTime>03/09/2021 21:13:33</publishTime>
     </File>
     <File Include="bin/ServiceStack.Common.dll">
       <publishTime>12/17/2019 14:33:08</publishTime>
@@ -271,7 +271,7 @@
       <publishTime>12/07/2020 11:41:11</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>03/08/2021 15:04:16</publishTime>
+      <publishTime>03/09/2021 21:13:59</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>03/08/2021 15:04:16</publishTime>
