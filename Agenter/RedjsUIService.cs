@@ -50,10 +50,17 @@ namespace Rsd.Redjs.Agenter
             var files = getFilesService.GetFiles(context.Request);
 
             context.Response.Cache.SetCacheability(HttpCacheability.Public);
-
+            if (files.Length == 0)
+            {
+                context.Response.ContentType = "text/html;charset=utf-8";
+                context.Response.Write("<label>文件不存在</label>");
+                context.Response.End();
+                return;
+            }
             var file = context.Request.Path.ToLower();
+           
             //js文件
-            if (file.EndsWith(".js"))
+            if (file.EndsWith(".js")|| files[0].EndsWith(".js"))
             {
                 context.Response.ContentType = "application/javascript";
  
@@ -177,7 +184,7 @@ namespace Rsd.Redjs.Agenter
             }
 
             //css 文件
-            if (file.EndsWith(".css"))
+            if (file.EndsWith(".css") || files[0].EndsWith(".css"))
             {
                 context.Response.ContentType = "text/css";
                 var css = this.CompressCss(context.Request.IsAjaxRequest(), _f_compress, files);

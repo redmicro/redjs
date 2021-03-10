@@ -1,4 +1,5 @@
 ﻿using Rsd.Dudu;
+using Rsd.Dudu.Log;
 using Rsd.Dudu.Web;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,8 @@ namespace Rsd.Redjs.Agenter
             WebApplication.Initial(this,()=>{
 
                  WebApplication.LoadPlugins(Rsd.Dudu.UI.Config.GetConfig(null, Dudu.UI.Core.UILogLevelTypes.All,null));
-                
-                 ServicesContainer.AddService(new RedjsUIService());
-                 ServicesContainer.AddService(new RedjsGetFilesService(host));
+
+                 ServicesContainer.AddService(new FileLogService(), new RedjsUIService(), new RedjsGetFilesService(host)); 
             });
           
             
