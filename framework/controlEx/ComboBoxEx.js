@@ -101,7 +101,7 @@ Rsd.define('Rsd.controlEx.ComboBoxEx', {
             _ctrl.style.height = '100%';
 
             _config.dataStore.load(null,function(data){
-
+ 
                 var _txt = _value;
                 _config.dataStore.getObject(_value,function (obj) {
                     var _item = obj;
