@@ -11,11 +11,12 @@ Rsd.define('Rsd.view.SingleDialog', {
     layout:'vbox',
     height:500,
     readOnly:true,
+    style:{overflow:'hidden'}, 
     buttons:['save','delete','cancel'],
     items:[
         {
             xtype:'model-viewer',
-            "style":{"overflowY":'auto'},
+            "style":{"overflow":'visible'},
             height:'auto',
             region:'center',
             width:'100%' 

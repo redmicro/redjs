@@ -375,6 +375,11 @@ legend {
     margin-right: 5px;
     float: right;
 }
+.x-dialog .x-dialog-body
+{
+     overflow: auto;
+}
+
 .x-footer
 {
     background-color: var( --bg-color-foot);

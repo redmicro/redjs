@@ -5,6 +5,7 @@ Rsd.define('Rsd.container.Dialog', {
     extend: 'Rsd.container.Component',
     xtype: 'dialog',
     domCls: 'x-dialog',
+    bodyCls:'x-dialog-body',
     floating: true,
     /** 
      * @description 可拖动
